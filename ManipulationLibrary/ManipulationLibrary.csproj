@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C2FC9E1F-A7EC-4AEB-9E51-8F7A1A012599}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ManipulationLibrary</RootNamespace>
+    <AssemblyName>ManipulationLibrary</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>ManipulationLibrary.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="microsoft.crm.sdk, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>sdk\microsoft.crm.sdk.dll</HintPath>
+    </Reference>
+    <Reference Include="microsoft.crm.sdktypeproxy, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>sdk\microsoft.crm.sdktypeproxy.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.ServiceModel">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Workflow.Activities">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Workflow.ComponentModel">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Workflow.Runtime">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.WorkflowServices">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Calculations\AdvancedMath.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Calculations\AdvancedMath.designer.cs">
+      <DependentUpon>AdvancedMath.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calculations\BasicMath.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Calculations\BasicMath.designer.cs">
+      <DependentUpon>BasicMath.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calculations\ConvertValue.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Calculations\ConvertValue.Designer.cs">
+      <DependentUpon>ConvertValue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calculations\Helpers\EqOperator.cs" />
+    <Compile Include="Calculations\Helpers\EqToken.cs" />
+    <Compile Include="Calculations\Helpers\Equation.cs" />
+    <Compile Include="Calculations\Maximum.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Calculations\Maximum.designer.cs">
+      <DependentUpon>Maximum.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calculations\Minimum.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Calculations\Minimum.Designer.cs">
+      <DependentUpon>Minimum.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegEx\FormatRegex.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RegEx\FormatRegex.designer.cs">
+      <DependentUpon>FormatRegex.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RegEx\Match.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RegEx\Match.designer.cs">
+      <DependentUpon>Match.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RegEx\ReturnMatch.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RegEx\ReturnMatch.designer.cs">
+      <DependentUpon>ReturnMatch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Strings\Capitalize.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Strings\Capitalize.designer.cs">
+      <DependentUpon>Capitalize.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Strings\Metaphone.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Strings\Metaphone.designer.cs">
+      <DependentUpon>Metaphone.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Strings\PadString.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Strings\PadString.designer.cs">
+      <DependentUpon>PadString.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Strings\Replace.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Strings\Replace.designer.cs">
+      <DependentUpon>Replace.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Strings\Soundex.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Strings\Soundex.designer.cs">
+      <DependentUpon>Soundex.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Strings\StrLength.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Strings\StrLength.designer.cs">
+      <DependentUpon>StrLength.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Strings\Substring.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Strings\Substring.designer.cs">
+      <DependentUpon>Substring.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Strings\Trim.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Strings\Trim.designer.cs">
+      <DependentUpon>Trim.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ManipulationLibrary.snk" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
