@@ -1,0 +1,10 @@
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\ManipulationLibrary\ManipulationLibrary\bin\Release\ManipulationLibrary.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\ManipulationLibrary\ManipulationLibrary\bin\Release\ManipulationLibrary.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\ManipulationLibrary\ManipulationLibrary\obj\Release\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\ManipulationLibrary\ManipulationLibrary\obj\Release\ManipulationLibrary.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\ManipulationLibrary\ManipulationLibrary\obj\Release\ManipulationLibrary.pdb
+\\tsclient\C\Users\carlcolt\Documents\Visual Studio 2010\ManipulationLibrary\ManipulationLibrary\ManipulationLibrary\bin\Release\ManipulationLibrary.dll
+\\tsclient\C\Users\carlcolt\Documents\Visual Studio 2010\ManipulationLibrary\ManipulationLibrary\ManipulationLibrary\bin\Release\ManipulationLibrary.pdb
+\\tsclient\C\Users\carlcolt\Documents\Visual Studio 2010\ManipulationLibrary\ManipulationLibrary\ManipulationLibrary\obj\Release\ResolveAssemblyReference.cache
+\\tsclient\C\Users\carlcolt\Documents\Visual Studio 2010\ManipulationLibrary\ManipulationLibrary\ManipulationLibrary\obj\Release\ManipulationLibrary.dll
+\\tsclient\C\Users\carlcolt\Documents\Visual Studio 2010\ManipulationLibrary\ManipulationLibrary\ManipulationLibrary\obj\Release\ManipulationLibrary.pdb
