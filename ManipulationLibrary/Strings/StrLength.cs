@@ -28,7 +28,6 @@ namespace ManipulationLibrary.Strings
 
         public static DependencyProperty TextProperty = DependencyProperty.Register("Text", typeof(String), typeof(StrLength));
         [CrmInput("Text")]
-        [CrmOutput("Result")]
         public String Text
         {
             get { return (String)GetValue(TextProperty); }
