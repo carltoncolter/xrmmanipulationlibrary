@@ -8,3 +8,8 @@ C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects
 \\tsclient\C\Users\carlcolt\Documents\Visual Studio 2010\ManipulationLibrary\ManipulationLibrary\ManipulationLibrary\obj\Release\ResolveAssemblyReference.cache
 \\tsclient\C\Users\carlcolt\Documents\Visual Studio 2010\ManipulationLibrary\ManipulationLibrary\ManipulationLibrary\obj\Release\ManipulationLibrary.dll
 \\tsclient\C\Users\carlcolt\Documents\Visual Studio 2010\ManipulationLibrary\ManipulationLibrary\ManipulationLibrary\obj\Release\ManipulationLibrary.pdb
+\\tsclient\C\a\ManipulationLibrary\bin\Release\ManipulationLibrary.dll
+\\tsclient\C\a\ManipulationLibrary\bin\Release\ManipulationLibrary.pdb
+\\tsclient\C\a\ManipulationLibrary\obj\Release\ResolveAssemblyReference.cache
+\\tsclient\C\a\ManipulationLibrary\obj\Release\ManipulationLibrary.dll
+\\tsclient\C\a\ManipulationLibrary\obj\Release\ManipulationLibrary.pdb
