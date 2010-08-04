@@ -109,6 +109,37 @@
     <Compile Include="Calculations\Minimum.Designer.cs">
       <DependentUpon>Minimum.cs</DependentUpon>
     </Compile>
+    <Compile Include="Dates\AddBusinessDays.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Dates\AddBusinessDays.designer.cs">
+      <DependentUpon>AddBusinessDays.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dates\AddDaysToDate.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Dates\AddDaysToDate.designer.cs">
+      <DependentUpon>AddDaysToDate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dates\Helpers\DateUtilities.cs" />
+    <Compile Include="Dates\ParseDate.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Dates\ParseDate.designer.cs">
+      <DependentUpon>ParseDate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dates\SubBusinessDays.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Dates\SubBusinessDays.designer.cs">
+      <DependentUpon>SubBusinessDays.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dates\SubDaysFromDate.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Dates\SubDaysFromDate.designer.cs">
+      <DependentUpon>SubDaysFromDate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RegEx\FormatRegex.cs">
       <SubType>Component</SubType>

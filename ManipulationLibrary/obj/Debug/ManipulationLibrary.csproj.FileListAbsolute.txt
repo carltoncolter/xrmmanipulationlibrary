@@ -13,3 +13,8 @@ C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects
 \\tsclient\C\ManipulationLibrary\ManipulationLibrary\obj\Debug\ResolveAssemblyReference.cache
 \\tsclient\C\ManipulationLibrary\ManipulationLibrary\obj\Debug\ManipulationLibrary.dll
 \\tsclient\C\ManipulationLibrary\ManipulationLibrary\obj\Debug\ManipulationLibrary.pdb
+\\tsclient\C\a\ManipulationLibrary\bin\Debug\ManipulationLibrary.dll
+\\tsclient\C\a\ManipulationLibrary\bin\Debug\ManipulationLibrary.pdb
+\\tsclient\C\a\ManipulationLibrary\obj\Debug\ResolveAssemblyReference.cache
+\\tsclient\C\a\ManipulationLibrary\obj\Debug\ManipulationLibrary.dll
+\\tsclient\C\a\ManipulationLibrary\obj\Debug\ManipulationLibrary.pdb
