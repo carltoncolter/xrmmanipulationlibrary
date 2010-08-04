@@ -14,7 +14,7 @@ using Microsoft.Crm.Sdk;
 
 namespace ManipulationLibrary.Dates
 {
-    [CrmWorkflowActivity("SubTract Days From Date", "Date Utilities")]
+    [CrmWorkflowActivity("Subtract Days From Date", "Date Utilities")]
     public partial class SubDaysFromDate : SequenceActivity
     {
 
