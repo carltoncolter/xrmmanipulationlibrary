@@ -14,7 +14,6 @@ using ManipulationLibrary.Dates.Helpers;
 
 namespace ManipulationLibrary.Dates
 {
-    [WorkflowActivity("Add Business Days to Date", "Date Utilities")]
     public sealed class AddBusinessDays : CodeActivity
     {
 

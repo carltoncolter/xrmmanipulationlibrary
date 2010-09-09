@@ -10,7 +10,6 @@ using Microsoft.Xrm.Sdk.Workflow;
 
 namespace ManipulationLibrary.Strings
 {
-    [WorkflowActivity("Codify (SoundEx)", "String Utilities")]
     public sealed class Soundex : CodeActivity
     {
         /// <summary>

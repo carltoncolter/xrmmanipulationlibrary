@@ -8,7 +8,6 @@ using Microsoft.Xrm.Sdk.Workflow;
 
 namespace ManipulationLibrary.Strings
 {
-    [WorkflowActivity("Trim", "String Utilities")]
     public sealed class Trim : CodeActivity
     {
         protected override void Execute(CodeActivityContext executionContext)

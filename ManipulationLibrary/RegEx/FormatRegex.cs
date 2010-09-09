@@ -10,7 +10,6 @@ using Microsoft.Xrm.Sdk.Workflow;
 
 namespace ManipulationLibrary.RegEx
 {
-    [WorkflowActivity("Format Matched String", "RegEx Utilities")]
     public sealed class FormatRegex : CodeActivity
     {
         protected override void Execute(CodeActivityContext executionContext)

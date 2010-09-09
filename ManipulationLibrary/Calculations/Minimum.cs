@@ -9,7 +9,6 @@ using Microsoft.Xrm.Sdk.Workflow;
 
 namespace ManipulationLibrary.Calculations
 {
-    [WorkflowActivity("Minimum", "Calculation Utilities")]
     public sealed class Minimum : CodeActivity
     {
         protected override void Execute(CodeActivityContext executionContext)

@@ -9,7 +9,6 @@ using Microsoft.Xrm.Sdk.Workflow;
 
 namespace ManipulationLibrary.Strings
 {
-    [WorkflowActivity("Replace", "String Utilities")]
     public sealed class Replace : CodeActivity
     {
         protected override void Execute(CodeActivityContext executionContext)

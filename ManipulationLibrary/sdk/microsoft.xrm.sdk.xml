@@ -1,0 +1,1514 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+	<assembly>
+		<name>Microsoft.Xrm.Sdk</name>
+	</assembly>
+	<members>
+		<member name="M:Microsoft.Xrm.Sdk.AttributeCollection.#ctor">
+			<summary>constructor_initializesAttributeCollection class.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.DataCollection`1.ToArray">
+			<returns>Returns <see cref="{0}"></see>.</returns>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.DataCollection`2.#ctor">
+			<summary>constructor_initializesDataCollection class.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.DataCollection`2.Contains(`0)">
+			<returns>Returns <see cref="T:System.Boolean"></see>.</returns>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.DataCollection`2.GetEnumerator">
+			<returns>Returns <see cref="T:System.Collections.Generic.IEnumerator`1"></see>.</returns>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.DataCollection`2.Remove(`0)">
+			<returns>Returns <see cref="T:System.Boolean"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.DataCollection`2.Count">
+			<returns>Returns <see cref="T:System.Int32"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.DataCollection`2.Item(`0)">
+			<returns>Returns <see cref="T:System.Int32"></see>.</returns>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Entity.#ctor">
+			<summary>constructor_initializesEntity class.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Entity.#ctor(System.String)">
+			<summary>constructor_initializesEntity class setting the entity name.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Entity.Contains(System.String)">
+			<returns>Returns <see cref="T:System.Boolean"></see>.</returns>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Entity.GetAttributeValue``1(System.String)">
+			<returns>Returns <see cref="T:System.Boolean"></see>.</returns>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Entity.GetFormattedAttributeValue(System.String)">
+			<returns>Returns <see cref="T:System.String"></see>.</returns>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Entity.GetRelatedEntities``1(System.String,System.Nullable{Microsoft.Xrm.Sdk.EntityRole})">
+			<returns>Returns <see cref="T:System.Collections.Generic.IEnumerable`1"></see>.</returns>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Entity.GetRelatedEntity``1(System.String,System.Nullable{Microsoft.Xrm.Sdk.EntityRole})">
+			<returns>Returns <see cref="T:System.Collections.Generic.IEnumerable`1"></see>.</returns>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Entity.ToEntityReference">
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.EntityReference"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Entity.Attributes">
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.AttributeCollection"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Entity.EntityState">
+			<returns>Returns <see cref="T:System.Nullable`1"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Entity.ExtensionData">
+			<returns>Returns <see cref="T:System.Runtime.Serialization.ExtensionDataObject"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Entity.FormattedValues">
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.FormattedValueCollection"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Entity.Id">
+			<returns>Returns <see cref="T:System.Guid"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Entity.Item(System.String)">
+			<returns>Returns <see cref="T:System.Object"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Entity.LogicalName">
+			<returns>Returns <see cref="T:System.String"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Entity.RelatedEntities">
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.RelatedEntityCollection"></see>.</returns>
+		</member>
+		<member name="T:Microsoft.Xrm.Sdk.EntityAction">
+			<summary>Specify the action to perform on related entities.</summary>
+		</member>
+		<member name="F:Microsoft.Xrm.Sdk.EntityAction.Create">
+			<summary>Create a related record and associate it with the primary record. This is the default action for the Create method.</summary>
+		</member>
+		<member name="F:Microsoft.Xrm.Sdk.EntityAction.Default">
+			<summary>Perform the default action.</summary>
+		</member>
+		<member name="F:Microsoft.Xrm.Sdk.EntityAction.None">
+			<summary>Associate the related record with the primary record.</summary>
+		</member>
+		<member name="F:Microsoft.Xrm.Sdk.EntityAction.Update">
+			<summary>Update the related record and associate it with the primary record. This is the default action for the Update method.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.EntityCollection.#ctor">
+			<summary>constructor_initializesEntityCollection class.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.EntityCollection.#ctor(System.Collections.Generic.IList{Microsoft.Xrm.Sdk.Entity})">
+			<summary>constructor_initializesEntityCollection class setting the xxx.</summary>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.EntityCollection.Entities">
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.DataCollection`1"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.EntityCollection.EntityName">
+			<returns>Returns <see cref="T:System.String"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.EntityCollection.ExtensionData">
+			<returns>Returns <see cref="T:System.Runtime.Serialization.ExtensionDataObject"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.EntityCollection.Item(System.Int32)">
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.Entity"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.EntityCollection.MinActiveRowVersion">
+			<returns>Returns <see cref="T:System.String"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.EntityCollection.MoreRecords">
+			<returns>Returns <see cref="T:System.Boolean"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.EntityCollection.PagingCookie">
+			<returns>Returns <see cref="T:System.String"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.EntityCollection.TotalRecordCount">
+			<returns>Returns <see cref="T:System.Int32"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.EntityCollection.TotalRecordCountLimitExceeded">
+			<returns>Returns <see cref="T:System.Boolean"></see>.</returns>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.EntityIdCollection.#ctor">
+			<summary>constructor_initializesEntityIdCollection class.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.EntityIdCollection.#ctor(System.Collections.Generic.IList{System.Guid})">
+			<summary>constructor_initializesEntityIdCollection class setting the xxx.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.EntityImageCollection.#ctor">
+			<summary>constructor_initializesEntityImageCollection class.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.EntityReference.#ctor">
+			<summary>constructor_initializesEntityReference class.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.EntityReference.#ctor(System.String,System.Guid)">
+			<summary>constructor_initializesEntityReference class setting the logical name and entity ID.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.EntityReference.Equals(System.Object)">
+			<returns>Returns <see cref="T:System.Boolean"></see>.</returns>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.EntityReference.GetHashCode">
+			<returns>Returns <see cref="T:System.Int32"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.EntityReference.ExtensionData">
+			<returns>Returns <see cref="T:System.Runtime.Serialization.ExtensionDataObject"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.EntityReference.Id">
+			<returns>Returns <see cref="T:System.Guid"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.EntityReference.LogicalName">
+			<returns>Returns <see cref="T:System.String"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.EntityReference.Name">
+			<returns>Returns <see cref="T:System.String"></see>.</returns>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.ErrorDetailCollection.#ctor">
+			<summary>constructor_initializesErrorDetailCollection class.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Extension.Create(Microsoft.Xrm.Sdk.IOrganizationService,Microsoft.Xrm.Sdk.Entity,Microsoft.Xrm.Sdk.RelatedEntityActionCollection)">
+			<returns>Returns <see cref="T:System.Guid"></see>.</returns>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Extension.Retrieve(Microsoft.Xrm.Sdk.IOrganizationService,System.String,System.Guid,Microsoft.Xrm.Sdk.Query.ColumnSet,Microsoft.Xrm.Sdk.Query.RelatedEntitiesQuery)">
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.Entity"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.IExecutionContext.BusinessUnitId">
+			<returns>Returns <see cref="T:System.Guid"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.IExecutionContext.CorrelationId">
+			<returns>Returns <see cref="T:System.Guid"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.IExecutionContext.Depth">
+			<returns>Returns <see cref="T:System.Int32"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.IExecutionContext.InitiatingUserId">
+			<returns>Returns <see cref="T:System.Guid"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.IExecutionContext.InputParameters">
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.ParameterCollection"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.IExecutionContext.IsExecutingOffline">
+			<returns>Returns <see cref="T:System.Boolean"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.IExecutionContext.IsInTransaction">
+			<returns>Returns <see cref="T:System.Boolean"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.IExecutionContext.IsOfflinePlayback">
+			<returns>Returns <see cref="T:System.Boolean"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.IExecutionContext.IsolationMode">
+			<returns>Returns <see cref="T:System.Int32"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.IExecutionContext.MessageName">
+			<returns>Returns <see cref="T:System.String"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.IExecutionContext.Mode">
+			<returns>Returns <see cref="T:System.Int32"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.IExecutionContext.OperationCreatedOn">
+			<returns>Returns <see cref="T:System.DateTime"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.IExecutionContext.OperationId">
+			<returns>Returns <see cref="T:System.Guid"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.IExecutionContext.OrganizationId">
+			<returns>Returns <see cref="T:System.Guid"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.IExecutionContext.OrganizationName">
+			<returns>Returns <see cref="T:System.String"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.IExecutionContext.OutputParameters">
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.ParameterCollection"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.IExecutionContext.OwningExtension">
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.EntityReference"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.IExecutionContext.PostEntityImages">
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.EntityImageCollection"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.IExecutionContext.PreEntityImages">
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.EntityImageCollection"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.IExecutionContext.PrimaryEntityId">
+			<returns>Returns <see cref="T:System.Guid"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.IExecutionContext.PrimaryEntityName">
+			<returns>Returns <see cref="T:System.String"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.IExecutionContext.RequestId">
+			<returns>Returns <see cref="T:System.Nullable`1"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.IExecutionContext.SecondaryEntityName">
+			<returns>Returns <see cref="T:System.String"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.IExecutionContext.SharedVariables">
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.ParameterCollection"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.IExecutionContext.UserId">
+			<returns>Returns <see cref="T:System.Guid"></see>.</returns>
+		</member>
+		<member name="T:Microsoft.Xrm.Sdk.IOrganizationService">
+			<summary>Provides programmatic access to the metadata and data for an organization.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.IOrganizationService.Associate(System.String,System.Guid,Microsoft.Xrm.Sdk.Relationship,Microsoft.Xrm.Sdk.EntityReferenceCollection)">
+			<summary>Creates a link between records.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.IOrganizationService.Create(Microsoft.Xrm.Sdk.Entity)">
+			<summary>Creates a record. </summary>
+			<returns>Returns a System.Guid, the ID of the newly created record.</returns>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.IOrganizationService.Delete(System.String,System.Guid)">
+			<summary>Deletes a record.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.IOrganizationService.Disassociate(System.String,System.Guid,Microsoft.Xrm.Sdk.Relationship,Microsoft.Xrm.Sdk.EntityReferenceCollection)">
+			<summary>Deletes a link between records.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.IOrganizationService.Execute(Microsoft.Xrm.Sdk.OrganizationRequest)">
+			<summary>Executes a message in the form of a request, and returns a response.</summary>
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.OrganizationResponse"></see>. You must cast the return value of this method to the specific instance of the response that corresponds to the Request parameter.</returns>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.IOrganizationService.Retrieve(System.String,System.Guid,Microsoft.Xrm.Sdk.Query.ColumnSet)">
+			<summary>Retrieves a record.</summary>
+			<returns>Returns the requested <see cref="T:Microsoft.Xrm.Sdk.Entity"></see>.</returns>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.IOrganizationService.RetrieveMultiple(Microsoft.Xrm.Sdk.Query.QueryBase)">
+			<summary>Retrieves a collection of records.</summary>
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.EntityCollection"></see>.</returns>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.IOrganizationService.Update(Microsoft.Xrm.Sdk.Entity)">
+			<summary>Updates an existing record.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.IOrganizationServiceFactory.CreateOrganizationService(System.Nullable{System.Guid})">
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.IOrganizationService"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Label.ExtensionData">
+			<returns>Returns <see cref="T:System.Runtime.Serialization.ExtensionDataObject"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Label.LocalizedLabels">
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.LocalizedLabelCollection"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Label.UserLocalizedLabel">
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.LocalizedLabel"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.LocalizedLabel.ExtensionData">
+			<returns>Returns <see cref="T:System.Runtime.Serialization.ExtensionDataObject"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.LocalizedLabel.IsManaged">
+			<returns>Returns <see cref="T:System.Nullable`1"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.LocalizedLabel.Label">
+			<returns>Returns <see cref="T:System.String"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.LocalizedLabel.LanguageCode">
+			<returns>Returns <see cref="T:System.Int32"></see>.</returns>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Money.Equals(System.Object)">
+			<returns>Returns <see cref="T:System.Boolean"></see>.</returns>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Money.GetHashCode">
+			<returns>Returns <see cref="T:System.Int32"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Money.ExtensionData">
+			<returns>Returns <see cref="T:System.Runtime.Serialization.ExtensionDataObject"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Money.Value">
+			<returns>Returns <see cref="T:System.Decimal"></see>.</returns>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.OptionSetValue.Equals(System.Object)">
+			<returns>Returns <see cref="T:System.Boolean"></see>.</returns>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.OptionSetValue.GetHashCode">
+			<returns>Returns <see cref="T:System.Int32"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.OptionSetValue.ExtensionData">
+			<returns>Returns <see cref="T:System.Runtime.Serialization.ExtensionDataObject"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.OptionSetValue.Value">
+			<returns>Returns <see cref="T:System.Int32"></see>.</returns>
+		</member>
+		<member name="T:Microsoft.Xrm.Sdk.OrganizationRequest">
+			<summary>Contains the data needed to execute a request. Base class for all organization requests.</summary>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.OrganizationRequest.ExtensionData">
+			<summary>For internal use only.</summary>
+			<returns>Returns <see cref="T:System.Runtime.Serialization.ExtensionDataObject"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.OrganizationRequest.Item(System.String)">
+			<summary>Gets an indexer for the Parameters collection.</summary>
+			<returns>Returns <see cref="T:System.Object"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.OrganizationRequest.Parameters">
+			<summary>Gets or sets the collection of parameters for the request. Required, but is supplied by derived classes.</summary>
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.ParameterCollection"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.OrganizationRequest.RequestId">
+			<summary>Gets or sets the ID of an asynchronous operation (system job). Optional. </summary>
+			<returns>Returns <see cref="T:System.Nullable`1"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.OrganizationRequest.RequestName">
+			<summary>Gets or sets the name of the request. Required, but is supplied by derived classes.</summary>
+			<returns>Returns <see cref="T:System.String"></see>.</returns>
+		</member>
+		<member name="T:Microsoft.Xrm.Sdk.OrganizationResponse">
+			<summary>Contains the response from a request. Base class for all organization responses.</summary>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.OrganizationResponse.ExtensionData">
+			<summary>For internal use only.</summary>
+			<returns>Returns <see cref="T:System.Runtime.Serialization.ExtensionDataObject"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.OrganizationResponse.Item(System.String)">
+			<summary>Gets an indexer for the Parameters collection.</summary>
+			<returns>Returns <see cref="T:System.Object"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.OrganizationResponse.ResponseName">
+			<summary>Gets or sets the name of the response.</summary>
+			<returns>Returns <see cref="T:System.String"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.OrganizationResponse.Results">
+			<summary>Gets the results of the request that was performed.</summary>
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.ParameterCollection"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.OrganizationServiceFault.InnerFault">
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.OrganizationServiceFault"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.OrganizationServiceFault.TraceText">
+			<returns>Returns <see cref="T:System.String"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.RelatedEntityAction.Action">
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.EntityAction"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.RelatedEntityAction.ExtensionData">
+			<returns>Returns <see cref="T:System.Runtime.Serialization.ExtensionDataObject"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.RelatedEntityAction.RelatedActions">
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.RelatedEntityActionCollection"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.RelatedEntityAction.Relationship">
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.Relationship"></see>.</returns>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Relationship.Equals(System.Object)">
+			<returns>Returns <see cref="T:System.Boolean"></see>.</returns>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Relationship.GetHashCode">
+			<returns>Returns <see cref="T:System.Int32"></see>.</returns>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Relationship.ToString">
+			<returns>Returns <see cref="T:System.String"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Relationship.ExtensionData">
+			<returns>Returns <see cref="T:System.Runtime.Serialization.ExtensionDataObject"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Relationship.PrimaryEntityRole">
+			<returns>Returns <see cref="T:System.Nullable`1"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Relationship.SchemaName">
+			<returns>Returns <see cref="T:System.String"></see>.</returns>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.RelationshipQueryCollection.#ctor">
+			<summary>constructor_initializesDataCollection class.</summary>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.RemoteExecutionContext.BusinessUnitId">
+			<returns>Returns <see cref="T:System.Guid"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.RemoteExecutionContext.CorrelationId">
+			<returns>Returns <see cref="T:System.Guid"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.RemoteExecutionContext.Depth">
+			<returns>Returns <see cref="T:System.Int32"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.RemoteExecutionContext.ExtensionData">
+			<returns>Returns <see cref="T:System.Runtime.Serialization.ExtensionDataObject"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.RemoteExecutionContext.InitiatingUserId">
+			<returns>Returns <see cref="T:System.Guid"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.RemoteExecutionContext.InputParameters">
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.ParameterCollection"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.RemoteExecutionContext.IsExecutingOffline">
+			<returns>Returns <see cref="T:System.Boolean"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.RemoteExecutionContext.IsInTransaction">
+			<returns>Returns <see cref="T:System.Boolean"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.RemoteExecutionContext.IsOfflinePlayback">
+			<returns>Returns <see cref="T:System.Boolean"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.RemoteExecutionContext.IsolationMode">
+			<returns>Returns <see cref="T:System.Int32"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.RemoteExecutionContext.MessageName">
+			<returns>Returns <see cref="T:System.String"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.RemoteExecutionContext.Mode">
+			<returns>Returns <see cref="T:System.Int32"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.RemoteExecutionContext.OperationCreatedOn">
+			<returns>Returns <see cref="T:System.DateTime"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.RemoteExecutionContext.OperationId">
+			<returns>Returns <see cref="T:System.Guid"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.RemoteExecutionContext.OrganizationId">
+			<returns>Returns <see cref="T:System.Guid"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.RemoteExecutionContext.OrganizationName">
+			<returns>Returns <see cref="T:System.String"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.RemoteExecutionContext.OutputParameters">
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.ParameterCollection"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.RemoteExecutionContext.OwningExtension">
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.EntityReference"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.RemoteExecutionContext.ParentContext">
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.RemoteExecutionContext"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.RemoteExecutionContext.PostEntityImages">
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.EntityImageCollection"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.RemoteExecutionContext.PreEntityImages">
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.EntityImageCollection"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.RemoteExecutionContext.PrimaryEntityId">
+			<returns>Returns <see cref="T:System.Guid"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.RemoteExecutionContext.PrimaryEntityName">
+			<returns>Returns <see cref="T:System.String"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.RemoteExecutionContext.RequestId">
+			<returns>Returns <see cref="T:System.Nullable`1"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.RemoteExecutionContext.SecondaryEntityName">
+			<returns>Returns <see cref="T:System.String"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.RemoteExecutionContext.SharedVariables">
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.ParameterCollection"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.RemoteExecutionContext.Stage">
+			<returns>Returns <see cref="T:System.Int32"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.RemoteExecutionContext.UserId">
+			<returns>Returns <see cref="T:System.Guid"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.SaveChangesResult.Error">
+			<returns>Returns <see cref="T:System.Exception"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.SaveChangesResult.Request">
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.OrganizationRequest"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.SaveChangesResult.Response">
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.OrganizationResponse"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.SaveChangesResultCollection.HasError">
+			<returns>Returns <see cref="T:System.Boolean"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.SaveChangesResultCollection.Options">
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.Client.SaveChangesOptions"></see>.</returns>
+		</member>
+		<member name="T:Microsoft.Xrm.Sdk.Client.OrganizationServiceProxy">
+			<summary>Proxy that implements <see cref="T:Microsoft.Xrm.Sdk.IOrganizationService"></see> and provides TBD.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Client.OrganizationServiceProxy.Associate(System.String,System.Guid,Microsoft.Xrm.Sdk.Relationship,Microsoft.Xrm.Sdk.EntityReferenceCollection)">
+			<summary>See <see cref="T:Microsoft.Xrm.Sdk.IOrganizationService"></see>. <see cref="M:Microsoft.Xrm.Sdk.IOrganizationService.Associate(System.String,System.Guid,Microsoft.Xrm.Sdk.Relationship,Microsoft.Xrm.Sdk.EntityReferenceCollection)"></see>.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Client.OrganizationServiceProxy.AssociateCore(System.String,System.Guid,Microsoft.Xrm.Sdk.Relationship,Microsoft.Xrm.Sdk.EntityReferenceCollection)">
+			<summary>internal</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Client.OrganizationServiceProxy.Create(Microsoft.Xrm.Sdk.Entity)">
+			<summary>See <see cref="T:Microsoft.Xrm.Sdk.IOrganizationService"></see>. <see cref="M:Microsoft.Xrm.Sdk.IOrganizationService.Create(Microsoft.Xrm.Sdk.Entity)"></see>.</summary>
+			<returns>Returns <see cref="T:System.Guid"></see>.</returns>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Client.OrganizationServiceProxy.CreateCore(Microsoft.Xrm.Sdk.Entity)">
+			<summary>internal</summary>
+			<returns>Returns <see cref="T:System.Guid"></see>.</returns>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Client.OrganizationServiceProxy.Delete(System.String,System.Guid)">
+			<summary>See <see cref="T:Microsoft.Xrm.Sdk.IOrganizationService"></see>. <see cref="M:Microsoft.Xrm.Sdk.IOrganizationService.Delete(System.String,System.Guid)"></see>.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Client.OrganizationServiceProxy.DeleteCore(System.String,System.Guid)">
+			<summary>internal</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Client.OrganizationServiceProxy.Disassociate(System.String,System.Guid,Microsoft.Xrm.Sdk.Relationship,Microsoft.Xrm.Sdk.EntityReferenceCollection)">
+			<summary>See <see cref="T:Microsoft.Xrm.Sdk.IOrganizationService"></see>. <see cref="M:Microsoft.Xrm.Sdk.IOrganizationService.Disassociate(System.String,System.Guid,Microsoft.Xrm.Sdk.Relationship,Microsoft.Xrm.Sdk.EntityReferenceCollection)"></see>.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Client.OrganizationServiceProxy.DisassociateCore(System.String,System.Guid,Microsoft.Xrm.Sdk.Relationship,Microsoft.Xrm.Sdk.EntityReferenceCollection)">
+			<summary>internal</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Client.OrganizationServiceProxy.Execute(Microsoft.Xrm.Sdk.OrganizationRequest)">
+			<summary>See <see cref="T:Microsoft.Xrm.Sdk.IOrganizationService"></see>. <see cref="M:Microsoft.Xrm.Sdk.IOrganizationService.Execute(Microsoft.Xrm.Sdk.OrganizationRequest)"></see>.</summary>
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.OrganizationResponse"></see>.</returns>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Client.OrganizationServiceProxy.ExecuteCore(Microsoft.Xrm.Sdk.OrganizationRequest)">
+			<summary>internal</summary>
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.OrganizationResponse"></see>.</returns>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Client.OrganizationServiceProxy.Retrieve(System.String,System.Guid,Microsoft.Xrm.Sdk.Query.ColumnSet)">
+			<summary>See <see cref="T:Microsoft.Xrm.Sdk.IOrganizationService"></see>. <see cref="M:Microsoft.Xrm.Sdk.IOrganizationService.Retrieve(System.String,System.Guid,Microsoft.Xrm.Sdk.Query.ColumnSet)"></see>.</summary>
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.Entity"></see>.</returns>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Client.OrganizationServiceProxy.RetrieveCore(System.String,System.Guid,Microsoft.Xrm.Sdk.Query.ColumnSet)">
+			<summary>internal</summary>
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.Entity"></see>.</returns>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Client.OrganizationServiceProxy.RetrieveMultiple(Microsoft.Xrm.Sdk.Query.QueryBase)">
+			<summary>See <see cref="T:Microsoft.Xrm.Sdk.IOrganizationService"></see>. <see cref="M:Microsoft.Xrm.Sdk.IOrganizationService.RetrieveMultiple(Microsoft.Xrm.Sdk.Query.QueryBase)"></see>.</summary>
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.EntityCollection"></see>.</returns>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Client.OrganizationServiceProxy.RetrieveMultipleCore(Microsoft.Xrm.Sdk.Query.QueryBase)">
+			<summary>internal</summary>
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.EntityCollection"></see>.</returns>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Client.OrganizationServiceProxy.Update(Microsoft.Xrm.Sdk.Entity)">
+			<summary>See <see cref="T:Microsoft.Xrm.Sdk.IOrganizationService"></see>. <see cref="M:Microsoft.Xrm.Sdk.IOrganizationService.Update(Microsoft.Xrm.Sdk.Entity)"></see>.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Client.OrganizationServiceProxy.UpdateCore(Microsoft.Xrm.Sdk.Entity)">
+			<summary>internal</summary>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Client.OrganizationServiceProxy.CallerId">
+			<returns>Returns <see cref="T:System.Guid"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Client.OrganizationServiceProxy.SyncOperationType">
+			<returns>Returns <see cref="T:System.String"></see>.</returns>
+		</member>
+		<member name="T:Microsoft.Xrm.Sdk.Messages.AssociateRequest">
+			<summary>Request_Contains_Data create a link between records.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Messages.AssociateRequest.#ctor">
+			<summary>constructor_initializesAssociateEntitiesRequest class.</summary>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Messages.AssociateRequest.RelatedEntities">
+			<summary>Gets or sets a collection of entity references (references to records) to be associated. Required.</summary>
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.EntityReferenceCollection"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Messages.AssociateRequest.Relationship">
+			<summary>Get or sets the name of the relationship to be used for the association. Required.</summary>
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.Relationship"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Messages.AssociateRequest.Target">
+			<summary>Gets or sets the target, which is the record to which the related records will be associated. Required.</summary>
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.EntityReference"></see>.</returns>
+		</member>
+		<member name="T:Microsoft.Xrm.Sdk.Messages.AssociateResponse">
+			<summary>Response_Message<see cref="T:Microsoft.Xrm.Sdk.Messages.AssociateRequest"></see>.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Messages.AssociateResponse.#ctor">
+			<summary>constructor_initializesAssociateResponse class.</summary>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Messages.CanBeReferencedRequest.EntityName">
+			<returns>Returns <see cref="T:System.String"></see>.</returns>
+		</member>
+		<member name="T:Microsoft.Xrm.Sdk.Messages.CreateEntityRequest">
+			<summary>Use this request to create a custom entity.</summary>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Messages.CreateEntityRequest.Entity">
+			<summary>Gets or sets the metadata for the new entity to be created.</summary>
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.Metadata.EntityMetadata"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Messages.CreateEntityRequest.HasActivities">
+			<summary>Gets or sets whether the new entity will be created that has a special relationship to activity entities and is a valid regarding object for the activity.</summary>
+			<returns>Returns <see cref="T:System.Boolean"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Messages.CreateEntityRequest.HasNotes">
+			<summary>Gets or sets whether the new entity will be created that has a special relationship to the annotation entity.</summary>
+			<returns>Returns <see cref="T:System.Boolean"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Messages.CreateEntityRequest.PrimaryAttribute">
+			<summary>Gets or sets the metadata for the primary attribute for the new entity.</summary>
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.Metadata.StringAttributeMetadata"></see>.</returns>
+		</member>
+		<member name="T:Microsoft.Xrm.Sdk.Messages.CreateEntityResponse">
+			<summary>Contains the response from the <see cref="T:Microsoft.Xrm.Sdk.Messages.CreateEntityRequest"></see>.</summary>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Messages.CreateEntityResponse.AttributeId">
+			<summary>Gets the ID of the primary attribute for the newly created entity.</summary>
+			<returns>Returns <see cref="T:System.Guid"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Messages.CreateEntityResponse.EntityId">
+			<summary>Gets the ID of the newly created entity.</summary>
+			<returns>Returns <see cref="T:System.Guid"></see>.</returns>
+		</member>
+		<member name="T:Microsoft.Xrm.Sdk.Messages.CreateRequest">
+			<summary>Request_Contains_Data create a record.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Messages.CreateRequest.#ctor">
+			<summary>constructor_initializesCreateRequest class.</summary>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Messages.CreateRequest.Target">
+			<summary>Gets or sets an instance of an entity that will be used to create a new record. Required. </summary>
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.Entity"></see>.</returns>
+		</member>
+		<member name="T:Microsoft.Xrm.Sdk.Messages.CreateResponse">
+			<summary>Response_Message<see cref="T:Microsoft.Xrm.Sdk.Messages.CreateRequest"></see>.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Messages.CreateResponse.#ctor">
+			<summary>constructor_initializesCreateResponse class.</summary>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Messages.CreateResponse.id">
+			<summary>Gets the ID of the newly created entity instance.</summary>
+			<returns>Returns <see cref="T:System.Guid"></see>.</returns>
+		</member>
+		<member name="T:Microsoft.Xrm.Sdk.Messages.DeleteRequest">
+			<summary>Request_Contains_Data delete a record.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Messages.DeleteRequest.#ctor">
+			<summary>constructor_initializesDeleteRequest class.</summary>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Messages.DeleteRequest.Target">
+			<summary>Gets or sets a reference to the record you want to delete. Required.</summary>
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.EntityReference"></see>.</returns>
+		</member>
+		<member name="T:Microsoft.Xrm.Sdk.Messages.DeleteResponse">
+			<summary>Contains the response from the <see cref="T:Microsoft.Xrm.Sdk.Messages.DeleteRequest"></see>.</summary>
+		</member>
+		<member name="T:Microsoft.Xrm.Sdk.Messages.DisassociateRequest">
+			<summary>Request_Contains_Data delete a link between records.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Messages.DisassociateRequest.#ctor">
+			<summary>constructor_initializesDisassociateRequest class.</summary>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Messages.DisassociateRequest.RelatedEntities">
+			<summary>Gets or sets a collection of entity references (references to records) to be disassociated. Required.</summary>
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.EntityReferenceCollection"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Messages.DisassociateRequest.Relationship">
+			<summary>Get or sets the name of the relationship to be used for the disassociation. Required.</summary>
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.Relationship"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Messages.DisassociateRequest.Target">
+			<summary>Gets or sets the target, which is the record from which the related records will be disassociated. Required.</summary>
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.EntityReference"></see>.</returns>
+		</member>
+		<member name="T:Microsoft.Xrm.Sdk.Messages.DisassociateResponse">
+			<summary>Response_Message<see cref="T:Microsoft.Xrm.Sdk.Messages.DisassociateRequest"></see>.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Messages.DisassociateResponse.#ctor">
+			<summary>constructor_initializesDisssociateResponse class.</summary>
+		</member>
+		<member name="T:Microsoft.Xrm.Sdk.Messages.RetrieveMultipleRequest">
+			<summary>Request_Contains_Data retrieve a collection of records that satisfy the specified query criteria.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Messages.RetrieveMultipleRequest.#ctor">
+			<summary>constructor_initializesRetrieveMultipleRequest class.</summary>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Messages.RetrieveMultipleRequest.Query">
+			<summary>Gets or sets the query criteria for the retrieve multiple operation.Required.</summary>
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.Query.QueryBase"></see>.</returns>
+		</member>
+		<member name="T:Microsoft.Xrm.Sdk.Messages.RetrieveMultipleResponse">
+			<summary>Response_Message<see cref="T:Microsoft.Xrm.Sdk.Messages.RetrieveMultipleRequest"></see>.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Messages.RetrieveMultipleResponse.#ctor">
+			<summary>constructor_initializesRetrieveMultipleResponse class.</summary>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Messages.RetrieveMultipleResponse.EntityCollection">
+			<summary>Gets the collection of records that satisfy the query in the request.</summary>
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.EntityCollection"></see>.</returns>
+		</member>
+		<member name="T:Microsoft.Xrm.Sdk.Messages.RetrieveRequest">
+			<summary>Request_Contains_Data retrieve a record.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Messages.RetrieveRequest.#ctor">
+			<summary>constructor_initializesRetrieveRequest class.</summary>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Messages.RetrieveRequest.ColumnSet">
+			<summary>Gets or sets the collection of attributes for which non-null values are returned from a query. Optional.</summary>
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.Query.ColumnSet"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Messages.RetrieveRequest.RelatedEntitiesQuery">
+			<summary>Gets or sets the query that describes the related records to be retrieved. Optional.</summary>
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.Query.RelatedEntitiesQuery"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Messages.RetrieveRequest.Target">
+			<summary>Gets or sets the target, which is the record to be retrieved. Required.</summary>
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.EntityReference"></see>.</returns>
+		</member>
+		<member name="T:Microsoft.Xrm.Sdk.Messages.RetrieveResponse">
+			<summary>Response_Message<see cref="T:Microsoft.Xrm.Sdk.Deployment.Proxy.RetrieveRequest"></see>.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Messages.RetrieveResponse.#ctor">
+			<summary>constructor_initializesRetrieveResponse class.</summary>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Messages.RetrieveResponse.Entity">
+			<summary>Gets the record specified in the request.</summary>
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.Entity"></see>.</returns>
+		</member>
+		<member name="T:Microsoft.Xrm.Sdk.Messages.UpdateRequest">
+			<summary>Request_Contains_Data update an existing record.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Messages.UpdateRequest.#ctor">
+			<summary>constructor_initializesUpdateRequest class.</summary>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Messages.UpdateRequest.Target">
+			<summary>Gets or sets an instance of an entity that will be used to update a record. Required. </summary>
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.Entity"></see>.</returns>
+		</member>
+		<member name="T:Microsoft.Xrm.Sdk.Messages.UpdateResponse">
+			<summary>Response_Message<see cref="T:Microsoft.Xrm.Sdk.Messages.UpdateRequest"></see>.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Messages.UpdateResponse.#ctor">
+			<summary>constructor_initializesUpdateResponse class.</summary>
+		</member>
+		<member name="T:Microsoft.Xrm.Sdk.Metadata.AssociatedMenuBehavior">
+			<summary>The AssociatedMenuBehavior enumeration type describes the behavior of the associated menu for a one-to-many relationship.</summary>
+		</member>
+		<member name="F:Microsoft.Xrm.Sdk.Metadata.AssociatedMenuBehavior.DoNotDisplay">
+			<summary>Do not show the associated menu.</summary>
+		</member>
+		<member name="F:Microsoft.Xrm.Sdk.Metadata.AssociatedMenuBehavior.UseCollectionName">
+			<summary>Use the collection name for the associated menu.</summary>
+		</member>
+		<member name="F:Microsoft.Xrm.Sdk.Metadata.AssociatedMenuBehavior.UseLabel">
+			<summary>Use the label for the associated menu</summary>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Metadata.AssociatedMenuConfiguration.Behavior">
+			<returns>Returns <see cref="T:System.Nullable`1"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Metadata.AssociatedMenuConfiguration.Group">
+			<returns>Returns <see cref="T:System.Nullable`1"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Metadata.AssociatedMenuConfiguration.Label">
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.Label"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Metadata.AssociatedMenuConfiguration.Order">
+			<returns>Returns <see cref="T:System.Nullable`1"></see>.</returns>
+		</member>
+		<member name="T:Microsoft.Xrm.Sdk.Metadata.AssociatedMenuGroup">
+			<summary>The AssociatedMenuGroup enumeration type describes the group in which to display the associated menu for a one-to-many relationship</summary>
+		</member>
+		<member name="F:Microsoft.Xrm.Sdk.Metadata.AssociatedMenuGroup.Details">
+			<summary>Show the associated menu in the details group.</summary>
+		</member>
+		<member name="F:Microsoft.Xrm.Sdk.Metadata.AssociatedMenuGroup.Marketing">
+			<summary>Show the associated menu in the marketing group.</summary>
+		</member>
+		<member name="F:Microsoft.Xrm.Sdk.Metadata.AssociatedMenuGroup.Sales">
+			<summary>Show the associated menu in the sales group.</summary>
+		</member>
+		<member name="F:Microsoft.Xrm.Sdk.Metadata.AssociatedMenuGroup.Service">
+			<summary>Show the associated menu in the service group.</summary>
+		</member>
+		<member name="T:Microsoft.Xrm.Sdk.Metadata.AttributeMetadata">
+			<summary>Contains all the metadata for an entity attribute.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Metadata.AttributeMetadata.#ctor">
+			<summary>Initializes a new instance of the AttributeMetadata class.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Metadata.AttributeMetadata.#ctor(Microsoft.Xrm.Sdk.Metadata.AttributeTypeCode)">
+			<summary>Initializes a new instance of the AttributeMetadata class.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Metadata.AttributeMetadata.#ctor(Microsoft.Xrm.Sdk.Metadata.AttributeTypeCode,System.String)">
+			<summary>Initializes a new instance of the AttributeMetadata class.</summary>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Metadata.AttributeMetadata.AttributeOf">
+			<summary>Gets the name of that attribute that this attribute extends.</summary>
+			<returns>Returns <see cref="T:System.String"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Metadata.AttributeMetadata.AttributeType">
+			<summary>Gets or sets the type for the attribute.</summary>
+			<returns>Returns <see cref="T:System.Nullable`1"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Metadata.AttributeMetadata.CanBeSecuredForCreate">
+			<returns>Returns <see cref="T:System.Nullable`1"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Metadata.AttributeMetadata.CanBeSecuredForRead">
+			<returns>Returns <see cref="T:System.Nullable`1"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Metadata.AttributeMetadata.CanBeSecuredForUpdate">
+			<returns>Returns <see cref="T:System.Nullable`1"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Metadata.AttributeMetadata.ColumnNumber">
+			<returns>Returns <see cref="T:System.Nullable`1"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Metadata.AttributeMetadata.DeprecatedVersion">
+			<returns>Returns <see cref="T:System.String"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Metadata.AttributeMetadata.Description">
+			<summary>Gets or sets the description of the attribute.</summary>
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.Label"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Metadata.AttributeMetadata.DisplayName">
+			<summary>Gets or sets the display name for the attribute.</summary>
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.Label"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Metadata.AttributeMetadata.EntityLogicalName">
+			<summary>Gets the logical name of the entity that contains the attribute.</summary>
+			<returns>Returns <see cref="T:System.String"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Metadata.AttributeMetadata.IsAuditEnabled">
+			<returns>Returns <see cref="T:System.Nullable`1"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Metadata.AttributeMetadata.IsCustomAttribute">
+			<returns>Returns <see cref="T:System.Nullable`1"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Metadata.AttributeMetadata.IsCustomizable">
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.BooleanManagedProperty"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Metadata.AttributeMetadata.IsManaged">
+			<returns>Returns <see cref="T:System.Nullable`1"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Metadata.AttributeMetadata.IsPrimaryId">
+			<returns>Returns <see cref="T:System.Nullable`1"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Metadata.AttributeMetadata.IsPrimaryName">
+			<returns>Returns <see cref="T:System.Nullable`1"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Metadata.AttributeMetadata.IsRenameable">
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.BooleanManagedProperty"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Metadata.AttributeMetadata.IsSecured">
+			<returns>Returns <see cref="T:System.Nullable`1"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Metadata.AttributeMetadata.IsValidForAdvancedFind">
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.BooleanManagedProperty"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Metadata.AttributeMetadata.IsValidForCreate">
+			<returns>Returns <see cref="T:System.Nullable`1"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Metadata.AttributeMetadata.IsValidForRead">
+			<returns>Returns <see cref="T:System.Nullable`1"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Metadata.AttributeMetadata.IsValidForUpdate">
+			<returns>Returns <see cref="T:System.Nullable`1"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Metadata.AttributeMetadata.LinkedAttributeId">
+			<returns>Returns <see cref="T:System.Nullable`1"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Metadata.AttributeMetadata.LogicalName">
+			<summary>Gets the logical name for the attribute.</summary>
+			<returns>Returns <see cref="T:System.String"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Metadata.AttributeMetadata.RequiredLevel">
+			<summary>Gets or sets the data entry requirement level enforced for the attribute.</summary>
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.AttributeRequiredLevelManagedProperty"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Metadata.AttributeMetadata.SchemaName">
+			<summary>Gets or sets the schema name for the attribute.</summary>
+			<returns>Returns <see cref="T:System.String"></see>.</returns>
+		</member>
+		<member name="T:Microsoft.Xrm.Sdk.Metadata.AttributeRequiredLevel">
+			<summary>The AttributeRequiredLevel enumeration type describes the requirement level for an attribute.</summary>
+		</member>
+		<member name="F:Microsoft.Xrm.Sdk.Metadata.AttributeRequiredLevel.ApplicationRequired">
+			<summary>The attribute is required to have a value.</summary>
+		</member>
+		<member name="F:Microsoft.Xrm.Sdk.Metadata.AttributeRequiredLevel.None">
+			<summary>No requirements are specified.</summary>
+		</member>
+		<member name="F:Microsoft.Xrm.Sdk.Metadata.AttributeRequiredLevel.Recommended">
+			<summary>It is recommended that the attribute has a value.</summary>
+		</member>
+		<member name="F:Microsoft.Xrm.Sdk.Metadata.AttributeRequiredLevel.SystemRequired">
+			<summary>The attribute is required to have a value.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Metadata.BigIntAttributeMetadata.#ctor">
+			<summary>Initializes a new instance of the AttributeMetadata class.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Metadata.BooleanAttributeMetadata.#ctor">
+			<summary>Initializes a new instance of the AttributeMetadata class.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Metadata.DateTimeAttributeMetadata.#ctor">
+			<summary>Initializes a new instance of the AttributeMetadata class.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Metadata.DecimalAttributeMetadata.#ctor">
+			<summary>Initializes a new instance of the AttributeMetadata class.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Metadata.DoubleAttributeMetadata.#ctor">
+			<summary>Initializes a new instance of the AttributeMetadata class.</summary>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Metadata.EntityMetadata.ActivityTypeMask">
+			<returns>Returns <see cref="T:System.Nullable`1"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Metadata.EntityMetadata.Attributes">
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.Metadata.AttributeMetadata"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Metadata.EntityMetadata.CanTriggerWorkflow">
+			<returns>Returns <see cref="T:System.Nullable`1"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Metadata.EntityMetadata.Description">
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.Label"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Metadata.EntityMetadata.DisplayCollectionName">
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.Label"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Metadata.EntityMetadata.DisplayName">
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.Label"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Metadata.EntityMetadata.DocumentManagementStatus">
+			<returns>Returns <see cref="T:System.Nullable`1"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Metadata.EntityMetadata.IsActivity">
+			<returns>Returns <see cref="T:System.Nullable`1"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Metadata.EntityMetadata.IsActivityParty">
+			<returns>Returns <see cref="T:System.Nullable`1"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Metadata.EntityMetadata.IsAuditEnabled">
+			<returns>Returns <see cref="T:System.Nullable`1"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Metadata.EntityMetadata.IsAvailableOffline">
+			<returns>Returns <see cref="T:System.Nullable`1"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Metadata.EntityMetadata.IsChildEntity">
+			<returns>Returns <see cref="T:System.Nullable`1"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Metadata.EntityMetadata.IsConnectionsEnabled">
+			<returns>Returns <see cref="T:System.Nullable`1"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Metadata.EntityMetadata.IsCustomEntity">
+			<returns>Returns <see cref="T:System.Nullable`1"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Metadata.EntityMetadata.IsCustomizable">
+			<returns>Returns <see cref="T:System.Nullable`1"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Metadata.EntityMetadata.IsDuplicateDetectionEnabled">
+			<returns>Returns <see cref="T:System.Nullable`1"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Metadata.EntityMetadata.IsImportable">
+			<returns>Returns <see cref="T:System.Nullable`1"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Metadata.EntityMetadata.IsIntersect">
+			<returns>Returns <see cref="T:System.Nullable`1"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Metadata.EntityMetadata.IsMailMergeEnabled">
+			<returns>Returns <see cref="T:System.Nullable`1"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Metadata.EntityMetadata.IsValidForAdvancedFind">
+			<returns>Returns <see cref="T:System.Nullable`1"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Metadata.EntityMetadata.LogicalName">
+			<returns>Returns <see cref="T:System.String"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Metadata.EntityMetadata.ManyToManyRelationships">
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.Metadata.ManyToManyRelationshipMetadata"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Metadata.EntityMetadata.ManyToOneRelationships">
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.Metadata.OneToManyRelationshipMetadata"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Metadata.EntityMetadata.ObjectTypeCode">
+			<returns>Returns <see cref="T:System.Nullable`1"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Metadata.EntityMetadata.OneToManyRelationships">
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.Metadata.OneToManyRelationshipMetadata"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Metadata.EntityMetadata.OwnershipType">
+			<returns>Returns <see cref="T:System.Nullable`1"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Metadata.EntityMetadata.PrimaryIdAttribute">
+			<returns>Returns <see cref="T:System.String"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Metadata.EntityMetadata.PrimaryNameAttribute">
+			<returns>Returns <see cref="T:System.String"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Metadata.EntityMetadata.Privileges">
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.Metadata.SecurityPrivilegeMetadata"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Metadata.EntityMetadata.ReportViewName">
+			<returns>Returns <see cref="T:System.String"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Metadata.EntityMetadata.SchemaName">
+			<returns>Returns <see cref="T:System.String"></see>.</returns>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Metadata.EntityNameAttributeMetadata.#ctor">
+			<summary>Initializes a new instance of the AttributeMetadata class.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Metadata.EnumAttributeMetadata.#ctor">
+			<summary>Initializes a new instance of the AttributeMetadata class.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Metadata.IntegerAttributeMetadata.#ctor">
+			<summary>Initializes a new instance of the AttributeMetadata class.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Metadata.LookupAttributeMetadata.#ctor">
+			<summary>Initializes a new instance of the AttributeMetadata class.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Metadata.ManagedPropertyAttributeMetadata.#ctor">
+			<summary>Initializes a new instance of the AttributeMetadata class.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Metadata.MemoAttributeMetadata.#ctor">
+			<summary>Initializes a new instance of the AttributeMetadata class.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Metadata.MoneyAttributeMetadata.#ctor">
+			<summary>Initializes a new instance of the AttributeMetadata class.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Metadata.PicklistAttributeMetadata.#ctor">
+			<summary>Initializes a new instance of the AttributeMetadata class.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Metadata.StateAttributeMetadata.#ctor">
+			<summary>Initializes a new instance of the AttributeMetadata class.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Metadata.StatusAttributeMetadata.#ctor">
+			<summary>Initializes a new instance of the AttributeMetadata class.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Metadata.StringAttributeMetadata.#ctor">
+			<summary>Initializes a new instance of the AttributeMetadata class.</summary>
+		</member>
+		<member name="T:Microsoft.Xrm.Sdk.Query.ColumnSet">
+			<summary>Specifies the attributes for which non-null values are returned from a query.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Query.ColumnSet.#ctor">
+			<summary>constructor_initializesColumnSet class.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Query.ColumnSet.#ctor(System.Boolean)">
+			<summary>constructor_initializesColumnSet class setting the <see cref="P:Microsoft.Xrm.Sdk.Query.ColumnSet.AllColumns"></see> property.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Query.ColumnSet.#ctor(System.String[])">
+			<summary>constructor_initializesColumnSet class setting the <see cref="P:Microsoft.Xrm.Sdk.Query.ColumnSet.Columns"></see> property.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Query.ColumnSet.AddColumn(System.String)">
+			<summary>Adds the specified attribute to the column set.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Query.ColumnSet.AddColumns(System.String[])">
+			<summary>Adds the specified attribute to the column set.</summary>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Query.ColumnSet.AllColumns">
+			<summary>Specifies whether to retrieve all attributes of an entity instance.</summary>
+			<returns>Returns <see cref="T:System.Boolean"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Query.ColumnSet.Columns">
+			<summary>Specifies a collection of Strings containing the names of the attributes.</summary>
+			<returns>Returns <see cref="T:System.Collections.Generic.ICollection`1"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Query.ColumnSet.ExtensionData">
+			<returns>Returns <see cref="T:System.Runtime.Serialization.ExtensionDataObject"></see>.</returns>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Query.ConditionExpression.#ctor">
+			<summary>constructor_initializesConditionExpression class.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Query.ConditionExpression.#ctor(System.String,Microsoft.Xrm.Sdk.Query.ConditionOperator)">
+			<summary>constructor_initializesConditionExpression class setting the attribute name and condition operator.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Query.ConditionExpression.#ctor(System.String,Microsoft.Xrm.Sdk.Query.ConditionOperator,System.Collections.ICollection)">
+			<summary>constructor_initializesConditionExpression class setting the attribute name, condition operator and a collection of values.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Query.ConditionExpression.#ctor(System.String,Microsoft.Xrm.Sdk.Query.ConditionOperator,System.Object)">
+			<summary>constructor_initializesConditionExpression class setting the attribute name, condition operator and value object.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Query.ConditionExpression.#ctor(System.String,Microsoft.Xrm.Sdk.Query.ConditionOperator,System.Object[])">
+			<summary>constructor_initializesConditionExpression class setting the attribute name, condition operator and an array of value objects.</summary>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Query.ConditionExpression.AttributeName">
+			<returns>Returns <see cref="T:System.String"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Query.ConditionExpression.ExtensionData">
+			<returns>Returns <see cref="T:System.Runtime.Serialization.ExtensionDataObject"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Query.ConditionExpression.Operator">
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.Query.ConditionOperator"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Query.ConditionExpression.Values">
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.DataCollection`1"></see>.</returns>
+		</member>
+		<member name="T:Microsoft.Xrm.Sdk.Query.ConditionOperator">
+			<summary>The ConditionOperator enumeration type specifies the possible values for the condition operator in a condition expression. </summary>
+		</member>
+		<member name="F:Microsoft.Xrm.Sdk.Query.ConditionOperator.Between">
+			<summary>Specifies that the value is between two values.</summary>
+		</member>
+		<member name="F:Microsoft.Xrm.Sdk.Query.ConditionOperator.Equal">
+			<summary>Specifies that two expressions are compared for equality.</summary>
+		</member>
+		<member name="F:Microsoft.Xrm.Sdk.Query.ConditionOperator.EqualBusinessId">
+			<summary>Specifies that the value is equal to the specified business ID.</summary>
+		</member>
+		<member name="F:Microsoft.Xrm.Sdk.Query.ConditionOperator.EqualUserId">
+			<summary>Specifies that the value is equal to the specified user ID.</summary>
+		</member>
+		<member name="F:Microsoft.Xrm.Sdk.Query.ConditionOperator.EqualUserLanguage">
+			<summary>Specifies that the value is equal to the language for the user.</summary>
+		</member>
+		<member name="F:Microsoft.Xrm.Sdk.Query.ConditionOperator.GreaterEqual">
+			<summary>Specifies that two expressions are compared for greater than or equal to conditions.</summary>
+		</member>
+		<member name="F:Microsoft.Xrm.Sdk.Query.ConditionOperator.GreaterThan">
+			<summary>Specifies that two expressions are compared for the greater than condition.</summary>
+		</member>
+		<member name="F:Microsoft.Xrm.Sdk.Query.ConditionOperator.In">
+			<summary>Specifies that a given value is matched to a value in a list.</summary>
+		</member>
+		<member name="F:Microsoft.Xrm.Sdk.Query.ConditionOperator.Last7Days">
+			<summary>Specifies that a date range consists of last seven days including today.</summary>
+		</member>
+		<member name="F:Microsoft.Xrm.Sdk.Query.ConditionOperator.LastMonth">
+			<summary>Specifies that a date range consist of last month including first day of the last month and last day of the last month.</summary>
+		</member>
+		<member name="F:Microsoft.Xrm.Sdk.Query.ConditionOperator.LastWeek">
+			<summary>Specifies that a date range consists of previous week including Sunday through Saturday.</summary>
+		</member>
+		<member name="F:Microsoft.Xrm.Sdk.Query.ConditionOperator.LastXDays">
+			<summary>Specifies that a date range consists of last X days.</summary>
+		</member>
+		<member name="F:Microsoft.Xrm.Sdk.Query.ConditionOperator.LastXHours">
+			<summary>Specifies that a date range consists of last X hours.</summary>
+		</member>
+		<member name="F:Microsoft.Xrm.Sdk.Query.ConditionOperator.LastXMonths">
+			<summary>Specifies that a date range consists of last X months.</summary>
+		</member>
+		<member name="F:Microsoft.Xrm.Sdk.Query.ConditionOperator.LastXWeeks">
+			<summary>Specifies that a date range consists of last X weeks.</summary>
+		</member>
+		<member name="F:Microsoft.Xrm.Sdk.Query.ConditionOperator.LastXYears">
+			<summary>Specifies that a date range consists of last X years.</summary>
+		</member>
+		<member name="F:Microsoft.Xrm.Sdk.Query.ConditionOperator.LastYear">
+			<summary>Specifies that a date range consists of previous year.</summary>
+		</member>
+		<member name="F:Microsoft.Xrm.Sdk.Query.ConditionOperator.LessEqual">
+			<summary>Specifies that two expressions are compared for greater than or equal to conditions.</summary>
+		</member>
+		<member name="F:Microsoft.Xrm.Sdk.Query.ConditionOperator.LessThan">
+			<summary>Specifies that two expressions are compared for a less than condition.</summary>
+		</member>
+		<member name="F:Microsoft.Xrm.Sdk.Query.ConditionOperator.Like">
+			<summary>Specifies that the character string is matched to a specified pattern.</summary>
+		</member>
+		<member name="F:Microsoft.Xrm.Sdk.Query.ConditionOperator.Next7Days">
+			<summary>Specifies that a date range consists of the next seven days.</summary>
+		</member>
+		<member name="F:Microsoft.Xrm.Sdk.Query.ConditionOperator.NextMonth">
+			<summary>Specifies that a date range consists of next month.</summary>
+		</member>
+		<member name="F:Microsoft.Xrm.Sdk.Query.ConditionOperator.NextWeek">
+			<summary>Specifies that a date range consists of next week.</summary>
+		</member>
+		<member name="F:Microsoft.Xrm.Sdk.Query.ConditionOperator.NextXDays">
+			<summary>Specifies that a date range consists of the next X days.</summary>
+		</member>
+		<member name="F:Microsoft.Xrm.Sdk.Query.ConditionOperator.NextXHours">
+			<summary>Specifies that a date range consists of the next X hours.</summary>
+		</member>
+		<member name="F:Microsoft.Xrm.Sdk.Query.ConditionOperator.NextXMonths">
+			<summary>Specifies that a date range consists of the next X months.</summary>
+		</member>
+		<member name="F:Microsoft.Xrm.Sdk.Query.ConditionOperator.NextXWeeks">
+			<summary>Specifies that a date range consists of the next X weeks.</summary>
+		</member>
+		<member name="F:Microsoft.Xrm.Sdk.Query.ConditionOperator.NextXYears">
+			<summary>Specifies that a date range consists of the next X years.</summary>
+		</member>
+		<member name="F:Microsoft.Xrm.Sdk.Query.ConditionOperator.NextYear">
+			<summary>Specifies that a date range consists of next year.</summary>
+		</member>
+		<member name="F:Microsoft.Xrm.Sdk.Query.ConditionOperator.NotBetween">
+			<summary>Specifies that the value is not between two values.</summary>
+		</member>
+		<member name="F:Microsoft.Xrm.Sdk.Query.ConditionOperator.NotEqual">
+			<summary>Specifies that two expressions are compared for inequality.</summary>
+		</member>
+		<member name="F:Microsoft.Xrm.Sdk.Query.ConditionOperator.NotEqualBusinessId">
+			<summary>Specifies that the value is not equal to the specified business ID.</summary>
+		</member>
+		<member name="F:Microsoft.Xrm.Sdk.Query.ConditionOperator.NotEqualUserId">
+			<summary>Specifies that the value is not equal to the specified user ID.</summary>
+		</member>
+		<member name="F:Microsoft.Xrm.Sdk.Query.ConditionOperator.NotIn">
+			<summary>Specifies that a given value is not matched to a value in a subquery or a list.</summary>
+		</member>
+		<member name="F:Microsoft.Xrm.Sdk.Query.ConditionOperator.NotLike">
+			<summary>Specifies that the character string is matched to a specified pattern.</summary>
+		</member>
+		<member name="F:Microsoft.Xrm.Sdk.Query.ConditionOperator.NotNull">
+			<summary>Specifies that the value is not null.</summary>
+		</member>
+		<member name="F:Microsoft.Xrm.Sdk.Query.ConditionOperator.NotOn">
+			<summary>Specifies that the value is not on the specified date.</summary>
+		</member>
+		<member name="F:Microsoft.Xrm.Sdk.Query.ConditionOperator.Null">
+			<summary>Specifies that the value is null.</summary>
+		</member>
+		<member name="F:Microsoft.Xrm.Sdk.Query.ConditionOperator.OlderThanXMonths">
+			<summary>Specifies that the value is older than the specified number of months.</summary>
+		</member>
+		<member name="F:Microsoft.Xrm.Sdk.Query.ConditionOperator.On">
+			<summary>Specifies that a value is on a specified date.</summary>
+		</member>
+		<member name="F:Microsoft.Xrm.Sdk.Query.ConditionOperator.OnOrAfter">
+			<summary>Specifies that a value is on or after a specified date.</summary>
+		</member>
+		<member name="F:Microsoft.Xrm.Sdk.Query.ConditionOperator.OnOrBefore">
+			<summary>Specifies that a value is on or before a specified date.</summary>
+		</member>
+		<member name="F:Microsoft.Xrm.Sdk.Query.ConditionOperator.ThisMonth">
+			<summary>Specifies that a date range consists of this month.</summary>
+		</member>
+		<member name="F:Microsoft.Xrm.Sdk.Query.ConditionOperator.ThisWeek">
+			<summary>Specifies that a date range consists of the current week.</summary>
+		</member>
+		<member name="F:Microsoft.Xrm.Sdk.Query.ConditionOperator.ThisYear">
+			<summary>Specifies that a date range consists of the current year.</summary>
+		</member>
+		<member name="F:Microsoft.Xrm.Sdk.Query.ConditionOperator.Today">
+			<summary>Specifies that a date range consists of today.</summary>
+		</member>
+		<member name="F:Microsoft.Xrm.Sdk.Query.ConditionOperator.Tomorrow">
+			<summary>Specifies that a date range consists of tomorrow.</summary>
+		</member>
+		<member name="F:Microsoft.Xrm.Sdk.Query.ConditionOperator.Yesterday">
+			<summary>Specifies that a date range consists of yesterday.</summary>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Query.FetchExpression.Query">
+			<returns>Returns <see cref="T:System.String"></see>.</returns>
+		</member>
+		<member name="T:Microsoft.Xrm.Sdk.Query.FilterExpression">
+			<summary>Specifies complex condition and logical filter expressions used for filtering the results of the query.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Query.FilterExpression.#ctor">
+			<summary>Initializes a new instance of the FilterExpression class.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Query.FilterExpression.#ctor(Microsoft.Xrm.Sdk.Query.LogicalOperator)">
+			<summary>Initializes a new instance of the FilterExpression class.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Query.FilterExpression.AddCondition(Microsoft.Xrm.Sdk.Query.ConditionExpression)">
+			<summary>Adds a condition to the filter expression setting the condition expression.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Query.FilterExpression.AddCondition(System.String,Microsoft.Xrm.Sdk.Query.ConditionOperator,System.Object[])">
+			<summary>Adds a condition to the filter expression setting the attribute name, condition operator, and value array.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Query.FilterExpression.AddFilter(Microsoft.Xrm.Sdk.Query.FilterExpression)">
+			<summary>Adds a child filter to the filter expression.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Query.FilterExpression.AddFilter(Microsoft.Xrm.Sdk.Query.LogicalOperator)">
+			<summary>Adds a child filter to the filter expression setting the logical operator.</summary>
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.Query.FilterExpression"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Query.FilterExpression.Conditions">
+			<summary>Gets condition expressions that include attributes, condition operators, and attribute values.</summary>
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.DataCollection`1"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Query.FilterExpression.ExtensionData">
+			<returns>Returns <see cref="T:System.Runtime.Serialization.ExtensionDataObject"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Query.FilterExpression.FilterOperator">
+			<summary>Gets or sets logical AND/OR filter operators.</summary>
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.Query.LogicalOperator"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Query.FilterExpression.Filters">
+			<summary>Gets a hierarchy of condition and logical filter expressions that filter the results of the query.</summary>
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.DataCollection`1"></see>.</returns>
+		</member>
+		<member name="T:Microsoft.Xrm.Sdk.Query.JoinOperator">
+			<summary>The JoinOperator enumeration type specifies the possible values for a join operator in a <see cref="T:Microsoft.Xrm.Sdk.Query.LinkEntity"></see>. </summary>
+		</member>
+		<member name="F:Microsoft.Xrm.Sdk.Query.JoinOperator.Inner">
+			<summary>Specifies that the values in the attributes being joined are compared using a comparison operator.</summary>
+		</member>
+		<member name="F:Microsoft.Xrm.Sdk.Query.JoinOperator.LeftOuter">
+			<summary>Specifies that all instances of the entity in the FROM clause are returned if they meet WHERE or HAVING search conditions.</summary>
+		</member>
+		<member name="F:Microsoft.Xrm.Sdk.Query.JoinOperator.Natural">
+			<summary>Specifies that only one value of the two joined attributes is returned if an equal-join operation is performed and the two values are identical.</summary>
+		</member>
+		<member name="T:Microsoft.Xrm.Sdk.Query.LinkEntity">
+			<summary>Specifies the links between multiple entity types used in creating complex queries. </summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Query.LinkEntity.#ctor">
+			<summary>Initializes a new instance of the LinkEntity class.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Query.LinkEntity.#ctor(System.String,System.String,System.String,System.String,Microsoft.Xrm.Sdk.Query.JoinOperator)">
+			<summary>Initializes a new instance of the LinkEntity class setting the required properties.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Query.LinkEntity.AddLink(System.String,System.String,System.String)">
+			<summary>Adds a link setting the link to entity name, the link from attribute name and the link to attribute name.</summary>
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.Query.LinkEntity"></see>.</returns>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Query.LinkEntity.AddLink(System.String,System.String,System.String,Microsoft.Xrm.Sdk.Query.JoinOperator)">
+			<summary>Adds a link setting the link to entity name, the link from attribute name, the link to attribute name, and the join operator.</summary>
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.Query.LinkEntity"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Query.LinkEntity.Columns">
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.Query.ColumnSet"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Query.LinkEntity.EntityAlias">
+			<returns>Returns <see cref="T:System.String"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Query.LinkEntity.ExtensionData">
+			<returns>Returns <see cref="T:System.Runtime.Serialization.ExtensionDataObject"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Query.LinkEntity.JoinOperator">
+			<summary>Gets or sets the join operator.</summary>
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.Query.JoinOperator"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Query.LinkEntity.LinkCriteria">
+			<summary>Gets or sets the complex condition and logical filter expressions that filter the results of the query.</summary>
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.Query.FilterExpression"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Query.LinkEntity.LinkEntities">
+			<summary>Gets the links between multiple entity types.</summary>
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.DataCollection`1"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Query.LinkEntity.LinkFromAttributeName">
+			<summary>Gets or sets the logical name of the attribute of the entity that you are linking from.</summary>
+			<returns>Returns <see cref="T:System.String"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Query.LinkEntity.LinkFromEntityName">
+			<summary>Gets or sets the logical name of the entity that you are linking from.</summary>
+			<returns>Returns <see cref="T:System.String"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Query.LinkEntity.LinkToAttributeName">
+			<summary>Gets or sets the logical name of the attribute of the entity that you are linking to.</summary>
+			<returns>Returns <see cref="T:System.String"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Query.LinkEntity.LinkToEntityName">
+			<summary>Gets or sets the logical name of the entity that you are linking to.</summary>
+			<returns>Returns <see cref="T:System.String"></see>.</returns>
+		</member>
+		<member name="T:Microsoft.Xrm.Sdk.Query.LogicalOperator">
+			<summary>The LogicalOperator enumeration type specifies the possible values for an operator in a <see cref="T:Microsoft.Xrm.Sdk.Query.FilterExpression"></see>. </summary>
+		</member>
+		<member name="F:Microsoft.Xrm.Sdk.Query.LogicalOperator.And">
+			<summary>Specifies that a logical AND operation is performed.</summary>
+		</member>
+		<member name="F:Microsoft.Xrm.Sdk.Query.LogicalOperator.Or">
+			<summary>Specifies that a logical OR operation is performed.</summary>
+		</member>
+		<member name="T:Microsoft.Xrm.Sdk.Query.OrderExpression">
+			<summary>Sets the order in which the entity instances are returned from the query.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Query.OrderExpression.#ctor">
+			<summary>Initializes a new instance of the OrderExpression class.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Query.OrderExpression.#ctor(System.String,Microsoft.Xrm.Sdk.Query.OrderType)">
+			<summary>Initializes a new instance of the OrderExpression class setting the attribute name and the order type.</summary>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Query.OrderExpression.AttributeName">
+			<summary>Gets or sets the name of the attribute in the order expression.</summary>
+			<returns>Returns <see cref="T:System.String"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Query.OrderExpression.ExtensionData">
+			<returns>Returns <see cref="T:System.Runtime.Serialization.ExtensionDataObject"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Query.OrderExpression.OrderType">
+			<summary>Gets or sets the ascending or descending order.</summary>
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.Query.OrderType"></see>.</returns>
+		</member>
+		<member name="T:Microsoft.Xrm.Sdk.Query.OrderType">
+			<summary>The OrderType enumeration type specifies the possible values for the order type in an <see cref="T:Microsoft.Xrm.Sdk.Query.OrderExpression"></see>. </summary>
+		</member>
+		<member name="F:Microsoft.Xrm.Sdk.Query.OrderType.Ascending">
+			<summary>Specifies that the values of the specified attribute should be sorted in ascending order, from lowest to highest.</summary>
+		</member>
+		<member name="F:Microsoft.Xrm.Sdk.Query.OrderType.Descending">
+			<summary>Specifies that the values of the specified attribute should be sorted in descending order, from highest to lowest.</summary>
+		</member>
+		<member name="T:Microsoft.Xrm.Sdk.Query.PagingInfo">
+			<summary>Specifies a number of pages and a number of entity instances per page to return from the query.  </summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Query.PagingInfo.#ctor">
+			<summary>Initializes a new instance of the PagingInfo class.</summary>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Query.PagingInfo.Count">
+			<summary>Gets or sets the number of entity instances returned per page.</summary>
+			<returns>Returns <see cref="T:System.Int32"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Query.PagingInfo.ExtensionData">
+			<returns>Returns <see cref="T:System.Runtime.Serialization.ExtensionDataObject"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Query.PagingInfo.PageNumber">
+			<summary>Gets or sets the number of pages returned from the query.</summary>
+			<returns>Returns <see cref="T:System.Int32"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Query.PagingInfo.PagingCookie">
+			<summary>Gets or sets a total number of entity instances returned.</summary>
+			<returns>Returns <see cref="T:System.String"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Query.PagingInfo.ReturnTotalRecordCount">
+			<returns>Returns <see cref="T:System.Boolean"></see>.</returns>
+		</member>
+		<member name="T:Microsoft.Xrm.Sdk.Query.QueryBase">
+			<summary>Represents the abstract base class for constructing a query. </summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Query.QueryBase.#ctor">
+			<summary>Initializes a new instance of the QueryBase class.</summary>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Query.QueryBase.ExtensionData">
+			<returns>Returns <see cref="T:System.Runtime.Serialization.ExtensionDataObject"></see>.</returns>
+		</member>
+		<member name="T:Microsoft.Xrm.Sdk.Query.QueryByAttribute">
+			<summary>Retrieves instances of a specific entity type by specifying a set of attribute and value pairs.  </summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Query.QueryByAttribute.#ctor">
+			<summary>Initializes a new instance of the QueryBase class.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Query.QueryByAttribute.#ctor(System.String)">
+			<summary>Initializes a new instance of the QueryBase class.</summary>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Query.QueryByAttribute.Attributes">
+			<summary>Gets or sets the set of attributes selected in the query.</summary>
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.DataCollection`1"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Query.QueryByAttribute.ColumnSet">
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.Query.ColumnSet"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Query.QueryByAttribute.EntityName">
+			<returns>Returns <see cref="T:System.String"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Query.QueryByAttribute.Orders">
+			<summary>Gets or sets the order in which the entity instances are returned from the query. </summary>
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.DataCollection`1"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Query.QueryByAttribute.PageInfo">
+			<summary>Gets or sets the number of pages and the number of entity instances per page returned from the query.</summary>
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.Query.PagingInfo"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Query.QueryByAttribute.Values">
+			<summary>Gets or sets the attribute values to look for when the query is executed.</summary>
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.DataCollection`1"></see>.</returns>
+		</member>
+		<member name="T:Microsoft.Xrm.Sdk.Query.QueryExpression">
+			<summary>Retrieves instances of a specific entity type by using a complex query.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Query.QueryExpression.#ctor">
+			<summary>Initializes a new instance of the QueryExpression class.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Query.QueryExpression.#ctor(System.String)">
+			<summary>Initializes a new instance of the QueryExpression class setting the entity name.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Query.QueryExpression.AddLink(System.String,System.String,System.String)">
+			<summary>Adds the specified link to the query expression setting the entity name to link to, the attribute name to link from and the attribute name to link to.</summary>
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.Query.LinkEntity"></see>.</returns>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Query.QueryExpression.AddLink(System.String,System.String,System.String,Microsoft.Xrm.Sdk.Query.JoinOperator)">
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.Query.LinkEntity"></see>.</returns>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Query.QueryExpression.AddOrder(System.String,Microsoft.Xrm.Sdk.Query.OrderType)">
+			<summary>Adds the specified order expression to the query expression.</summary>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Query.QueryExpression.ColumnSet">
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.Query.ColumnSet"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Query.QueryExpression.Criteria">
+			<summary>Gets or sets the complex condition and logical filter expressions that filter the results of the query.</summary>
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.Query.FilterExpression"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Query.QueryExpression.Distinct">
+			<summary>Gets or sets a value that indicates whether the results of the query contain duplicate entity instances.</summary>
+			<returns>Returns <see cref="T:System.Boolean"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Query.QueryExpression.EntityName">
+			<returns>Returns <see cref="T:System.String"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Query.QueryExpression.LinkEntities">
+			<summary>Gets the links between multiple entity types.</summary>
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.DataCollection`1"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Query.QueryExpression.Orders">
+			<summary>Gets the order in which the entity instances are returned from the query.</summary>
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.DataCollection`1"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Query.QueryExpression.PageInfo">
+			<summary>Gets or sets the number of pages and the number of entity instances per page returned from the query.</summary>
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.Query.PagingInfo"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Query.RelatedEntitiesQuery.ExtensionData">
+			<returns>Returns <see cref="T:System.Runtime.Serialization.ExtensionDataObject"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Query.RelatedEntitiesQuery.LinkEntities">
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.DataCollection`1"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Query.RelatedEntitiesQuery.RelationshipQueries">
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.DataCollection`1"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Query.RelationshipQuery.ExtensionData">
+			<returns>Returns <see cref="T:System.Runtime.Serialization.ExtensionDataObject"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Query.RelationshipQuery.Query">
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.Query.QueryBase"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Query.RelationshipQuery.Relationship">
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.Relationship"></see>.</returns>
+		</member>
+	</members>
+</doc>

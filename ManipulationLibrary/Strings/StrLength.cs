@@ -8,7 +8,6 @@ using Microsoft.Xrm.Sdk.Workflow;
 
 namespace ManipulationLibrary.Strings
 {
-    [WorkflowActivity("Length", "String Utilities")]
     public sealed class StrLength : CodeActivity
     {
         protected override void Execute(CodeActivityContext executionContext)

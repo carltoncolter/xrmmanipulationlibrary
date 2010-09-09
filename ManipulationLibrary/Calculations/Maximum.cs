@@ -9,7 +9,6 @@ using Microsoft.Xrm.Sdk.Workflow;
 
 namespace ManipulationLibrary.Calculations
 {
-    [WorkflowActivity("Maximum", "Calculation Utilities")]
     public sealed class Maximum : CodeActivity
     {
         protected override void Execute(CodeActivityContext executionContext)

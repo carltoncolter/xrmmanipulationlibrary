@@ -8,7 +8,6 @@ using Microsoft.Xrm.Sdk.Workflow;
 
 namespace ManipulationLibrary.Strings
 {
-    [WorkflowActivity("Substring", "String Utilities")]
     public sealed class Substring : CodeActivity
     {
         

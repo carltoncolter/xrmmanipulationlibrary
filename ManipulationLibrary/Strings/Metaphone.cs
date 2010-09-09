@@ -29,7 +29,6 @@ using Microsoft.Xrm.Sdk.Workflow;
 
 namespace ManipulationLibrary.Strings
 {
-    [WorkflowActivity("Codify (Metaphone)", "String Utilities")]
     public sealed class Metaphone : CodeActivity
     {
         private const int ComMaxLength = 6;
