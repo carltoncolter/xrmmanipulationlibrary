@@ -3,74 +3,55 @@
 //  File:		Substring.cs
 // ==================================================================================
 using System;
-using System.Workflow.ComponentModel;
-using System.Workflow.Activities;
-using Microsoft.Crm.Sdk;
-using Microsoft.Crm.Workflow;
+using System.Activities;
+using Microsoft.Xrm.Sdk.Workflow;
 
 namespace ManipulationLibrary.Strings
 {
-    [CrmWorkflowActivity("Substring", "String Utilities")]
-    public partial class Substring : SequenceActivity
+    [WorkflowActivity("Substring", "String Utilities")]
+    public sealed class Substring : CodeActivity
     {
-        public Substring()
+        
+        protected override void Execute(CodeActivityContext executionContext)
         {
-            InitializeComponent();
+            var result = PerformSubstring(Text.Get<string>(executionContext), StartIndex.Get<int>(executionContext), Length.Get<int>(executionContext), LeftToRight.Get<bool>(executionContext));
+            Result.Set(executionContext,result);
         }
 
-        protected override ActivityExecutionStatus Execute(ActivityExecutionContext executionContext)
+        private static string PerformSubstring(string result, int start, int length, bool lefttoright)
         {
-            if (Length.Value <= 0 || Start.Value < 0)
+            if (length <= 0 || start < 0)
             {
-                Text = String.Empty;
+                result = String.Empty;
             }
             else
             {
-                int start = Start.Value;
-                if (!LeftToRight.Value)
+                if (!lefttoright)
                 {
-                    start = Text.Length - Length.Value - Start.Value;
+                    start = result.Length - length - start;
                 }
-                Text = Text.Substring(start, Length.Value);
+                result = result.Substring(start, length);
             }
-            return base.Execute(executionContext);
+            return result;
         }
 
-        public static DependencyProperty TextProperty = DependencyProperty.Register("Text", typeof(String), typeof(Substring));
-        [CrmInput("Text")]
-        [CrmOutput("Result")]
-        public String Text
-        {
-            get { return (String)GetValue(TextProperty); }
-            set { SetValue(TextProperty, value); }
-        }
+        [Input("Text")]
+        public InArgument<string> Text { get; set; }
 
-        public static DependencyProperty LeftToRightProperty = DependencyProperty.Register("LeftToRight", typeof(CrmBoolean), typeof(Substring));
-        [CrmInput("From Left To Right")]
-        [CrmDefault("True")]
-        public CrmBoolean LeftToRight
-        {
-            get { return (CrmBoolean)GetValue(LeftToRightProperty); }
-            set { SetValue(LeftToRightProperty, value); }
-        }
+        [Output("Result")]
+        public OutArgument<string> Result { get; set; }
 
-        public static DependencyProperty StartProperty = DependencyProperty.Register("Start", typeof(CrmNumber), typeof(Substring));
-        [CrmInput("Start Index")]
-        [CrmDefault("0")]
-        public CrmNumber Start
-        {
-            get { return (CrmNumber)GetValue(StartProperty); }
-            set { SetValue(StartProperty, value); }
-        }
+        [Input("From Left To Right")]
+        [Default("True")]
+        public InArgument<bool> LeftToRight { get; set; }
 
-        public static DependencyProperty LengthProperty = DependencyProperty.Register("Length", typeof(CrmNumber), typeof(Substring));
-        [CrmInput("Length")]
-        [CrmDefault("3")]
-        public CrmNumber Length
-        {
-            get { return (CrmNumber)GetValue(LengthProperty); }
-            set { SetValue(LengthProperty, value); }
-        }
+        [Input("Start Index")]
+        [Default("0")]
+        public InArgument<int> StartIndex { get; set; }
 
+        [Input("Length")]
+        [Default("3")]
+        public InArgument<int> Length { get; set; }
+        
     }
 }

@@ -1,19 +1,24 @@
 ﻿// ==================================================================================
 //  Project:	Manipulation Library for Microsoft Dynamics CRM 4.0
-//  File:		Trim.cs
+//  File:		URLEncode.cs
+//  Summary:    URL Encodes a string
 // ==================================================================================
 using System.Activities;
-
+using System.Web;
 using Microsoft.Xrm.Sdk.Workflow;
 
-namespace ManipulationLibrary.Strings
+namespace ManipulationLibrary.Web
 {
-    [WorkflowActivity("Trim", "String Utilities")]
-    public sealed class Trim : CodeActivity
+    [WorkflowActivity("URL Encode", "Web Utilities")]
+    public sealed class URLEncode : CodeActivity
     {
         protected override void Execute(CodeActivityContext executionContext)
         {
-            Result.Set(executionContext,Text.Get<string>(executionContext).Trim());
+            var text = Text.Get<string>(executionContext);
+
+            var result = HttpUtility.UrlEncode(text);
+
+            Result.Set(executionContext,result);
         }
 
         [Input("Text")]

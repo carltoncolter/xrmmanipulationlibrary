@@ -4,69 +4,51 @@
 //  Summary:	This workflow activity solves basic math equations. 
 // ==================================================================================
 
-using System.Workflow.ComponentModel;
-using System.Workflow.Activities;
-using Microsoft.Crm.Sdk;
-using Microsoft.Crm.Workflow;
+using System.Activities;
+using Microsoft.Xrm.Sdk.Workflow;
 
 namespace ManipulationLibrary.Calculations
 {
-    [CrmWorkflowActivity("Basic Math", "Calculation Utilities")]
-    public partial class BasicMath : SequenceActivity
+    [WorkflowActivity("Basic Math", "Calculation Utilities")]
+    public sealed class BasicMath : CodeActivity
     {
-        public BasicMath()
+        protected override void Execute(CodeActivityContext executionContext)
         {
-            InitializeComponent();
-        }
-
-        protected override ActivityExecutionStatus Execute(ActivityExecutionContext executionContext)
-        {
+            var n = Number1.Get<decimal>(executionContext);
+            var n2 = Number2.Get<decimal>(executionContext);
             
-            switch (Symbol)
+            switch (Symbol.Get<string>(executionContext))
             {
                 case "+":
-                    Number.Value += Number2.Value;
+                    n += n2;
                     break;
                 case "-":
-                    Number.Value -= Number2.Value;
+                    n -= n2;
                     break;
                 case "/":
-                    Number.Value /= Number2.Value;
+                    n /= n2;
                     break;
                 case "*":
-                    Number.Value *= Number2.Value;
+                    n *= n2;
                     break;
             }
 
-            return base.Execute(executionContext);
+            Result.Set(executionContext, n);
         }
 
-        public static DependencyProperty NumberProperty = DependencyProperty.Register("Number", typeof(CrmDecimal), typeof(BasicMath));
-        [CrmInput("First number")]
-        [CrmOutput("Result")]
-        public CrmDecimal Number
-        {
-            get { return (CrmDecimal)GetValue(NumberProperty); }
-            set { SetValue(NumberProperty, value); }
-        }
+        [Input("First number")]
+        [Default("0")]
+        public InArgument<decimal> Number1 { get; set; }
 
+        [Input("Second number")]
+        [Default("0")]
+        public InArgument<decimal> Number2 { get; set; }
 
-        public static DependencyProperty Number2Property = DependencyProperty.Register("Number2", typeof(CrmDecimal), typeof(BasicMath));
-        [CrmInput("Second number")]
-        public CrmDecimal Number2
-        {
-            get { return (CrmDecimal)GetValue(Number2Property); }
-            set { SetValue(Number2Property, value); }
-        }
+        [Input("Symbol")]
+        [Default("+")]
+        public InArgument<string> Symbol { get; set; }
 
-        public static DependencyProperty SymbolProperty = DependencyProperty.Register("Symbol", typeof(string), typeof(BasicMath));
-        [CrmInput("Symbol")]
-        [CrmDefault("+")]
-        public string Symbol
-        {
-            get { return (string)GetValue(SymbolProperty); }
-            set { SetValue(SymbolProperty, value); }
-        }
-        
+        [Output("Result")]
+        public OutArgument<decimal > Result { get; set; }
     }
 }

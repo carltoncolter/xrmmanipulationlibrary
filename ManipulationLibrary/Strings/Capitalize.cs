@@ -3,53 +3,40 @@
 //  File:		Capitalize.cs
 //  Summary:    Capitalize the beginning of words in a string
 // ==================================================================================
-using System;
-using System.Workflow.ComponentModel;
-using System.Workflow.Activities;
-using Microsoft.Crm.Sdk;
-using Microsoft.Crm.Workflow;
+using System.Activities;
+using Microsoft.Xrm.Sdk.Workflow;
 
 namespace ManipulationLibrary.Strings
 {
-    [CrmWorkflowActivity("Capitalize", "String Utilities")]
-    public partial class Capitalize : SequenceActivity
+    [WorkflowActivity("Capitalize", "String Utilities")]
+    public sealed class Capitalize : CodeActivity
     {
-        public Capitalize()
+        protected override void Execute(CodeActivityContext executionContext)
         {
-            InitializeComponent();
-        }
+            var text = Text.Get<string>(executionContext);
+            string result;
 
-        protected override ActivityExecutionStatus Execute(ActivityExecutionContext executionContext)
-        {
-            if (CapAll.Value)
+            if (CapAll.Get<bool>(executionContext))
             {
                 // All words
-                Text = System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(Text);
+                result = System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(text);
             } else
             {
                 // First Letter only
-                Text = Text.Substring(0, 1).ToUpper() + Text.Substring(1);
-                
+                result = text.Substring(0, 1).ToUpper() + text.Substring(1);
             }
-            return base.Execute(executionContext);
+
+            Result.Set(executionContext,result);
         }
 
-        public static DependencyProperty TextProperty = DependencyProperty.Register("Text", typeof(String), typeof(Capitalize));
-        [CrmInput("Text")]
-        [CrmOutput("Result")]
-        public String Text
-        {
-            get { return (String)GetValue(TextProperty); }
-            set { SetValue(TextProperty, value); }
-        }
+        [Input("Text")]
+        public InArgument<string> Text { get; set; }
 
-        public static DependencyProperty CapAllProperty = DependencyProperty.Register("CapAll", typeof(CrmBoolean), typeof(Capitalize));
-        [CrmInput("Capitalize All Words")]
-        [CrmDefault("True")]
-        public CrmBoolean CapAll
-        {
-            get { return (CrmBoolean)GetValue(CapAllProperty); }
-            set { SetValue(CapAllProperty, value); }
-        }
+        [Output("Result")]
+        public OutArgument<string> Result { get; set; }
+
+        [Input("Capitalize All Words")]
+        [Default("True")]
+        public InArgument<bool> CapAll { get; set; }
     }
 }

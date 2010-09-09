@@ -5,47 +5,43 @@
 using System;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.Workflow.ComponentModel;
-using System.Workflow.Activities;
-using Microsoft.Crm.Sdk;
-using Microsoft.Crm.Workflow;
+using System.Activities;
+using Microsoft.Xrm.Sdk.Workflow;
 
 namespace ManipulationLibrary.RegEx
 {
-    [CrmWorkflowActivity("Return Match", "RegEx Utilities")]
-    public partial class ReturnMatch : SequenceActivity
+    [WorkflowActivity("Return Match", "RegEx Utilities")]
+    public sealed class ReturnMatch : CodeActivity
     {
-        public ReturnMatch()
+        protected override void Execute(CodeActivityContext executionContext)
         {
-            InitializeComponent();
-        }
-
-        protected override ActivityExecutionStatus Execute(ActivityExecutionContext executionContext)
-        {
-            Invalid = new CrmBoolean { Value = false };
-            Match = new CrmBoolean { Value = false };
-
+            var invalid = false;
+            var match = false;
+            var pattern = Pattern.Get<string>(executionContext);
+            var text = Text.Get<string>(executionContext);
+            var index = Index.Get<int>(executionContext);
+            var matchResult = string.Empty;
             try
             {
                 var result = new StringBuilder();
-                var regex = new Regex(Pattern);
+                var regex = new Regex(pattern);
 
-                var results = regex.Match(Text);
+                var results = regex.Match(text);
                 var pos = 1;
 
-                Match.Value = results.Success;
+                match = results.Success;
 
                 while (results.Success)
                 {
-                    if (pos==Index.Value)
+                    if (pos==index)
                     {
                         result.Append(results.Value);
                         break;
                     } 
                     
-                    if (pos==-1 && Index.Value>=1)
+                    if (pos==-1 && index>=1)
                     {
-                        result.Append(results.Value);
+                        result.Append(results);
                     }
                     
                     results = results.NextMatch();
@@ -53,61 +49,40 @@ namespace ManipulationLibrary.RegEx
                 }
 
                 if (result.Length>0)
-                    Text = result.ToString();
+                    matchResult = result.ToString();
             }
             catch (ArgumentException)
             {
-                Invalid.Value = true;
+                invalid = true;
                 // Syntax error in the regular expression
             }
 
-            return base.Execute(executionContext);
+            InvalidRegularExpression.Set(executionContext,invalid);
+            MatchFound.Set(executionContext, match);
+            Match.Set(executionContext,matchResult);
+            
         }
 
-        public static DependencyProperty InvalidProperty = DependencyProperty.Register("Invalid", typeof(CrmBoolean), typeof(ReturnMatch));
-        [CrmOutput("Invalid Regular Expression")]
-        [CrmDefault("False")]
-        public CrmBoolean Invalid
-        {
-            get { return (CrmBoolean)GetValue(InvalidProperty); }
-            set { SetValue(InvalidProperty, value); }
-        }
+        [Input("Match Index (-1 for all, 1 for first)")]
+        [Default("-1")]
+        public InArgument<int> Index { get; set; }
 
-        public static DependencyProperty MatchProperty = DependencyProperty.Register("Match", typeof(CrmBoolean), typeof(ReturnMatch));
-        [CrmOutput("Match Found")]
-        [CrmDefault("False")]
-        public CrmBoolean Match
-        {
-            get { return (CrmBoolean)GetValue(MatchProperty); }
-            set { SetValue(MatchProperty, value); }
-        }
+        [Input("Text")]
+        public InArgument<string> Text { get; set; }
 
-        public static DependencyProperty IndexProperty = DependencyProperty.Register("Index", typeof (CrmNumber), typeof (ReturnMatch));
-        [CrmInput("Match Index (-1 for all, 1 for first)")]
-        [CrmDefault("-1")]
-        public CrmNumber Index
-        {
-            get { return (CrmNumber)GetValue(IndexProperty); }
-            set { SetValue(IndexProperty, value); }
-        }
+        [Input("Regular Expression Pattern")]
+        public InArgument<string> Pattern { get; set; }
 
+        [Output("Invalid Regular Expression")]
+        [Default("False")]
+        public OutArgument<bool> InvalidRegularExpression { get; set; }
 
+        [Output("Match Found")]
+        [Default("False")]
+        public OutArgument<bool> MatchFound { get; set; }
 
-        public static DependencyProperty TextProperty = DependencyProperty.Register("Text", typeof(String), typeof(ReturnMatch));
-        [CrmInput("Text")]
-        [CrmOutput("Match")]
-        public String Text
-        {
-            get { return (String)GetValue(TextProperty); }
-            set { SetValue(TextProperty, value); }
-        }
+        [Output("Match")]
+        public OutArgument<string> Match { get; set; }
 
-        public static DependencyProperty PatternProperty = DependencyProperty.Register("Pattern", typeof(String), typeof(ReturnMatch));
-        [CrmInput("Regular Expression Pattern")]
-        public String Pattern
-        {
-            get { return (String)GetValue(PatternProperty); }
-            set { SetValue(PatternProperty, value); }
-        }
     }
 }

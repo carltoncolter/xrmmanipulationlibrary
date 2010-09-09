@@ -1,19 +1,24 @@
 ﻿// ==================================================================================
 //  Project:	Manipulation Library for Microsoft Dynamics CRM 4.0
-//  File:		Trim.cs
+//  File:		URLdecode.cs
+//  Summary:    URL Decodes a string
 // ==================================================================================
 using System.Activities;
-
+using System.Web;
 using Microsoft.Xrm.Sdk.Workflow;
 
-namespace ManipulationLibrary.Strings
+namespace ManipulationLibrary.Web
 {
-    [WorkflowActivity("Trim", "String Utilities")]
-    public sealed class Trim : CodeActivity
+    [WorkflowActivity("URL Decode", "Web Utilities")]
+    public sealed class URLDecode : CodeActivity
     {
         protected override void Execute(CodeActivityContext executionContext)
         {
-            Result.Set(executionContext,Text.Get<string>(executionContext).Trim());
+            var text = Text.Get<string>(executionContext);
+
+            var result = HttpUtility.UrlDecode(text);
+
+            Result.Set(executionContext,result);
         }
 
         [Input("Text")]

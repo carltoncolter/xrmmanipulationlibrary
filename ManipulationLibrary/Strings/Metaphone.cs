@@ -22,17 +22,15 @@
  * definitions in the static class.
  */
 using System;
+using System.Activities;
 using System.Collections.Generic;
 using System.Text;
-using System.Workflow.Activities;
-using System.Workflow.ComponentModel;
-using Microsoft.Crm.Sdk;
-using Microsoft.Crm.Workflow;
+using Microsoft.Xrm.Sdk.Workflow;
 
 namespace ManipulationLibrary.Strings
 {
-    [CrmWorkflowActivity("Codify (Metaphone)", "String Utilities")]
-    public partial class Metaphone : SequenceActivity
+    [WorkflowActivity("Codify (Metaphone)", "String Utilities")]
+    public sealed class Metaphone : CodeActivity
     {
         private const int ComMaxLength = 6;
 
@@ -234,49 +232,29 @@ namespace ManipulationLibrary.Strings
                                      };
         }
 
-        public Metaphone()
+        [Input("Maximum Length")]
+        [Default("4")]
+        public InArgument<int> MaxLength { get; set; }
+        
+        [Input("Minimum Length")]
+        [Default("4")]
+        public InArgument<int> MinLength { get; set; }
+
+        [Input("Text")]
+        public InArgument<string> Text { get; set; }
+
+        [Output("Result")]
+        public OutArgument<string> Result { get; set; }
+
+
+        protected override void Execute(CodeActivityContext executionContext)
         {
-            InitializeComponent();
-        }
-        public static DependencyProperty MaxLengthProperty = DependencyProperty.Register("MaxLength", typeof(CrmNumber),
-                                                                                         typeof(Metaphone));
+            var text = Text.Get<string>(executionContext);
+            var min = MinLength.Get<int>(executionContext);
+            var max =  MaxLength.Get<int>(executionContext);
+            var result = Codify(text, min, max);
 
-
-        [CrmInput("Maximum Length")]
-        [CrmDefault("4")]
-        public CrmNumber MaxLength
-        {
-            get { return (CrmNumber)GetValue(MaxLengthProperty); }
-            set { SetValue(MaxLengthProperty, value); }
-        }
-
-        public static DependencyProperty MinLengthProperty = DependencyProperty.Register("MinLength", typeof(CrmNumber),
-                                                                                 typeof(Metaphone));
-
-        [CrmInput("Minimum Length")]
-        [CrmDefault("4")]
-        public CrmNumber MinLength
-        {
-            get { return (CrmNumber)GetValue(MinLengthProperty); }
-            set { SetValue(MinLengthProperty, value); }
-        }
-
-
-        public static DependencyProperty TextProperty = DependencyProperty.Register("Text", typeof(String),
-                                                                                    typeof(Metaphone));
-        [CrmInput("Text")]
-        [CrmOutput("Result")]
-        public String Text
-        {
-            get { return (String)GetValue(TextProperty); }
-            set { SetValue(TextProperty, value); }
-        }
-
-        protected override ActivityExecutionStatus Execute(ActivityExecutionContext executionContext)
-        {
-            Text = Codify(Text, MinLength.Value, MaxLength.Value);
-
-            return base.Execute(executionContext);
+            Result.Set(executionContext,result);
         }
 
         private static string Codify(string text, int min, int max)

@@ -3,44 +3,25 @@
 //  File:		StrLength.cs
 //  Summary:    Get the length of a string.
 // ==================================================================================
-using System;
-using System.Workflow.ComponentModel;
-using System.Workflow.Activities;
-using Microsoft.Crm.Sdk;
-using Microsoft.Crm.Workflow;
+using System.Activities;
+using Microsoft.Xrm.Sdk.Workflow;
 
 namespace ManipulationLibrary.Strings
 {
-    [CrmWorkflowActivity("Length", "String Utilities")]
-    public partial class StrLength : SequenceActivity
+    [WorkflowActivity("Length", "String Utilities")]
+    public sealed class StrLength : CodeActivity
     {
-        public StrLength()
+        protected override void Execute(CodeActivityContext executionContext)
         {
-            InitializeComponent();
+            Length.Set(executionContext, Text.Get<string>(executionContext).Length);
         }
 
-        protected override ActivityExecutionStatus Execute(ActivityExecutionContext executionContext)
-        {
-            Length = new CrmNumber { Value = Text.Length };
-            
-            return base.Execute(executionContext);
-        }
 
-        public static DependencyProperty TextProperty = DependencyProperty.Register("Text", typeof(String), typeof(StrLength));
-        [CrmInput("Text")]
-        public String Text
-        {
-            get { return (String)GetValue(TextProperty); }
-            set { SetValue(TextProperty, value); }
-        }
+        [Input("Text")]
+        public InArgument<string> Text { get; set; }
 
-        public static DependencyProperty LengthProperty = DependencyProperty.Register("Length", typeof(CrmNumber), typeof(StrLength));
-        [CrmOutput("Length")]
-        public CrmNumber Length
-        {
-            get { return (CrmNumber)GetValue(LengthProperty); }
-            set { SetValue(LengthProperty, value); }
-        }
+        [Output("Length")]
+        public OutArgument<int> Length { get; set; }
 
     }
 }

@@ -3,36 +3,32 @@
 //  File:		Replace.cs
 // ==================================================================================
 using System;
+using System.Activities;
 using System.Text;
-using System.Workflow.ComponentModel;
-using System.Workflow.Activities;
-using Microsoft.Crm.Sdk;
-using Microsoft.Crm.Workflow;
+using Microsoft.Xrm.Sdk.Workflow;
 
 namespace ManipulationLibrary.Strings
 {
-    [CrmWorkflowActivity("Replace", "String Utilities")]
-    public partial class Replace : SequenceActivity
+    [WorkflowActivity("Replace", "String Utilities")]
+    public sealed class Replace : CodeActivity
     {
-        public Replace()
+        protected override void Execute(CodeActivityContext executionContext)
         {
-            InitializeComponent();
-        }
-
-        protected override ActivityExecutionStatus Execute(ActivityExecutionContext executionContext)
-        {
-            if (!CaseSensitive.Value)
+            var text = Text.Get<string>(executionContext);
+            var old = Old.Get<string>(executionContext);
+            var @new = New.Get<string>(executionContext);
+            var result = string.Empty;
+            if (!CaseSensitive.Get<bool>(executionContext))
             {
-                if (!String.IsNullOrEmpty(Text) && !String.IsNullOrEmpty(Old))
+                if (!String.IsNullOrEmpty(text) && !String.IsNullOrEmpty(old))
                 {
-                    Text = Text.Replace(Old, New);
+                    result = text.Replace(old, @new);
                 }
             } else
             {
-                Text = CompareAndReplace(Text, Old, New, StringComparison.CurrentCultureIgnoreCase);
+                result = CompareAndReplace(text, old, @new, StringComparison.CurrentCultureIgnoreCase);
             }
-
-            return base.Execute(executionContext);
+            Result.Set(executionContext, result);
         }
 
         private static string CompareAndReplace (string text, string old, string @new, StringComparison comparison)
@@ -55,39 +51,21 @@ namespace ManipulationLibrary.Strings
             result.Append(text, pos, text.Length - pos);
             return result.ToString();
         }
-        
-        public static DependencyProperty TextProperty = DependencyProperty.Register("Text", typeof(String), typeof(Replace));
-        [CrmInput("Text")]
-        [CrmOutput("Result")]
-        public String Text
-        {
-            get { return (String)GetValue(TextProperty); }
-            set { SetValue(TextProperty, value); }
-        }
 
-        public static DependencyProperty OldProperty = DependencyProperty.Register("Old", typeof(String), typeof(Replace));
-        [CrmInput("Old Value")]
-        public String Old
-        {
-            get { return (String)GetValue(OldProperty); }
-            set { SetValue(OldProperty, value); }
-        }
+        [Input("Text")]
+        public InArgument<string> Text { get; set; }
 
-        public static DependencyProperty NewProperty = DependencyProperty.Register("New", typeof(String), typeof(Replace));
-        [CrmInput("New Value")]
-        public String New
-        {
-            get { return (String)GetValue(NewProperty); }
-            set { SetValue(NewProperty, value); }
-        }
+        [Output("Result")]
+        public OutArgument<string> Result { get; set; }
 
-        public static DependencyProperty CaseSensitiveProperty = DependencyProperty.Register("CaseSensitive", typeof(CrmBoolean), typeof(Replace));
-        [CrmInput("Case Sensitive")]
-        [CrmDefault("False")]
-        public CrmBoolean CaseSensitive
-        {
-            get { return (CrmBoolean)GetValue(CaseSensitiveProperty); }
-            set { SetValue(CaseSensitiveProperty, value); }
-        }
+        [Input("Old Value")]
+        public InArgument<string> Old { get; set; }
+
+        [Input("New Value")]
+        public InArgument<string> New { get; set; }
+
+        [Input("Case Sensitive")]
+        [Default("False")]
+        public InArgument<bool> CaseSensitive { get; set; }
     }
 }

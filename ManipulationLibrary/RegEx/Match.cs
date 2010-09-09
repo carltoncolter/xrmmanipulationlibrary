@@ -4,73 +4,49 @@
 // ==================================================================================
 using System;
 using System.Text.RegularExpressions;
-using System.Workflow.ComponentModel;
-using System.Workflow.Activities;
-using Microsoft.Crm.Sdk;
-using Microsoft.Crm.Workflow;
+using System.Activities;
+using Microsoft.Xrm.Sdk.Workflow;
 
 namespace ManipulationLibrary.RegEx
 {
-    [CrmWorkflowActivity("Match", "RegEx Utilities")]
-    public partial class Match : SequenceActivity
+    [WorkflowActivity("Match", "RegEx Utilities")]
+    public sealed class Match : CodeActivity
     {
-        public Match()
+        protected override void Execute(CodeActivityContext executionContext)
         {
-            InitializeComponent();
-        }
-
-        protected override ActivityExecutionStatus Execute(ActivityExecutionContext executionContext)
-        {
-            Invalid = new CrmBoolean { Value = false };
-            Found = new CrmBoolean { Value = false };
+            var invalid = false;
+            var match = false;
+            var pattern = Pattern.Get<string>(executionContext);
+            var text = Text.Get<string>(executionContext);
 
             try
             {
-                var regex = new Regex(Pattern);
-                var result = regex.Match(Text);
-                Found.Value = result.Success;
+                var regex = new Regex(pattern);
+                var result = regex.Match(text);
+                match = result.Success;
             }
             catch (ArgumentException)
             {
-                Invalid.Value = true;
+                invalid = true;
                 // Syntax error in the regular expression
             }
 
-            return base.Execute(executionContext);
+            InvalidRegularExpression.Set(executionContext, invalid);
+            MatchFound.Set(executionContext, match);
         }
 
-        public static DependencyProperty InvalidProperty = DependencyProperty.Register("Invalid", typeof(CrmBoolean), typeof(Match));
-        [CrmOutput("Invalid Regular Expression")]
-        [CrmDefault("False")]
-        public CrmBoolean Invalid
-        {
-            get { return (CrmBoolean)GetValue(InvalidProperty); }
-            set { SetValue(InvalidProperty, value); }
-        }
+        [Input("Text")]
+        public InArgument<string> Text { get; set; }
 
-        public static DependencyProperty FoundProperty = DependencyProperty.Register("Found", typeof(CrmBoolean), typeof(Match));
-        [CrmOutput("Match Found")]
-        [CrmDefault("False")]
-        public CrmBoolean Found
-        {
-            get { return (CrmBoolean)GetValue(FoundProperty); }
-            set { SetValue(FoundProperty, value); }
-        }
+        [Input("Regular Expression Pattern")]
+        public InArgument<string> Pattern { get; set; }
 
-        public static DependencyProperty TextProperty = DependencyProperty.Register("Text", typeof(String), typeof(Match));
-        [CrmInput("Text")]
-        public String Text
-        {
-            get { return (String)GetValue(TextProperty); }
-            set { SetValue(TextProperty, value); }
-        }
+        [Output("Invalid Regular Expression")]
+        [Default("False")]
+        public OutArgument<bool> InvalidRegularExpression { get; set; }
 
-        public static DependencyProperty PatternProperty = DependencyProperty.Register("Pattern", typeof(String), typeof(Match));
-        [CrmInput("Regular Expression Pattern")]
-        public String Pattern
-        {
-            get { return (String)GetValue(PatternProperty); }
-            set { SetValue(PatternProperty, value); }
-        }
+        [Output("Match Found")]
+        [Default("False")]
+        public OutArgument<bool> MatchFound { get; set; }
     }
 }

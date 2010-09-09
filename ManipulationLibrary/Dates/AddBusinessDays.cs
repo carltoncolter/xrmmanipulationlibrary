@@ -4,106 +4,59 @@
 //  Copyright:  Engage Inc. 2010
 //              www.engage2day.com
 //  License:    MsPL - Microsoft Public License
-//  Summary:	This workflow activity adds business days to a given date or determines the next business day after X normal days.
+//  Summary:	This workflow activity adds business days to a given date or 
+//              determines the next business day after X normal days.
 // ==================================================================================
 using System;
-using System.Workflow.ComponentModel;
-using System.Workflow.Activities;
-using Microsoft.Crm.Workflow;
-using Microsoft.Crm.Sdk;
-using Microsoft.Crm.Sdk.Query;
-using Microsoft.Crm.SdkTypeProxy;
+using System.Activities;
+using Microsoft.Xrm.Sdk.Workflow;
 using ManipulationLibrary.Dates.Helpers;
 
 namespace ManipulationLibrary.Dates
 {
-    [CrmWorkflowActivity("Add Business Days to Date", "Date Utilities")]
-    public partial class AddBusinessDays : SequenceActivity
+    [WorkflowActivity("Add Business Days to Date", "Date Utilities")]
+    public sealed class AddBusinessDays : CodeActivity
     {
 
-        protected override ActivityExecutionStatus Execute(ActivityExecutionContext executionContext)
+        protected override void Execute(CodeActivityContext executionContext)
         {
-            // Get the context service.
-            var contextService = (IContextService)executionContext.GetService(typeof(IContextService));
-            var context = contextService.Context;
-
-            // Use the context service to create an instance of CrmService.
-            var crmService = context.CreateCrmService();
-
-            //Retrieving our calendar objects for holiday calculations
-            ColumnSetBase cols = new AllColumns();
-            var org = (organization)crmService.Retrieve(EntityName.organization.ToString(), context.OrganizationId, cols);
-            var rules =  DateUtilities.GetCal(org, crmService);
-            
-            var result = new CrmDateTime();
+            var rules = DateUtilities.GetRules(executionContext);
             
             //Change the result based on the rules such as Check OnlyLastDay, etc.
-            result.Value = DateUtilities.ModifyDateTime(rules,
-                                         CheckOnlyLastDay.Value,
-                                         DateTime.Parse(StartDate.Value),
-                                         Operations.Add,
-                                         DaysToAdd.Value,
-                                         HoursToAdd.Value,
-                                         MinutesToAdd.Value).ToString();
+            var result = DateUtilities.ModifyDateTime(rules,
+                CheckOnlyLastDay.Get<bool>(executionContext), 
+                StartDate.Get<DateTime>(executionContext), 
+                Operations.Add, 
+                DaysToAdd.Get<int>(executionContext),
+                HoursToAdd.Get<int>(executionContext),
+                MinutesToAdd.Get<int>(executionContext));
 
-            Result = result;
-
-            return ActivityExecutionStatus.Closed;
+            Result.Set(executionContext, result);
         }
+        
+        [Output("Result")]
+        [Default("1900-01-01T00:00:00Z")]
+        public OutArgument<DateTime> Result { get; set; }
 
-        public static DependencyProperty ResultProperty = DependencyProperty.Register("Result", typeof(CrmDateTime), typeof(AddBusinessDays));
-        [CrmOutput("Result")]
-        [CrmDefault("1900-01-01T00:00:00Z")]
-        public CrmDateTime Result
-        {
-            get { return (CrmDateTime)GetValue(ResultProperty); }
-            set { SetValue(ResultProperty, value); }
-        }
+        [Input("Start Date")]
+        [Default("1900-01-01T00:00:00Z")]
+        public InArgument<DateTime> StartDate { get; set; }
 
-        public static DependencyProperty StartDateProperty = DependencyProperty.Register("StartDate", typeof(CrmDateTime), typeof(AddBusinessDays));
-        [CrmInput("Start Date")]
-        [CrmDefault("1900-01-01T00:00:00Z")]
-        public CrmDateTime StartDate
-        {
-            get { return (CrmDateTime)GetValue(StartDateProperty); }
-            set { SetValue(StartDateProperty, value); }
-        }
+        [Input("Only check to make sure the last day is a business day")]
+        [Default("false")]
+        public InArgument<bool> CheckOnlyLastDay { get; set; }
 
-        public static DependencyProperty CheckOnlyLastDayProperty = DependencyProperty.Register("CheckOnlyLastDay", typeof(CrmBoolean), typeof(AddBusinessDays));
-        [CrmInput("Make sure the last day is on a business day")]
-        [CrmDefault("false")]
-        public CrmBoolean CheckOnlyLastDay
-        {
-            get { return (CrmBoolean)GetValue(CheckOnlyLastDayProperty); }
-            set { SetValue(CheckOnlyLastDayProperty, value); }
-        }
+        [Input("Days To Add")]
+        [Default("0")]
+        public InArgument<int> DaysToAdd { get; set; }
 
-        public static DependencyProperty DaysToAddProperty = DependencyProperty.Register("DaysToAdd", typeof(CrmNumber), typeof(AddBusinessDays));
-        [CrmInput("Days To Add")]
-        [CrmDefault("0")]
-        public CrmNumber DaysToAdd
-        {
-            get { return (CrmNumber)GetValue(DaysToAddProperty); }
-            set { SetValue(DaysToAddProperty, value); }
-        }
+        [Input("Hours To Add")]
+        [Default("0")]
+        public InArgument<int> HoursToAdd { get; set; }
 
-        public static DependencyProperty HoursToAddProperty = DependencyProperty.Register("HoursToAdd", typeof(CrmNumber), typeof(AddBusinessDays));
-        [CrmInput("Hours To Add")]
-        [CrmDefault("0")]
-        public CrmNumber HoursToAdd
-        {
-            get { return (CrmNumber)GetValue(HoursToAddProperty); }
-            set { SetValue(HoursToAddProperty, value); }
-        }
-
-        public static DependencyProperty MinutesToAddProperty = DependencyProperty.Register("MinutesToAdd", typeof(CrmNumber), typeof(AddBusinessDays));
-        [CrmInput("Minutes To Add")]
-        [CrmDefault("0")]
-        public CrmNumber MinutesToAdd
-        {
-            get { return (CrmNumber)GetValue(MinutesToAddProperty); }
-            set { SetValue(MinutesToAddProperty, value); }
-        }
+        [Input("Minutes To Add")]
+        [Default("0")]
+        public InArgument<int> MinutesToAdd { get; set; }
     }
 }
 

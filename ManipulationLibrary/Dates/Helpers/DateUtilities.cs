@@ -10,13 +10,17 @@
 //
 //    A special thanks to Engage for contributing to the Manipulation Library.
 //                                                                    -Carlton Colter
+//
+//    This helper was updated to work with CRM 2011 (5.0).  It can be copied and 
+//    used in plugins and other CRM applications.
 // ==================================================================================
 
 using System;
+using System.Activities;
 using System.Linq;
-using Microsoft.Crm.Sdk;
-using Microsoft.Crm.Sdk.Query;
-using Microsoft.Crm.SdkTypeProxy;
+using Microsoft.Xrm.Sdk;
+using Microsoft.Xrm.Sdk.Query;
+using Microsoft.Xrm.Sdk.Workflow;
 
 namespace ManipulationLibrary.Dates.Helpers
 {
@@ -30,46 +34,14 @@ namespace ManipulationLibrary.Dates.Helpers
     public class DateUtilities
     {
         /// <summary>
-        ///   Change the date X days from the current date
-        /// </summary>
-        /// <param name = "date">The date to modify</param>
-        /// <param name = "days">The number of days to change</param>
-        /// <param name = "operation">The operation to add or subtract</param>
-        public static DateTime ChangeXDays(DateTime date, int days, Operations operation)
-        {
-            var span = new TimeSpan(days, 0, 0, 0);
-            return operation == Operations.Add ? date.Add(span) : date.Subtract(span);
-        }
-
-        /// <summary>
-        ///   Check to see if a date is a holiday using the calendarrules.
-        /// </summary>
-        /// <param name = "calRules">The list of calendarrules from the Business Closure calendar</param>
-        /// <param name = "date">The date to check</param>
-        /// <returns>true for holiday, false for not a holiday</returns>
-        public static Boolean CheckHoliday(calendarrule[] calRules, DateTime date)
-        {
-            if (calRules.Length == 0)
-            {
-                return false;
-            }
-
-            return (from rule in calRules
-                    let start = DateTime.Parse(rule.effectiveintervalstart.Value)
-                    let end = DateTime.Parse(rule.effectiveintervalend.Value)
-                    where date > start && date < end
-                    select start).Any();
-        }
-
-        /// <summary>
         ///   Find the date X business days from the start date.
         /// </summary>
         /// <param name = "calRules">The list of calendarrules from the Business Closure calendar</param>
         /// <param name = "startDate">The start date</param>
-        /// <param name = "daysToAdd">The number of business days to add</param>
+        /// <param name = "days">The number of business days</param>
         /// <param name = "operation">The operation to add or subtract</param>
         /// <returns>The start date plus the number of business days specified</returns>
-        public static DateTime FindDateXBizDays(calendarrule[] calRules, DateTime startDate, int daysToAdd,
+        public static DateTime FindDateXBizDays(EntityCollection calRules, DateTime startDate, int days,
                                                 Operations operation)
         {
             var day = new TimeSpan(1, 0, 0, 0);
@@ -80,7 +52,7 @@ namespace ManipulationLibrary.Dates.Helpers
                 oDate = startDate;
             }
 
-            while (daysToAdd > 0)
+            while (days > 0)
             {
                 //Check to see if we're doing an add or remove days operation, determine what the next day will be either way
                 oDate = operation == Operations.Add ? oDate.Add(day) : oDate.Subtract(day);
@@ -88,7 +60,7 @@ namespace ManipulationLibrary.Dates.Helpers
                 //If it is a business day, decrease the counter of the days left to add or subtract
                 if (IsBusinessDay(calRules, oDate))
                 {
-                    daysToAdd--;
+                    days--;
                 }
             }
 
@@ -96,56 +68,90 @@ namespace ManipulationLibrary.Dates.Helpers
         }
 
         /// <summary>
-        ///   Add or subtract days from a given date
+        ///   Get the Calendar Rules
         /// </summary>
-        /// <param name = "startDate">The start date</param>
-        /// <param name = "daysToAdd">The number of days to add</param>
-        /// <param name = "operation">Whether to subtract or add</param>
-        /// <returns></returns>
-        public static DateTime FindDateXDays(DateTime startDate, int daysToAdd, Operations operation)
+        /// <param name = "executionContext">The workflow execution context</param>
+        /// <returns>An array of the calendar rules</returns>
+        public static EntityCollection GetRules(CodeActivityContext executionContext)
         {
-            if (daysToAdd != 0)
+            // Create the context
+            var context = executionContext.GetExtension<IWorkflowContext>();
+            var serviceFactory = executionContext.GetExtension<IOrganizationServiceFactory>();
+            var service = serviceFactory.CreateOrganizationService(context.UserId);
+
+            //Create a query to retrieve calendarrules.
+            return GetRules(service, context.OrganizationId);
+        }
+
+        /// <summary>
+        ///   Get the Calendar Rules
+        /// </summary>
+        /// <param name="service">A Connected CRM Service</param>
+        /// <param name="orgId">The Organization ID</param>
+        /// <returns>An array of the calendar rules</returns>
+        public static EntityCollection GetRules(IOrganizationService service, Guid orgId)
+        {
+            // Must be connected
+            if (service == null) return null;
+            
+            var query = new QueryExpression
+                        {
+                            EntityName = "calendar",
+                            ColumnSet = new ColumnSet {AllColumns = true},
+                            LinkEntities =
+                                {
+                                    new LinkEntity
+                                    {
+                                        LinkFromEntityName = "calendar",
+                                        LinkToEntityName = "organization",
+                                        LinkFromAttributeName = "calendarid",
+                                        LinkToAttributeName = "businessclosurecalendarid",
+                                        LinkCriteria = new FilterExpression
+                                                       {
+                                                           FilterOperator = LogicalOperator.And,
+                                                           Conditions =
+                                                               {
+                                                                   new ConditionExpression
+                                                                   {
+                                                                       AttributeName = "organizationid",
+                                                                       Operator = ConditionOperator.Equal,
+                                                                       Values = {orgId}
+                                                                   }
+                                                               }
+                                                       }
+                                    }
+                                },
+                            PageInfo = new PagingInfo
+                                       {
+                                           Count = 1,
+                                           PageNumber = 1
+                                       }
+                        };
+
+            var calendars = service.RetrieveMultiple(query).Entities;
+
+            // If there was a calendar, return the rules (otherwise return null)
+            return (calendars.Count == 0) ? null : (EntityCollection)calendars[0].Attributes["calendarrules"];
+        }
+
+        /// <summary>
+        ///   Check to see if a date is a holiday using the calendarrules.
+        /// </summary>
+        /// <param name = "calRules">The list of calendarrules from the Business Closure calendar</param>
+        /// <param name = "date">The date to check</param>
+        /// <returns>true for holiday, false for not a holiday</returns>
+        public static Boolean IsClosed(EntityCollection calRules, DateTime date)
+        {
+            if (calRules.Entities.Count == 0)
             {
-                switch (operation)
-                {
-                    case Operations.Add:
-                        return startDate.AddDays(daysToAdd);
-                    case Operations.Subtract:
-                        return startDate.Subtract(new TimeSpan(daysToAdd, 0, 0, 0));
-                }
+                return false;
             }
 
-            return startDate;
-        }
-
-        /// <summary>
-        ///   Get the Calendar Rules
-        /// </summary>
-        /// <param name = "org">The CRM Organization</param>
-        /// <param name = "crmService">The CRM Service</param>
-        /// <returns>An array of the calendar rules</returns>
-        public static calendarrule[] GetCal(organization org, CrmService crmService)
-        {
-            var bizCal =
-                (calendar)
-                crmService.Retrieve(EntityName.calendar.ToString(), org.businessclosurecalendarid.Value,
-                                    new AllColumns());
-            return bizCal.calendarrules;
-        }
-
-        /// <summary>
-        ///   Get the Calendar Rules
-        /// </summary>
-        /// <param name = "org">The CRM Organization</param>
-        /// <param name = "crmService">The CRM Service Interface</param>
-        /// <returns>An array of the calendar rules</returns>
-        public static calendarrule[] GetCal(organization org, ICrmService crmService)
-        {
-            var bizCal =
-                (calendar)
-                crmService.Retrieve(EntityName.calendar.ToString(), org.businessclosurecalendarid.Value,
-                                    new AllColumns());
-            return bizCal.calendarrules;
+            return (from rule in calRules.Entities
+                    let start = (DateTime)rule.Attributes["effectiveintervalstart"]
+                    let end = (DateTime)rule.Attributes["effectiveintervalend"]
+                    where date >= start && date <= end
+                    select start).Any();
         }
 
         /// <summary>
@@ -158,7 +164,7 @@ namespace ManipulationLibrary.Dates.Helpers
         /// <param name = "days">The number of days to modify by</param>
         /// <param name = "hours">The number of hours to modify by</param>
         /// <param name = "minutes">The number of minutes to modify by</param>
-        public static DateTime ModifyDateTime(calendarrule[] calRules, bool checkLastDayOnly, DateTime date,
+        public static DateTime ModifyDateTime(EntityCollection calRules, bool checkLastDayOnly, DateTime date,
                                               Operations operation, int days, int hours, int minutes)
         {
             if (days != 0)
@@ -171,7 +177,7 @@ namespace ManipulationLibrary.Dates.Helpers
                     case true:
                         //When checkLastDayOnly is true, we only care if the last day is a business day. 
                         //So even if it's a thursday and we're adding four days, we'll return the next Monday, (since 4 days is a Sunday)
-                        date = ChangeXDays(date, days - 1, operation);
+                        date = date.AddDays(((operation == Operations.Add) ? 1 : -1) * days - 1);
                         date = FindDateXBizDays(calRules, date, 1, operation);
                         break;
                 }
@@ -209,7 +215,7 @@ namespace ManipulationLibrary.Dates.Helpers
         /// <param name = "calRules">The list of calendarrules from the Business Closure calendar</param>
         /// <param name = "date">The date to check</param>
         /// <returns>true if is a business day, false if it is not a business day</returns>
-        private static bool IsBusinessDay(calendarrule[] calRules, DateTime date)
+        private static bool IsBusinessDay(EntityCollection calRules, DateTime date)
         {
             // if it is Sat, Sun, or Holiday, then it is not a business day
             switch (date.DayOfWeek)
@@ -218,7 +224,7 @@ namespace ManipulationLibrary.Dates.Helpers
                 case DayOfWeek.Sunday:
                     return false;
                 default:
-                    return !CheckHoliday(calRules, date);
+                    return !IsClosed(calRules, date);
             }
         }
     }
