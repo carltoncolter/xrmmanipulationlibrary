@@ -18,3 +18,13 @@ C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects
 \\tsclient\C\a\ManipulationLibrary\obj\Debug\ResolveAssemblyReference.cache
 \\tsclient\C\a\ManipulationLibrary\obj\Debug\ManipulationLibrary.dll
 \\tsclient\C\a\ManipulationLibrary\obj\Debug\ManipulationLibrary.pdb
+C:\CrmManipulationLibrary\Source Code\ManipulationLibrary\bin\Debug\ManipulationLibrary.dll
+C:\CrmManipulationLibrary\Source Code\ManipulationLibrary\bin\Debug\ManipulationLibrary.pdb
+C:\CrmManipulationLibrary\Source Code\ManipulationLibrary\obj\Debug\ResolveAssemblyReference.cache
+C:\CrmManipulationLibrary\Source Code\ManipulationLibrary\obj\Debug\ManipulationLibrary.dll
+C:\CrmManipulationLibrary\Source Code\ManipulationLibrary\obj\Debug\ManipulationLibrary.pdb
+C:\Users\carlcolt\Documents\Visual Studio 2010\Projects\ManipulationLibrary\ManipulationLibrary\bin\Debug\ManipulationLibrary.dll
+C:\Users\carlcolt\Documents\Visual Studio 2010\Projects\ManipulationLibrary\ManipulationLibrary\bin\Debug\ManipulationLibrary.pdb
+C:\Users\carlcolt\Documents\Visual Studio 2010\Projects\ManipulationLibrary\ManipulationLibrary\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\carlcolt\Documents\Visual Studio 2010\Projects\ManipulationLibrary\ManipulationLibrary\obj\Debug\ManipulationLibrary.dll
+C:\Users\carlcolt\Documents\Visual Studio 2010\Projects\ManipulationLibrary\ManipulationLibrary\obj\Debug\ManipulationLibrary.pdb

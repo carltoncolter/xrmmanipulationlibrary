@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -10,10 +10,31 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ManipulationLibrary</RootNamespace>
     <AssemblyName>ManipulationLibrary</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>ManipulationLibrary.snk</AssemblyOriginatorKeyFile>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -23,6 +44,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -31,17 +53,14 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="microsoft.crm.sdk, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=x86">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>sdk\microsoft.crm.sdk.dll</HintPath>
-    </Reference>
-    <Reference Include="microsoft.crm.sdktypeproxy, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=x86">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>sdk\microsoft.crm.sdktypeproxy.dll</HintPath>
-    </Reference>
+    <Reference Include="Microsoft.Crm.Sdk.Proxy, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Xrm.Sdk, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Xrm.Sdk.Workflow, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System" />
+    <Reference Include="System.Activities" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
@@ -54,18 +73,6 @@
     <Reference Include="System.Transactions" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Services" />
-    <Reference Include="System.Workflow.Activities">
-      <RequiredTargetFramework>3.0</RequiredTargetFramework>
-    </Reference>
-    <Reference Include="System.Workflow.ComponentModel">
-      <RequiredTargetFramework>3.0</RequiredTargetFramework>
-    </Reference>
-    <Reference Include="System.Workflow.Runtime">
-      <RequiredTargetFramework>3.0</RequiredTargetFramework>
-    </Reference>
-    <Reference Include="System.WorkflowServices">
-      <RequiredTargetFramework>3.5</RequiredTargetFramework>
-    </Reference>
     <Reference Include="System.Xml.Linq">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
@@ -76,140 +83,58 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Calculations\AdvancedMath.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Calculations\AdvancedMath.designer.cs">
-      <DependentUpon>AdvancedMath.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Calculations\BasicMath.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Calculations\BasicMath.designer.cs">
-      <DependentUpon>BasicMath.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Calculations\ConvertValue.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Calculations\ConvertValue.Designer.cs">
-      <DependentUpon>ConvertValue.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Calculations\AdvancedMath.cs" />
+    <Compile Include="Calculations\BasicMath.cs" />
+    <Compile Include="Calculations\ConvertValue.cs" />
     <Compile Include="Calculations\Helpers\EqOperator.cs" />
     <Compile Include="Calculations\Helpers\EqToken.cs" />
     <Compile Include="Calculations\Helpers\Equation.cs" />
-    <Compile Include="Calculations\Maximum.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Calculations\Maximum.designer.cs">
-      <DependentUpon>Maximum.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Calculations\Minimum.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Calculations\Minimum.Designer.cs">
-      <DependentUpon>Minimum.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Dates\AddBusinessDays.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Dates\AddBusinessDays.designer.cs">
-      <DependentUpon>AddBusinessDays.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Dates\AddDaysToDate.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Dates\AddDaysToDate.designer.cs">
-      <DependentUpon>AddDaysToDate.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Calculations\Maximum.cs" />
+    <Compile Include="Calculations\Minimum.cs" />
+    <Compile Include="Dates\AddBusinessDays.cs" />
+    <Compile Include="Dates\AddDays.cs" />
+    <Compile Include="Dates\SubDays.cs" />
+    <Compile Include="Dates\SubBusinessDays.cs" />
     <Compile Include="Dates\Helpers\DateUtilities.cs" />
-    <Compile Include="Dates\ParseDate.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Dates\ParseDate.designer.cs">
-      <DependentUpon>ParseDate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Dates\SubBusinessDays.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Dates\SubBusinessDays.designer.cs">
-      <DependentUpon>SubBusinessDays.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Dates\SubDaysFromDate.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Dates\SubDaysFromDate.designer.cs">
-      <DependentUpon>SubDaysFromDate.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Dates\ParseDate.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RegEx\FormatRegex.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="RegEx\FormatRegex.designer.cs">
-      <DependentUpon>FormatRegex.cs</DependentUpon>
-    </Compile>
-    <Compile Include="RegEx\Match.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="RegEx\Match.designer.cs">
-      <DependentUpon>Match.cs</DependentUpon>
-    </Compile>
-    <Compile Include="RegEx\ReturnMatch.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="RegEx\ReturnMatch.designer.cs">
-      <DependentUpon>ReturnMatch.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Strings\Capitalize.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Strings\Capitalize.designer.cs">
-      <DependentUpon>Capitalize.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Strings\Metaphone.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Strings\Metaphone.designer.cs">
-      <DependentUpon>Metaphone.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Strings\PadString.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Strings\PadString.designer.cs">
-      <DependentUpon>PadString.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Strings\Replace.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Strings\Replace.designer.cs">
-      <DependentUpon>Replace.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Strings\Soundex.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Strings\Soundex.designer.cs">
-      <DependentUpon>Soundex.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Strings\StrLength.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Strings\StrLength.designer.cs">
-      <DependentUpon>StrLength.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Strings\Substring.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Strings\Substring.designer.cs">
-      <DependentUpon>Substring.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Strings\Trim.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Strings\Trim.designer.cs">
-      <DependentUpon>Trim.cs</DependentUpon>
-    </Compile>
+    <Compile Include="RegEx\FormatRegex.cs" />
+    <Compile Include="RegEx\Match.cs" />
+    <Compile Include="RegEx\Replace.cs" />
+    <Compile Include="RegEx\ReturnMatch.cs" />
+    <Compile Include="Strings\Capitalize.cs" />
+    <Compile Include="Strings\Metaphone.cs" />
+    <Compile Include="Strings\PadString.cs" />
+    <Compile Include="Strings\Replace.cs" />
+    <Compile Include="Strings\Soundex.cs" />
+    <Compile Include="Strings\StrLength.cs" />
+    <Compile Include="Strings\Substring.cs" />
+    <Compile Include="Strings\Trim.cs" />
+    <Compile Include="Web\URLDecode.cs" />
+    <Compile Include="Web\URLEncode.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ManipulationLibrary.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

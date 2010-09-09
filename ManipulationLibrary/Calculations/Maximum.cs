@@ -4,47 +4,29 @@
 //  Summary:	This workflow activity returns the highest number between two objects
 // ==================================================================================
 using System;
-using System.Workflow.Activities;
-using System.Workflow.ComponentModel;
-using Microsoft.Crm.Sdk;
-using Microsoft.Crm.Workflow;
+using System.Activities;
+using Microsoft.Xrm.Sdk.Workflow;
 
 namespace ManipulationLibrary.Calculations
 {
-    [CrmWorkflowActivity("Maximum", "Calculation Utilities")]
-    public partial class Maximum : SequenceActivity
+    [WorkflowActivity("Maximum", "Calculation Utilities")]
+    public sealed class Maximum : CodeActivity
     {
-        public Maximum()
+        protected override void Execute(CodeActivityContext executionContext)
         {
-            InitializeComponent();
+            Result.Set(executionContext,
+                       Math.Max(Number1.Get<int>(executionContext), Number2.Get<int>(executionContext)));
         }
 
-        public static DependencyProperty NumberProperty = DependencyProperty.Register("Number", typeof(CrmDecimal),
-                                                                                      typeof(Maximum));
-        [CrmInput("First number")]
-        [CrmOutput("Result")]
-        [CrmDefault("0")]
-        public CrmDecimal Number
-        {
-            get { return (CrmDecimal)GetValue(NumberProperty); }
-            set { SetValue(NumberProperty, value); }
-        }
+        [Input("First number")]
+        [Default("0")]
+        public InArgument<int> Number1 { get; set; }
 
-        public static DependencyProperty Number2Property = DependencyProperty.Register("Number2", typeof(CrmDecimal),
-                                                                                       typeof(Maximum));
-        [CrmInput("Second number")]
-        [CrmDefault("0")]
-        public CrmDecimal Number2
-        {
-            get { return (CrmDecimal)GetValue(Number2Property); }
-            set { SetValue(Number2Property, value); }
-        }
+        [Input("Second number")]
+        [Default("0")]
+        public InArgument<int> Number2 { get; set; }
 
-        protected override ActivityExecutionStatus Execute(ActivityExecutionContext executionContext)
-        {
-            Number.Value = Math.Max(Number.Value, Number2.Value);
-
-            return base.Execute(executionContext);
-        }
+        [Output("Result")]
+        public OutArgument<int> Result { get; set; }
     }
 }

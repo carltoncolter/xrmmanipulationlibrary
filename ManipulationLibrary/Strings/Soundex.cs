@@ -4,22 +4,15 @@
 //  Summary:	This class does a soundex string codification. 
 // ==================================================================================
 using System;
+using System.Activities;
 using System.Text;
-using System.Workflow.Activities;
-using System.Workflow.ComponentModel;
-using Microsoft.Crm.Sdk;
-using Microsoft.Crm.Workflow;
+using Microsoft.Xrm.Sdk.Workflow;
 
 namespace ManipulationLibrary.Strings
 {
-    [CrmWorkflowActivity("Codify (SoundEx)", "String Utilities")]
-    public partial class Soundex : SequenceActivity
+    [WorkflowActivity("Codify (SoundEx)", "String Utilities")]
+    public sealed class Soundex : CodeActivity
     {
-        public Soundex()
-        {
-            InitializeComponent();
-        }
-
         /// <summary>
         /// Convert string to a SoundEx Codified string
         /// </summary>
@@ -71,48 +64,33 @@ namespace ManipulationLibrary.Strings
 
             return soundex.ToString();
         }
-
-        protected override ActivityExecutionStatus Execute(ActivityExecutionContext executionContext)
+        
+        protected override void Execute(CodeActivityContext executionContext)
         {
-            Text = Codify(Text, MinLength.Value, MaxLength.Value, UseOriginal.Value);
-            return base.Execute(executionContext);
+            var minLength = MinLength.Get<int>(executionContext);
+            var maxLength = MaxLength.Get<int>(executionContext);
+            var useOriginalMethod = UseOriginal.Get<bool>(executionContext);
+            var text = Text.Get<string>(executionContext);
+            var result = Codify(text, minLength, maxLength, useOriginalMethod);
+            Result.Set(executionContext,result);
         }
 
-        public static DependencyProperty MinLengthProperty = DependencyProperty.Register("MinLength", typeof(CrmNumber), typeof(Soundex));
-        [CrmInput("Minimum Length")]
-        [CrmDefault("4")]
-        public CrmNumber MinLength
-        {
-            get { return (CrmNumber)GetValue(MinLengthProperty); }
-            set { SetValue(MinLengthProperty, value); }
-        }
+        [Input("Minimum Length")]
+        [Default("4")]
+        public InArgument<int> MinLength { get; set; }
 
-        public static DependencyProperty MaxLengthProperty = DependencyProperty.Register("MaxLength", typeof(CrmNumber), typeof(Soundex));
-        [CrmInput("Maximum Length")]
-        [CrmDefault("4")]
-        public CrmNumber MaxLength
-        {
-            get { return (CrmNumber)GetValue(MaxLengthProperty); }
-            set { SetValue(MaxLengthProperty, value); }
-        }
+        [Input("Maximum Length")]
+        [Default("4")]
+        public InArgument<int> MaxLength { get; set; }
 
-        public static DependencyProperty UseOriginalProperty = DependencyProperty.Register("UseOriginal", typeof(CrmBoolean), typeof(Soundex));
-        [CrmInput("Use Original Version")]
-        [CrmDefault("false")]
-        public CrmBoolean UseOriginal
-        {
-            get { return (CrmBoolean)GetValue(UseOriginalProperty); }
-            set { SetValue(UseOriginalProperty, value); }
-        }
+        [Input("Use Original Version")]
+        [Default("false")]
+        public InArgument<bool> UseOriginal { get; set; }
 
+        [Input("Text")]
+        public InArgument<string> Text { get; set; }
 
-        public static DependencyProperty TextProperty = DependencyProperty.Register("Text", typeof(String), typeof(Soundex));
-        [CrmInput("Text")]
-        [CrmOutput("Result")]
-        public String Text
-        {
-            get { return (String)GetValue(TextProperty); }
-            set { SetValue(TextProperty, value); }
-        }
+        [Output("Result")]
+        public OutArgument<string> Result { get; set; }
     }
 }

@@ -4,103 +4,63 @@
 //  Summary:	This workflow activity converts one value to another value
 // ==================================================================================
 using System;
-using System.Workflow.Activities;
-using System.Workflow.ComponentModel;
-using Microsoft.Crm.Sdk;
-using Microsoft.Crm.Workflow;
+using System.Activities;
+using Microsoft.Xrm.Sdk;
+using Microsoft.Xrm.Sdk.Workflow;
 
 namespace ManipulationLibrary.Calculations
 {
-    [CrmWorkflowActivity("Convert Value", "Calculation Utilities")]
-    public partial class ConvertValue : SequenceActivity
+    [WorkflowActivity("Convert Value", "Calculation Utilities")]
+    public sealed class ConvertValue : CodeActivity
     {
-        public ConvertValue()
+        protected override void Execute(CodeActivityContext executionContext)
         {
-            InitializeComponent();
-        }
-
-        public static DependencyProperty ValueProperty = DependencyProperty.Register("Value", typeof(string),
-                                                                                     typeof(ConvertValue));
-        [CrmInput("Value to convert")]
-        [CrmDefault("0")]
-        public string Value
-        {
-            get { return (string)GetValue(ValueProperty); }
-            set { SetValue(ValueProperty, value); }
-        }
-
-        public static DependencyProperty DecProperty = DependencyProperty.Register("Dec", typeof(CrmDecimal), typeof(ConvertValue));
-        [CrmOutput("Decimal")]
-        public CrmDecimal Dec
-        {
-            get { return (CrmDecimal)GetValue(DecProperty); }
-            set { SetValue(DecProperty, value); }
-        }
-
-        public static DependencyProperty MoneyProperty = DependencyProperty.Register("Money", typeof(CrmMoney), typeof(ConvertValue));
-        [CrmOutput("Money")]
-        public CrmMoney Money
-        {
-            get { return (CrmMoney)GetValue(MoneyProperty); }
-            set { SetValue(MoneyProperty, value); }
-        }
-
-        public static DependencyProperty FloatProperty = DependencyProperty.Register("Float", typeof(CrmFloat), typeof(ConvertValue));
-        [CrmOutput("Float")]
-        public CrmFloat Float
-        {
-            get { return (CrmFloat)GetValue(FloatProperty); }
-            set { SetValue(FloatProperty, value); }
-        }
-
-        public static DependencyProperty RoundedProperty = DependencyProperty.Register("Rounded", typeof(CrmNumber), typeof(ConvertValue));
-        [CrmOutput("Rounded Number")]
-        public CrmNumber Rounded
-        {
-            get { return (CrmNumber)GetValue(RoundedProperty); }
-            set { SetValue(RoundedProperty, value); }
-        }
-
-        public static DependencyProperty TruncatedProperty = DependencyProperty.Register("Truncated", typeof(CrmNumber), typeof(ConvertValue));
-        [CrmOutput("Truncated Number")]
-        public CrmNumber Truncated
-        {
-            get { return (CrmNumber)GetValue(TruncatedProperty); }
-            set { SetValue(TruncatedProperty, value); }
-        }
-
-        public static DependencyProperty ErrorProperty = DependencyProperty.Register("Error", typeof(CrmBoolean), typeof(ConvertValue));
-        [CrmOutput("Formula Processing Error")]
-        [CrmDefault("False")]
-        public CrmBoolean Error
-        {
-            get { return (CrmBoolean)GetValue(ErrorProperty); }
-            set { SetValue(ErrorProperty, value); }
-        }
-               
-        protected override ActivityExecutionStatus Execute(ActivityExecutionContext executionContext)
-        {
-            Error = new CrmBoolean { Value = false };
+            var error = false;
             try
             {
                 var value = Convert.ToDouble(Value);
-                
-                Float = new CrmFloat {Value = value, formattedvalue = String.Format("{0:0.0}", value)};
 
-                Dec = new CrmDecimal { Value = Convert.ToDecimal(Math.Round(value, 2)) };
+                FloatValue.Set(executionContext, value);
+
+                DecimalValue.Set(executionContext, Convert.ToDecimal(Math.Round(value, 2)));
+
+                MoneyValue.Set(executionContext, new Money { Value = Convert.ToDecimal(Math.Round(value, 2)) });
+
+                TruncatedValue.Set(executionContext, Convert.ToInt32(Math.Truncate(value)));
                 
-                Money = new CrmMoney { Value = Convert.ToDecimal(Math.Round(value, 2)) };
-                
-                Truncated = new CrmNumber { Value = Convert.ToInt32(Math.Truncate(value)) };
-                
-                Rounded = new CrmNumber { Value = Convert.ToInt32(Math.Round(value, 0)) };
+                RoundedValue.Set(executionContext, Convert.ToInt32(Math.Round(value, 0)));
             }
             catch
             {
-                Error.Value = true;
+                error = true;
             }
 
-            return base.Execute(executionContext);
+            ProcessingError.Set(executionContext, error);
         }
+
+
+        [Input("Value to convert")]
+        [Default("0")]
+        public InArgument<string> Value { get; set; }
+        
+        [Output("Decimal")]
+        public OutArgument<decimal > DecimalValue { get; set; }
+        
+        [Output("Money")]
+        public OutArgument<Money> MoneyValue { get; set; }
+        
+        [Output("Float")]
+        public OutArgument<double> FloatValue { get; set; }
+
+        [Output("Rounded Number")]
+        public OutArgument<int> RoundedValue { get; set; }
+
+        [Output("Truncated Number")]
+        public OutArgument<int> TruncatedValue { get; set; }
+
+        [Output("Processing Error")]
+        [Default("False")]
+        public OutArgument<bool> ProcessingError { get; set; }
+
     }
 }

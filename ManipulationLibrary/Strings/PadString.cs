@@ -3,64 +3,42 @@
 //  File:		PadString.cs
 // ==================================================================================
 using System;
-using System.Workflow.ComponentModel;
-using System.Workflow.Activities;
-using Microsoft.Crm.Sdk;
-using Microsoft.Crm.Workflow;
+using System.Activities;
+using Microsoft.Xrm.Sdk.Workflow;
 
 namespace ManipulationLibrary.Strings
 {
-    [CrmWorkflowActivity("Pad String", "String Utilities")]
-    public partial class PadString : SequenceActivity
+    [WorkflowActivity("Pad String", "String Utilities")]
+    public sealed class PadString : CodeActivity
     {
-        public PadString()
+        protected override void Execute(CodeActivityContext executionContext)
         {
-            InitializeComponent();
+            var padchar = PadCharacter.Get<string>(executionContext);
+            var pad = (String.IsNullOrEmpty(padchar)) ? ' ' : padchar[0];
+            var length = FinalLength.Get<int>(executionContext);
+
+            var text = Text.Get<string>(executionContext);
+            var result = PadOnLeft.Get<bool>(executionContext) ? text.PadLeft(length, pad) : text.PadRight(length, pad);
+
+            Result.Set(executionContext, result);
         }
 
-        protected override ActivityExecutionStatus Execute(ActivityExecutionContext executionContext)
-        {
-            var pad = (String.IsNullOrEmpty(PadCharacter)) ? ' ' : PadCharacter[0];
-            
-            Text = PadOnLeft.Value ? Text.PadLeft(Length.Value, pad) : Text.PadRight(Length.Value, pad);
-            
-            return base.Execute(executionContext);
-        }
+        [Input("Text")]
+        public InArgument<string> Text { get; set; }
 
-        public static DependencyProperty TextProperty = DependencyProperty.Register("Text", typeof(String), typeof(PadString));
-        [CrmInput("Text")]
-        [CrmOutput("Result")]
-        public String Text
-        {
-            get { return (String)GetValue(TextProperty); }
-            set { SetValue(TextProperty, value); }
-        }
+        [Output("Result")]
+        public OutArgument<string> Result { get; set; }
 
-        public static DependencyProperty PadCharacterProperty = DependencyProperty.Register("PadCharacter", typeof(string), typeof(PadString));
-        [CrmInput("Pad Character")]
-        public string PadCharacter
-        {
-            get { return (string)GetValue(PadCharacterProperty); }
-            set { SetValue(PadCharacterProperty, value); }
-        }
+        [Input("Pad Character")]
+        public InArgument<string> PadCharacter { get; set; }
 
-        public static DependencyProperty PadOnLeftProperty = DependencyProperty.Register("PadOnLeft", typeof(CrmBoolean), typeof(PadString));
-        [CrmInput("Pad on the Left")]
-        [CrmDefault("True")]
-        public CrmBoolean PadOnLeft
-        {
-            get { return (CrmBoolean)GetValue(PadOnLeftProperty); }
-            set { SetValue(PadOnLeftProperty, value); }
-        }
+        [Input("Pad on the Left")]
+        [Default("True")]
+        public InArgument<bool> PadOnLeft { get; set; }
 
-        public static DependencyProperty LengthProperty = DependencyProperty.Register("Length", typeof(CrmNumber), typeof(PadString));
-        [CrmInput("Final Length")]
-        [CrmDefault("30")]
-        public CrmNumber Length
-        {
-            get { return (CrmNumber)GetValue(LengthProperty); }
-            set { SetValue(LengthProperty, value); }
-        }
+        [Input("Final Length")]
+        [Default("30")]
+        public InArgument<int> FinalLength { get; set; }
 
     }
 }
