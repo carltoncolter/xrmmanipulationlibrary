@@ -9,7 +9,6 @@ using Microsoft.Xrm.Sdk.Workflow;
 
 namespace ManipulationLibrary.Calculations
 {
-    [WorkflowActivity("Basic Math", "Calculation Utilities")]
     public sealed class BasicMath : CodeActivity
     {
         protected override void Execute(CodeActivityContext executionContext)

@@ -15,11 +15,9 @@ using System;
 using System.Globalization;
 using System.Activities;
 using Microsoft.Xrm.Sdk.Workflow;
-using Microsoft.Xrm.Sdk;
 
 namespace ManipulationLibrary.Dates
 {
-    [WorkflowActivity("Parse Date", "Date Utilities")]
     public sealed class ParseDate : CodeActivity
     {
 

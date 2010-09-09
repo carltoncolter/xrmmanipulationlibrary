@@ -10,7 +10,6 @@ using Microsoft.Xrm.Sdk.Workflow;
 
 namespace ManipulationLibrary.Calculations
 {
-    [WorkflowActivity("Convert Value", "Calculation Utilities")]
     public sealed class ConvertValue : CodeActivity
     {
         protected override void Execute(CodeActivityContext executionContext)
@@ -37,8 +36,7 @@ namespace ManipulationLibrary.Calculations
 
             ProcessingError.Set(executionContext, error);
         }
-
-
+        
         [Input("Value to convert")]
         [Default("0")]
         public InArgument<string> Value { get; set; }

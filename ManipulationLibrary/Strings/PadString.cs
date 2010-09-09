@@ -8,7 +8,6 @@ using Microsoft.Xrm.Sdk.Workflow;
 
 namespace ManipulationLibrary.Strings
 {
-    [WorkflowActivity("Pad String", "String Utilities")]
     public sealed class PadString : CodeActivity
     {
         protected override void Execute(CodeActivityContext executionContext)

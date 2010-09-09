@@ -12,7 +12,6 @@ using Microsoft.Xrm.Sdk.Workflow;
 
 namespace ManipulationLibrary.Dates
 {
-    [WorkflowActivity("Subtract Days", "Date Utilities")]
     public sealed class SubDays : CodeActivity
     {
 

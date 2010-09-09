@@ -9,7 +9,6 @@ using Microsoft.Xrm.Sdk.Workflow;
 
 namespace ManipulationLibrary.Web
 {
-    [WorkflowActivity("URL Encode", "Web Utilities")]
     public sealed class URLEncode : CodeActivity
     {
         protected override void Execute(CodeActivityContext executionContext)

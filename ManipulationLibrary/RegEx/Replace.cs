@@ -9,7 +9,6 @@ using Microsoft.Xrm.Sdk.Workflow;
 
 namespace ManipulationLibrary.RegEx
 {
-    [WorkflowActivity("Replace", "RegEx Utilities")]
     public sealed class Replace : CodeActivity
     {
         protected override void Execute(CodeActivityContext executionContext)

@@ -1,0 +1,519 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+	<assembly>
+		<name>Microsoft.Xrm.Sdk.Workflow</name>
+	</assembly>
+	<members>
+		<member name="T:Microsoft.Xrm.Sdk.Workflow.AttributeDependency">
+			<summary>Describes an attribute dependency for a workflow.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Workflow.AttributeDependency.#ctor">
+			<summary>Initializes a new instance of the AttributeDependency class.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Workflow.AttributeDependency.#ctor(System.String,System.String,System.String)">
+			<summary>Initializes a new instance of the AttributeDependency class setting the parameter name, dependent entity name and dependent attribute name.</summary>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Workflow.AttributeDependency.DependentAttributeName">
+			<summary>Gets or sets the name of the dependent attribute.</summary>
+			<returns>Returns <see cref="T:System.String"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Workflow.AttributeDependency.DependentEntityName">
+			<summary>Gets or sets the name of the entity for the dependent attribute.</summary>
+			<returns>Returns <see cref="T:System.String"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Workflow.AttributeDependency.ParameterType">
+			<summary>Gets or sets the type of parameter.</summary>
+			<returns>Returns <see cref="T:System.Type"></see>.</returns>
+		</member>
+		<member name="T:Microsoft.Xrm.Sdk.Workflow.AttributeTargetAttribute">
+			<summary>Specifies a required attribute of a parameter picklist or status parameter types.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Workflow.AttributeTargetAttribute.#ctor(System.String,System.String)">
+			<summary>Initializes a new instance of the AttributeTargetAttribute class.</summary>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Workflow.AttributeTargetAttribute.AttributeName">
+			<summary>Gets the name of the target attribute.</summary>
+			<returns>Returns <see cref="T:System.String"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Workflow.AttributeTargetAttribute.EntityName">
+			<summary>Gets the name of the entity.</summary>
+			<returns>Returns <see cref="T:System.String"></see>.</returns>
+		</member>
+		<member name="T:Microsoft.Xrm.Sdk.Workflow.CustomEntityDependency">
+			<summary>The CustomEntityDependency class inherits from <see cref="T:Microsoft.Xrm.Sdk.Workflow.ParameterDependencyBase"></see>. It exposes the following members.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Workflow.CustomEntityDependency.#ctor">
+			<summary>Initializes a new instance of the CustomEntityDependency class.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Workflow.CustomEntityDependency.#ctor(System.String,System.String)">
+			<summary>Initializes a new instance of the CustomEntityDependency class.</summary>
+			<param name="customEntityName">Specifies a String containing the name of the custom entity.</param>
+			<param name="parameterName">Specifies a String containing the parameter name.</param>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Workflow.CustomEntityDependency.CustomEntityName">
+			<returns>Returns <see cref="T:System.String"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Workflow.CustomEntityDependency.ParameterType">
+			<returns>Returns <see cref="T:System.Type"></see>.</returns>
+		</member>
+		<member name="T:Microsoft.Xrm.Sdk.Workflow.DefaultAttribute">
+			<summary>Specifies an optional default value that is assign to a parameter. The DefaultAttribute class inherits from System.Attribute. It implements the System.Runtime.InteropServices._Attribute interface. It exposes the following members.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Workflow.DefaultAttribute.#ctor(System.String)">
+			<summary>Initializes a new instance of the DefaultAttribute class setting the value property.</summary>
+			<param name="value">Specifies a String containing the attribute value.</param>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Workflow.DefaultAttribute.#ctor(System.String,System.String)">
+			<summary>Initializes a new instance of the DefaultAttribute class setting the value and entity name properties.</summary>
+			<param name="value">Specifies a String containing the attribute value.</param>
+			<param name="entityName">Specifies a String containing the name of the entity.</param>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Workflow.DefaultAttribute.EntityName">
+			<summary>Gets the entity name for a value of type lookup, a customer or an owner.</summary>
+			<returns>Returns <see cref="T:System.String"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Workflow.DefaultAttribute.Value">
+			<summary>Gets the default value.</summary>
+			<returns>Returns <see cref="T:System.String"></see>.</returns>
+		</member>
+		<member name="T:Microsoft.Xrm.Sdk.Workflow.EntityCreatedByDependency">
+			<summary>Describes a dependency for the created by property of an entity.The EntityCreatedByDependency class inherits from <see cref="T:Microsoft.Xrm.Sdk.Workflow.EntityDependencyBase"></see>. It exposes the following members.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Workflow.EntityCreatedByDependency.#ctor">
+			<summary>Initializes a new instance of the EntityCreatedByDependency class.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Workflow.EntityCreatedByDependency.#ctor(System.String,System.String)">
+			<summary>Initializes a new instance of the EntityCreatedByDependency class.</summary>
+			<param name="parameterName">Specifies a String containing the parameter name.</param>
+			<param name="entityAttributes">description</param>
+		</member>
+		<member name="T:Microsoft.Xrm.Sdk.Workflow.EntityDependencyBase">
+			<summary>Specifies the abstract base class for entity dependencies.The EntityDependencyBase class inherits from <see cref="T:Microsoft.Xrm.Sdk.Workflow.ParameterDependencyBase"></see>. It exposes the following members.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Workflow.EntityDependencyBase.#ctor(System.String,System.String)">
+			<param name="parameterName">In implemented classes this parameter is a String that specifies the parameter name.</param>
+			<param name="entityAttributes">In implemented classes, this parameter is a String that specifies the entity attributes.</param>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Workflow.EntityDependencyBase.EntityAttributes">
+			<returns>Returns <see cref="T:System.String"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Workflow.EntityDependencyBase.ParameterType">
+			<returns>Returns <see cref="T:System.Type"></see>.</returns>
+		</member>
+		<member name="T:Microsoft.Xrm.Sdk.Workflow.InputAttribute">
+			<summary>Specifies an input parameter.The InputAttribute class inherits from <see cref="T:Microsoft.Xrm.Sdk.Workflow.ParameterAttribute"></see>. It implements the System.Runtime.InteropServices._Attribute interface. It exposes the following members.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Workflow.InputAttribute.#ctor(System.String)">
+			<summary>Initializes a new instance of the InputAttribute class setting the name property.</summary>
+			<param name="name">Specifies a String containing the name of the parameter that will appears in the workflow designer UI.</param>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Workflow.IStorageService.RetrieveData(System.Guid)">
+			<summary>For internal use only.</summary>
+			<returns>Returns <see cref="T:System.Object"></see>.</returns>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Workflow.IStorageService.SaveData(System.Guid,System.Object)">
+			<returns>Returns <see cref="T:System.Guid"></see>.</returns>
+		</member>
+		<member name="T:Microsoft.Xrm.Sdk.Workflow.IWaitNotificationService">
+			<summary>For internal use only.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Workflow.IWaitNotificationService.RegisterListener(System.Guid,System.String,System.Guid)">
+			<returns>Returns <see cref="T:System.Guid"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Workflow.IWaitNotificationService.SubscriptionToRegister">
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.Workflow.WaitSubscription"></see>.</returns>
+		</member>
+		<member name="T:Microsoft.Xrm.Sdk.Workflow.IWorkflowContext">
+			<summary>Provides access to the data associated with the process instance.</summary>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Workflow.IWorkflowContext.StageName">
+			<returns>Returns <see cref="T:System.String"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Workflow.IWorkflowContext.WorkflowCategory">
+			<returns>Returns <see cref="T:System.Int32"></see>.</returns>
+		</member>
+		<member name="T:Microsoft.Xrm.Sdk.Workflow.LocalParameterDependency">
+			<summary>The LocalParameterDependency class inherits from <see cref="T:Microsoft.Xrm.Sdk.Workflow.ParameterDependencyBase"></see>. It exposes the following members.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Workflow.LocalParameterDependency.#ctor(System.String,System.Type)">
+			<summary>Initializes a new instance of the LocalParameterDependency class.</summary>
+			<param name="parameterName">Specifies a String containing the parameter name.</param>
+			<param name="parameterType">description</param>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Workflow.LocalParameterDependency.ParameterType">
+			<returns>Returns <see cref="T:System.Type"></see>.</returns>
+		</member>
+		<member name="T:Microsoft.Xrm.Sdk.Workflow.OutputAttribute">
+			<summary>Specifies an output parameter.The CrmOutputAttribute class inherits from <see cref="T:Microsoft.Xrm.Sdk.Workflow.ParameterAttribute"></see>. It implements the System.Runtime.InteropServices._Attribute interface. It exposes the following members.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Workflow.OutputAttribute.#ctor(System.String)">
+			<summary>Initializes a new instance of the CrmOutputAttribute class, while initializing the name property.</summary>
+			<param name="name">Specifies a String containing the name of the parameter that will appears in the workflow designer UI.</param>
+		</member>
+		<member name="T:Microsoft.Xrm.Sdk.Workflow.ParameterAttribute">
+			<summary>Specifies the abstract base class used for attributes.The ParameterAttribute class inherits from System.Attribute. It implements the System.Runtime.InteropServices._Attribute interface. It exposes the following members.</summary>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Workflow.ParameterAttribute.Name">
+			<summary>Gets the name of the parameter that will appear in the workflow designer UI.</summary>
+			<returns>Returns <see cref="T:System.String"></see>.</returns>
+		</member>
+		<member name="T:Microsoft.Xrm.Sdk.Workflow.ParameterDependencyBase">
+			<summary>Specifies the abstract base class for parameter dependencies.The ParameterDependencyBase class exposes the following members.</summary>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Workflow.ParameterDependencyBase.ParameterName">
+			<summary>Gets or sets the parameter name.</summary>
+			<returns>Returns <see cref="T:System.String"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Workflow.ParameterDependencyBase.ParameterType">
+			<returns>Returns <see cref="T:System.Type"></see>.</returns>
+		</member>
+		<member name="T:Microsoft.Xrm.Sdk.Workflow.PreImageDependency">
+			<summary>The PreImageDependency class inherits from <see cref="T:Microsoft.Xrm.Sdk.Workflow.EntityDependencyBase"></see>. It exposes the following members.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Workflow.PreImageDependency.#ctor">
+			<summary>Initializes a new instance of the PreImageDependency class.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Workflow.PreImageDependency.#ctor(System.String,System.String)">
+			<summary>Initializes a new instance of the PreImageDependency class.</summary>
+			<param name="parameterName">Specifies a String containing the parameter name.</param>
+			<param name="entityAttributes">description</param>
+		</member>
+		<member name="T:Microsoft.Xrm.Sdk.Workflow.PrimaryEntityDependency">
+			<summary>The PrimaryEntityDependency class inherits from <see cref="T:Microsoft.Xrm.Sdk.Workflow.EntityDependencyBase"></see>. It exposes the following members.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Workflow.PrimaryEntityDependency.#ctor">
+			<summary>Initializes a new instance of the PrimaryEntityDependency class.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Workflow.PrimaryEntityDependency.#ctor(System.String,System.String,System.Int32)">
+			<summary>Initializes a new instance of the PrimaryEntityDependency class.</summary>
+			<param name="parameterName">Specifies a String containing the parameter name.</param>
+			<param name="type">description</param>
+			<param name="entityAttributes">description</param>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Workflow.PrimaryEntityDependency.Type">
+			<returns>Returns <see cref="T:System.Int32"></see>.</returns>
+		</member>
+		<member name="T:Microsoft.Xrm.Sdk.Workflow.ReferenceTargetAttribute">
+			<summary>Specifies the required attribute of a parameter for lookup, customer or owner parameter types.The CrmReferenceTargetAttribute class inherits from System.Attribute. It implements the System.Runtime.InteropServices._Attribute interface. It exposes the following members.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Workflow.ReferenceTargetAttribute.#ctor(System.String)">
+			<summary>Initializes a new instance of the CrmReferenceTargetAttribute class.</summary>
+			<param name="entityName">Specifies a String containing the name of the entity.</param>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Workflow.ReferenceTargetAttribute.EntityName">
+			<summary>Gets the name of the entity for the attribute.</summary>
+			<returns>Returns <see cref="T:System.String"></see>.</returns>
+		</member>
+		<member name="T:Microsoft.Xrm.Sdk.Workflow.RelatedEntityDependency">
+			<summary>The RelatedEntityDependency class inherits from <see cref="T:Microsoft.Xrm.Sdk.Workflow.EntityDependencyBase"></see>. It exposes the following members.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Workflow.RelatedEntityDependency.#ctor">
+			<summary>Initializes a new instance of the RelatedEntityDependency class.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Workflow.RelatedEntityDependency.#ctor(System.String,System.String,System.String,System.String)">
+			<summary>Initializes a new instance of the RelatedEntityDependency class.</summary>
+			<param name="parameterName">Specifies a String containing the parameter name.</param>
+			<param name="relatedAttributeName">Specifies a String containing the name of the related attribute.</param>
+			<param name="entityAttributes">description</param>
+			<param name="relatedEntityName">Specifies a String containing the name of the related entity.</param>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Workflow.RelatedEntityDependency.RelatedAttributeName">
+			<returns>Returns <see cref="T:System.String"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Workflow.RelatedEntityDependency.RelatedEntityName">
+			<returns>Returns <see cref="T:System.String"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Workflow.WaitSubscription.EntityId">
+			<returns>Returns <see cref="T:System.Guid"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Workflow.WaitSubscription.EntityName">
+			<returns>Returns <see cref="T:System.String"></see>.</returns>
+		</member>
+		<member name="T:Microsoft.Xrm.Sdk.Workflow.WorkflowDependencyType">
+			<summary>This class specifies the integer flags to set the workflowdependency.type property. Although the property may accept any value, these are the valid values.This class does not need instantiation or initialization because the fields represent constant integer values. These values are intended to be used when setting entity property values.The WorkflowDependencyType class exposes the following members.</summary>
+		</member>
+		<member name="F:Microsoft.Xrm.Sdk.Workflow.WorkflowDependencyType.AttributeDefinition">
+			<summary>Specifies a dependency on an attribute definition.</summary>
+		</member>
+		<member name="F:Microsoft.Xrm.Sdk.Workflow.WorkflowDependencyType.CustomEntityDefinition">
+			<summary>Specifies a dependency on a custom entity definition.</summary>
+		</member>
+		<member name="F:Microsoft.Xrm.Sdk.Workflow.WorkflowDependencyType.LocalParameter">
+			<summary>Specifies a dependency on a local parameter.</summary>
+		</member>
+		<member name="F:Microsoft.Xrm.Sdk.Workflow.WorkflowDependencyType.PrimaryEntityImage">
+			<summary>Specifies a dependency on a primary entity image.</summary>
+		</member>
+		<member name="F:Microsoft.Xrm.Sdk.Workflow.WorkflowDependencyType.PrimaryEntityPostImage">
+			<summary>Specifies a dependency on a primary entity post image.</summary>
+		</member>
+		<member name="F:Microsoft.Xrm.Sdk.Workflow.WorkflowDependencyType.PrimaryEntityPreImage">
+			<summary>Specifies a dependency on a primary entity pre image.</summary>
+		</member>
+		<member name="F:Microsoft.Xrm.Sdk.Workflow.WorkflowDependencyType.RelatedEntityImage">
+			<summary>Specifies a dependency on a related entity image.</summary>
+		</member>
+		<member name="F:Microsoft.Xrm.Sdk.Workflow.WorkflowDependencyType.SdkAssociation">
+			<summary>Specifies a dependency on an SDK association.</summary>
+		</member>
+		<member name="T:Microsoft.Xrm.Sdk.Workflow.WorkflowStepActivityStatus">
+			<summary>This class specifies the integer flags to set the StepActivity.Status property. Although the property may accept any value, these are the valid values.This class does not need instantiation or initialization because the fields represent constant integer values. These values are intended to be used when setting entity property values.The WorkflowStepActivityStatus class exposes the following members.</summary>
+		</member>
+		<member name="F:Microsoft.Xrm.Sdk.Workflow.WorkflowStepActivityStatus.Canceled">
+			<summary>Indicates the step has been cancelled.</summary>
+		</member>
+		<member name="F:Microsoft.Xrm.Sdk.Workflow.WorkflowStepActivityStatus.Failed">
+			<summary>The step has failed.</summary>
+		</member>
+		<member name="F:Microsoft.Xrm.Sdk.Workflow.WorkflowStepActivityStatus.InProgress">
+			<summary>The step is in progress.</summary>
+		</member>
+		<member name="F:Microsoft.Xrm.Sdk.Workflow.WorkflowStepActivityStatus.SuccessfullyCompleted">
+			<summary>The step has successfully completed.</summary>
+		</member>
+		<member name="F:Microsoft.Xrm.Sdk.Workflow.WorkflowStepActivityStatus.Waiting">
+			<summary>Indicates the step is waiting.</summary>
+		</member>
+		<member name="T:Microsoft.Xrm.Sdk.Workflow.XrmTimeSpan">
+			<summary>Represents a time interval. Similar to System.TimeSpan but with added support for month and year.The XrmTimeSpan structure exposes the following members.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Workflow.XrmTimeSpan.#ctor(System.TimeSpan)">
+			<summary>Initializes a new instance of the CrmTimeSpan class setting the time span.</summary>
+			<param name="value">Specifies the time span.</param>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Workflow.XrmTimeSpan.#ctor(System.Int32,System.Int32,System.Int32)">
+			<summary>Initializes a new instance of the XrmTimeSpan class setting the days, hours and minutes.</summary>
+			<param name="hours">Specifies the hours for the time span.</param>
+			<param name="minutes">Specifies the minutes for the time span.</param>
+			<param name="days">Specifies the days for the time span.</param>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Workflow.XrmTimeSpan.#ctor(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)">
+			<summary>Initializes a new instance of the XrmTimeSpan class setting the years, months, days, hours and minutes.</summary>
+			<param name="days">Specifies the days for the time span.</param>
+			<param name="hours">Specifies the hours for the time span.</param>
+			<param name="years">Specifies the years for the time span.</param>
+			<param name="months">Specifies the months for the time span.</param>
+		</member>
+		<member name="F:Microsoft.Xrm.Sdk.Workflow.XrmTimeSpan.Zero">
+			<summary>Represents the zero XrmTimeSpan value. This field is read-only.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Workflow.XrmTimeSpan.Add(System.DateTime)">
+			<summary>Adds the specified CrmTimeSpan to this instance.</summary>
+			<returns>Returns <see cref="T:System.DateTime"></see>.</returns>
+			<param name="value">A date/time value to add to the current instance value.</param>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Workflow.XrmTimeSpan.CreateXrmTimeSpan(Microsoft.Xrm.Sdk.Workflow.XrmTimeSpan)">
+			<summary>Creates an instance of a XrmTimeSpan class setting the time span members.</summary>
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.Workflow.XrmTimeSpan"></see>.</returns>
+			<param name="cts">Specifies the time span.</param>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Workflow.XrmTimeSpan.CreateXrmTimeSpan(System.Int32,System.Int32,System.Int32)">
+			<summary>Creates an instance of a XrmTimeSpan class setting the days, hours and minutes.</summary>
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.Workflow.XrmTimeSpan"></see>.</returns>
+			<param name="hours">Specifies the hours for the time span.</param>
+			<param name="minutes">Specifies the minutes for the time span.</param>
+			<param name="days">Specifies the days for the time span.</param>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Workflow.XrmTimeSpan.CreateXrmTimeSpan(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)">
+			<summary>Creates an instance of a XrmTimeSpan class setting the years, months, days, hours and minutes.</summary>
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.Workflow.XrmTimeSpan"></see>.</returns>
+			<param name="minutes">Specifies the minutes for the time span.</param>
+			<param name="days">Specifies the days for the time span.</param>
+			<param name="hours">Specifies the hours for the time span.</param>
+			<param name="years">Specifies the years for the time span.</param>
+			<param name="months">Specifies the months for the time span.</param>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Workflow.XrmTimeSpan.Equals(System.Object)">
+			<summary>Returns a value indicating whether this instance is equal to a specified object.</summary>
+			<returns>Returns <see cref="T:System.Boolean"></see>.</returns>
+			<param name="obj">Specifies the object to test for equality with the current instance.</param>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Workflow.XrmTimeSpan.Equals(Microsoft.Xrm.Sdk.Workflow.XrmTimeSpan)">
+			<summary>Returns a value indicating whether this instance is equal to a specified XrmTimeSpan object.</summary>
+			<returns>Returns <see cref="T:System.Boolean"></see>.</returns>
+			<param name="value">Specifies the XrmTimeSpan instance to test for equality with the current instance.</param>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Workflow.XrmTimeSpan.GetHashCode">
+			<summary>Returns a hash code for this instance.</summary>
+			<returns>Returns <see cref="T:System.Int32"></see>.</returns>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Workflow.XrmTimeSpan.op_Equality(Microsoft.Xrm.Sdk.Workflow.XrmTimeSpan,Microsoft.Xrm.Sdk.Workflow.XrmTimeSpan)">
+			<summary>Indicates whether two XrmTimeSpan instances are equal.</summary>
+			<returns>Returns <see cref="T:System.Boolean"></see>.</returns>
+			<param name="span2">Specifies a XrmTimeSpan.</param>
+			<param name="span1">Specifies a XrmTimeSpan.</param>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Workflow.XrmTimeSpan.op_Inequality(Microsoft.Xrm.Sdk.Workflow.XrmTimeSpan,Microsoft.Xrm.Sdk.Workflow.XrmTimeSpan)">
+			<summary>Indicates whether two XrmTimeSpan instances are equal.</summary>
+			<returns>Returns <see cref="T:System.Boolean"></see>.</returns>
+			<param name="span2">Specifies a XrmTimeSpan.</param>
+			<param name="span1">Specifies a XrmTimeSpan.</param>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Workflow.XrmTimeSpan.Subtract(System.DateTime)">
+			<summary>Subtracts the specified XrmTimeSpan from this instance.</summary>
+			<returns>Returns <see cref="T:System.DateTime"></see>.</returns>
+			<param name="value">Specifies a date/time value to subtract.</param>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Workflow.XrmTimeSpan.Days">
+			<summary>Gets the number of whole days represented by the current XrmTimeSpan structure.</summary>
+			<returns>Returns <see cref="T:System.Int32"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Workflow.XrmTimeSpan.Hours">
+			<summary>Gets the number of whole hours represented by the current XrmTimeSpan structure.</summary>
+			<returns>Returns <see cref="T:System.Int32"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Workflow.XrmTimeSpan.Minutes">
+			<summary>Gets the number of whole minutes represented by the current XrmTimeSpan structure.</summary>
+			<returns>Returns <see cref="T:System.Int32"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Workflow.XrmTimeSpan.Months">
+			<summary>Gets the number of whole months represented by the current XrmTimeSpan structure.</summary>
+			<returns>Returns <see cref="T:System.Int32"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Workflow.XrmTimeSpan.Years">
+			<summary>Gets the number of whole years represented by the current XrmTimeSpan structure.</summary>
+			<returns>Returns <see cref="T:System.Int32"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Workflow.Activities.ActivityReference.Arguments">
+			<returns>Returns <see cref="T:System.Collections.Generic.Dictionary`2"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Workflow.Activities.AssignEntity.Entity">
+			<returns>Returns <see cref="T:System.Activities.OutArgument`1"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Workflow.Activities.AssignEntity.EntityId">
+			<returns>Returns <see cref="T:System.Activities.InArgument`1"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Workflow.Activities.AssignEntity.EntityName">
+			<returns>Returns <see cref="T:System.Activities.InArgument`1"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Workflow.Activities.AssignEntity.Owner">
+			<returns>Returns <see cref="T:System.Activities.InArgument`1"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Workflow.Activities.CreateEntity.Entity">
+			<returns>Returns <see cref="T:System.Activities.InOutArgument`1"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Workflow.Activities.CreateEntity.EntityId">
+			<returns>Returns <see cref="T:System.Activities.OutArgument`1"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Workflow.Activities.CreateEntity.EntityName">
+			<returns>Returns <see cref="T:System.Activities.InArgument`1"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Workflow.Activities.GetEntityProperty.Attribute">
+			<returns>Returns <see cref="T:System.Activities.InArgument`1"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Workflow.Activities.GetEntityProperty.Entity">
+			<returns>Returns <see cref="T:System.Activities.InArgument`1"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Workflow.Activities.GetEntityProperty.EntityName">
+			<returns>Returns <see cref="T:System.Activities.InArgument`1"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Workflow.Activities.GetEntityProperty.TargetType">
+			<returns>Returns <see cref="T:System.Activities.InArgument`1"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Workflow.Activities.GetEntityProperty.Value">
+			<returns>Returns <see cref="T:System.Activities.OutArgument`1"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Workflow.Activities.Postpone.BlockExecution">
+			<returns>Returns <see cref="T:System.Activities.InArgument`1"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Workflow.Activities.Postpone.BookmarkCallback">
+			<returns>Returns <see cref="T:System.Activities.BookmarkCallback"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Workflow.Activities.Postpone.PostponeUntil">
+			<returns>Returns <see cref="T:System.Activities.InArgument`1"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Workflow.Activities.RetrieveEntity.Attributes">
+			<returns>Returns <see cref="T:System.Activities.InArgument`1"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Workflow.Activities.RetrieveEntity.Entity">
+			<returns>Returns <see cref="T:System.Activities.OutArgument`1"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Workflow.Activities.RetrieveEntity.EntityId">
+			<returns>Returns <see cref="T:System.Activities.InArgument`1"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Workflow.Activities.RetrieveEntity.EntityName">
+			<returns>Returns <see cref="T:System.Activities.InArgument`1"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Workflow.Activities.RetrieveEntity.ThrowIfNotExists">
+			<returns>Returns <see cref="T:System.Activities.InArgument`1"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Workflow.Activities.SendEmail.Entity">
+			<returns>Returns <see cref="T:System.Activities.InOutArgument`1"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Workflow.Activities.SendEmail.EntityId">
+			<returns>Returns <see cref="T:System.Activities.OutArgument`1"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Workflow.Activities.SendEmailFromTemplate.Entity">
+			<returns>Returns <see cref="T:System.Activities.InOutArgument`1"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Workflow.Activities.SendEmailFromTemplate.EntityId">
+			<returns>Returns <see cref="T:System.Activities.OutArgument`1"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Workflow.Activities.SendEmailFromTemplate.RegardingId">
+			<returns>Returns <see cref="T:System.Activities.InArgument`1"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Workflow.Activities.SendEmailFromTemplate.RegardingType">
+			<returns>Returns <see cref="T:System.Activities.InArgument`1"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Workflow.Activities.SendEmailFromTemplate.TemplateId">
+			<returns>Returns <see cref="T:System.Activities.InArgument`1"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Workflow.Activities.SetEntityProperty.Attribute">
+			<returns>Returns <see cref="T:System.Activities.InArgument`1"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Workflow.Activities.SetEntityProperty.Entity">
+			<returns>Returns <see cref="T:System.Activities.InOutArgument`1"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Workflow.Activities.SetEntityProperty.EntityName">
+			<returns>Returns <see cref="T:System.Activities.InArgument`1"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Workflow.Activities.SetEntityProperty.TargetType">
+			<returns>Returns <see cref="T:System.Activities.InArgument`1"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Workflow.Activities.SetEntityProperty.Value">
+			<returns>Returns <see cref="T:System.Activities.InArgument`1"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Workflow.Activities.SetState.Entity">
+			<returns>Returns <see cref="T:System.Activities.OutArgument`1"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Workflow.Activities.SetState.EntityId">
+			<returns>Returns <see cref="T:System.Activities.InArgument`1"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Workflow.Activities.SetState.EntityName">
+			<returns>Returns <see cref="T:System.Activities.InArgument`1"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Workflow.Activities.SetState.State">
+			<returns>Returns <see cref="T:System.Activities.InArgument`1"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Workflow.Activities.SetState.Status">
+			<returns>Returns <see cref="T:System.Activities.InArgument`1"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Workflow.Activities.StartChildWorkflow.EntityId">
+			<returns>Returns <see cref="T:System.Activities.InArgument`1"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Workflow.Activities.StartChildWorkflow.EntityName">
+			<returns>Returns <see cref="T:System.Activities.InArgument`1"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Workflow.Activities.StartChildWorkflow.WorkflowId">
+			<returns>Returns <see cref="T:System.Activities.InArgument`1"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Workflow.Activities.UpdateEntity.Entity">
+			<returns>Returns <see cref="T:System.Activities.InOutArgument`1"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Workflow.Activities.UpdateEntity.EntityName">
+			<returns>Returns <see cref="T:System.Activities.InArgument`1"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Workflow.Activities.Workflow.Activities">
+			<returns>Returns <see cref="T:System.Collections.ObjectModel.Collection`1"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Workflow.Activities.Workflow.BookmarkCallback">
+			<returns>Returns <see cref="T:System.Activities.BookmarkCallback"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Workflow.Activities.Workflow.OnChildComplete">
+			<returns>Returns <see cref="T:System.Activities.CompletionCallback"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Workflow.Activities.Workflow.Variables">
+			<returns>Returns <see cref="T:System.Collections.ObjectModel.Collection`1"></see>.</returns>
+		</member>
+	</members>
+</doc>

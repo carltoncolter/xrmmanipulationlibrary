@@ -14,7 +14,6 @@ using ManipulationLibrary.Dates.Helpers;
 
 namespace ManipulationLibrary.Dates
 {
-    [WorkflowActivity("Subtract Business Days to Date", "Date Utilities")]
     public sealed class SubBusinessDays : CodeActivity
     {
 

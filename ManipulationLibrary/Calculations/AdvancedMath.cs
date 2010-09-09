@@ -13,7 +13,6 @@ using Microsoft.Xrm.Sdk.Workflow;
 
 namespace ManipulationLibrary.Calculations
 {
-    [WorkflowActivity("Solve Equation", "Calculation Utilities")]
     public sealed class AdvancedMath : CodeActivity
     {
         private void AddParameters(ActivityContext context, Dictionary<string, string> parameters)
