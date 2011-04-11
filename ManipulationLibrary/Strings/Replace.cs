@@ -15,7 +15,10 @@ namespace ManipulationLibrary.Strings
         {
             var text = Text.Get<string>(executionContext);
             var old = Old.Get<string>(executionContext);
+            
             var @new = New.Get<string>(executionContext);
+            if (@new == null) @new = String.Empty;
+
             var result = string.Empty;
             if (!CaseSensitive.Get<bool>(executionContext))
             {
