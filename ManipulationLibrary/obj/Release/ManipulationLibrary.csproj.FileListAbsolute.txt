@@ -24,3 +24,14 @@ C:\Users\carlcolt\Documents\Visual Studio 2010\Projects\ManipulationLibrary\Mani
 C:\Users\carlcolt\Documents\Visual Studio 2010\Projects\ManipulationLibrary\ManipulationLibrary\obj\Release\ResolveAssemblyReference.cache
 C:\Users\carlcolt\Documents\Visual Studio 2010\Projects\ManipulationLibrary\ManipulationLibrary\obj\Release\ManipulationLibrary.dll
 C:\Users\carlcolt\Documents\Visual Studio 2010\Projects\ManipulationLibrary\ManipulationLibrary\obj\Release\ManipulationLibrary.pdb
+D:\My Libraries\Projects\manipulationlibrary\ManipulationLibrary\bin\Release\ManipulationLibrary.dll
+D:\My Libraries\Projects\manipulationlibrary\ManipulationLibrary\bin\Release\ManipulationLibrary.pdb
+D:\My Libraries\Projects\manipulationlibrary\ManipulationLibrary\bin\Release\Microsoft.Crm.Sdk.Proxy.dll
+D:\My Libraries\Projects\manipulationlibrary\ManipulationLibrary\bin\Release\Microsoft.Xrm.Sdk.dll
+D:\My Libraries\Projects\manipulationlibrary\ManipulationLibrary\bin\Release\Microsoft.Xrm.Sdk.Workflow.dll
+D:\My Libraries\Projects\manipulationlibrary\ManipulationLibrary\bin\Release\Microsoft.Crm.Sdk.Proxy.xml
+D:\My Libraries\Projects\manipulationlibrary\ManipulationLibrary\bin\Release\Microsoft.Xrm.Sdk.xml
+D:\My Libraries\Projects\manipulationlibrary\ManipulationLibrary\bin\Release\Microsoft.Xrm.Sdk.Workflow.xml
+D:\My Libraries\Projects\manipulationlibrary\ManipulationLibrary\obj\Release\ResolveAssemblyReference.cache
+D:\My Libraries\Projects\manipulationlibrary\ManipulationLibrary\obj\Release\ManipulationLibrary.dll
+D:\My Libraries\Projects\manipulationlibrary\ManipulationLibrary\obj\Release\ManipulationLibrary.pdb

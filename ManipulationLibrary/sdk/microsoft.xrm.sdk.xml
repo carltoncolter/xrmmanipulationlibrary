@@ -122,6 +122,35 @@
 			<summary>constructor_initializesBooleanManagedProperty class</summary>
 			<param name="value">Sets the value of the BooleanManagedProperty.</param>
 		</member>
+		<member name="T:Microsoft.Xrm.Sdk.CallerImpersonationScope">
+			<summary>Identifies a user as the owner of all data changes made by calls to a Web service.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.CallerImpersonationScope.#ctor(Microsoft.Xrm.Sdk.IOrganizationService,System.Guid)">
+			<summary>constructor_initializesCallerImpersonationScope class.</summary>
+			<param name="service">Specifies an organization service object.</param>
+			<param name="callerId">Specifies the ID of the user that owns any data changes made by a call to the service.</param>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.CallerImpersonationScope.Dispose">
+			<summary>Disposes the CallerImpersonationScope object.</summary>
+		</member>
+		<member name="T:Microsoft.Xrm.Sdk.ClaimTypes">
+			<summary>Identifies the types of claims that are supported or may be supported in a future product release.</summary>
+		</member>
+		<member name="F:Microsoft.Xrm.Sdk.ClaimTypes.InitiatingUser">
+			<summary>Specifies an initiating user claim.</summary>
+		</member>
+		<member name="F:Microsoft.Xrm.Sdk.ClaimTypes.Organization">
+			<summary>Specifies an organization claim.</summary>
+		</member>
+		<member name="F:Microsoft.Xrm.Sdk.ClaimTypes.PluginAssembly">
+			<summary>Specifies a plug-in assembly claim.</summary>
+		</member>
+		<member name="F:Microsoft.Xrm.Sdk.ClaimTypes.PluginPublisher">
+			<summary>Specifies a plug-in publisher claim.</summary>
+		</member>
+		<member name="F:Microsoft.Xrm.Sdk.ClaimTypes.User">
+			<summary>Specifies a user claim.</summary>
+		</member>
 		<member name="M:Microsoft.Xrm.Sdk.DataCollection`1.ToArray">
 			<returns>Returns <see cref="{0}"></see>.</returns>
 		</member>
@@ -316,6 +345,9 @@
 			<summary>Gets or sets whether the results of the query exceeds the total record count.</summary>
 			<returns>Returns <see cref="T:System.Boolean"></see>.</returns>
 		</member>
+		<member name="T:Microsoft.Xrm.Sdk.EntityImageCollection">
+			<summary>Contains a collection of <see cref="T:Microsoft.Xrm.Sdk.Entity"></see> image objects.</summary>
+		</member>
 		<member name="M:Microsoft.Xrm.Sdk.EntityImageCollection.#ctor">
 			<summary>constructor_initializesEntityImageCollection class.</summary>
 		</member>
@@ -385,6 +417,9 @@
 		</member>
 		<member name="F:Microsoft.Xrm.Sdk.EntityState.Unchanged">
 			<summary>Indicates that the entity is unchanged since the last call to <see cref="M:Microsoft.Xrm.Sdk.Client.OrganizationServiceContext.SaveChanges"></see>.</summary>
+		</member>
+		<member name="T:Microsoft.Xrm.Sdk.ErrorDetailCollection">
+			<summary>Contains a collection of objects that provide details on an error.</summary>
 		</member>
 		<member name="M:Microsoft.Xrm.Sdk.ErrorDetailCollection.#ctor">
 			<summary>constructor_initializesErrorDetailCollection class.</summary>
@@ -604,7 +639,7 @@
 		<member name="M:Microsoft.Xrm.Sdk.IOrganizationServiceFactory.CreateOrganizationService(System.Nullable{System.Guid})">
 			<summary>Returns an <see cref="T:Microsoft.Xrm.Sdk.IOrganizationService"></see> instance for the organization that the specified user is a member of.</summary>
 			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.IOrganizationService"></see>.</returns>
-			<param name="userId">The global unique identifier of a system user.</param>
+			<param name="userId">Specifies the system user that calls to the service are made for.  A null value indicates the SYSTEM user. A Guid.Empty value indicates the same user as IPluginExecutionContext.<see cref="P:Microsoft.Xrm.Sdk.IExecutionContext.UserId"></see>. Any other value indicates a specific system user. </param>
 		</member>
 		<member name="T:Microsoft.Xrm.Sdk.IPlugin">
 			<summary>Base interface for a plug-in.</summary>
@@ -622,7 +657,14 @@
 		</member>
 		<member name="P:Microsoft.Xrm.Sdk.IPluginExecutionContext.Stage">
 			<summary>Gets the stage in the execution pipeline that a synchronous plug-in is registered for. </summary>
-			<returns>Returns <see cref="T:System.Int32"></see>. Valid values are 10, 20, 40, and 50.</returns>
+			<returns>Returns <see cref="T:System.Int32"></see>. Valid values are 10 (pre-validation), 20 (pre-operation), 40 (post-operation), and 50 (post-operation, deprecated).</returns>
+		</member>
+		<member name="T:Microsoft.Xrm.Sdk.IProxyTypesAssemblyProvider">
+			<summary>Provides the early-bound entity types assembly that was created using the CrmSvcUtil utility.</summary>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.IProxyTypesAssemblyProvider.ProxyTypesAssembly">
+			<summary>Gets or sets the assembly that contains the early-bound entity types.</summary>
+			<returns>Returns <see cref="T:System.Reflection.Assembly"></see>.</returns>
 		</member>
 		<member name="T:Microsoft.Xrm.Sdk.IServiceEndpointNotificationService">
 			<summary>Posts the plug-in execution context to the Windows Azure platform AppFabric Service Bus.</summary>
@@ -663,6 +705,20 @@
 			<summary>Executes plug-in code in response to an event.</summary>
 			<returns>Returns <see cref="T:System.String"></see>. The return value is sent back to pn_microsoftcrm over the service bus and received by the plug-in that initiated the original service bus post.</returns>
 			<param name="executionContext">Defines the contextual information passed to a plug-in at run-time.</param>
+		</member>
+		<member name="T:Microsoft.Xrm.Sdk.KnownTypesResolver">
+			<summary>Resolves known organization message request and response types for the SDK contracts.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.KnownTypesResolver.#ctor">
+			<summary>constructor_initializesKnownTypesResolver class.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.KnownTypesResolver.ResolveName(System.String,System.String,System.Type,System.Runtime.Serialization.DataContractResolver)">
+			<summary>Enables users to map a xsi:type name to any type.</summary>
+			<returns>Returns <see cref="T:System.Type"></see>.</returns>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.KnownTypesResolver.TryResolveType(System.Type,System.Type,System.Runtime.Serialization.DataContractResolver,System.Xml.XmlDictionaryString@,System.Xml.XmlDictionaryString@)">
+			<summary>Maps any type to a new xsi:type representation.</summary>
+			<returns>Returns <see cref="T:System.Boolean"></see>.</returns>
 		</member>
 		<member name="T:Microsoft.Xrm.Sdk.Label">
 			<summary>Contains a collection of translations for a label.</summary>
@@ -1148,6 +1204,80 @@
 			<summary>Gets the message for the fault.</summary>
 			<returns>Returns <see cref="T:System.String"></see>.</returns>
 		</member>
+		<member name="T:Microsoft.Xrm.Sdk.Client.AuthenticationProviderType">
+			<summary>Identifies the type of identity provider used for authentication.</summary>
+		</member>
+		<member name="F:Microsoft.Xrm.Sdk.Client.AuthenticationProviderType.ActiveDirectory">
+			<summary>Specifies an Active Directory identity provider.</summary>
+		</member>
+		<member name="F:Microsoft.Xrm.Sdk.Client.AuthenticationProviderType.Federation">
+			<summary>Specifies a federated claims identity provider.</summary>
+		</member>
+		<member name="F:Microsoft.Xrm.Sdk.Client.AuthenticationProviderType.LiveId">
+			<summary>Specifies a pn_Windows_Live_ID identity provider.</summary>
+		</member>
+		<member name="F:Microsoft.Xrm.Sdk.Client.AuthenticationProviderType.None">
+			<summary>Specifies no identity provider.</summary>
+		</member>
+		<member name="T:Microsoft.Xrm.Sdk.Client.CancelEventArgs">
+			<summary>Contains arguments for a cancel event.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Client.CancelEventArgs.#ctor">
+			<summary>constructor_initializesCancelEventArgs class.</summary>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Client.CancelEventArgs.Cancel">
+			<summary>When set to true, indicates a canceled event.</summary>
+			<returns>Returns <see cref="T:System.Boolean"></see>.</returns>
+		</member>
+		<member name="T:Microsoft.Xrm.Sdk.Client.ChannelEventArgs">
+			<summary>Contains arguments for a WCF channel event.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Client.ChannelEventArgs.#ctor(System.String)">
+			<summary>constructor_initializesChannelEventArgs class using a message.</summary>
+			<param name="message">A message describing the event.</param>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Client.ChannelEventArgs.Message">
+			<summary>Gets a message describing the event.</summary>
+			<returns>Returns <see cref="T:System.String"></see>.</returns>
+		</member>
+		<member name="T:Microsoft.Xrm.Sdk.Client.ChannelFaultedEventArgs">
+			<summary>Contains arguments for a faulted WCF channel event.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Client.ChannelFaultedEventArgs.#ctor(System.Exception)">
+			<summary>constructor_initializesChannelFaultedEventArgs class using an exception.</summary>
+			<param name="exception">An exception or null.</param>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Client.ChannelFaultedEventArgs.#ctor(System.String,System.Exception)">
+			<summary>constructor_initializesChannelFaultedEventArgs class using message and an exception.</summary>
+			<param name="exception">An exception or null.</param>
+			<param name="message">A message describing the event.</param>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Client.ChannelFaultedEventArgs.Exception">
+			<summary>Gets the exception related to the event.</summary>
+			<returns>Returns <see cref="T:System.Exception"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Client.ChannelFaultedEventArgs.Message">
+			<summary>Gets a message describing the event.</summary>
+			<returns>Returns <see cref="T:System.String"></see>.</returns>
+		</member>
+		<member name="T:Microsoft.Xrm.Sdk.Client.ClaimsPolicyConfiguration">
+			<summary>Contains a policy configuration that identifies a Secure Token Service for use with claims authentication.</summary>
+		</member>
+		<member name="T:Microsoft.Xrm.Sdk.Client.ClientAuthenticationType">
+			<summary>Specifies the type of authentication used by an SDK client.</summary>
+		</member>
+		<member name="F:Microsoft.Xrm.Sdk.Client.ClientAuthenticationType.Kerberos">
+			<summary>Specifies Kerberos authentication.</summary>
+		</member>
+		<member name="F:Microsoft.Xrm.Sdk.Client.ClientAuthenticationType.SecurityToken">
+			<summary>Specifies a security token for use with claims authentication.</summary>
+		</member>
+		<member name="T:Microsoft.Xrm.Sdk.Client.CrossRealmIssuerEndpointDictionary">
+			<summary>Contains a dictionary of remote issuer endpoints.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Client.CrossRealmIssuerEndpointDictionary.#ctor">
+			<summary>constructor_initializesCrossRealmIssuerEndpointDictionary class.</summary>
+		</member>
 		<member name="T:Microsoft.Xrm.Sdk.Client.DiscoveryServiceProxy">
 			<summary>Implements <see cref="T:Microsoft.Xrm.Sdk.Discovery.IDiscoveryService"></see> and provides an authenticated WCF channel to the discovery service endpoint.</summary>
 		</member>
@@ -1162,8 +1292,8 @@
 			<param name="serviceConfiguration">A service configuration.</param>
 		</member>
 		<member name="M:Microsoft.Xrm.Sdk.Client.DiscoveryServiceProxy.#ctor(System.Uri,System.Uri,System.ServiceModel.Description.ClientCredentials,System.ServiceModel.Description.ClientCredentials)">
-			<summary>Initializes a new instance of the DiscoveryServiceProxy class using a URI, home realm URI, and client and device credentials.</summary>
-			<param name="homeRealmUri">The URI of the home realm.</param>
+			<summary>Initializes a new instance of the DiscoveryServiceProxy class using a discovery service URI, home realm URI, and client and device credentials.</summary>
+			<param name="homeRealmUri">This parameter is set to a non-null value when a second ADFS instance is configured as an identity provider to the ADFS instance that pn_CRM_2011 has been configured with for claims authentication. The parameter value is the URI of the WS-Trust metadata endpoint of the second ADFS instance.</param>
 			<param name="deviceCredentials">The Windows Live ID device credentials.</param>
 			<param name="uri">The URI of the discovery service.</param>
 			<param name="clientCredentials">The logon credentials of the client.</param>
@@ -1171,6 +1301,145 @@
 		<member name="M:Microsoft.Xrm.Sdk.Client.DiscoveryServiceProxy.Execute(Microsoft.Xrm.Sdk.Discovery.DiscoveryRequest)">
 			<summary>See IDiscoveryService.<see cref="M:Microsoft.Xrm.Sdk.Discovery.IDiscoveryService.Execute(Microsoft.Xrm.Sdk.Discovery.DiscoveryRequest)"></see></summary>
 			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.Discovery.DiscoveryResponse"></see>.</returns>
+		</member>
+		<member name="T:Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute">
+			<summary>Identifies the logical name of an entity.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute.#ctor(System.String)">
+			<summary>constructor_initializesEntityLogicalNameAttribute class.</summary>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute.LogicalName">
+			<summary>Gets the logical name of the entity.</summary>
+			<returns>Returns <see cref="T:System.String"></see>.</returns>
+		</member>
+		<member name="T:Microsoft.Xrm.Sdk.Client.IServiceConfiguration`1">
+			<summary>Represents a configured pn_microsoftcrm service.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Client.IServiceConfiguration`1.Authenticate(System.ServiceModel.Description.ClientCredentials)">
+			<summary>Authenticates against the trusted pn_microsoftcrm Secure Token Service using client credentials. </summary>
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.Client.SecurityTokenResponse"></see>. Returns null when the service is in Active Directory mode. A non-null value is returned when in federated mode.</returns>
+			<param name="clientCredentials">Specifies a client credential instance containing either Windowshttp://msdn.microsoft.com/en-us/library/system.servicemodel.description.clientcredentials.windows.aspx credentials or UserNamehttp://msdn.microsoft.com/en-us/library/system.servicemodel.description.clientcredentials.username.aspx credentials.</param>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Client.IServiceConfiguration`1.Authenticate(System.IdentityModel.Tokens.SecurityToken)">
+			<summary>Authenticates against the trusted pn_microsoftcrm Secure Token Service using a security token.</summary>
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.Client.SecurityTokenResponse"></see>. </returns>
+			<param name="securityToken">A security token retrieved from an identity provider other than the trusted pn_microsoftcrm Secure Token Service (when in federation mode).</param>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Client.IServiceConfiguration`1.Authenticate(System.ServiceModel.Description.ClientCredentials,Microsoft.Xrm.Sdk.Client.SecurityTokenResponse)">
+			<summary>Authenticates against pn_Windows_Live_ID  using client credentials and a security token response.</summary>
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.Client.SecurityTokenResponse"></see>.</returns>
+			<param name="clientCredentials">Specifies a client credential instance containing UserNamehttp://msdn.microsoft.com/en-us/library/system.servicemodel.description.clientcredentials.username.aspx credentials where the UserName and Password properties are set.</param>
+			<param name="deviceSecurityToken">A security token response received from authenticating the user's device with pn_Windows_Live_ID.</param>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Client.IServiceConfiguration`1.AuthenticateCrossRealm(System.ServiceModel.Description.ClientCredentials,System.String,System.Uri)">
+			<summary>Authenticates against a remote Secure Token Service (STS) using client credentials.</summary>
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.Client.SecurityTokenResponse"></see>.</returns>
+			<param name="crossRealmSts">Specifies the URI of the cross realm STS metadata endpoint.</param>
+			<param name="clientCredentials">Specifies a client credentials instance with the Windows  credentials or the UserName (.UserName and .Password) set.</param>
+			<param name="appliesTo">Specifies the identifier of the STS to authenticate on behalf of.</param>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Client.IServiceConfiguration`1.AuthenticateCrossRealm(System.IdentityModel.Tokens.SecurityToken,System.String,System.Uri)">
+			<summary>Authenticates against a remote Secure Token Service (STS) using a security token retrieved from an identity provider (when in federation mode).</summary>
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.Client.SecurityTokenResponse"></see>.</returns>
+			<param name="crossRealmSts">Specifies the URI of the cross realm STS metadata endpoint.</param>
+			<param name="securityToken">Specifies a security token issued from an identity provider.</param>
+			<param name="appliesTo">Specifies the identifier of the STS to authenticate on behalf of.</param>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Client.IServiceConfiguration`1.AuthenticateDevice(System.ServiceModel.Description.ClientCredentials)">
+			<summary>Authenticates a registered device against pn_Windows_Live_ID.</summary>
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.Client.SecurityTokenResponse"></see>.</returns>
+			<param name="clientCredentials">Specifies a client credential instance.</param>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Client.IServiceConfiguration`1.CreateChannelFactory">
+			<summary>Creates a client factory that uses the default Kerberos credentials.</summary>
+			<returns>Returns <see cref="T:System.ServiceModel.ChannelFactory`1"></see>.</returns>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Client.IServiceConfiguration`1.CreateChannelFactory(Microsoft.Xrm.Sdk.Client.ClientAuthenticationType)">
+			<summary>Creates a client factory that can use the default Kerberos credentials or support a security token during channel creation.</summary>
+			<returns>Returns <see cref="T:System.ServiceModel.ChannelFactory`1"></see>.</returns>
+			<param name="clientAuthenticationType">Specify a client authentication type of <see cref="T:Microsoft.Xrm.Sdk.Client.ClientAuthenticationType"></see>.Kerberos or <see cref="T:Microsoft.Xrm.Sdk.Client.ClientAuthenticationType"></see>.SecurityToken.</param>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Client.IServiceConfiguration`1.CreateChannelFactory(System.ServiceModel.Description.ClientCredentials)">
+			<summary>Creates a channel factory that supports passing the client credentials, regardless of whether in federation authentication mode or not.</summary>
+			<returns>Returns <see cref="T:System.ServiceModel.ChannelFactory`1"></see>.</returns>
+			<param name="clientCredentials">Specifies client authentication credentials.</param>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Client.IServiceConfiguration`1.AuthenticationType">
+			<summary>Gets the type of authentication, either federated claims or Active Directory, supported by the service.</summary>
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.Client.AuthenticationProviderType"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Client.IServiceConfiguration`1.CrossRealmIssuerEndpoints">
+			<summary>Gets the Secure Token Service (STS) issuer endpoints.</summary>
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.Client.CrossRealmIssuerEndpointDictionary"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Client.IServiceConfiguration`1.CurrentIssuer">
+			<summary>Gets or sets the endpoint used by the Secure Token Service (STS) to issue the trusted token.</summary>
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.Client.IssuerEndpoint"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Client.IServiceConfiguration`1.CurrentServiceEndpoint">
+			<summary>Gets or sets the current service endpoint.</summary>
+			<returns>Returns <see cref="T:System.ServiceModel.Description.ServiceEndpoint"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Client.IServiceConfiguration`1.IssuerEndpoints">
+			<summary>Gets a dictionary of endpoints, containing the URLs and binding information required to use a configured Secure Token Service (STS), for issuing a trusted token.</summary>
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.Client.IssuerEndpointDictionary"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Client.IServiceConfiguration`1.PolicyConfiguration">
+			<summary>Gets the policy configuration of the service endpoint.</summary>
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.Client.PolicyConfiguration"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Client.IServiceConfiguration`1.ServiceEndpoints">
+			<summary>Gets the service endpoints.</summary>
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.Client.ServiceEndpointDictionary"></see>.</returns>
+		</member>
+		<member name="T:Microsoft.Xrm.Sdk.Client.IssuerEndpoint">
+			<summary>Represents an issuer endpoint.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Client.IssuerEndpoint.#ctor">
+			<summary>constructor_initializesIssuerEndpoint class.</summary>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Client.IssuerEndpoint.CredentialType">
+			<summary>Gets or sets the type of credentials the endpoint supports.</summary>
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.Client.TokenServiceCredentialType"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Client.IssuerEndpoint.IssuerAddress">
+			<summary>Gets or sets the actual URL that provides authentication for a particular credential type.</summary>
+			<returns>Returns <see cref="T:System.ServiceModel.EndpointAddress"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Client.IssuerEndpoint.IssuerBinding">
+			<summary>Gets or sets the binding information used to construct a channel to the issuer endpoint from a client.</summary>
+			<returns>Returns <see cref="T:System.ServiceModel.Channels.Binding"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Client.IssuerEndpoint.IssuerMetadataAddress">
+			<summary>Gets or sets the URL that provides metadata about the set of issuer endpoints hosted by a Secure Token Service (STS).</summary>
+			<returns>Returns <see cref="T:System.ServiceModel.EndpointAddress"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Client.IssuerEndpoint.TrustVersion">
+			<summary>Gets or sets the WS-Trust standard, either 1.3 or 2005, that is supported on the endpoint. </summary>
+			<returns>Returns <see cref="T:System.ServiceModel.Security.TrustVersion"></see>.</returns>
+		</member>
+		<member name="T:Microsoft.Xrm.Sdk.Client.IssuerEndpointDictionary">
+			<summary>Contains a dictionary of <see cref="T:Microsoft.Xrm.Sdk.Client.IssuerEndpoint"></see> objects.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Client.IssuerEndpointDictionary.#ctor">
+			<summary>constructor_initializesIssuerEndpointDictionary class.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Client.IssuerEndpointDictionary.GetIssuerEndpoint(Microsoft.Xrm.Sdk.Client.TokenServiceCredentialType)">
+			<summary>Obtains the issuer endpoint from a Secure Token Service.</summary>
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.Client.IssuerEndpoint"></see>.</returns>
+			<param name="credentialType">Specifies the credential type used by the issuer endpoint.</param>
+		</member>
+		<member name="T:Microsoft.Xrm.Sdk.Client.LiveIdDeviceSecurityTokenHandler">
+			<summary>internal</summary>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Client.LiveIdDeviceSecurityTokenHandler.CanWriteToken">
+			<returns>Returns <see cref="T:System.Boolean"></see>.</returns>
+		</member>
+		<member name="T:Microsoft.Xrm.Sdk.Client.LiveIdPolicyConfiguration">
+			<summary>Contains a policy configuration that identifies a Secure Token Service for use with pn_Windows_Live_ID authentication.</summary>
+		</member>
+		<member name="T:Microsoft.Xrm.Sdk.Client.LiveIdRequestSecurityTokenSerializer">
+			<summary>internal</summary>
 		</member>
 		<member name="T:Microsoft.Xrm.Sdk.Client.MergeOption">
 			<summary>Specifies the synchronization option for sending or receiving entity data to or from a data service using the <see cref="T:Microsoft.Xrm.Sdk.Client.OrganizationServiceContext"></see>.</summary>
@@ -1353,8 +1622,8 @@
 			<param name="serviceConfiguration">A service configuration.</param>
 		</member>
 		<member name="M:Microsoft.Xrm.Sdk.Client.OrganizationServiceProxy.#ctor(System.Uri,System.Uri,System.ServiceModel.Description.ClientCredentials,System.ServiceModel.Description.ClientCredentials)">
-			<summary>Initializes a new instance of the OrganizationServiceProxy class using a URI, home realm URI, and client and device credentials.</summary>
-			<param name="homeRealmUri">The URI of the home realm.</param>
+			<summary>Initializes a new instance of the OrganizationServiceProxy class using a discovery service URI, home realm URI, and client and device credentials.</summary>
+			<param name="homeRealmUri">This parameter is set to a non-null value when a second ADFS instance is configured as an identity provider to the ADFS instance that pn_CRM_2011 has been configured with for claims authentication. The parameter value is the URI of the WS-Trust metadata endpoint of the second ADFS instance.</param>
 			<param name="deviceCredentials">The Windows Live ID device credentials.</param>
 			<param name="uri">The URI of the discovery service.</param>
 			<param name="clientCredentials">The logon credentials of the client.</param>
@@ -1430,6 +1699,51 @@
 			<summary>internal</summary>
 			<returns>Returns <see cref="T:System.String"></see>.</returns>
 		</member>
+		<member name="T:Microsoft.Xrm.Sdk.Client.PolicyConfiguration">
+			<summary>Contains a policy configuration that identifies a Secure Token Service (STS).</summary>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Client.PolicyConfiguration.SecureTokenServiceIdentifier">
+			<summary>Gets an identifier of a Secure Token Service (STS) provider.</summary>
+			<returns>Returns <see cref="T:System.String"></see>.</returns>
+		</member>
+		<member name="T:Microsoft.Xrm.Sdk.Client.ProxyTypesAssemblyAttribute">
+			<summary>Indicates that the assembly contains early-bound types generated by the CrmSvcUtil utility.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Client.ProxyTypesAssemblyAttribute.#ctor">
+			<summary>constructor_initializesProxyTypesAssemblyAttribute class.</summary>
+		</member>
+		<member name="T:Microsoft.Xrm.Sdk.Client.ProxyTypesBehavior">
+			<summary>Enables early-bound entity types on a service proxy.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Client.ProxyTypesBehavior.#ctor">
+			<summary>constructor_initializesProxyTypesBehavior class.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Client.ProxyTypesBehavior.#ctor(System.Reflection.Assembly)">
+			<summary>constructor_initializesProxyTypesBehavior class using an assembly containing proxy types generated by the CrmSvcUtil utility.</summary>
+			<param name="proxyTypesAssembly">Specifies an assembly containing proxy types.</param>
+		</member>
+		<member name="T:Microsoft.Xrm.Sdk.Client.RequestProxyAttribute">
+			<summary>Indicates the name of the message request, represented by the SdkMessageRequest entity, to which the request corresponds.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Client.RequestProxyAttribute.#ctor(System.String)">
+			<summary>constructor_initializesRequestProxyAttribute class.</summary>
+			<param name="name">Specifies the name of the message request.</param>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Client.RequestProxyAttribute.Name">
+			<summary>Gets the name of the message request.</summary>
+			<returns>Returns <see cref="T:System.String"></see>.</returns>
+		</member>
+		<member name="T:Microsoft.Xrm.Sdk.Client.ResponseProxyAttribute">
+			<summary>Indicates the name of the message response, represented by the SdkMessageResponse entity, to which the response corresponds.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Client.ResponseProxyAttribute.#ctor(System.String)">
+			<summary>constructor_initializesResponseProxyAttribute class.</summary>
+			<param name="name">Specifies the name of the message response.</param>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Client.ResponseProxyAttribute.Name">
+			<summary>Gets the name of the message response.</summary>
+			<returns>Returns <see cref="T:System.String"></see>.</returns>
+		</member>
 		<member name="T:Microsoft.Xrm.Sdk.Client.SaveChangesOptions">
 			<summary>Specifies how the <see cref="M:Microsoft.Xrm.Sdk.Client.OrganizationServiceContext.SaveChanges"></see> method behaves when an error occurs while updating data in pn_microsoftcrm.</summary>
 		</member>
@@ -1439,17 +1753,243 @@
 		<member name="F:Microsoft.Xrm.Sdk.Client.SaveChangesOptions.None">
 			<summary>Specifies that the <see cref="M:Microsoft.Xrm.Sdk.Client.OrganizationServiceContext.SaveChanges"></see> method should throw an exception when an error occurs while updating data in pn_microsoftcrm.</summary>
 		</member>
+		<member name="T:Microsoft.Xrm.Sdk.Client.SecurityTokenResponse">
+			<summary>Represents a security token response.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Client.SecurityTokenResponse.#ctor">
+			<summary>constructor_initializesSecurityTokenResponse class.</summary>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Client.SecurityTokenResponse.Response">
+			<summary>Gets or sets a security token request response.</summary>
+			<returns>Returns <see cref="T:Microsoft.IdentityModel.Protocols.WSTrust.RequestSecurityTokenResponse"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Client.SecurityTokenResponse.Token">
+			<summary>Gets or sets a security token.</summary>
+			<returns>Returns <see cref="T:System.IdentityModel.Tokens.SecurityToken"></see>.</returns>
+		</member>
+		<member name="T:Microsoft.Xrm.Sdk.Client.ServiceChannel`1">
+			<summary>Represents a communication channel to a pn_microsoftcrm service.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Client.ServiceChannel`1.#ctor(System.ServiceModel.ChannelFactory{`0})">
+			<summary>constructor_initializesServiceChannel class using a channel factory. internal</summary>
+			<param name="factory">A channel factory.</param>
+		</member>
+		<member name="E:Microsoft.Xrm.Sdk.Client.ServiceChannel`1.ChannelClosed">
+			<summary>Occurs when a service channel transitions into the closed state.</summary>
+		</member>
+		<member name="E:Microsoft.Xrm.Sdk.Client.ServiceChannel`1.ChannelFaulted">
+			<summary>Occurs when a service channel transitions into the faulted state.</summary>
+		</member>
+		<member name="E:Microsoft.Xrm.Sdk.Client.ServiceChannel`1.ChannelOpened">
+			<summary>Occurs when a service channel transitions into the opened state.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Client.ServiceChannel`1.Abort">
+			<summary>Causes a service channel to transition immediately from its current state into the closing state.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Client.ServiceChannel`1.Close">
+			<summary>Causes a service channel to transition from its current state into the closed state.</summary>
+		</member>
 		<member name="M:Microsoft.Xrm.Sdk.Client.ServiceChannel`1.CreateChannel">
+			<summary>Creates a new service channel that is in the created state.</summary>
 			<returns>Returns <see cref="{0}"></see>.</returns>
 		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Client.ServiceChannel`1.Dispose">
+			<summary>Disposes the service channel.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Client.ServiceChannel`1.Finalize">
+			<summary>Finalizes the service channel.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Client.ServiceChannel`1.OnChannelClosed(Microsoft.Xrm.Sdk.Client.ChannelEventArgs)">
+			<summary>Inserts processing on a service channel after it transitions to the closing state due to the invocation of a synchronous close operation.</summary>
+			<param name="args">Channel event arguments.</param>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Client.ServiceChannel`1.OnChannelFaulted(Microsoft.Xrm.Sdk.Client.ChannelFaultedEventArgs)">
+			<summary>Inserts processing on a service channel after it transitions to the faulted state due to the invocation of a synchronous operation.</summary>
+			<param name="args">Channel faulted event arguments.</param>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Client.ServiceChannel`1.OnChannelOpened(Microsoft.Xrm.Sdk.Client.ChannelEventArgs)">
+			<summary>Inserts processing on a service channel after it transitions into the opening state which must complete within a specified interval of time.</summary>
+			<param name="args">Channel event arguments.</param>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Client.ServiceChannel`1.Open">
+			<summary>Causes a service channel to transition from the created state into the opened state.</summary>
+		</member>
 		<member name="P:Microsoft.Xrm.Sdk.Client.ServiceChannel`1.Channel">
+			<summary>Gets the channel that is associated with the service channel.</summary>
 			<returns>Returns <see cref="{0}"></see>.</returns>
 		</member>
 		<member name="P:Microsoft.Xrm.Sdk.Client.ServiceChannel`1.CommunicationObject">
+			<summary>Gets the System.ServiceModel.Channels.CommunicationObjecthttp://msdn.microsoft.com/en-us/library/system.servicemodel.channels.communicationobject.aspx that is associated with the service channel.</summary>
 			<returns>Returns <see cref="T:System.ServiceModel.ICommunicationObject"></see>.</returns>
 		</member>
 		<member name="P:Microsoft.Xrm.Sdk.Client.ServiceChannel`1.Factory">
+			<summary>Gets the channel factory associated with the service channel.</summary>
 			<returns>Returns <see cref="T:System.ServiceModel.ChannelFactory`1"></see>.</returns>
+		</member>
+		<member name="T:Microsoft.Xrm.Sdk.Client.ServiceConfigurationFactory">
+			<summary>Represents a client factory for creating service configurations.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Client.ServiceConfigurationFactory.CreateConfiguration``1(System.Uri)">
+			<summary>Creates a service configuration.</summary>
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.Client.IServiceConfiguration`1"></see>.</returns>
+			<param name="serviceUri">Specifies the service’s URI.</param>
+		</member>
+		<member name="T:Microsoft.Xrm.Sdk.Client.ServiceEndpointDictionary">
+			<summary>Contains a dictionary of ServiceEndpoint objects.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Client.ServiceEndpointDictionary.#ctor">
+			<summary>constructor_initializesServiceEndpointDictionary class.</summary>
+		</member>
+		<member name="T:Microsoft.Xrm.Sdk.Client.ServiceProxy`1">
+			<summary>Provides an abstract base class to encapsulate service connection operations and user authentication management.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Client.ServiceProxy`1.#ctor(Microsoft.Xrm.Sdk.Client.IServiceConfiguration{`0},System.ServiceModel.Description.ClientCredentials)">
+			<summary>constructor_initializesServiceProxy class using a service configuration and client logon credentials.</summary>
+			<param name="clientCredentials">The logon credentials of the client.</param>
+			<param name="serviceConfiguration">A service configuration.</param>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Client.ServiceProxy`1.#ctor(Microsoft.Xrm.Sdk.Client.IServiceConfiguration{`0},Microsoft.Xrm.Sdk.Client.SecurityTokenResponse)">
+			<summary>constructor_initializesServiceProxy class using a service configuration and security token response. </summary>
+			<param name="securityTokenResponse">A security token response.</param>
+			<param name="serviceConfiguration">A service configuration.</param>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Client.ServiceProxy`1.#ctor(System.Uri,System.Uri,System.ServiceModel.Description.ClientCredentials,System.ServiceModel.Description.ClientCredentials)">
+			<summary>constructor_initializesServiceProxy class using a service URI, a home realm URI, client logon credentials, and Windows Live device credentials.</summary>
+			<param name="homeRealmUri">The URI of the WS-Trust metadata endpoint of a second ADFS instance.</param>
+			<param name="deviceCredentials">The credentials of a device registered with Windows Live. Only required when authenticating with pn_crm_online, otherwise use null.</param>
+			<param name="uri">The URI of the service.</param>
+			<param name="clientCredentials">The client’s logon credentials.</param>
+		</member>
+		<member name="E:Microsoft.Xrm.Sdk.Client.ServiceProxy`1.FactoryClosed">
+			<summary>An event that is raised when a channel factory is closed. </summary>
+		</member>
+		<member name="E:Microsoft.Xrm.Sdk.Client.ServiceProxy`1.FactoryFaulted">
+			<summary>An event that is raised when a channel factory is faulted.</summary>
+		</member>
+		<member name="E:Microsoft.Xrm.Sdk.Client.ServiceProxy`1.FactoryOpened">
+			<summary>An event that is raised when a channel factory is opened.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Client.ServiceProxy`1.Authenticate">
+			<summary>Closes the service channel and channel factory if they are open, and then invokes <see cref="M:Microsoft.Xrm.Sdk.Client.ServiceProxy`1.AuthenticateCore"></see>.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Client.ServiceProxy`1.AuthenticateCore">
+			<summary>Authenticates the client with a service.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Client.ServiceProxy`1.AuthenticateCrossRealm">
+			<summary>Invokes <see cref="M:Microsoft.Xrm.Sdk.Client.ServiceProxy`1.AuthenticateCrossRealmCore"></see>.</summary>
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.Client.SecurityTokenResponse"></see>.</returns>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Client.ServiceProxy`1.AuthenticateCrossRealmCore">
+			<summary>Authenticates a user in a realm other than the realm that the pn_microsoftcrm server is located in.</summary>
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.Client.SecurityTokenResponse"></see>.</returns>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Client.ServiceProxy`1.AuthenticateDevice">
+			<summary>Invokes <see cref="M:Microsoft.Xrm.Sdk.Client.ServiceProxy`1.AuthenticateDeviceCore"></see>.</summary>
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.Client.SecurityTokenResponse"></see>.</returns>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Client.ServiceProxy`1.AuthenticateDeviceCore">
+			<summary>Authenticates a device with Windows Live.</summary>
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.Client.SecurityTokenResponse"></see>.</returns>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Client.ServiceProxy`1.CloseChannel(System.Boolean)">
+			<summary>Closes a validated service channel.</summary>
+			<param name="forceClose">Set to true to close the service channel.</param>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Client.ServiceProxy`1.Dispose(System.Boolean)">
+			<summary>Custom implementation of Dispose that disposes the service channel and channel factory.</summary>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Client.ServiceProxy`1.OnFactoryClosed(Microsoft.Xrm.Sdk.Client.ChannelEventArgs)">
+			<summary>Event handler virtual method for a channel factory that is in a closed state.</summary>
+			<param name="args">Channel events arguments.</param>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Client.ServiceProxy`1.OnFactoryFaulted(Microsoft.Xrm.Sdk.Client.ChannelFaultedEventArgs)">
+			<summary>Event handler virtual method for a channel factory that is in a faulted state.</summary>
+			<param name="args">Faulted channel event arguments.</param>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Client.ServiceProxy`1.OnFactoryOpened(Microsoft.Xrm.Sdk.Client.ChannelEventArgs)">
+			<summary>Event handler virtual method for a channel factory that is in an opened state.</summary>
+			<param name="args">Channel event arguments.</param>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Client.ServiceProxy`1.SetBindingTimeout(System.ServiceModel.Channels.Binding,System.TimeSpan,System.TimeSpan,System.TimeSpan)">
+			<summary>The maximum amount of time a single channel operation has to complete before a timeout fault is raised on a service channel binding.</summary>
+			<param name="closeTimeout">A close operation timespan.</param>
+			<param name="openTimeout">An open operation timespan.</param>
+			<param name="sendTimeout">A send operation timespan.</param>
+			<param name="binding">The target channel binding.</param>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Client.ServiceProxy`1.ShouldRetry(System.ServiceModel.Security.MessageSecurityException,System.Nullable{System.Boolean})">
+			<summary>Not documented in this release.</summary>
+			<returns>Returns <see cref="T:System.Nullable`1"></see>.</returns>
+		</member>
+		<member name="M:Microsoft.Xrm.Sdk.Client.ServiceProxy`1.ValidateAuthentication">
+			<summary>Authenticates the client and creates a new service channel.</summary>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Client.ServiceProxy`1.ChannelFactory">
+			<summary>A WCF channel factory that manages a single channel instance.</summary>
+			<returns>Returns <see cref="T:System.ServiceModel.ChannelFactory`1"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Client.ServiceProxy`1.ClientCredentials">
+			<summary>The login credentials of the client.</summary>
+			<returns>Returns <see cref="T:System.ServiceModel.Description.ClientCredentials"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Client.ServiceProxy`1.DeviceCredentials">
+			<summary>The Windows Live credentials of a registered device.</summary>
+			<returns>Returns <see cref="T:System.ServiceModel.Description.ClientCredentials"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Client.ServiceProxy`1.HomeRealmSecurityTokenResponse">
+			<summary>The security token response of the home realm.</summary>
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.Client.SecurityTokenResponse"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Client.ServiceProxy`1.HomeRealmUri">
+			<summary>The home realm URI.</summary>
+			<returns>Returns <see cref="T:System.Uri"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Client.ServiceProxy`1.IsAuthenticated">
+			<summary>When set to true, the created WCF channel has been authenticated.</summary>
+			<returns>Returns <see cref="T:System.Boolean"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Client.ServiceProxy`1.SecurityTokenResponse">
+			<summary>The security token response.</summary>
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.Client.SecurityTokenResponse"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Client.ServiceProxy`1.ServiceChannel">
+			<summary>The communication channel used to access a pn_microsoftcrm service.</summary>
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.Client.ServiceChannel`1"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Client.ServiceProxy`1.ServiceConfiguration">
+			<summary>A service configuration.</summary>
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.Client.IServiceConfiguration`1"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Xrm.Sdk.Client.ServiceProxy`1.Timeout">
+			<summary>The maximum amount of time a single channel operation has to complete before a timeout fault is raised on a service channel binding.</summary>
+			<returns>Returns <see cref="T:System.TimeSpan"></see>.</returns>
+		</member>
+		<member name="T:Microsoft.Xrm.Sdk.Client.TokenServiceCredentialType">
+			<summary>Specifies the kinds of credentials accepted by a security token service.</summary>
+		</member>
+		<member name="F:Microsoft.Xrm.Sdk.Client.TokenServiceCredentialType.AsymmetricToken">
+			<summary>Specifies an asymmetric credential token.</summary>
+		</member>
+		<member name="F:Microsoft.Xrm.Sdk.Client.TokenServiceCredentialType.Certificate">
+			<summary>Specifies a certificate configured for user identification.</summary>
+		</member>
+		<member name="F:Microsoft.Xrm.Sdk.Client.TokenServiceCredentialType.Kerberos">
+			<summary>Specifies a Kerberos credential.</summary>
+		</member>
+		<member name="F:Microsoft.Xrm.Sdk.Client.TokenServiceCredentialType.None">
+			<summary>Specifies no credential endpoint is found.</summary>
+		</member>
+		<member name="F:Microsoft.Xrm.Sdk.Client.TokenServiceCredentialType.SymmetricToken">
+			<summary>Specifies a symmetric credential token.</summary>
+		</member>
+		<member name="F:Microsoft.Xrm.Sdk.Client.TokenServiceCredentialType.Username">
+			<summary>Specifies a username and password credential.</summary>
+		</member>
+		<member name="F:Microsoft.Xrm.Sdk.Client.TokenServiceCredentialType.Windows">
+			<summary>Specifies an integrated Windows authentication credential.</summary>
+		</member>
+		<member name="T:Microsoft.Xrm.Sdk.Client.WindowsPolicyConfiguration">
+			<summary>Contains a policy configuration that identifies an Active Directory provider.</summary>
 		</member>
 		<member name="T:Microsoft.Xrm.Sdk.Client.XrmBinding">
 			<summary>internal</summary>
@@ -1543,7 +2083,7 @@
 			<summary>Indicates default access. The actual access is determined by the endpoint URL.</summary>
 		</member>
 		<member name="F:Microsoft.Xrm.Sdk.Discovery.EndpointAccessType.Internet">
-			<summary>Indicates internet access.</summary>
+			<summary>Indicates Internet access.</summary>
 		</member>
 		<member name="F:Microsoft.Xrm.Sdk.Discovery.EndpointAccessType.Intranet">
 			<summary>Indicates intranet access.</summary>
@@ -1976,7 +2516,7 @@
 			<summary>constructor_initializesCreateResponse class.</summary>
 		</member>
 		<member name="P:Microsoft.Xrm.Sdk.Messages.CreateResponse.id">
-			<summary>Gets the ID of the newly created entity instance.</summary>
+			<summary>Gets the ID of the newly created record.</summary>
 			<returns>Returns <see cref="T:System.Guid"></see>.</returns>
 		</member>
 		<member name="T:Microsoft.Xrm.Sdk.Messages.DeleteAttributeRequest">
@@ -4765,7 +5305,7 @@
 			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.DataCollection`1"></see>.</returns>
 		</member>
 		<member name="P:Microsoft.Xrm.Sdk.Query.QueryExpression.NoLock">
-			<summary>TBD</summary>
+			<summary>Gets or sets a value that indicates that no shared locks are issued against the data that would prohibit other transactions from modifying the data in the records returned from the query.</summary>
 			<returns>Returns <see cref="T:System.Boolean"></see>.</returns>
 		</member>
 		<member name="P:Microsoft.Xrm.Sdk.Query.QueryExpression.Orders">

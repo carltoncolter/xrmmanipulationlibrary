@@ -1,5 +1,5 @@
 ﻿// ==================================================================================
-//  Project:	Manipulation Library for Microsoft Dynamics CRM 4.0
+//  Project:	Manipulation Library for Microsoft Dynamics CRM 2011
 //  File:		FormatRegex.cs
 //  Summary:	This workflow activity formats a string using regular expression
 // ==================================================================================

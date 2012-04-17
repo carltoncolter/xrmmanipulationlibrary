@@ -468,11 +468,11 @@
 			<summary>constructor_initializesAssignEntity class.</summary>
 		</member>
 		<member name="P:Microsoft.Xrm.Sdk.Workflow.Activities.AssignEntity.Entity">
-			<summary>Gets the resulting entity instance (record) following the assignment to a new owner.</summary>
+			<summary>Gets the resulting record following the assignment to a new owner.</summary>
 			<returns>Returns <see cref="T:System.Activities.OutArgument`1"></see>.</returns>
 		</member>
 		<member name="P:Microsoft.Xrm.Sdk.Workflow.Activities.AssignEntity.EntityId">
-			<summary>Sets the ID of the entity instance to assign.</summary>
+			<summary>Sets the ID of the record to assign.</summary>
 			<returns>Returns <see cref="T:System.Activities.InArgument`1"></see>.</returns>
 		</member>
 		<member name="P:Microsoft.Xrm.Sdk.Workflow.Activities.AssignEntity.EntityName">
@@ -484,21 +484,21 @@
 			<returns>Returns <see cref="T:System.Activities.InArgument`1"></see>.</returns>
 		</member>
 		<member name="T:Microsoft.Xrm.Sdk.Workflow.Activities.CreateEntity">
-			<summary>Creates an entity instance (record).</summary>
+			<summary>Creates an record.</summary>
 		</member>
 		<member name="M:Microsoft.Xrm.Sdk.Workflow.Activities.CreateEntity.#ctor">
 			<summary>constructor_initializesCreateEntity class.</summary>
 		</member>
 		<member name="P:Microsoft.Xrm.Sdk.Workflow.Activities.CreateEntity.Entity">
-			<summary>Gets or sets the entity instance (record.</summary>
+			<summary>Gets or sets the record.</summary>
 			<returns>Returns <see cref="T:System.Activities.InOutArgument`1"></see>.</returns>
 		</member>
 		<member name="P:Microsoft.Xrm.Sdk.Workflow.Activities.CreateEntity.EntityId">
-			<summary>Gets the ID of the entity instance (record) that was created.</summary>
+			<summary>Gets the ID of the record that was created.</summary>
 			<returns>Returns <see cref="T:System.Activities.OutArgument`1"></see>.</returns>
 		</member>
 		<member name="P:Microsoft.Xrm.Sdk.Workflow.Activities.CreateEntity.EntityName">
-			<summary>Sets the logical entity name of the entity instance to create.</summary>
+			<summary>Sets the logical entity name of the record to create.</summary>
 			<returns>Returns <see cref="T:System.Activities.InArgument`1"></see>.</returns>
 		</member>
 		<member name="T:Microsoft.Xrm.Sdk.Workflow.Activities.GetEntityProperty">
@@ -585,7 +585,7 @@
 			<returns>Returns <see cref="T:System.String"></see>.</returns>
 		</member>
 		<member name="T:Microsoft.Xrm.Sdk.Workflow.Activities.RetrieveEntity">
-			<summary>Retrieves an entity instance (record).</summary>
+			<summary>Retrieves a record.</summary>
 		</member>
 		<member name="M:Microsoft.Xrm.Sdk.Workflow.Activities.RetrieveEntity.#ctor">
 			<summary>constructor_initializesRetrieveEntity class.</summary>
@@ -595,11 +595,11 @@
 			<returns>Returns <see cref="T:System.Activities.InArgument`1"></see>.</returns>
 		</member>
 		<member name="P:Microsoft.Xrm.Sdk.Workflow.Activities.RetrieveEntity.Entity">
-			<summary>Gets the retrieved entity instance (record).</summary>
+			<summary>Gets the retrieved record.</summary>
 			<returns>Returns <see cref="T:System.Activities.OutArgument`1"></see>.</returns>
 		</member>
 		<member name="P:Microsoft.Xrm.Sdk.Workflow.Activities.RetrieveEntity.EntityId">
-			<summary>Sets the ID of the entity instance (record) to be retrieved.</summary>
+			<summary>Sets the ID of the record to be retrieved.</summary>
 			<returns>Returns <see cref="T:System.Activities.InArgument`1"></see>.</returns>
 		</member>
 		<member name="P:Microsoft.Xrm.Sdk.Workflow.Activities.RetrieveEntity.EntityName">
@@ -607,18 +607,18 @@
 			<returns>Returns <see cref="T:System.Activities.InArgument`1"></see>.</returns>
 		</member>
 		<member name="P:Microsoft.Xrm.Sdk.Workflow.Activities.RetrieveEntity.ThrowIfNotExists">
-			<summary>Sets whether the workflow should throw an exception if the entity instance (record) does not exist.</summary>
+			<summary>Sets whether the workflow should throw an exception if the record does not exist.</summary>
 			<returns>Returns <see cref="T:System.Activities.InArgument`1"></see>.</returns>
 		</member>
 		<member name="T:Microsoft.Xrm.Sdk.Workflow.Activities.SendEmail">
-			<summary>Sends an e-mail.</summary>
+			<summary>Sends an e-mail message.</summary>
 		</member>
 		<member name="P:Microsoft.Xrm.Sdk.Workflow.Activities.SendEmail.Entity">
-			<summary>Gets or sets the e-mail entity instance (record).</summary>
+			<summary>Gets or sets the e-mail record.</summary>
 			<returns>Returns <see cref="T:System.Activities.InOutArgument`1"></see>.</returns>
 		</member>
 		<member name="P:Microsoft.Xrm.Sdk.Workflow.Activities.SendEmail.EntityId">
-			<summary>Gets the ID of the resulting e-mail.</summary>
+			<summary>Gets the ID of the resulting e-mail record.</summary>
 			<returns>Returns <see cref="T:System.Activities.OutArgument`1"></see>.</returns>
 		</member>
 		<member name="T:Microsoft.Xrm.Sdk.Workflow.Activities.SendEmailFromTemplate">
@@ -645,7 +645,7 @@
 			<returns>Returns <see cref="T:System.Activities.InArgument`1"></see>.</returns>
 		</member>
 		<member name="T:Microsoft.Xrm.Sdk.Workflow.Activities.SetEntityProperty">
-			<summary>Sets a property (attribute) of an entity instance (record).</summary>
+			<summary>Sets a property (attribute) of a record.</summary>
 		</member>
 		<member name="M:Microsoft.Xrm.Sdk.Workflow.Activities.SetEntityProperty.#ctor">
 			<summary>constructor_initializesSetEntityProperty class.</summary>
@@ -655,11 +655,11 @@
 			<returns>Returns <see cref="T:System.Activities.InArgument`1"></see>.</returns>
 		</member>
 		<member name="P:Microsoft.Xrm.Sdk.Workflow.Activities.SetEntityProperty.Entity">
-			<summary>Gets or sets the entity instance (record).</summary>
+			<summary>Gets or sets the record.</summary>
 			<returns>Returns <see cref="T:System.Activities.InOutArgument`1"></see>.</returns>
 		</member>
 		<member name="P:Microsoft.Xrm.Sdk.Workflow.Activities.SetEntityProperty.EntityName">
-			<summary>Sets the logical entity name of the entity instance (record) specified in the Entity property.</summary>
+			<summary>Sets the logical entity name of the record specified in the Entity property.</summary>
 			<returns>Returns <see cref="T:System.Activities.InArgument`1"></see>.</returns>
 		</member>
 		<member name="P:Microsoft.Xrm.Sdk.Workflow.Activities.SetEntityProperty.TargetType">
@@ -671,14 +671,14 @@
 			<returns>Returns <see cref="T:System.Activities.InArgument`1"></see>.</returns>
 		</member>
 		<member name="T:Microsoft.Xrm.Sdk.Workflow.Activities.SetState">
-			<summary>Sets the state and status of an entity instance (record).</summary>
+			<summary>Sets the state and status of a record.</summary>
 		</member>
 		<member name="P:Microsoft.Xrm.Sdk.Workflow.Activities.SetState.Entity">
-			<summary>Gets the resulting entity instance (record) following the update.</summary>
+			<summary>Gets the resulting record following the update.</summary>
 			<returns>Returns <see cref="T:System.Activities.OutArgument`1"></see>.</returns>
 		</member>
 		<member name="P:Microsoft.Xrm.Sdk.Workflow.Activities.SetState.EntityId">
-			<summary>Sets the ID of the entity instance (record) to update.</summary>
+			<summary>Sets the ID of the record to update.</summary>
 			<returns>Returns <see cref="T:System.Activities.InArgument`1"></see>.</returns>
 		</member>
 		<member name="P:Microsoft.Xrm.Sdk.Workflow.Activities.SetState.EntityName">
@@ -686,7 +686,7 @@
 			<returns>Returns <see cref="T:System.Activities.InArgument`1"></see>.</returns>
 		</member>
 		<member name="P:Microsoft.Xrm.Sdk.Workflow.Activities.SetState.State">
-			<summary>Sets the new state for the entity instance (record).</summary>
+			<summary>Sets the new state for the record.</summary>
 			<returns>Returns <see cref="T:System.Activities.InArgument`1"></see>.</returns>
 		</member>
 		<member name="P:Microsoft.Xrm.Sdk.Workflow.Activities.SetState.Status">
@@ -712,13 +712,13 @@
 			<returns>Returns <see cref="T:System.Activities.InArgument`1"></see>.</returns>
 		</member>
 		<member name="T:Microsoft.Xrm.Sdk.Workflow.Activities.UpdateEntity">
-			<summary>Updates an entity instance (record).</summary>
+			<summary>Updates a record.</summary>
 		</member>
 		<member name="M:Microsoft.Xrm.Sdk.Workflow.Activities.UpdateEntity.#ctor">
 			<summary>constructor_initializesUpdateEntity class.</summary>
 		</member>
 		<member name="P:Microsoft.Xrm.Sdk.Workflow.Activities.UpdateEntity.Entity">
-			<summary>Gets or sets the entity instance (record).</summary>
+			<summary>Gets or sets the record.</summary>
 			<returns>Returns <see cref="T:System.Activities.InOutArgument`1"></see>.</returns>
 		</member>
 		<member name="P:Microsoft.Xrm.Sdk.Workflow.Activities.UpdateEntity.EntityName">

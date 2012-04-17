@@ -1,5 +1,5 @@
 ﻿// ==================================================================================
-//  Project:	Manipulation Library for Microsoft Dynamics CRM 4.0
+//  Project:	Manipulation Library for Microsoft Dynamics CRM 2011
 //  File:		AddBusinessDays.cs
 //  Copyright:  Engage Inc. 2010
 //              www.engage2day.com
@@ -9,8 +9,8 @@
 // ==================================================================================
 using System;
 using System.Activities;
+using ManipulationLibrary.Helpers;
 using Microsoft.Xrm.Sdk.Workflow;
-using ManipulationLibrary.Dates.Helpers;
 
 namespace ManipulationLibrary.Dates
 {

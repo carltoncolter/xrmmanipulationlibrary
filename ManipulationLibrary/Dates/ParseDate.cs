@@ -1,5 +1,5 @@
 // ==================================================================================
-//  Project:	Manipulation Library for Microsoft Dynamics CRM 4.0
+//  Project:	Manipulation Library for Microsoft Dynamics CRM 2011
 //  File:		ParseDate.cs
 //  License:    MsPL - Microsoft Public License
 //  Summary:	This workflow activity parses a date and was written by Carlton Colter.
@@ -14,6 +14,7 @@
 using System;
 using System.Globalization;
 using System.Activities;
+using ManipulationLibrary.Helpers;
 using Microsoft.Xrm.Sdk.Workflow;
 
 namespace ManipulationLibrary.Dates
@@ -27,17 +28,49 @@ namespace ManipulationLibrary.Dates
             return ciCurr.Calendar.GetWeekOfYear(date, CalendarWeekRule.FirstFourDayWeek, System.DayOfWeek.Monday);
         }
 
+        private static CultureInfo GetCultureInfo(CodeActivityContext executionContext, int languageCode)
+        {
+            if (languageCode>0) return new CultureInfo(languageCode);
+            var settings = UserSettings.GetUserSettings(executionContext);
+            var uilang = (int) settings["uilanguageid"];
+            return new CultureInfo(uilang);
+        }
+
         protected override void Execute(CodeActivityContext executionContext)
         {
-            var am = false;
-            var date = Date.Get<DateTime>(executionContext);
-            int hour = date.Hour;
+            var dateString = DateString.Get<string>(executionContext);
+            var dateFormat = DateFormat.Get<string>(executionContext);
+            DateTime date;
+
+            if (!String.IsNullOrWhiteSpace(dateString))
+            {
+                var provider = CultureInfo.InvariantCulture;
+
+                if (!DateTime.TryParseExact(dateString, dateFormat, provider, DateTimeStyles.None, out date))
+                {
+                    date = Date.Get<DateTime>(executionContext);
+                }
+            }
+            else
+            {
+                date = Date.Get<DateTime>(executionContext);
+            }
+
+            bool am;
+            
+            var hour = date.Hour;
             
             Year.Set(executionContext, date.Year);
+            YearText.Set(executionContext, date.Year.ToString());
             Month.Set(executionContext, date.Month);
             Day.Set(executionContext, date.Day);
             Hour24.Set(executionContext, date.Hour);
-            
+
+            var cultureInfo = GetCultureInfo(executionContext, LanguageCode.Get<int>(executionContext));
+            MonthText.Set(executionContext, date.ToString("MMMM", cultureInfo.DateTimeFormat));
+            DayOfWeekString.Set(executionContext, date.ToString("dddd", cultureInfo.DateTimeFormat));
+
+
             if (date.Hour >= 12)
             {
                 am = false;
@@ -54,7 +87,6 @@ namespace ManipulationLibrary.Dates
             Minute.Set(executionContext, date.Minute);
             
             DayOfWeek.Set(executionContext, (int)date.DayOfWeek);
-            DayOfWeekString.Set(executionContext,date.DayOfWeek.ToString());
             DayOfYear.Set(executionContext, date.DayOfYear);
             Week.Set(executionContext, GetWeek(date));
         }
@@ -62,7 +94,19 @@ namespace ManipulationLibrary.Dates
         [Input("Date")]
         [Default("1900-01-01T00:00:00Z")]
         public InArgument<DateTime> Date { get; set; }
-        
+
+        [Input("Language Code")]
+        [Default("-1")]
+        public InArgument<int> LanguageCode { get; set; }
+
+        [Input("Date Format")]
+        [Default("MM/dd/yyyy")]
+        public InArgument<string> DateFormat { get; set; }
+
+        [Input("Date String (Overrides Date)")]
+        [Default("")]
+        public InArgument<string> DateString { get; set; }
+
         [Output("Day Of Week")]
         public OutArgument<int> DayOfWeek { get; set; }
         
@@ -78,8 +122,14 @@ namespace ManipulationLibrary.Dates
         [Output("Year")]
         public OutArgument<int> Year { get; set; }
 
+        [Output("Year (Text)")]
+        public OutArgument<string> YearText { get; set; }
+
         [Output("Month")]
         public OutArgument<int> Month { get; set; }
+
+        [Output("Month (Text)")]
+        public OutArgument<string> MonthText { get; set; }
 
         [Output("Day")]
         public OutArgument<int> Day { get; set; }
