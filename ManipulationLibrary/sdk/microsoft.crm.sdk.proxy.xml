@@ -293,7 +293,7 @@
 			<summary>Request_Contains_Data add an item to a campaign activity.</summary>
 		</member>
 		<member name="M:Microsoft.Crm.Sdk.Messages.AddItemCampaignActivityRequest.#ctor">
-			<summary>Initializes a new instance of the AddItemCampaignActivityRequest class.</summary>
+			<summary>constructor_initializesOrganizationRequest class.</summary>
 		</member>
 		<member name="P:Microsoft.Crm.Sdk.Messages.AddItemCampaignActivityRequest.CampaignActivityId">
 			<summary>Gets or sets the ID of the campaign activity. Required.</summary>
@@ -304,7 +304,7 @@
 			<returns>Returns <see cref="T:System.String"></see>.</returns>
 		</member>
 		<member name="P:Microsoft.Crm.Sdk.Messages.AddItemCampaignActivityRequest.ItemId">
-			<summary>Gets or sets the ID of the record to be added to the campaign activity. Required.</summary>
+			<summary>Gets or sets the ID of the item to be added to the campaign activity. Required.</summary>
 			<returns>Returns <see cref="T:System.Guid"></see>.</returns>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.AddItemCampaignActivityResponse">
@@ -321,7 +321,7 @@
 			<summary>Request_Contains_Data add an item to a campaign.</summary>
 		</member>
 		<member name="M:Microsoft.Crm.Sdk.Messages.AddItemCampaignRequest.#ctor">
-			<summary>Initializes a new instance of the AddItemCampaignRequest class.</summary>
+			<summary>constructor_initializesOrganizationRequest class.</summary>
 		</member>
 		<member name="P:Microsoft.Crm.Sdk.Messages.AddItemCampaignRequest.CampaignId">
 			<summary>Gets or sets the ID of the campaign. Required.</summary>
@@ -346,10 +346,10 @@
 			<returns>Returns <see cref="T:System.Guid"></see>.</returns>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.AddListMembersListRequest">
-			<summary>Request_Contains_Data add the members to the list. </summary>
+			<summary>Request_Contains_Data add members to the list. </summary>
 		</member>
 		<member name="M:Microsoft.Crm.Sdk.Messages.AddListMembersListRequest.#ctor">
-			<summary>Initializes a new instance of the AddListMembersListRequest class.</summary>
+			<summary>constructor_initializesOrganizationRequest class.</summary>
 		</member>
 		<member name="P:Microsoft.Crm.Sdk.Messages.AddListMembersListRequest.ListId">
 			<summary>Gets or sets the ID of the list. Required.</summary>
@@ -430,7 +430,7 @@
 			<summary>constructor_initializesAddPrivilegesRoleResponse class.</summary>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.AddProductToKitRequest">
-			<summary>Request_Contains_Data to add a product to a kit.</summary>
+			<summary>Request_Contains_Data add a product to a kit.</summary>
 		</member>
 		<member name="M:Microsoft.Crm.Sdk.Messages.AddProductToKitRequest.#ctor">
 			<summary>Initializes a new instance of the AddProductToKitRequest class.</summary>
@@ -488,7 +488,7 @@
 			<returns>Returns <see cref="T:System.Guid"></see>.</returns>
 		</member>
 		<member name="P:Microsoft.Crm.Sdk.Messages.AddSolutionComponentRequest.ComponentType">
-			<summary>Gets or sets the SolutionComponentType value representing the solution component you are adding. </summary>
+			<summary>Gets or sets the  value representing the solution component you are adding. </summary>
 			<returns>Returns <see cref="T:System.Int32"></see>.</returns>
 		</member>
 		<member name="P:Microsoft.Crm.Sdk.Messages.AddSolutionComponentRequest.SolutionUniqueName">
@@ -505,16 +505,24 @@
 			<returns><see cref="T:System.Guid"></see> Returns the id of the SolutionComponent record created by the Add Solution Component request.</returns>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.AddSubstituteProductRequest">
-			<summary>Deprecated. Use <see cref="T:Microsoft.Xrm.Sdk.Messages.AssociateRequest"></see>.</summary>
+			<summary>deprecated Use <see cref="T:Microsoft.Xrm.Sdk.Messages.AssociateRequest"></see>.</summary>
+		</member>
+		<member name="M:Microsoft.Crm.Sdk.Messages.AddSubstituteProductRequest.#ctor">
+			<summary>deprecated</summary>
 		</member>
 		<member name="P:Microsoft.Crm.Sdk.Messages.AddSubstituteProductRequest.ProductId">
+			<summary>deprecated</summary>
 			<returns>Returns <see cref="T:System.Guid"></see>.</returns>
 		</member>
 		<member name="P:Microsoft.Crm.Sdk.Messages.AddSubstituteProductRequest.SubstituteId">
+			<summary>deprecated</summary>
 			<returns>Returns <see cref="T:System.Guid"></see>.</returns>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.AddSubstituteProductResponse">
-			<summary>Deprecated.</summary>
+			<summary>deprecated</summary>
+		</member>
+		<member name="M:Microsoft.Crm.Sdk.Messages.AddSubstituteProductResponse.#ctor">
+			<summary>deprecated</summary>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.AddToQueueRequest">
 			<summary>Request_Contains_Data move an entity record from a source queue to a destination queue.</summary>
@@ -708,22 +716,25 @@
 			<summary>constructor_initializesAssignResponse class.</summary>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.AssociateEntitiesRequest">
-			<summary>Deprecated. Request_Contains_Data add a link between two entity instances in a many-to-many relationship. Deprecated. Use <see cref="T:Microsoft.Xrm.Sdk.Messages.AssociateRequest"></see>.</summary>
+			<summary>Request_Contains_Data add a link between two entity instances in a many-to-many relationship. deprecated Use <see cref="T:Microsoft.Xrm.Sdk.Messages.AssociateRequest"></see>.</summary>
 		</member>
 		<member name="M:Microsoft.Crm.Sdk.Messages.AssociateEntitiesRequest.#ctor">
 			<summary>constructor_initializesAssociateEntitiesRequest class.</summary>
 		</member>
 		<member name="P:Microsoft.Crm.Sdk.Messages.AssociateEntitiesRequest.Moniker1">
+			<summary>deprecated</summary>
 			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.EntityReference"></see>.</returns>
 		</member>
 		<member name="P:Microsoft.Crm.Sdk.Messages.AssociateEntitiesRequest.Moniker2">
+			<summary>deprecated</summary>
 			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.EntityReference"></see>.</returns>
 		</member>
 		<member name="P:Microsoft.Crm.Sdk.Messages.AssociateEntitiesRequest.RelationshipName">
+			<summary>deprecated</summary>
 			<returns>Returns <see cref="T:System.String"></see>.</returns>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.AssociateEntitiesResponse">
-			<summary>Response_Message<see cref="T:Microsoft.Crm.Sdk.Messages.AssociateEntitiesRequest"></see>. Deprecated.</summary>
+			<summary>Response_Message<see cref="T:Microsoft.Crm.Sdk.Messages.AssociateEntitiesRequest"></see>. deprecated</summary>
 		</member>
 		<member name="M:Microsoft.Crm.Sdk.Messages.AssociateEntitiesResponse.#ctor">
 			<summary>constructor_initializesAssociateEntitiesResponse class.</summary>
@@ -763,29 +774,84 @@
 		<member name="T:Microsoft.Crm.Sdk.Messages.AuditDetailCollection">
 			<summary>Contains a collection of <see cref="T:Microsoft.Crm.Sdk.Messages.AuditDetail"></see> objects.</summary>
 		</member>
+		<member name="M:Microsoft.Crm.Sdk.Messages.AuditDetailCollection.#ctor">
+			<summary>constructor_initializesAuditDetailCollection class.</summary>
+		</member>
+		<member name="M:Microsoft.Crm.Sdk.Messages.AuditDetailCollection.Add(Microsoft.Crm.Sdk.Messages.AuditDetail)">
+			<summary>Adds an <see cref="T:Microsoft.Crm.Sdk.Messages.AuditDetail"></see> object to the <see cref="P:Microsoft.Crm.Sdk.Messages.AuditDetailCollection.AuditDetails"></see> collection.</summary>
+			<param name="auditDetail">Specifies an object containing audit details.</param>
+		</member>
 		<member name="P:Microsoft.Crm.Sdk.Messages.AuditDetailCollection.AuditDetails">
+			<summary>Gets the AuditDetails collection.</summary>
 			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.DataCollection`1"></see>.</returns>
 		</member>
 		<member name="P:Microsoft.Crm.Sdk.Messages.AuditDetailCollection.Count">
+			<summary>Indicates the number of elements in the <see cref="P:Microsoft.Crm.Sdk.Messages.AuditDetailCollection.AuditDetails"></see> collection.</summary>
 			<returns>Returns <see cref="T:System.Int32"></see>.</returns>
 		</member>
 		<member name="P:Microsoft.Crm.Sdk.Messages.AuditDetailCollection.ExtensionData">
+			<summary>ExtensionData</summary>
 			<returns>Returns <see cref="T:System.Runtime.Serialization.ExtensionDataObject"></see>.</returns>
 		</member>
 		<member name="P:Microsoft.Crm.Sdk.Messages.AuditDetailCollection.Item(System.Int32)">
+			<summary>Gets or sets the element at the specified index.</summary>
 			<returns>Returns <see cref="T:Microsoft.Crm.Sdk.Messages.AuditDetail"></see>.</returns>
+			<param name="index">Specifies the element index.</param>
 		</member>
 		<member name="P:Microsoft.Crm.Sdk.Messages.AuditDetailCollection.MoreRecords">
-			<returns>Returns <see cref="T:System.Boolean"></see>.</returns>
+			<summary>Indicates if there are more records.</summary>
+			<returns>Returns <see cref="T:System.Boolean"></see>. A value of true indicates there are more records.</returns>
 		</member>
 		<member name="P:Microsoft.Crm.Sdk.Messages.AuditDetailCollection.PagingCookie">
+			<summary>Gets or sets a paging cookie.</summary>
 			<returns>Returns <see cref="T:System.String"></see>.</returns>
 		</member>
 		<member name="P:Microsoft.Crm.Sdk.Messages.AuditDetailCollection.TotalRecordCount">
+			<summary>Gets or sets the total record count in the collection.</summary>
 			<returns>Returns <see cref="T:System.Int32"></see>.</returns>
 		</member>
+		<member name="T:Microsoft.Crm.Sdk.Messages.AuditPartitionDetail">
+			<summary>Identifies a SQL partition used for storage of auditing data records.</summary>
+		</member>
+		<member name="M:Microsoft.Crm.Sdk.Messages.AuditPartitionDetail.#ctor">
+			<summary>constructor_initializesAuditPartitionDetail class.</summary>
+		</member>
+		<member name="P:Microsoft.Crm.Sdk.Messages.AuditPartitionDetail.EndDate">
+			<summary>Gets or sets the end date and time for the last audit record in the partition.</summary>
+			<returns>Returns <see cref="T:System.Nullable`1"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Crm.Sdk.Messages.AuditPartitionDetail.ExtensionData">
+			<summary>ExtensionData</summary>
+			<returns>Returns <see cref="T:System.Runtime.Serialization.ExtensionDataObject"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Crm.Sdk.Messages.AuditPartitionDetail.PartitionNumber">
+			<summary>Gets or sets the partition’s sequence (serial) number.</summary>
+			<returns>Returns <see cref="T:System.Int32"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Crm.Sdk.Messages.AuditPartitionDetail.Size">
+			<summary>Gets or sets the size in bytes of the partition.</summary>
+			<returns>Returns <see cref="T:System.Int64"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Crm.Sdk.Messages.AuditPartitionDetail.StartDate">
+			<summary>Gets or sets the creation date and time of the first record in the partition.</summary>
+			<returns>Returns <see cref="T:System.Nullable`1"></see>.</returns>
+		</member>
+		<member name="T:Microsoft.Crm.Sdk.Messages.AuditPartitionDetailCollection">
+			<summary>Contains a data collection of <see cref="T:Microsoft.Crm.Sdk.Messages.AuditDetail"></see> objects. </summary>
+		</member>
+		<member name="M:Microsoft.Crm.Sdk.Messages.AuditPartitionDetailCollection.#ctor">
+			<summary>constructor_initializesAuditPartitionDetailCollection class.</summary>
+		</member>
+		<member name="P:Microsoft.Crm.Sdk.Messages.AuditPartitionDetailCollection.ExtensionData">
+			<summary>ExtensionData</summary>
+			<returns>Returns <see cref="T:System.Runtime.Serialization.ExtensionDataObject"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Crm.Sdk.Messages.AuditPartitionDetailCollection.IsLogicalCollection">
+			<summary>Gets or sets if the auditing partition list is a logical collection.</summary>
+			<returns>Returns <see cref="T:System.Boolean"></see>.</returns>
+		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.AutoMapEntityRequest">
-			<summary>Request_Contains_Data to generate a new set of attribute mappings based on the metadata.</summary>
+			<summary>Request_Contains_Data generate a new set of attribute mappings based on the metadata.</summary>
 		</member>
 		<member name="M:Microsoft.Crm.Sdk.Messages.AutoMapEntityRequest.#ctor">
 			<summary>constructor_initializesAutoMapEntityRequest class.</summary>
@@ -952,22 +1018,33 @@
 		<member name="T:Microsoft.Crm.Sdk.Messages.BulkOperationStatusCloseRequest">
 			<summary>internal</summary>
 		</member>
+		<member name="M:Microsoft.Crm.Sdk.Messages.BulkOperationStatusCloseRequest.#ctor">
+			<summary>internal</summary>
+		</member>
 		<member name="P:Microsoft.Crm.Sdk.Messages.BulkOperationStatusCloseRequest.BulkOperationId">
+			<summary>internal</summary>
 			<returns>Returns <see cref="T:System.Guid"></see>.</returns>
 		</member>
 		<member name="P:Microsoft.Crm.Sdk.Messages.BulkOperationStatusCloseRequest.ErrorCode">
+			<summary>internal</summary>
 			<returns>Returns <see cref="T:System.Int32"></see>.</returns>
 		</member>
 		<member name="P:Microsoft.Crm.Sdk.Messages.BulkOperationStatusCloseRequest.FailureCount">
+			<summary>internal</summary>
 			<returns>Returns <see cref="T:System.Int32"></see>.</returns>
 		</member>
 		<member name="P:Microsoft.Crm.Sdk.Messages.BulkOperationStatusCloseRequest.StatusReason">
+			<summary>internal</summary>
 			<returns>Returns <see cref="T:System.Int32"></see>.</returns>
 		</member>
 		<member name="P:Microsoft.Crm.Sdk.Messages.BulkOperationStatusCloseRequest.SuccessCount">
+			<summary>internal</summary>
 			<returns>Returns <see cref="T:System.Int32"></see>.</returns>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.BulkOperationStatusCloseResponse">
+			<summary>internal</summary>
+		</member>
+		<member name="M:Microsoft.Crm.Sdk.Messages.BulkOperationStatusCloseResponse.#ctor">
 			<summary>internal</summary>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.CalculateActualValueOpportunityRequest">
@@ -1130,13 +1207,21 @@
 			<summary>internal</summary>
 		</member>
 		<member name="M:Microsoft.Crm.Sdk.Messages.CleanUpBulkOperationRequest.#ctor">
-			<summary>constructor_initializesOrganizationRequest class.</summary>
+			<summary>internal</summary>
+		</member>
+		<member name="P:Microsoft.Crm.Sdk.Messages.CleanUpBulkOperationRequest.BulkOperationId">
+			<summary>internal</summary>
+			<returns>Returns <see cref="T:System.Guid"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Crm.Sdk.Messages.CleanUpBulkOperationRequest.BulkOperationSource">
+			<summary>internal</summary>
+			<returns>Returns <see cref="T:System.Int32"></see>.</returns>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.CleanUpBulkOperationResponse">
 			<summary>internal</summary>
 		</member>
 		<member name="M:Microsoft.Crm.Sdk.Messages.CleanUpBulkOperationResponse.#ctor">
-			<summary>constructor_initializesOrganizationResponse class.</summary>
+			<summary>internal</summary>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.CloneContractRequest">
 			<summary>Request_Contains_Data copy an existing contract and its line items.</summary>
@@ -1149,7 +1234,7 @@
 			<returns>Returns <see cref="T:System.Guid"></see>.</returns>
 		</member>
 		<member name="P:Microsoft.Crm.Sdk.Messages.CloneContractRequest.IncludeCanceledLines">
-			<summary>Gets or sets a value that indicates whether the canceled line items of the original contract are to be included in the copy (clone). Required.</summary>
+			<summary>Gets or sets a value that indicates whether the canceled line items of the originating contract are to be included in the copy (clone). Required.</summary>
 			<returns>Returns <see cref="T:System.Boolean"></see>.</returns>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.CloneContractResponse">
@@ -1162,17 +1247,45 @@
 			<summary>Gets the resulting contract.</summary>
 			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.Entity"></see>.</returns>
 		</member>
+		<member name="T:Microsoft.Crm.Sdk.Messages.CloseIncidentRequest">
+			<summary>Request_Contains_Data close an incident (case).</summary>
+		</member>
 		<member name="M:Microsoft.Crm.Sdk.Messages.CloseIncidentRequest.#ctor">
 			<summary>constructor_initializesOrganizationRequest class.</summary>
 		</member>
+		<member name="P:Microsoft.Crm.Sdk.Messages.CloseIncidentRequest.IncidentResolution">
+			<summary>Gets or sets the incident resolution (case resolution) that is associated with the incident (case) to be closed. Required.</summary>
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.Entity"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Crm.Sdk.Messages.CloseIncidentRequest.Status">
+			<summary>Gets or sets a status of the incident. Required.</summary>
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.OptionSetValue"></see>.</returns>
+		</member>
+		<member name="T:Microsoft.Crm.Sdk.Messages.CloseIncidentResponse">
+			<summary>Response_Message<see cref="T:Microsoft.Crm.Sdk.Messages.CloseIncidentRequest"></see>.</summary>
+		</member>
 		<member name="M:Microsoft.Crm.Sdk.Messages.CloseIncidentResponse.#ctor">
-			<summary>constructor_initializesOrganizationResponse class.</summary>
+			<summary>Initializes a new instance of the CloseIncidentResponse class.</summary>
+		</member>
+		<member name="T:Microsoft.Crm.Sdk.Messages.CloseQuoteRequest">
+			<summary>Request_Contains_Data close a quote.</summary>
 		</member>
 		<member name="M:Microsoft.Crm.Sdk.Messages.CloseQuoteRequest.#ctor">
 			<summary>constructor_initializesOrganizationRequest class.</summary>
 		</member>
+		<member name="P:Microsoft.Crm.Sdk.Messages.CloseQuoteRequest.QuoteClose">
+			<summary>Gets or sets a quote to be closed. Required.</summary>
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.Entity"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Crm.Sdk.Messages.CloseQuoteRequest.Status">
+			<summary>Gets or sets a status of the quote. Required.</summary>
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.OptionSetValue"></see>.</returns>
+		</member>
+		<member name="T:Microsoft.Crm.Sdk.Messages.CloseQuoteResponse">
+			<summary>Response_Message<see cref="T:Microsoft.Crm.Sdk.Messages.CloseQuoteRequest"></see>.</summary>
+		</member>
 		<member name="M:Microsoft.Crm.Sdk.Messages.CloseQuoteResponse.#ctor">
-			<summary>constructor_initializesOrganizationResponse class.</summary>
+			<summary>Initializes a new instance of the CloseQuoteResponse class.</summary>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.ComponentDetail">
 			<summary>Provides additional information about a solution components related to a <see cref="T:Microsoft.Crm.Sdk.Messages.MissingComponent"></see>.</summary>
@@ -1213,33 +1326,41 @@
 			<returns>Returns <see cref="T:System.Int32"></see>.</returns>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.CompoundCreateRequest">
-			<summary>Creates a compound entity (salesorder, invoice, quote, or duplicate rule) and its related entity (salesorderdetail, invoicedetail, quotedetail, or duplicaterulecondition). Deprecated. Use <see cref="T:Microsoft.Xrm.Sdk.Messages.CreateRequest"></see>.</summary>
+			<summary>Creates a compound entity (salesorder, invoice, quote, or duplicate rule) and its related entity (salesorderdetail, invoicedetail, quotedetail, or duplicaterulecondition). deprecated Use <see cref="T:Microsoft.Xrm.Sdk.Messages.CreateRequest"></see>.</summary>
 		</member>
 		<member name="M:Microsoft.Crm.Sdk.Messages.CompoundCreateRequest.#ctor">
 			<summary>constructor_initializesCompoundCreateRequest class.</summary>
 		</member>
 		<member name="P:Microsoft.Crm.Sdk.Messages.CompoundCreateRequest.ChildEntities">
+			<summary>deprecated</summary>
 			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.EntityCollection"></see>.</returns>
 		</member>
 		<member name="P:Microsoft.Crm.Sdk.Messages.CompoundCreateRequest.Entity">
+			<summary>deprecated</summary>
 			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.Entity"></see>.</returns>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.CompoundCreateResponse">
-			<summary>Request_Contains_Data<see cref="T:Microsoft.Crm.Sdk.Messages.CompoundCreateRequest"></see>. Deprecated.</summary>
+			<summary>deprecated</summary>
 		</member>
 		<member name="M:Microsoft.Crm.Sdk.Messages.CompoundCreateResponse.#ctor">
-			<summary>constructor_initializesCompoundCreateResponse class.</summary>
+			<summary>deprecated</summary>
 		</member>
 		<member name="P:Microsoft.Crm.Sdk.Messages.CompoundCreateResponse.Id">
+			<summary>deprecated</summary>
 			<returns>Returns <see cref="T:System.Guid"></see>.</returns>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.CompoundUpdateDuplicateDetectionRuleRequest">
 			<summary>Request_Contains_Data update a duplicate rule and its related duplicate rule conditions.</summary>
 		</member>
+		<member name="M:Microsoft.Crm.Sdk.Messages.CompoundUpdateDuplicateDetectionRuleRequest.#ctor">
+			<summary>Initializes a new instance of the CompoundUpdateDuplicateDetectionRuleRequest class.</summary>
+		</member>
 		<member name="P:Microsoft.Crm.Sdk.Messages.CompoundUpdateDuplicateDetectionRuleRequest.ChildEntities">
+			<summary>Gets or sets a collection of the duplicate rule conditions to be updated. Required.</summary>
 			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.EntityCollection"></see>.</returns>
 		</member>
 		<member name="P:Microsoft.Crm.Sdk.Messages.CompoundUpdateDuplicateDetectionRuleRequest.Entity">
+			<summary>Gets or sets the duplicate rule to be updated. Required.</summary>
 			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.Entity"></see>.</returns>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.CompoundUpdateDuplicateDetectionRuleResponse">
@@ -1249,19 +1370,21 @@
 			<summary>Initializes a new instance of the CompoundUpdateDuplicateDetectionRuleResponse class.</summary>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.CompoundUpdateRequest">
-			<summary>Request_Contains_Data update a compound record (salesorder, invoice,  quote or duplicaterule) and its related detail record (salesorderdetail,  invoicedetail,  quotedetail or duplicaterulecondition). Deprecated. Use <see cref="T:Microsoft.Xrm.Sdk.Messages.CreateRequest"></see>.</summary>
+			<summary>Request_Contains_Data update a compound record (salesorder, invoice,  quote or duplicaterule) and its related detail record (salesorderdetail,  invoicedetail,  quotedetail or duplicaterulecondition). deprecated Use <see cref="T:Microsoft.Xrm.Sdk.Messages.CreateRequest"></see>.</summary>
 		</member>
 		<member name="M:Microsoft.Crm.Sdk.Messages.CompoundUpdateRequest.#ctor">
 			<summary>constructor_initializesCompoundUpdateRequest class.</summary>
 		</member>
 		<member name="P:Microsoft.Crm.Sdk.Messages.CompoundUpdateRequest.ChildEntities">
+			<summary>deprecated</summary>
 			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.EntityCollection"></see>.</returns>
 		</member>
 		<member name="P:Microsoft.Crm.Sdk.Messages.CompoundUpdateRequest.Entity">
+			<summary>deprecated</summary>
 			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.Entity"></see>.</returns>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.CompoundUpdateResponse">
-			<summary>Response_Message<see cref="T:Microsoft.Crm.Sdk.Messages.CompoundUpdateRequest"></see>. Deprecated.</summary>
+			<summary>Response_Message<see cref="T:Microsoft.Crm.Sdk.Messages.CompoundUpdateRequest"></see>. deprecated</summary>
 		</member>
 		<member name="M:Microsoft.Crm.Sdk.Messages.CompoundUpdateResponse.#ctor">
 			<summary>constructor_initializesCompoundUpdateResponse class.</summary>
@@ -1295,7 +1418,7 @@
 			<returns>Returns <see cref="T:System.Guid"></see>.</returns>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.ConvertKitToProductRequest">
-			<summary>Request_Contains_Data to convert a kit to a product.</summary>
+			<summary>Request_Contains_Data convert a kit to a product.</summary>
 		</member>
 		<member name="M:Microsoft.Crm.Sdk.Messages.ConvertKitToProductRequest.#ctor">
 			<summary>Initializes a new instance of the ConvertKitToProductRequest class.</summary>
@@ -1311,7 +1434,7 @@
 			<summary>Initializes a new instance of the ConvertKitToProductResponse class.</summary>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.ConvertProductToKitRequest">
-			<summary>Request_Contains_Data to convert a product to a kit.</summary>
+			<summary>Request_Contains_Data convert a product to a kit.</summary>
 		</member>
 		<member name="M:Microsoft.Crm.Sdk.Messages.ConvertProductToKitRequest.#ctor">
 			<summary>Initializes a new instance of the ConvertProductToKitRequest class.</summary>
@@ -1439,7 +1562,7 @@
 			<returns>Returns <see cref="T:System.Guid"></see>.</returns>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.CopyMembersListRequest">
-			<summary>Request_Contains_Data to copy the members from the source list to the target list without creating duplicates.</summary>
+			<summary>Request_Contains_Data copy the members from the source list to the target list without creating duplicates.</summary>
 		</member>
 		<member name="M:Microsoft.Crm.Sdk.Messages.CopyMembersListRequest.#ctor">
 			<summary>Initializes a new instance of the CopyMembersListRequest class.</summary>
@@ -1796,22 +1919,25 @@
 			<summary>constructor_initializesDeprovisionLanguageResponse class</summary>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.DisassociateEntitiesRequest">
-			<summary>Request_Contains_Data remove a link between two entity instances in a many to many relationship. Deprecated. Use <see cref="T:Microsoft.Xrm.Sdk.Messages.DisassociateRequest"></see>.</summary>
+			<summary>Request_Contains_Data remove a link between two entity instances in a many to many relationship. deprecated Use <see cref="T:Microsoft.Xrm.Sdk.Messages.DisassociateRequest"></see>.</summary>
 		</member>
 		<member name="M:Microsoft.Crm.Sdk.Messages.DisassociateEntitiesRequest.#ctor">
 			<summary>constructor_initializesDisassociateEntitiesRequest class.</summary>
 		</member>
 		<member name="P:Microsoft.Crm.Sdk.Messages.DisassociateEntitiesRequest.Moniker1">
+			<summary>deprecated</summary>
 			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.EntityReference"></see>.</returns>
 		</member>
 		<member name="P:Microsoft.Crm.Sdk.Messages.DisassociateEntitiesRequest.Moniker2">
+			<summary>deprecated</summary>
 			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.EntityReference"></see>.</returns>
 		</member>
 		<member name="P:Microsoft.Crm.Sdk.Messages.DisassociateEntitiesRequest.RelationshipName">
+			<summary>deprecated</summary>
 			<returns>Returns <see cref="T:System.String"></see>.</returns>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.DisassociateEntitiesResponse">
-			<summary>Response_Message<see cref="T:Microsoft.Crm.Sdk.Messages.DisassociateEntitiesRequest"></see>. Deprecated.</summary>
+			<summary>Response_Message<see cref="T:Microsoft.Crm.Sdk.Messages.DisassociateEntitiesRequest"></see>. deprecated</summary>
 		</member>
 		<member name="M:Microsoft.Crm.Sdk.Messages.DisassociateEntitiesResponse.#ctor">
 			<summary>constructor_initializesDisassociateEntitiesResponse class.</summary>
@@ -1967,15 +2093,23 @@
 			<returns>Returns <see cref="T:System.String"></see>.</returns>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.ExecuteFetchRequest">
-			<summary>Deprecated. Use <see cref="T:Microsoft.Xrm.Sdk.Messages.RetrieveMultipleRequest"></see>.</summary>
+			<summary>deprecated Use <see cref="T:Microsoft.Xrm.Sdk.Messages.RetrieveMultipleRequest"></see>.</summary>
+		</member>
+		<member name="M:Microsoft.Crm.Sdk.Messages.ExecuteFetchRequest.#ctor">
+			<summary>deprecated</summary>
 		</member>
 		<member name="P:Microsoft.Crm.Sdk.Messages.ExecuteFetchRequest.FetchXml">
+			<summary>deprecated</summary>
 			<returns>Returns <see cref="T:System.String"></see>.</returns>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.ExecuteFetchResponse">
-			<summary>Deprecated.</summary>
+			<summary>deprecated</summary>
+		</member>
+		<member name="M:Microsoft.Crm.Sdk.Messages.ExecuteFetchResponse.#ctor">
+			<summary>deprecated</summary>
 		</member>
 		<member name="P:Microsoft.Crm.Sdk.Messages.ExecuteFetchResponse.FetchXmlResult">
+			<summary>deprecated</summary>
 			<returns>Returns <see cref="T:System.String"></see>.</returns>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.ExecuteWorkflowRequest">
@@ -2198,23 +2332,77 @@
 		<member name="M:Microsoft.Crm.Sdk.Messages.FulfillSalesOrderResponse.#ctor">
 			<summary>constructor_initializes of the FulfillSalesOrderResponse class.</summary>
 		</member>
+		<member name="T:Microsoft.Crm.Sdk.Messages.GenerateInvoiceFromOpportunityRequest">
+			<summary>Request_Contains_Data generate an invoice from an opportunity.</summary>
+		</member>
 		<member name="M:Microsoft.Crm.Sdk.Messages.GenerateInvoiceFromOpportunityRequest.#ctor">
 			<summary>constructor_initializesOrganizationRequest class.</summary>
 		</member>
+		<member name="P:Microsoft.Crm.Sdk.Messages.GenerateInvoiceFromOpportunityRequest.ColumnSet">
+			<summary>Gets or sets the collection of attributes to retrieve in the resulting invoice. Required.</summary>
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.Query.ColumnSet"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Crm.Sdk.Messages.GenerateInvoiceFromOpportunityRequest.OpportunityId">
+			<summary>Gets or sets the ID of the opportunity to be used as the basis for the new invoice. Required.</summary>
+			<returns>Returns <see cref="T:System.Guid"></see>.</returns>
+		</member>
+		<member name="T:Microsoft.Crm.Sdk.Messages.GenerateInvoiceFromOpportunityResponse">
+			<summary>Response_Message<see cref="T:Microsoft.Crm.Sdk.Messages.GenerateInvoiceFromOpportunityRequest"></see>.</summary>
+		</member>
 		<member name="M:Microsoft.Crm.Sdk.Messages.GenerateInvoiceFromOpportunityResponse.#ctor">
-			<summary>constructor_initializesOrganizationResponse class.</summary>
+			<summary>Initializes a new instance of the GenerateInvoiceFromOpportunityResponse class.</summary>
+		</member>
+		<member name="P:Microsoft.Crm.Sdk.Messages.GenerateInvoiceFromOpportunityResponse.Entity">
+			<summary>Gets the resulting invoice.</summary>
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.Entity"></see>.</returns>
+		</member>
+		<member name="T:Microsoft.Crm.Sdk.Messages.GenerateQuoteFromOpportunityRequest">
+			<summary>Request_Contains_Data generate a quote from an opportunity.</summary>
 		</member>
 		<member name="M:Microsoft.Crm.Sdk.Messages.GenerateQuoteFromOpportunityRequest.#ctor">
 			<summary>constructor_initializesOrganizationRequest class.</summary>
 		</member>
+		<member name="P:Microsoft.Crm.Sdk.Messages.GenerateQuoteFromOpportunityRequest.ColumnSet">
+			<summary>Gets or sets the collection of attributes to retrieve in the resulting quote. Required.</summary>
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.Query.ColumnSet"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Crm.Sdk.Messages.GenerateQuoteFromOpportunityRequest.OpportunityId">
+			<summary>Gets or sets the ID of the opportunity to be used as the basis for the new quote. Required.</summary>
+			<returns>Returns <see cref="T:System.Guid"></see>.</returns>
+		</member>
+		<member name="T:Microsoft.Crm.Sdk.Messages.GenerateQuoteFromOpportunityResponse">
+			<summary>Response_Message<see cref="T:Microsoft.Crm.Sdk.Messages.GenerateQuoteFromOpportunityRequest"></see>.</summary>
+		</member>
 		<member name="M:Microsoft.Crm.Sdk.Messages.GenerateQuoteFromOpportunityResponse.#ctor">
-			<summary>constructor_initializesOrganizationResponse class.</summary>
+			<summary>Initializes a new instance of the GenerateQuoteFromOpportunityResponse class.</summary>
+		</member>
+		<member name="P:Microsoft.Crm.Sdk.Messages.GenerateQuoteFromOpportunityResponse.Entity">
+			<summary>Gets the resulting quote.</summary>
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.Entity"></see>.</returns>
+		</member>
+		<member name="T:Microsoft.Crm.Sdk.Messages.GenerateSalesOrderFromOpportunityRequest">
+			<summary>Request_Contains_Data generate a sales order (order) from an opportunity.</summary>
 		</member>
 		<member name="M:Microsoft.Crm.Sdk.Messages.GenerateSalesOrderFromOpportunityRequest.#ctor">
 			<summary>constructor_initializesOrganizationRequest class.</summary>
 		</member>
+		<member name="P:Microsoft.Crm.Sdk.Messages.GenerateSalesOrderFromOpportunityRequest.ColumnSet">
+			<summary>Gets or sets the collection of attributes to retrieve in the resulting sales order (order). Required.</summary>
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.Query.ColumnSet"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Crm.Sdk.Messages.GenerateSalesOrderFromOpportunityRequest.OpportunityId">
+			<summary>Gets or sets the ID of the opportunity to be used as the basis for the new sales order (order). Required.</summary>
+			<returns>Returns <see cref="T:System.Guid"></see>.</returns>
+		</member>
+		<member name="T:Microsoft.Crm.Sdk.Messages.GenerateSalesOrderFromOpportunityResponse">
+			<summary>Response_Message<see cref="T:Microsoft.Crm.Sdk.Messages.GenerateSalesOrderFromOpportunityRequest"></see>.</summary>
+		</member>
 		<member name="M:Microsoft.Crm.Sdk.Messages.GenerateSalesOrderFromOpportunityResponse.#ctor">
-			<summary>constructor_initializesOrganizationResponse class.</summary>
+			<summary>Initializes a new instance of the GenerateSalesOrderFromOpportunityResponse class.</summary>
+		</member>
+		<member name="P:Microsoft.Crm.Sdk.Messages.GenerateSalesOrderFromOpportunityResponse.Entity">
+			<summary>Gets the resulting sales order (order).</summary>
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.Entity"></see>.</returns>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.GetAllTimeZonesWithDisplayNameRequest">
 			<summary>Request_Contains_Data retrieve all the time zone definitions for the specified locale returning only the display name attribute.</summary>
@@ -2304,23 +2492,73 @@
 			<summary>Gets the source file header columns.</summary>
 			<returns>Returns <see cref="T:System.String"></see>.</returns>
 		</member>
+		<member name="T:Microsoft.Crm.Sdk.Messages.GetInvoiceProductsFromOpportunityRequest">
+			<summary>Request_Contains_Data retrieve the products from an opportunity and copy them to the invoice.</summary>
+		</member>
 		<member name="M:Microsoft.Crm.Sdk.Messages.GetInvoiceProductsFromOpportunityRequest.#ctor">
-			<summary>constructor_initializesOrganizationRequest class.</summary>
+			<summary>constructor_initializesGetInvoiceProductsFromOpportunityRequest class.</summary>
+		</member>
+		<member name="P:Microsoft.Crm.Sdk.Messages.GetInvoiceProductsFromOpportunityRequest.InvoiceId">
+			<summary>Gets or sets the ID of the invoice.</summary>
+			<returns>Returns <see cref="T:System.Guid"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Crm.Sdk.Messages.GetInvoiceProductsFromOpportunityRequest.OpportunityId">
+			<summary>Gets or sets the ID of the opportunity.</summary>
+			<returns>Returns <see cref="T:System.Guid"></see>.</returns>
+		</member>
+		<member name="T:Microsoft.Crm.Sdk.Messages.GetInvoiceProductsFromOpportunityResponse">
+			<summary>Response_Message<see cref="T:Microsoft.Crm.Sdk.Messages.GetInvoiceProductsFromOpportunityRequest"></see>.</summary>
 		</member>
 		<member name="M:Microsoft.Crm.Sdk.Messages.GetInvoiceProductsFromOpportunityResponse.#ctor">
-			<summary>constructor_initializesOrganizationResponse class.</summary>
+			<summary>Initializes a new instance of the GetInvoiceProductsFromOpportunityResponse class.</summary>
+		</member>
+		<member name="T:Microsoft.Crm.Sdk.Messages.GetQuantityDecimalRequest">
+			<summary>Request_Contains_Data get the quantity decimal value of a product for the entity specified in the target.</summary>
 		</member>
 		<member name="M:Microsoft.Crm.Sdk.Messages.GetQuantityDecimalRequest.#ctor">
-			<summary>constructor_initializesOrganizationRequest class.</summary>
+			<summary>constructor_initializesGetQuantityDecimalRequest class.</summary>
+		</member>
+		<member name="P:Microsoft.Crm.Sdk.Messages.GetQuantityDecimalRequest.ProductId">
+			<summary>Gets or sets the ID of the product. Required.</summary>
+			<returns>Returns <see cref="T:System.Guid"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Crm.Sdk.Messages.GetQuantityDecimalRequest.Target">
+			<summary>Gets or sets the target record for the get quantity decimal operation. Required.</summary>
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.EntityReference"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Crm.Sdk.Messages.GetQuantityDecimalRequest.UoMId">
+			<summary>Gets or sets the ID of the unit of measure (unit). Required.</summary>
+			<returns>Returns <see cref="T:System.Guid"></see>.</returns>
+		</member>
+		<member name="T:Microsoft.Crm.Sdk.Messages.GetQuantityDecimalResponse">
+			<summary>Response_Message<see cref="T:Microsoft.Crm.Sdk.Messages.GetQuantityDecimalRequest"></see>.</summary>
 		</member>
 		<member name="M:Microsoft.Crm.Sdk.Messages.GetQuantityDecimalResponse.#ctor">
-			<summary>constructor_initializesOrganizationResponse class.</summary>
+			<summary>Initializes a new instance of the GetQuantityDecimalResponse class.</summary>
+		</member>
+		<member name="P:Microsoft.Crm.Sdk.Messages.GetQuantityDecimalResponse.Quantity">
+			<summary>Gets the quantity decimal value for a product.</summary>
+			<returns>Returns <see cref="T:System.Int32"></see>.</returns>
+		</member>
+		<member name="T:Microsoft.Crm.Sdk.Messages.GetQuoteProductsFromOpportunityRequest">
+			<summary>Request_Contains_Data retrieve the products from an opportunity and copy them to the quote.</summary>
 		</member>
 		<member name="M:Microsoft.Crm.Sdk.Messages.GetQuoteProductsFromOpportunityRequest.#ctor">
-			<summary>constructor_initializesOrganizationRequest class.</summary>
+			<summary>constructor_initializesGetQuoteProductsFromOpportunityRequest class.</summary>
+		</member>
+		<member name="P:Microsoft.Crm.Sdk.Messages.GetQuoteProductsFromOpportunityRequest.OpportunityId">
+			<summary>Gets or sets the ID of the opportunity.</summary>
+			<returns>Returns <see cref="T:System.Guid"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Crm.Sdk.Messages.GetQuoteProductsFromOpportunityRequest.QuoteId">
+			<summary>Gets or sets the ID of the quote.</summary>
+			<returns>Returns <see cref="T:System.Guid"></see>.</returns>
+		</member>
+		<member name="T:Microsoft.Crm.Sdk.Messages.GetQuoteProductsFromOpportunityResponse">
+			<summary>Response_Message<see cref="T:Microsoft.Crm.Sdk.Messages.GetQuoteProductsFromOpportunityRequest"></see>.</summary>
 		</member>
 		<member name="M:Microsoft.Crm.Sdk.Messages.GetQuoteProductsFromOpportunityResponse.#ctor">
-			<summary>constructor_initializesOrganizationResponse class.</summary>
+			<summary>Initializes a new instance of the GetQuoteProductsFromOpportunityResponse class.</summary>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.GetReportHistoryLimitRequest">
 			<summary>Request_Contains_Data retrieve the history limit for a report.</summary>
@@ -2342,14 +2580,28 @@
 			<summary>Gets or sets the history limit for a report.</summary>
 			<returns>Returns <see cref="T:System.Int32"></see>.</returns>
 		</member>
+		<member name="T:Microsoft.Crm.Sdk.Messages.GetSalesOrderProductsFromOpportunityRequest">
+			<summary>Request_Contains_Data retrieve the products from an opportunity and copy them to the sales order (order).</summary>
+		</member>
 		<member name="M:Microsoft.Crm.Sdk.Messages.GetSalesOrderProductsFromOpportunityRequest.#ctor">
-			<summary>constructor_initializesOrganizationRequest class.</summary>
+			<summary>constructor_initializesGetSalesOrderProductsFromOpportunityRequest class.</summary>
+		</member>
+		<member name="P:Microsoft.Crm.Sdk.Messages.GetSalesOrderProductsFromOpportunityRequest.OpportunityId">
+			<summary>Gets or sets the ID of the opportunity.</summary>
+			<returns>Returns <see cref="T:System.Guid"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Crm.Sdk.Messages.GetSalesOrderProductsFromOpportunityRequest.SalesOrderId">
+			<summary>Gets or sets the ID of the sales order (order).</summary>
+			<returns>Returns <see cref="T:System.Guid"></see>.</returns>
+		</member>
+		<member name="T:Microsoft.Crm.Sdk.Messages.GetSalesOrderProductsFromOpportunityResponse">
+			<summary>Response_Message<see cref="T:Microsoft.Crm.Sdk.Messages.GetSalesOrderProductsFromOpportunityRequest"></see>.</summary>
 		</member>
 		<member name="M:Microsoft.Crm.Sdk.Messages.GetSalesOrderProductsFromOpportunityResponse.#ctor">
-			<summary>constructor_initializesOrganizationResponse class.</summary>
+			<summary>Initializes a new instance of the GetSalesOrderProductsFromOpportunityResponse class.</summary>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.GetTimeZoneCodeByLocalizedNameRequest">
-			<summary>Request_Contains_Data retrieve the time-zone code for the specified localized time-zone name.</summary>
+			<summary>Request_Contains_Data retrieve the time zone code for the specified localized time zone name.</summary>
 		</member>
 		<member name="M:Microsoft.Crm.Sdk.Messages.GetTimeZoneCodeByLocalizedNameRequest.#ctor">
 			<summary>Initializes a new instance of the GetTimeZoneCodeByLocalizedNameRequest class.</summary>
@@ -2597,9 +2849,19 @@
 			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.EntityCollection"></see>.</returns>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.IsBackOfficeInstalledRequest">
-			<summary>checks if pn_Great_Plains_9 is installed. Deprecated.</summary>
+			<summary>Checks if pn_Great_Plains_9 is installed. deprecated</summary>
+		</member>
+		<member name="M:Microsoft.Crm.Sdk.Messages.IsBackOfficeInstalledRequest.#ctor">
+			<summary>deprecated</summary>
+		</member>
+		<member name="T:Microsoft.Crm.Sdk.Messages.IsBackOfficeInstalledResponse">
+			<summary>deprecated</summary>
+		</member>
+		<member name="M:Microsoft.Crm.Sdk.Messages.IsBackOfficeInstalledResponse.#ctor">
+			<summary>deprecated</summary>
 		</member>
 		<member name="P:Microsoft.Crm.Sdk.Messages.IsBackOfficeInstalledResponse.IsInstalled">
+			<summary>deprecated</summary>
 			<returns>Returns <see cref="T:System.Boolean"></see>.</returns>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.IsComponentCustomizableRequest">
@@ -2613,14 +2875,14 @@
 			<returns>Returns <see cref="T:System.Guid"></see>.</returns>
 		</member>
 		<member name="P:Microsoft.Crm.Sdk.Messages.IsComponentCustomizableRequest.ComponentType">
-			<summary>Gets or sets the SolutionComponentType value representing the solution component. </summary>
+			<summary>Gets or sets the value representing the solution component. </summary>
 			<returns>Returns <see cref="T:System.Int32"></see>.</returns>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.IsComponentCustomizableResponse">
-			<summary>Response_Message<see cref="T:Microsoft.Xrm.Sdk.Messages.IsComponentCustomizableRequest"></see></summary>
+			<summary>Response_Message<see cref="T:Microsoft.Xrm.Sdk.Messages.IsComponentCustomizableRequest"></see> class.</summary>
 		</member>
 		<member name="M:Microsoft.Crm.Sdk.Messages.IsComponentCustomizableResponse.#ctor">
-			<summary>constructor_initializesIsComponentCustomizableResponse class</summary>
+			<summary>constructor_initializesIsComponentCustomizableResponse class.</summary>
 		</member>
 		<member name="P:Microsoft.Crm.Sdk.Messages.IsComponentCustomizableResponse.IsComponentCustomizable">
 			<summary>Gets the value indicating whether a solution component is customizable.</summary>
@@ -2679,7 +2941,7 @@
 			<returns>Returns <see cref="T:System.DateTime"></see>.</returns>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.LockInvoicePricingRequest">
-			<summary>Request_Contains_Data to lock the total price of products and services specified in the invoice.</summary>
+			<summary>Request_Contains_Data lock the total price of products and services specified in the invoice.</summary>
 		</member>
 		<member name="M:Microsoft.Crm.Sdk.Messages.LockInvoicePricingRequest.#ctor">
 			<summary>Initializes a new instance of the LockInvoicePricingRequest class.</summary>
@@ -2695,7 +2957,7 @@
 			<summary>Initializes a new instance of the LockInvoicePricingResponse class.</summary>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.LockSalesOrderPricingRequest">
-			<summary>Request_Contains_Data to lock the total price of products and services specified in the sales order (order).</summary>
+			<summary>Request_Contains_Data lock the total price of products and services specified in the sales order (order).</summary>
 		</member>
 		<member name="M:Microsoft.Crm.Sdk.Messages.LockSalesOrderPricingRequest.#ctor">
 			<summary>Initializes a new instance of the LockSalesOrderPricingRequest class.</summary>
@@ -2714,79 +2976,185 @@
 			<summary>internal</summary>
 		</member>
 		<member name="M:Microsoft.Crm.Sdk.Messages.LogFailureBulkOperationRequest.#ctor">
-			<summary>constructor_initializesOrganizationRequest class.</summary>
+			<summary>internal</summary>
+		</member>
+		<member name="P:Microsoft.Crm.Sdk.Messages.LogFailureBulkOperationRequest.AdditionalInfo">
+			<summary>internal</summary>
+			<returns>Returns <see cref="T:System.String"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Crm.Sdk.Messages.LogFailureBulkOperationRequest.BulkOperationId">
+			<summary>internal</summary>
+			<returns>Returns <see cref="T:System.Guid"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Crm.Sdk.Messages.LogFailureBulkOperationRequest.ErrorCode">
+			<summary>internal</summary>
+			<returns>Returns <see cref="T:System.Int32"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Crm.Sdk.Messages.LogFailureBulkOperationRequest.Message">
+			<summary>internal</summary>
+			<returns>Returns <see cref="T:System.String"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Crm.Sdk.Messages.LogFailureBulkOperationRequest.RegardingObjectId">
+			<summary>internal</summary>
+			<returns>Returns <see cref="T:System.Guid"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Crm.Sdk.Messages.LogFailureBulkOperationRequest.RegardingObjectTypeCode">
+			<summary>internal</summary>
+			<returns>Returns <see cref="T:System.Int32"></see>.</returns>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.LogFailureBulkOperationResponse">
 			<summary>internal</summary>
 		</member>
 		<member name="M:Microsoft.Crm.Sdk.Messages.LogFailureBulkOperationResponse.#ctor">
-			<summary>constructor_initializesOrganizationResponse class.</summary>
+			<summary>internal</summary>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.LogSuccessBulkOperationRequest">
 			<summary>internal</summary>
 		</member>
 		<member name="M:Microsoft.Crm.Sdk.Messages.LogSuccessBulkOperationRequest.#ctor">
-			<summary>constructor_initializesOrganizationRequest class.</summary>
+			<summary>internal</summary>
+		</member>
+		<member name="P:Microsoft.Crm.Sdk.Messages.LogSuccessBulkOperationRequest.AdditionalInfo">
+			<summary>internal</summary>
+			<returns>Returns <see cref="T:System.String"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Crm.Sdk.Messages.LogSuccessBulkOperationRequest.BulkOperationId">
+			<summary>internal</summary>
+			<returns>Returns <see cref="T:System.Guid"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Crm.Sdk.Messages.LogSuccessBulkOperationRequest.CreatedObjectId">
+			<summary>internal</summary>
+			<returns>Returns <see cref="T:System.Guid"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Crm.Sdk.Messages.LogSuccessBulkOperationRequest.CreatedObjectTypeCode">
+			<summary>internal</summary>
+			<returns>Returns <see cref="T:System.Int32"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Crm.Sdk.Messages.LogSuccessBulkOperationRequest.RegardingObjectId">
+			<summary>internal</summary>
+			<returns>Returns <see cref="T:System.Guid"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Crm.Sdk.Messages.LogSuccessBulkOperationRequest.RegardingObjectTypeCode">
+			<summary>internal</summary>
+			<returns>Returns <see cref="T:System.Int32"></see>.</returns>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.LogSuccessBulkOperationResponse">
 			<summary>internal</summary>
 		</member>
 		<member name="M:Microsoft.Crm.Sdk.Messages.LogSuccessBulkOperationResponse.#ctor">
-			<summary>constructor_initializesOrganizationResponse class.</summary>
+			<summary>internal</summary>
+		</member>
+		<member name="T:Microsoft.Crm.Sdk.Messages.LoseOpportunityRequest">
+			<summary>Request_Contains_Data set the state of an opportunity to Lost.</summary>
 		</member>
 		<member name="M:Microsoft.Crm.Sdk.Messages.LoseOpportunityRequest.#ctor">
 			<summary>constructor_initializesOrganizationRequest class.</summary>
 		</member>
+		<member name="P:Microsoft.Crm.Sdk.Messages.LoseOpportunityRequest.OpportunityClose">
+			<summary>Gets or sets the opportunity close activity associated with the opportunity to be lost. Required.</summary>
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.Entity"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Crm.Sdk.Messages.LoseOpportunityRequest.Status">
+			<summary>Gets or sets a status of the opportunity. Required.</summary>
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.OptionSetValue"></see>.</returns>
+		</member>
+		<member name="T:Microsoft.Crm.Sdk.Messages.LoseOpportunityResponse">
+			<summary>Response_Message<see cref="T:Microsoft.Crm.Sdk.Messages.LoseOpportunityRequest"></see>.</summary>
+		</member>
 		<member name="M:Microsoft.Crm.Sdk.Messages.LoseOpportunityResponse.#ctor">
-			<summary>constructor_initializesOrganizationResponse class.</summary>
+			<summary>Initializes a new instance of the LoseOpportunityResponse class.</summary>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.MakeAvailableToOrganizationReportRequest">
-			<summary>Deprecated. Use <see cref="T:Microsoft.Xrm.Sdk.Messages.UpdateRequest"></see>.</summary>
+			<summary>deprecated Use <see cref="T:Microsoft.Xrm.Sdk.Messages.UpdateRequest"></see>.</summary>
+		</member>
+		<member name="M:Microsoft.Crm.Sdk.Messages.MakeAvailableToOrganizationReportRequest.#ctor">
+			<summary>deprecated</summary>
 		</member>
 		<member name="P:Microsoft.Crm.Sdk.Messages.MakeAvailableToOrganizationReportRequest.ReportId">
+			<summary>deprecated</summary>
 			<returns>Returns <see cref="T:System.Guid"></see>.</returns>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.MakeAvailableToOrganizationReportResponse">
-			<summary>Deprecated.</summary>
+			<summary>deprecated</summary>
+		</member>
+		<member name="M:Microsoft.Crm.Sdk.Messages.MakeAvailableToOrganizationReportResponse.#ctor">
+			<summary>deprecated</summary>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.MakeAvailableToOrganizationTemplateRequest">
-			<summary>Deprecated. Use <see cref="T:Microsoft.Xrm.Sdk.Messages.UpdateRequest"></see>.</summary>
+			<summary>deprecated Use <see cref="T:Microsoft.Xrm.Sdk.Messages.UpdateRequest"></see>.</summary>
+		</member>
+		<member name="M:Microsoft.Crm.Sdk.Messages.MakeAvailableToOrganizationTemplateRequest.#ctor">
+			<summary>deprecated</summary>
 		</member>
 		<member name="P:Microsoft.Crm.Sdk.Messages.MakeAvailableToOrganizationTemplateRequest.TemplateId">
+			<summary>deprecated</summary>
 			<returns>Returns <see cref="T:System.Guid"></see>.</returns>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.MakeAvailableToOrganizationTemplateResponse">
-			<summary>Deprecated.</summary>
+			<summary>deprecated</summary>
+		</member>
+		<member name="M:Microsoft.Crm.Sdk.Messages.MakeAvailableToOrganizationTemplateResponse.#ctor">
+			<summary>deprecated</summary>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.MakeUnavailableToOrganizationReportRequest">
-			<summary>Deprecated. Use <see cref="T:Microsoft.Xrm.Sdk.Messages.UpdateRequest"></see>.</summary>
+			<summary>deprecated Use <see cref="T:Microsoft.Xrm.Sdk.Messages.UpdateRequest"></see>.</summary>
+		</member>
+		<member name="M:Microsoft.Crm.Sdk.Messages.MakeUnavailableToOrganizationReportRequest.#ctor">
+			<summary>deprecated</summary>
 		</member>
 		<member name="P:Microsoft.Crm.Sdk.Messages.MakeUnavailableToOrganizationReportRequest.ReportId">
+			<summary>deprecated</summary>
 			<returns>Returns <see cref="T:System.Guid"></see>.</returns>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.MakeUnavailableToOrganizationReportResponse">
-			<summary>Deprecated.</summary>
+			<summary>deprecated</summary>
+		</member>
+		<member name="M:Microsoft.Crm.Sdk.Messages.MakeUnavailableToOrganizationReportResponse.#ctor">
+			<summary>deprecated</summary>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.MakeUnavailableToOrganizationTemplateRequest">
-			<summary>Deprecated. Use <see cref="T:Microsoft.Xrm.Sdk.Messages.UpdateRequest"></see>.</summary>
+			<summary>deprecated Use <see cref="T:Microsoft.Xrm.Sdk.Messages.UpdateRequest"></see>.</summary>
+		</member>
+		<member name="M:Microsoft.Crm.Sdk.Messages.MakeUnavailableToOrganizationTemplateRequest.#ctor">
+			<summary>deprecated</summary>
 		</member>
 		<member name="P:Microsoft.Crm.Sdk.Messages.MakeUnavailableToOrganizationTemplateRequest.TemplateId">
+			<summary>deprecated</summary>
 			<returns>Returns <see cref="T:System.Guid"></see>.</returns>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.MakeUnavailableToOrganizationTemplateResponse">
-			<summary>Deprecated.</summary>
+			<summary>deprecated</summary>
+		</member>
+		<member name="M:Microsoft.Crm.Sdk.Messages.MakeUnavailableToOrganizationTemplateResponse.#ctor">
+			<summary>deprecated</summary>
+		</member>
+		<member name="T:Microsoft.Crm.Sdk.Messages.MergeRequest">
+			<summary>Request_Contains_Data merge the information from two entity records of the same type.</summary>
+		</member>
+		<member name="M:Microsoft.Crm.Sdk.Messages.MergeRequest.#ctor">
+			<summary>constructor_initializesMergeRequest class.</summary>
 		</member>
 		<member name="P:Microsoft.Crm.Sdk.Messages.MergeRequest.PerformParentingChecks">
+			<summary>Gets or sets a value that indicates whether to check if the parent information is different for the two entity records. Required.</summary>
 			<returns>Returns <see cref="T:System.Boolean"></see>.</returns>
 		</member>
 		<member name="P:Microsoft.Crm.Sdk.Messages.MergeRequest.SubordinateId">
+			<summary>Gets or sets the ID of the entity record to merge data from. Required.</summary>
 			<returns>Returns <see cref="T:System.Guid"></see>.</returns>
 		</member>
 		<member name="P:Microsoft.Crm.Sdk.Messages.MergeRequest.Target">
+			<summary>Gets or sets the target of the merge operation. Required.</summary>
 			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.EntityReference"></see>.</returns>
 		</member>
 		<member name="P:Microsoft.Crm.Sdk.Messages.MergeRequest.UpdateContent">
+			<summary>Gets or sets additional entity attributes to be set during the merge operation. Optional.</summary>
 			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.Entity"></see>.</returns>
+		</member>
+		<member name="T:Microsoft.Crm.Sdk.Messages.MergeResponse">
+			<summary>Response_Message<see cref="T:Microsoft.Crm.Sdk.Messages.MergeRequest"></see>.</summary>
+		</member>
+		<member name="M:Microsoft.Crm.Sdk.Messages.MergeResponse.#ctor">
+			<summary>Initializes a new instance of the MergeResponse class.</summary>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.MissingComponent">
 			<summary>Contains data to describe a solution component required by a solution but not found in the system.</summary>
@@ -2952,7 +3320,7 @@
 			<summary>Request_Contains_Data process marketing campaign e-mail responses.</summary>
 		</member>
 		<member name="M:Microsoft.Crm.Sdk.Messages.ProcessInboundEmailRequest.#ctor">
-			<summary>constructor_initializesOrganizationRequest class.</summary>
+			<summary>constructor_initializesProcessInboundEmailRequest class.</summary>
 		</member>
 		<member name="P:Microsoft.Crm.Sdk.Messages.ProcessInboundEmailRequest.InboundEmailActivity">
 			<summary>Gets or sets the ID of the inbound e-mail activity.</summary>
@@ -2968,13 +3336,29 @@
 			<summary>internal</summary>
 		</member>
 		<member name="M:Microsoft.Crm.Sdk.Messages.ProcessOneMemberBulkOperationRequest.#ctor">
-			<summary>constructor_initializesOrganizationRequest class.</summary>
+			<summary>internal</summary>
+		</member>
+		<member name="P:Microsoft.Crm.Sdk.Messages.ProcessOneMemberBulkOperationRequest.BulkOperationId">
+			<summary>internal</summary>
+			<returns>Returns <see cref="T:System.Guid"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Crm.Sdk.Messages.ProcessOneMemberBulkOperationRequest.BulkOperationSource">
+			<summary>internal</summary>
+			<returns>Returns <see cref="T:System.Int32"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Crm.Sdk.Messages.ProcessOneMemberBulkOperationRequest.Entity">
+			<summary>internal</summary>
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.Entity"></see>.</returns>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.ProcessOneMemberBulkOperationResponse">
 			<summary>internal</summary>
 		</member>
 		<member name="M:Microsoft.Crm.Sdk.Messages.ProcessOneMemberBulkOperationResponse.#ctor">
-			<summary>constructor_initializesOrganizationResponse class.</summary>
+			<summary>internal</summary>
+		</member>
+		<member name="P:Microsoft.Crm.Sdk.Messages.ProcessOneMemberBulkOperationResponse.ProcessResult">
+			<summary>internal</summary>
+			<returns>Returns <see cref="T:System.Int32"></see>.</returns>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.PropagateByExpressionRequest">
 			<summary>Request_Contains_Data create a quick campaign to distribute an activity to accounts, contacts or leads selected by a query.</summary>
@@ -3031,6 +3415,18 @@
 		<member name="P:Microsoft.Crm.Sdk.Messages.PropagateByExpressionResponse.BulkOperationId">
 			<summary>Gets the ID of the bulk operation created to distribute the campaign activity. Required.</summary>
 			<returns>Returns <see cref="T:System.Guid"></see>.</returns>
+		</member>
+		<member name="T:Microsoft.Crm.Sdk.Messages.PropagationOwnershipOptions">
+			<summary>Specifies the possible values for propagation ownership options.</summary>
+		</member>
+		<member name="F:Microsoft.Crm.Sdk.Messages.PropagationOwnershipOptions.Caller">
+			<summary>Specifies that all created activities are assigned to the caller of the API.</summary>
+		</member>
+		<member name="F:Microsoft.Crm.Sdk.Messages.PropagationOwnershipOptions.ListMemberOwner">
+			<summary>Specifies that created activities are assigned to respective owners of target members.</summary>
+		</member>
+		<member name="F:Microsoft.Crm.Sdk.Messages.PropagationOwnershipOptions.None">
+			<summary>Specifies that there is no change in ownership for the created activities. </summary>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.ProposalParty">
 			<summary>Represents a party (user, team or resource) needed for the proposed appointment.</summary>
@@ -3098,11 +3494,25 @@
 		<member name="M:Microsoft.Crm.Sdk.Messages.PublishAllXmlResponse.#ctor">
 			<summary>constructor_initializesPublishAllXmlResponse class</summary>
 		</member>
+		<member name="T:Microsoft.Crm.Sdk.Messages.PublishDuplicateRuleRequest">
+			<summary>Request_Contains_Data submit an asynchronous job to publish a duplicate rule.</summary>
+		</member>
 		<member name="M:Microsoft.Crm.Sdk.Messages.PublishDuplicateRuleRequest.#ctor">
-			<summary>constructor_initializesOrganizationRequest class.</summary>
+			<summary>constructor_initializesPublishDuplicateRuleRequest class.</summary>
+		</member>
+		<member name="P:Microsoft.Crm.Sdk.Messages.PublishDuplicateRuleRequest.DuplicateRuleId">
+			<summary>Gets or sets the ID of the duplicate rule to be published. Required.</summary>
+			<returns>Returns <see cref="T:System.Guid"></see>.</returns>
+		</member>
+		<member name="T:Microsoft.Crm.Sdk.Messages.PublishDuplicateRuleResponse">
+			<summary>Response_Message<see cref="T:Microsoft.Crm.Sdk.Messages.PublishDuplicateRuleRequest"></see>.</summary>
 		</member>
 		<member name="M:Microsoft.Crm.Sdk.Messages.PublishDuplicateRuleResponse.#ctor">
-			<summary>constructor_initializesOrganizationResponse class.</summary>
+			<summary>Initializes a new instance of the PublishDuplicateRuleResponse class.</summary>
+		</member>
+		<member name="P:Microsoft.Crm.Sdk.Messages.PublishDuplicateRuleResponse.JobId">
+			<summary>Gets the ID of the asynchronous duplicate rule publishing job.</summary>
+			<returns>Returns <see cref="T:System.Guid"></see>.</returns>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.PublishXmlRequest">
 			<summary>Request_Contains_Data publish specified solution components. </summary>
@@ -3115,10 +3525,10 @@
 			<returns>Returns <see cref="T:System.String"></see>.</returns>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.PublishXmlResponse">
-			<summary>Response_Message<see cref="T:Microsoft.Xrm.Sdk.Messages.PublishXmlRequest"></see></summary>
+			<summary>Response_Message<see cref="T:Microsoft.Xrm.Sdk.Messages.PublishXmlRequest"></see> class.</summary>
 		</member>
 		<member name="M:Microsoft.Crm.Sdk.Messages.PublishXmlResponse.#ctor">
-			<summary>constructor_initializesPublishXmlResponse class</summary>
+			<summary>constructor_initializesPublishXmlResponse class.</summary>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.QualifyLeadRequest">
 			<summary>Request_Contains_Data qualify a lead and create account, contact and opportunity records that are linked to the originating lead record.</summary>
@@ -3168,11 +3578,29 @@
 			<summary>Gets the collection of references to the newly created account, contact, and opportunity records. </summary>
 			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.EntityReferenceCollection"></see>.</returns>
 		</member>
+		<member name="T:Microsoft.Crm.Sdk.Messages.QualifyMemberListRequest">
+			<summary>Request_Contains_Data qualify the specified list and either override the list members or remove them according to the specified option.</summary>
+		</member>
 		<member name="M:Microsoft.Crm.Sdk.Messages.QualifyMemberListRequest.#ctor">
-			<summary>constructor_initializesOrganizationRequest class.</summary>
+			<summary>constructor_initializesQualifyMemberListRequest class.</summary>
+		</member>
+		<member name="P:Microsoft.Crm.Sdk.Messages.QualifyMemberListRequest.ListId">
+			<summary>Gets or sets the ID of the list to qualify. Required.</summary>
+			<returns>Returns <see cref="T:System.Guid"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Crm.Sdk.Messages.QualifyMemberListRequest.MembersId">
+			<summary>Gets or sets the IDs of the members to qualify. Required.</summary>
+			<returns>Returns <see cref="T:System.Guid"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Crm.Sdk.Messages.QualifyMemberListRequest.OverrideorRemove">
+			<summary>Gets or sets a value that indicates whether to override or remove the members from the list. Required.</summary>
+			<returns>Returns <see cref="T:System.Boolean"></see>.</returns>
+		</member>
+		<member name="T:Microsoft.Crm.Sdk.Messages.QualifyMemberListResponse">
+			<summary>Response_Message<see cref="T:Microsoft.Crm.Sdk.Messages.QualifyMemberListRequest"></see>.</summary>
 		</member>
 		<member name="M:Microsoft.Crm.Sdk.Messages.QualifyMemberListResponse.#ctor">
-			<summary>constructor_initializesOrganizationResponse class.</summary>
+			<summary>Initializes a new instance of the QualifyMemberListResponse class.</summary>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.QueryExpressionToFetchXmlRequest">
 			<summary>Request_Contains_Data convert a query represented as a QueryExpression class to the equivalent query represented as FetchXML.</summary>
@@ -3314,44 +3742,79 @@
 		<member name="M:Microsoft.Crm.Sdk.Messages.RecalculateResponse.#ctor">
 			<summary>Initializes a new instance of the RecalculateResponse class. </summary>
 		</member>
+		<member name="T:Microsoft.Crm.Sdk.Messages.RelationshipAuditDetail">
+			<summary>Contains the audited details of a change in a relationship.</summary>
+		</member>
 		<member name="M:Microsoft.Crm.Sdk.Messages.RelationshipAuditDetail.#ctor">
-			<summary>Initializes a new instance of the AuditDetail class.</summary>
+			<summary>constructor_initializesRelationshipAuditDetail class.</summary>
+		</member>
+		<member name="P:Microsoft.Crm.Sdk.Messages.RelationshipAuditDetail.RelationshipName">
+			<summary>Gets or sets relationship name before the change occurs.</summary>
+			<returns>Returns <see cref="T:System.String"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Crm.Sdk.Messages.RelationshipAuditDetail.TargetRecords">
+			<summary>Provides a collection of relationship records that were added or removed.</summary>
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.DataCollection`1"></see>.</returns>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.RemoveItemCampaignActivityRequest">
-			<summary>sdk_ComingSoon</summary>
+			<summary>Request_Contains_Data remove an item from a campaign activity.</summary>
+		</member>
+		<member name="M:Microsoft.Crm.Sdk.Messages.RemoveItemCampaignActivityRequest.#ctor">
+			<summary>constructor_initializesOrganizationRequest class.</summary>
 		</member>
 		<member name="P:Microsoft.Crm.Sdk.Messages.RemoveItemCampaignActivityRequest.CampaignActivityId">
+			<summary>Gets or sets the ID of the campaign activity. Required.</summary>
 			<returns>Returns <see cref="T:System.Guid"></see>.</returns>
 		</member>
 		<member name="P:Microsoft.Crm.Sdk.Messages.RemoveItemCampaignActivityRequest.ItemId">
+			<summary>Gets or sets the ID of the item to be removed from the campaign activity. Required.</summary>
 			<returns>Returns <see cref="T:System.Guid"></see>.</returns>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.RemoveItemCampaignActivityResponse">
-			<summary>sdk_ComingSoon</summary>
+			<summary>Response_Message<see cref="T:Microsoft.Crm.Sdk.Messages.RemoveItemCampaignActivityRequest"></see>.</summary>
+		</member>
+		<member name="M:Microsoft.Crm.Sdk.Messages.RemoveItemCampaignActivityResponse.#ctor">
+			<summary>Initializes a new instance of the RemoveItemCampaignActivityResponse class.</summary>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.RemoveItemCampaignRequest">
-			<summary>sdk_ComingSoon</summary>
+			<summary>Request_Contains_Data remove an item from a campaign.</summary>
+		</member>
+		<member name="M:Microsoft.Crm.Sdk.Messages.RemoveItemCampaignRequest.#ctor">
+			<summary>constructor_initializesOrganizationRequest class.</summary>
 		</member>
 		<member name="P:Microsoft.Crm.Sdk.Messages.RemoveItemCampaignRequest.CampaignId">
+			<summary>Gets or sets the ID of the campaign. Required.</summary>
 			<returns>Returns <see cref="T:System.Guid"></see>.</returns>
 		</member>
 		<member name="P:Microsoft.Crm.Sdk.Messages.RemoveItemCampaignRequest.EntityId">
+			<summary>Gets or sets the ID of the item to be removed from the campaign. Required.</summary>
 			<returns>Returns <see cref="T:System.Guid"></see>.</returns>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.RemoveItemCampaignResponse">
-			<summary>sdk_ComingSoon</summary>
+			<summary>Response_Message<see cref="T:Microsoft.Crm.Sdk.Messages.RemoveItemCampaignRequest"></see>.</summary>
+		</member>
+		<member name="M:Microsoft.Crm.Sdk.Messages.RemoveItemCampaignResponse.#ctor">
+			<summary>Initializes a new instance of the RemoveItemCampaignResponse class.</summary>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.RemoveMemberListRequest">
-			<summary>sdk_ComingSoon</summary>
+			<summary>Request_Contains_Data remove a member from a list (marketing list).</summary>
+		</member>
+		<member name="M:Microsoft.Crm.Sdk.Messages.RemoveMemberListRequest.#ctor">
+			<summary>constructor_initializesOrganizationRequest class.</summary>
 		</member>
 		<member name="P:Microsoft.Crm.Sdk.Messages.RemoveMemberListRequest.EntityId">
+			<summary>Gets or sets the ID of the member to be removed from the list. Required.</summary>
 			<returns>Returns <see cref="T:System.Guid"></see>.</returns>
 		</member>
 		<member name="P:Microsoft.Crm.Sdk.Messages.RemoveMemberListRequest.ListId">
+			<summary>Gets or sets the ID of the list. Required.</summary>
 			<returns>Returns <see cref="T:System.Guid"></see>.</returns>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.RemoveMemberListResponse">
-			<summary>sdk_ComingSoon</summary>
+			<summary>Response_Message<see cref="T:Microsoft.Crm.Sdk.Messages.RemoveMemberListRequest"></see>.</summary>
+		</member>
+		<member name="M:Microsoft.Crm.Sdk.Messages.RemoveMemberListResponse.#ctor">
+			<summary>Initializes a new instance of the RemoveMemberListResponse class.</summary>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.RemoveMembersTeamRequest">
 			<summary>sdk_ComingSoon</summary>
@@ -3363,7 +3826,10 @@
 			<returns>Returns <see cref="T:System.Guid"></see>.</returns>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.RemoveMembersTeamResponse">
-			<summary>sdk_ComingSoon</summary>
+			<summary>Contains the response from <see cref="T:Microsoft.Crm.Sdk.Messages.RemoveMembersTeamRequest"></see>.</summary>
+		</member>
+		<member name="M:Microsoft.Crm.Sdk.Messages.RemoveMembersTeamResponse.#ctor">
+			<summary>Initializes a new instance of the RemoveMembersTeamResponse class.</summary>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.RemoveParentRequest">
 			<summary>sdk_ComingSoon</summary>
@@ -3372,7 +3838,10 @@
 			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.EntityReference"></see>.</returns>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.RemoveParentResponse">
-			<summary>sdk_ComingSoon</summary>
+			<summary>Contains the response from <see cref="T:Microsoft.Crm.Sdk.Messages.RemoveParentRequest"></see>.</summary>
+		</member>
+		<member name="M:Microsoft.Crm.Sdk.Messages.RemoveParentResponse.#ctor">
+			<summary>Initializes a new instance of the RemoveParentResponse class.</summary>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.RemovePrivilegeRoleRequest">
 			<summary>sdk_ComingSoon</summary>
@@ -3384,19 +3853,30 @@
 			<returns>Returns <see cref="T:System.Guid"></see>.</returns>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.RemovePrivilegeRoleResponse">
-			<summary>sdk_ComingSoon</summary>
+			<summary>Contains the response from <see cref="T:Microsoft.Crm.Sdk.Messages.RemovePrivilegeRoleRequest"></see>.</summary>
+		</member>
+		<member name="M:Microsoft.Crm.Sdk.Messages.RemovePrivilegeRoleResponse.#ctor">
+			<summary>Initializes a new instance of the RemovePrivilegeRoleResponse class.</summary>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.RemoveProductFromKitRequest">
-			<summary>sdk_ComingSoon</summary>
+			<summary>Request_Contains_Data remove a product from a kit.</summary>
+		</member>
+		<member name="M:Microsoft.Crm.Sdk.Messages.RemoveProductFromKitRequest.#ctor">
+			<summary>Initializes a new instance of the RemoveProductFromKitRequest class.</summary>
 		</member>
 		<member name="P:Microsoft.Crm.Sdk.Messages.RemoveProductFromKitRequest.KitId">
+			<summary>Gets or sets the ID of the kit from which the product is to be removed.</summary>
 			<returns>Returns <see cref="T:System.Guid"></see>.</returns>
 		</member>
 		<member name="P:Microsoft.Crm.Sdk.Messages.RemoveProductFromKitRequest.ProductId">
+			<summary>Gets or sets the ID of the product being removed from the kit.</summary>
 			<returns>Returns <see cref="T:System.Guid"></see>.</returns>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.RemoveProductFromKitResponse">
-			<summary>sdk_ComingSoon</summary>
+			<summary>Response_Message<see cref="T:Microsoft.Crm.Sdk.Messages.RemoveProductFromKitRequest"></see>.</summary>
+		</member>
+		<member name="M:Microsoft.Crm.Sdk.Messages.RemoveProductFromKitResponse.#ctor">
+			<summary>Initializes a new instance of the RemoveProductFromKitResponse class.</summary>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.RemoveRelatedRequest">
 			<summary>sdk_ComingSoon</summary>
@@ -3405,7 +3885,10 @@
 			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.EntityReference"></see>.</returns>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.RemoveRelatedResponse">
-			<summary>sdk_ComingSoon</summary>
+			<summary>Contains the response from <see cref="T:Microsoft.Crm.Sdk.Messages.RemoveRelatedRequest"></see>.</summary>
+		</member>
+		<member name="M:Microsoft.Crm.Sdk.Messages.RemoveRelatedResponse.#ctor">
+			<summary>Initializes a new instance of the RemoveRelatedResponse class.</summary>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.RemoveSolutionComponentRequest">
 			<summary>Request_Contains_Data remove a component from an unmanaged solution. </summary>
@@ -3418,7 +3901,7 @@
 			<returns>Returns <see cref="T:System.Guid"></see>.</returns>
 		</member>
 		<member name="P:Microsoft.Crm.Sdk.Messages.RemoveSolutionComponentRequest.ComponentType">
-			<summary>Gets or sets the SolutionComponentType value representing the solution component you are adding.</summary>
+			<summary>Gets or sets the value representing the solution component you are adding.</summary>
 			<returns>Returns <see cref="T:System.Int32"></see>.</returns>
 		</member>
 		<member name="P:Microsoft.Crm.Sdk.Messages.RemoveSolutionComponentRequest.SolutionUniqueName">
@@ -3426,32 +3909,62 @@
 			<returns>Returns <see cref="T:System.String"></see>.</returns>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.RemoveSolutionComponentResponse">
-			<summary>Response_Message<see cref="T:Microsoft.Xrm.Sdk.Messages.RemoveSolutionComponentRequest"></see></summary>
+			<summary>Response_Message<see cref="T:Microsoft.Xrm.Sdk.Messages.RemoveSolutionComponentRequest"></see> class.</summary>
 		</member>
 		<member name="M:Microsoft.Crm.Sdk.Messages.RemoveSolutionComponentResponse.#ctor">
-			<summary>constructor_initializesRemoveSolutionComponentResponse class</summary>
+			<summary>constructor_initializesRemoveSolutionComponentResponse class.</summary>
 		</member>
 		<member name="P:Microsoft.Crm.Sdk.Messages.RemoveSolutionComponentResponse.id">
 			<summary>Gets the ID value of the solution component that was removed.</summary>
 			<returns>Returns <see cref="T:System.Guid"></see>.</returns>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.RemoveSubstituteProductRequest">
-			<summary>Deprecated. Use <see cref="T:Microsoft.Xrm.Sdk.Messages.DisassociateRequest"></see>.</summary>
+			<summary>deprecated Use <see cref="T:Microsoft.Xrm.Sdk.Messages.DisassociateRequest"></see>.</summary>
+		</member>
+		<member name="M:Microsoft.Crm.Sdk.Messages.RemoveSubstituteProductRequest.#ctor">
+			<summary>deprecated</summary>
 		</member>
 		<member name="P:Microsoft.Crm.Sdk.Messages.RemoveSubstituteProductRequest.ProductId">
+			<summary>deprecated</summary>
 			<returns>Returns <see cref="T:System.Guid"></see>.</returns>
 		</member>
 		<member name="P:Microsoft.Crm.Sdk.Messages.RemoveSubstituteProductRequest.SubstituteId">
+			<summary>deprecated</summary>
 			<returns>Returns <see cref="T:System.Guid"></see>.</returns>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.RemoveSubstituteProductResponse">
-			<summary>Deprecated.</summary>
+			<summary>deprecated</summary>
+		</member>
+		<member name="M:Microsoft.Crm.Sdk.Messages.RemoveSubstituteProductResponse.#ctor">
+			<summary>deprecated</summary>
+		</member>
+		<member name="T:Microsoft.Crm.Sdk.Messages.RenewContractRequest">
+			<summary>Request_Contains_Data renew a contract and create the contract details for a new contract.</summary>
 		</member>
 		<member name="M:Microsoft.Crm.Sdk.Messages.RenewContractRequest.#ctor">
 			<summary>constructor_initializesOrganizationRequest class.</summary>
 		</member>
+		<member name="P:Microsoft.Crm.Sdk.Messages.RenewContractRequest.ContractId">
+			<summary>Gets or sets the ID of the contract to be renewed. Required.</summary>
+			<returns>Returns <see cref="T:System.Guid"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Crm.Sdk.Messages.RenewContractRequest.IncludeCanceledLines">
+			<summary>Gets or sets a value that indicates whether the canceled line items of the originating contract are to be included in the renewed contract.  Required.</summary>
+			<returns>Returns <see cref="T:System.Boolean"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Crm.Sdk.Messages.RenewContractRequest.Status">
+			<summary>Gets or sets a status of the contract.</summary>
+			<returns>Returns <see cref="T:System.Int32"></see>.</returns>
+		</member>
+		<member name="T:Microsoft.Crm.Sdk.Messages.RenewContractResponse">
+			<summary>Response_Message<see cref="T:Microsoft.Crm.Sdk.Messages.RenewContractRequest"></see>.</summary>
+		</member>
 		<member name="M:Microsoft.Crm.Sdk.Messages.RenewContractResponse.#ctor">
-			<summary>constructor_initializesOrganizationResponse class.</summary>
+			<summary>constructor_initializesRenewContractResponse class. </summary>
+		</member>
+		<member name="P:Microsoft.Crm.Sdk.Messages.RenewContractResponse.Entity">
+			<summary>Gets or sets the resulting contract.</summary>
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.Entity"></see>.</returns>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.ReplacePrivilegesRoleRequest">
 			<summary>sdk_ComingSoon</summary>
@@ -3463,7 +3976,10 @@
 			<returns>Returns <see cref="T:System.Guid"></see>.</returns>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.ReplacePrivilegesRoleResponse">
-			<summary>sdk_ComingSoon</summary>
+			<summary>Contains the response from <see cref="T:Microsoft.Crm.Sdk.Messages.ReplacePrivilegesRoleRequest"></see>.</summary>
+		</member>
+		<member name="M:Microsoft.Crm.Sdk.Messages.ReplacePrivilegesRoleResponse.#ctor">
+			<summary>Initializes a new instance of the ReplacePrivilegesRoleResponse class.</summary>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.RequiredResource">
 			<summary>Specifies a resource that is required for a scheduling operation.</summary>
@@ -3586,9 +4102,13 @@
 			<returns>Returns <see cref="T:System.Guid"></see>.</returns>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.RetrieveAllChildUsersSystemUserResponse">
-			<summary>sdk_ComingSoon</summary>
+			<summary>Contains the response from <see cref="T:Microsoft.Crm.Sdk.Messages.RetrieveAllChildUsersSystemUserRequest"></see>.</summary>
+		</member>
+		<member name="M:Microsoft.Crm.Sdk.Messages.RetrieveAllChildUsersSystemUserResponse.#ctor">
+			<summary>Initializes a new instance of the RetrieveAllChildUsersSystemUserResponse class.</summary>
 		</member>
 		<member name="P:Microsoft.Crm.Sdk.Messages.RetrieveAllChildUsersSystemUserResponse.EntityCollection">
+			<summary>Gets the resulting collection of all users that report to the specified system user (user).</summary>
 			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.EntityCollection"></see>.</returns>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.RetrieveApplicationRibbonRequest">
@@ -3694,9 +4214,13 @@
 			<returns>Returns <see cref="T:System.Guid"></see>.</returns>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.RetrieveBusinessHierarchyBusinessUnitResponse">
-			<summary>sdk_ComingSoon</summary>
+			<summary>Contains the response from <see cref="T:Microsoft.Crm.Sdk.Messages.RetrieveBusinessHierarchyBusinessUnitRequest"></see>.</summary>
+		</member>
+		<member name="M:Microsoft.Crm.Sdk.Messages.RetrieveBusinessHierarchyBusinessUnitResponse.#ctor">
+			<summary>Initializes a new instance of the RetrieveBusinessHierarchyBusinessUnitResponse class.</summary>
 		</member>
 		<member name="P:Microsoft.Crm.Sdk.Messages.RetrieveBusinessHierarchyBusinessUnitResponse.EntityCollection">
+			<summary>Gets the resulting collection of all business units in the business unit hierarchy.</summary>
 			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.EntityCollection"></see>.</returns>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.RetrieveByGroupResourceRequest">
@@ -3709,9 +4233,13 @@
 			<returns>Returns <see cref="T:System.Guid"></see>.</returns>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.RetrieveByGroupResourceResponse">
-			<summary>sdk_ComingSoon</summary>
+			<summary>Contains the response from <see cref="T:Microsoft.Crm.Sdk.Messages.RetrieveByGroupResourceRequest"></see>.</summary>
+		</member>
+		<member name="M:Microsoft.Crm.Sdk.Messages.RetrieveByGroupResourceResponse.#ctor">
+			<summary>Initializes a new instance of the RetrieveByGroupResourceResponse class.</summary>
 		</member>
 		<member name="P:Microsoft.Crm.Sdk.Messages.RetrieveByGroupResourceResponse.EntityCollection">
+			<summary>Gets the resulting collection of all resources related to the specified resource group.</summary>
 			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.EntityCollection"></see>.</returns>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.RetrieveByResourceResourceGroupRequest">
@@ -3724,9 +4252,13 @@
 			<returns>Returns <see cref="T:System.Guid"></see>.</returns>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.RetrieveByResourceResourceGroupResponse">
-			<summary>sdk_ComingSoon</summary>
+			<summary>Contains the response from <see cref="T:Microsoft.Crm.Sdk.Messages.RetrieveByResourceResourceGroupRequest"></see>.</summary>
+		</member>
+		<member name="M:Microsoft.Crm.Sdk.Messages.RetrieveByResourceResourceGroupResponse.#ctor">
+			<summary>Initializes a new instance of the RetrieveByResourceResourceGroupResponse class.</summary>
 		</member>
 		<member name="P:Microsoft.Crm.Sdk.Messages.RetrieveByResourceResourceGroupResponse.EntityCollection">
+			<summary>Gets the resulting collection of all resource groups (scheduling groups) that contain the specified resource.</summary>
 			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.EntityCollection"></see>.</returns>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.RetrieveByResourcesServiceRequest">
@@ -3739,9 +4271,13 @@
 			<returns>Returns <see cref="T:System.Guid"></see>.</returns>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.RetrieveByResourcesServiceResponse">
-			<summary>sdk_ComingSoon</summary>
+			<summary>Contains the response from <see cref="T:Microsoft.Crm.Sdk.Messages.RetrieveByResourcesServiceRequest"></see>.</summary>
+		</member>
+		<member name="M:Microsoft.Crm.Sdk.Messages.RetrieveByResourcesServiceResponse.#ctor">
+			<summary>Initializes a new instance of the RetrieveByResourcesServiceResponse class.</summary>
 		</member>
 		<member name="P:Microsoft.Crm.Sdk.Messages.RetrieveByResourcesServiceResponse.EntityCollection">
+			<summary>Gets the resulting collection of all services related to the specified set of services.</summary>
 			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.EntityCollection"></see>.</returns>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.RetrieveByTopIncidentProductKbArticleRequest">
@@ -3791,7 +4327,7 @@
 			<summary>constructor_initializesOrganizationRequest class.</summary>
 		</member>
 		<member name="P:Microsoft.Crm.Sdk.Messages.RetrieveDependenciesForDeleteRequest.ComponentType">
-			<summary>Gets or sets the SolutionComponentType of the component to be deleted.</summary>
+			<summary>Gets or sets the value for the type of the component to be deleted.</summary>
 			<returns>Returns <see cref="T:System.Int32"></see>.</returns>
 		</member>
 		<member name="P:Microsoft.Crm.Sdk.Messages.RetrieveDependenciesForDeleteRequest.ObjectId">
@@ -3799,10 +4335,10 @@
 			<returns>Returns <see cref="T:System.Guid"></see>.</returns>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.RetrieveDependenciesForDeleteResponse">
-			<summary>Response_Message<see cref="T:Microsoft.Xrm.Sdk.Messages.RetrieveDependenciesForDeleteRequest"></see></summary>
+			<summary>Response_Message<see cref="T:Microsoft.Xrm.Sdk.Messages.RetrieveDependenciesForDeleteRequest"></see> class.</summary>
 		</member>
 		<member name="M:Microsoft.Crm.Sdk.Messages.RetrieveDependenciesForDeleteResponse.#ctor">
-			<summary>constructor_initializesRetrieveDependenciesForDeleteResponse class</summary>
+			<summary>constructor_initializesRetrieveDependenciesForDeleteResponse class.</summary>
 		</member>
 		<member name="P:Microsoft.Crm.Sdk.Messages.RetrieveDependenciesForDeleteResponse.EntityCollection">
 			<summary>Gets a collection of Dependency records where the DependentComponentObjectId and  DependentComponentType represent those components that would prevent the  solution component from being deleted.</summary>
@@ -3835,7 +4371,7 @@
 			<summary>constructor_initializesOrganizationRequest class.</summary>
 		</member>
 		<member name="P:Microsoft.Crm.Sdk.Messages.RetrieveDependentComponentsRequest.ComponentType">
-			<summary>Gets or sets the SolutionComponentType value representing the solution component.</summary>
+			<summary>Gets or sets the value representing the solution component.</summary>
 			<returns>Returns <see cref="T:System.Int32"></see>.</returns>
 		</member>
 		<member name="P:Microsoft.Crm.Sdk.Messages.RetrieveDependentComponentsRequest.ObjectId">
@@ -3875,20 +4411,42 @@
 			<summary>constructor_initializesRetrieveDeprovisionedLanguagesRequest class</summary>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.RetrieveDeprovisionedLanguagesResponse">
-			<summary>Response_Message<see cref="T:Microsoft.Xrm.Sdk.Messages.RetrieveDeprovisionedLanguagesRequest"></see></summary>
+			<summary>Response_Message<see cref="T:Microsoft.Xrm.Sdk.Messages.RetrieveDeprovisionedLanguagesRequest"></see> class.</summary>
 		</member>
 		<member name="M:Microsoft.Crm.Sdk.Messages.RetrieveDeprovisionedLanguagesResponse.#ctor">
-			<summary>constructor_initializesRetrieveDeprovisionedLanguagesResponse class</summary>
+			<summary>constructor_initializesRetrieveDeprovisionedLanguagesResponse class.</summary>
 		</member>
 		<member name="P:Microsoft.Crm.Sdk.Messages.RetrieveDeprovisionedLanguagesResponse.RetrieveDeprovisionedLanguages">
 			<summary>Gets the array of language packs on the server that are disabled.</summary>
 			<returns>Returns <see cref="T:System.Int32"></see>.</returns>
 		</member>
+		<member name="T:Microsoft.Crm.Sdk.Messages.RetrieveDuplicatesRequest">
+			<summary>Request_Contains_Data detect and retrieve duplicates for a specified record.</summary>
+		</member>
 		<member name="M:Microsoft.Crm.Sdk.Messages.RetrieveDuplicatesRequest.#ctor">
-			<summary>constructor_initializesOrganizationRequest class.</summary>
+			<summary>constructor_initializesRetrieveDuplicatesRequest class.</summary>
+		</member>
+		<member name="P:Microsoft.Crm.Sdk.Messages.RetrieveDuplicatesRequest.BusinessEntity">
+			<summary>Gets or sets the record for which the duplicates will be retrieved. Required.</summary>
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.Entity"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Crm.Sdk.Messages.RetrieveDuplicatesRequest.MatchingEntityName">
+			<summary>Gets or sets the name of the matching entity type. Required.</summary>
+			<returns>Returns <see cref="T:System.String"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Crm.Sdk.Messages.RetrieveDuplicatesRequest.PagingInfo">
+			<summary>Gets or sets the paging information for the retrieved duplicates. Required.</summary>
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.Query.PagingInfo"></see>.</returns>
+		</member>
+		<member name="T:Microsoft.Crm.Sdk.Messages.RetrieveDuplicatesResponse">
+			<summary>Response_Message<see cref="T:Microsoft.Crm.Sdk.Messages.RetrieveDuplicatesRequest"></see>.</summary>
 		</member>
 		<member name="M:Microsoft.Crm.Sdk.Messages.RetrieveDuplicatesResponse.#ctor">
-			<summary>constructor_initializesOrganizationResponse class.</summary>
+			<summary>Initializes a new instance of the RetrieveDuplicatesResponse class.</summary>
+		</member>
+		<member name="P:Microsoft.Crm.Sdk.Messages.RetrieveDuplicatesResponse.DuplicateCollection">
+			<summary>Gets a collection of duplicate entity instances.</summary>
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.EntityCollection"></see>.</returns>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.RetrieveEntityRibbonRequest">
 			<summary>Request_Contains_Data [do something]. </summary>
@@ -3914,11 +4472,25 @@
 			<summary>Gets a compressed file that contains definitions of the ribbon.</summary>
 			<returns>Returns <see cref="T:System.Byte"></see>.</returns>
 		</member>
+		<member name="T:Microsoft.Crm.Sdk.Messages.RetrieveExchangeRateRequest">
+			<summary>Request_Contains_Data retrieve the exchange rate.</summary>
+		</member>
 		<member name="M:Microsoft.Crm.Sdk.Messages.RetrieveExchangeRateRequest.#ctor">
-			<summary>constructor_initializesOrganizationRequest class.</summary>
+			<summary>constructor_initializesRetrieveExchangeRateRequest class.</summary>
+		</member>
+		<member name="P:Microsoft.Crm.Sdk.Messages.RetrieveExchangeRateRequest.TransactionCurrencyId">
+			<summary>Gets or sets the ID of the currency. Required.</summary>
+			<returns>Returns <see cref="T:System.Guid"></see>.</returns>
+		</member>
+		<member name="T:Microsoft.Crm.Sdk.Messages.RetrieveExchangeRateResponse">
+			<summary>Response_Message<see cref="T:Microsoft.Crm.Sdk.Messages.RetrieveExchangeRateRequest"></see>.</summary>
 		</member>
 		<member name="M:Microsoft.Crm.Sdk.Messages.RetrieveExchangeRateResponse.#ctor">
-			<summary>constructor_initializesOrganizationResponse class.</summary>
+			<summary>Initializes a new instance of the RetrieveExchangeRateResponse class.</summary>
+		</member>
+		<member name="P:Microsoft.Crm.Sdk.Messages.RetrieveExchangeRateResponse.ExchangeRate">
+			<summary>Gets the exchange rate for the currency.</summary>
+			<returns>Returns <see cref="T:System.Decimal"></see>.</returns>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.RetrieveFilteredFormsRequest">
 			<summary>Request_Contains_Data retrieve the entity forms available for a specified user. </summary>
@@ -3979,10 +4551,10 @@
 			<returns>Returns <see cref="T:System.String"></see>.</returns>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.RetrieveFormXmlResponse">
-			<summary>Response_Message<see cref="T:Microsoft.Xrm.Sdk.Messages.RetrieveFormXmlRequest"></see></summary>
+			<summary>Response_Message<see cref="T:Microsoft.Xrm.Sdk.Messages.RetrieveFormXmlRequest"></see> class.</summary>
 		</member>
 		<member name="M:Microsoft.Crm.Sdk.Messages.RetrieveFormXmlResponse.#ctor">
-			<summary>constructor_initializesRetrieveFormXmlResponse class</summary>
+			<summary>constructor_initializesRetrieveFormXmlResponse class.</summary>
 		</member>
 		<member name="P:Microsoft.Crm.Sdk.Messages.RetrieveFormXmlResponse.ComponentState">
 			<summary>internal</summary>
@@ -4027,7 +4599,7 @@
 			<returns>Returns <see cref="T:System.Int32"></see>.</returns>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.RetrieveInstalledLanguagePackVersionResponse">
-			<summary>Response_Message<see cref="T:Microsoft.Xrm.Sdk.Messages.RetrieveInstalledLanguagePackVersionRequest"></see></summary>
+			<summary>Response_Message<see cref="T:Microsoft.Crm.Sdk.Messages.RetrieveInstalledLanguagePackVersionRequest"></see></summary>
 		</member>
 		<member name="M:Microsoft.Crm.Sdk.Messages.RetrieveInstalledLanguagePackVersionResponse.#ctor">
 			<summary>constructor_initializesRetrieveInstalledLanguagePackVersionResponse class</summary>
@@ -4079,43 +4651,69 @@
 			<returns>Returns <see cref="T:System.Boolean"></see>.</returns>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.RetrieveLocLabelsResponse">
-			<summary>Response_Message<see cref="T:Microsoft.Xrm.Sdk.Messages.RetrieveLocLabelsRequest"></see></summary>
+			<summary>Response_Message<see cref="T:Microsoft.Xrm.Sdk.Messages.RetrieveLocLabelsRequest"></see> class.</summary>
 		</member>
 		<member name="M:Microsoft.Crm.Sdk.Messages.RetrieveLocLabelsResponse.#ctor">
-			<summary>constructor_initializesRetrieveLocLabelsResponse class</summary>
+			<summary>constructor_initializesRetrieveLocLabelsResponse class.</summary>
 		</member>
 		<member name="P:Microsoft.Crm.Sdk.Messages.RetrieveLocLabelsResponse.Label">
 			<summary>Gets the label for the requested entity attribute.</summary>
 			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.Label"></see>.</returns>
 		</member>
+		<member name="T:Microsoft.Crm.Sdk.Messages.RetrieveMembersBulkOperationRequest">
+			<summary>Request_Contains_Data retrieve the members of a bulk operation.</summary>
+		</member>
+		<member name="M:Microsoft.Crm.Sdk.Messages.RetrieveMembersBulkOperationRequest.#ctor">
+			<summary>constructor_initializesOrganizationRequest class.</summary>
+		</member>
 		<member name="P:Microsoft.Crm.Sdk.Messages.RetrieveMembersBulkOperationRequest.BulkOperationId">
+			<summary>Gets or sets the ID of the bulk operation. Requied.</summary>
 			<returns>Returns <see cref="T:System.Guid"></see>.</returns>
 		</member>
 		<member name="P:Microsoft.Crm.Sdk.Messages.RetrieveMembersBulkOperationRequest.BulkOperationSource">
+			<summary>Gets or sets the source for a bulk operation. Required.</summary>
 			<returns>Returns <see cref="T:System.Int32"></see>.</returns>
 		</member>
 		<member name="P:Microsoft.Crm.Sdk.Messages.RetrieveMembersBulkOperationRequest.EntitySource">
+			<summary>Gets or sets the members to retrieve for a bulk operation. Required.</summary>
 			<returns>Returns <see cref="T:System.Int32"></see>.</returns>
 		</member>
 		<member name="P:Microsoft.Crm.Sdk.Messages.RetrieveMembersBulkOperationRequest.Query">
+			<summary>Gets or sets the query for the retrieve operation that can be used to break up large data sets into pages. Optional.</summary>
 			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.Query.QueryBase"></see>.</returns>
 		</member>
+		<member name="T:Microsoft.Crm.Sdk.Messages.RetrieveMembersBulkOperationResponse">
+			<summary>Contains the response from <see cref="T:Microsoft.Crm.Sdk.Messages.RetrieveMembersBulkOperationRequest"></see>.</summary>
+		</member>
 		<member name="M:Microsoft.Crm.Sdk.Messages.RetrieveMembersBulkOperationResponse.#ctor">
-			<summary>constructor_initializesOrganizationResponse class.</summary>
+			<summary>constructor_initializesRetrieveMembersBulkOperationResponse class.</summary>
+		</member>
+		<member name="P:Microsoft.Crm.Sdk.Messages.RetrieveMembersBulkOperationResponse.EntityCollection">
+			<summary>Gets the collection of bulk operation members. </summary>
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.EntityCollection"></see>.</returns>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.RetrieveMembersTeamRequest">
-			<summary>Deprecated. Use <see cref="T:Microsoft.Xrm.Sdk.Messages.RetrieveMultipleRequest"></see>.</summary>
+			<summary>deprecated Use <see cref="T:Microsoft.Xrm.Sdk.Messages.RetrieveMultipleRequest"></see>.</summary>
+		</member>
+		<member name="M:Microsoft.Crm.Sdk.Messages.RetrieveMembersTeamRequest.#ctor">
+			<summary>deprecated</summary>
 		</member>
 		<member name="P:Microsoft.Crm.Sdk.Messages.RetrieveMembersTeamRequest.EntityId">
+			<summary>deprecated</summary>
 			<returns>Returns <see cref="T:System.Guid"></see>.</returns>
 		</member>
 		<member name="P:Microsoft.Crm.Sdk.Messages.RetrieveMembersTeamRequest.MemberColumnSet">
+			<summary>deprecated</summary>
 			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.Query.ColumnSet"></see>.</returns>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.RetrieveMembersTeamResponse">
-			<summary>Deprecated.</summary>
+			<summary>deprecated</summary>
+		</member>
+		<member name="M:Microsoft.Crm.Sdk.Messages.RetrieveMembersTeamResponse.#ctor">
+			<summary>deprecated</summary>
 		</member>
 		<member name="P:Microsoft.Crm.Sdk.Messages.RetrieveMembersTeamResponse.EntityCollection">
+			<summary>deprecated</summary>
 			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.EntityCollection"></see>.</returns>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.RetrieveMissingComponentsRequest">
@@ -4132,14 +4730,14 @@
 			<summary>Response_Message<see cref="T:Microsoft.Xrm.Sdk.Messages.RetrieveMissingComponentsRequest"></see></summary>
 		</member>
 		<member name="M:Microsoft.Crm.Sdk.Messages.RetrieveMissingComponentsResponse.#ctor">
-			<summary>constructor_initializesRetrieveMissingComponentsResponse class</summary>
+			<summary>constructor_initializesRetrieveMissingComponentsResponse class.</summary>
 		</member>
 		<member name="P:Microsoft.Crm.Sdk.Messages.RetrieveMissingComponentsResponse.MissingComponents">
 			<summary>Gets an array of MissingComponent records.</summary>
 			<returns>Returns <see cref="T:Microsoft.Crm.Sdk.Messages.MissingComponent"></see>.</returns>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.RetrieveMissingDependenciesRequest">
-			<summary>Request_Contains_Data to retrieve any required solution components that are not included in the solution. </summary>
+			<summary>Request_Contains_Data retrieve any required solution components that are not included in the solution. </summary>
 		</member>
 		<member name="M:Microsoft.Crm.Sdk.Messages.RetrieveMissingDependenciesRequest.#ctor">
 			<summary>constructor_initializesRetrieveMissingDependenciesRequest class</summary>
@@ -4177,9 +4775,13 @@
 			<returns>Returns <see cref="T:System.Guid"></see>.</returns>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.RetrieveParentGroupsResourceGroupResponse">
-			<summary>sdk_ComingSoon</summary>
+			<summary>Contains the response from <see cref="T:Microsoft.Crm.Sdk.Messages.RetrieveParentGroupsResourceGroupRequest"></see>.</summary>
+		</member>
+		<member name="M:Microsoft.Crm.Sdk.Messages.RetrieveParentGroupsResourceGroupResponse.#ctor">
+			<summary>Initializes a new instance of the RetrieveParentGroupsResourceGroupResponse class.</summary>
 		</member>
 		<member name="P:Microsoft.Crm.Sdk.Messages.RetrieveParentGroupsResourceGroupResponse.EntityCollection">
+			<summary>Gets the resulting collection of the parent resource groups of the specified resource group (scheduling group).</summary>
 			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.EntityCollection"></see>.</returns>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.RetrieveParsedDataImportFileRequest">
@@ -4251,9 +4853,13 @@
 			<summary>sdk_ComingSoon</summary>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.RetrievePrivilegeSetResponse">
-			<summary>sdk_ComingSoon</summary>
+			<summary>Contains the response from <see cref="T:Microsoft.Crm.Sdk.Messages.RetrievePrivilegeSetRequest"></see>.</summary>
+		</member>
+		<member name="M:Microsoft.Crm.Sdk.Messages.RetrievePrivilegeSetResponse.#ctor">
+			<summary>Initializes a new instance of the RetrievePrivilegeSetResponse class.</summary>
 		</member>
 		<member name="P:Microsoft.Crm.Sdk.Messages.RetrievePrivilegeSetResponse.EntityCollection">
+			<summary>Gets the resulting collection of privilege records.</summary>
 			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.EntityCollection"></see>.</returns>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.RetrieveProvisionedLanguagePackVersionRequest">
@@ -4323,7 +4929,7 @@
 			<summary>constructor_initializesOrganizationRequest class.</summary>
 		</member>
 		<member name="P:Microsoft.Crm.Sdk.Messages.RetrieveRequiredComponentsRequest.ComponentType">
-			<summary>Gets or sets the SolutionComponentType value representing the solution component.</summary>
+			<summary>Gets or sets the value representing the solution component.</summary>
 			<returns>Returns <see cref="T:System.Int32"></see>.</returns>
 		</member>
 		<member name="P:Microsoft.Crm.Sdk.Messages.RetrieveRequiredComponentsRequest.ObjectId">
@@ -4347,9 +4953,10 @@
 			<returns>Returns <see cref="T:System.Guid"></see>.</returns>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.RetrieveRolePrivilegesRoleResponse">
-			<summary>sdk_ComingSoon</summary>
+			<summary>Response_Message<see cref="T:Microsoft.Crm.Sdk.Messages.RetrieveRolePrivilegesRoleRequest"></see>.</summary>
 		</member>
 		<member name="P:Microsoft.Crm.Sdk.Messages.RetrieveRolePrivilegesRoleResponse.RolePrivileges">
+			<summary>Gets or sets an array that contains the IDs and depths of the privileges held by the specified role.</summary>
 			<returns>Returns <see cref="T:Microsoft.Crm.Sdk.Messages.RolePrivilege"></see>.</returns>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.RetrieveSharedPrincipalsAndAccessRequest">
@@ -4382,39 +4989,61 @@
 			<returns>Returns <see cref="T:System.Guid"></see>.</returns>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.RetrieveSubGroupsResourceGroupResponse">
-			<summary>sdk_ComingSoon</summary>
+			<summary>Contains the response from <see cref="T:Microsoft.Crm.Sdk.Messages.RetrieveSubGroupsResourceGroupRequest"></see>.</summary>
+		</member>
+		<member name="M:Microsoft.Crm.Sdk.Messages.RetrieveSubGroupsResourceGroupResponse.#ctor">
+			<summary>Initializes a new instance of the RetrieveSubGroupsResourceGroupResponse class.</summary>
 		</member>
 		<member name="P:Microsoft.Crm.Sdk.Messages.RetrieveSubGroupsResourceGroupResponse.EntityCollection">
+			<summary>Gets the resulting collection of the child resource groups of the specified resource group (scheduling group).</summary>
 			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.EntityCollection"></see>.</returns>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.RetrieveSubsidiaryTeamsBusinessUnitRequest">
-			<summary>Deprecated. Use <see cref="T:Microsoft.Xrm.Sdk.Messages.RetrieveMultipleRequest"></see>.</summary>
+			<summary>deprecated Use <see cref="T:Microsoft.Xrm.Sdk.Messages.RetrieveMultipleRequest"></see>.</summary>
+		</member>
+		<member name="M:Microsoft.Crm.Sdk.Messages.RetrieveSubsidiaryTeamsBusinessUnitRequest.#ctor">
+			<summary>deprecated</summary>
 		</member>
 		<member name="P:Microsoft.Crm.Sdk.Messages.RetrieveSubsidiaryTeamsBusinessUnitRequest.ColumnSet">
+			<summary>deprecated</summary>
 			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.Query.ColumnSet"></see>.</returns>
 		</member>
 		<member name="P:Microsoft.Crm.Sdk.Messages.RetrieveSubsidiaryTeamsBusinessUnitRequest.EntityId">
+			<summary>deprecated</summary>
 			<returns>Returns <see cref="T:System.Guid"></see>.</returns>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.RetrieveSubsidiaryTeamsBusinessUnitResponse">
-			<summary>Deprecated. </summary>
+			<summary>deprecated</summary>
+		</member>
+		<member name="M:Microsoft.Crm.Sdk.Messages.RetrieveSubsidiaryTeamsBusinessUnitResponse.#ctor">
+			<summary>deprecated</summary>
 		</member>
 		<member name="P:Microsoft.Crm.Sdk.Messages.RetrieveSubsidiaryTeamsBusinessUnitResponse.EntityCollection">
+			<summary>deprecated</summary>
 			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.EntityCollection"></see>.</returns>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.RetrieveSubsidiaryUsersBusinessUnitRequest">
-			<summary>Deprecated. Use <see cref="T:Microsoft.Xrm.Sdk.Messages.RetrieveMultipleRequest"></see>.</summary>
+			<summary>deprecated Use <see cref="T:Microsoft.Xrm.Sdk.Messages.RetrieveMultipleRequest"></see>.</summary>
+		</member>
+		<member name="M:Microsoft.Crm.Sdk.Messages.RetrieveSubsidiaryUsersBusinessUnitRequest.#ctor">
+			<summary>deprecated</summary>
 		</member>
 		<member name="P:Microsoft.Crm.Sdk.Messages.RetrieveSubsidiaryUsersBusinessUnitRequest.ColumnSet">
+			<summary>deprecated</summary>
 			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.Query.ColumnSet"></see>.</returns>
 		</member>
 		<member name="P:Microsoft.Crm.Sdk.Messages.RetrieveSubsidiaryUsersBusinessUnitRequest.EntityId">
+			<summary>deprecated</summary>
 			<returns>Returns <see cref="T:System.Guid"></see>.</returns>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.RetrieveSubsidiaryUsersBusinessUnitResponse">
-			<summary>Deprecated. </summary>
+			<summary>deprecated</summary>
+		</member>
+		<member name="M:Microsoft.Crm.Sdk.Messages.RetrieveSubsidiaryUsersBusinessUnitResponse.#ctor">
+			<summary>deprecated</summary>
 		</member>
 		<member name="P:Microsoft.Crm.Sdk.Messages.RetrieveSubsidiaryUsersBusinessUnitResponse.EntityCollection">
+			<summary>deprecated</summary>
 			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.EntityCollection"></see>.</returns>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.RetrieveTeamPrivilegesRequest">
@@ -4438,18 +5067,27 @@
 			<returns>Returns a <see cref="T:Microsoft.Crm.Sdk.Messages.RolePrivilege"></see>array.</returns>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.RetrieveTeamsSystemUserRequest">
-			<summary>Deprecated. Use <see cref="T:Microsoft.Xrm.Sdk.Messages.RetrieveMultipleRequest"></see>.</summary>
+			<summary>deprecated Use <see cref="T:Microsoft.Xrm.Sdk.Messages.RetrieveMultipleRequest"></see>.</summary>
+		</member>
+		<member name="M:Microsoft.Crm.Sdk.Messages.RetrieveTeamsSystemUserRequest.#ctor">
+			<summary>deprecated</summary>
 		</member>
 		<member name="P:Microsoft.Crm.Sdk.Messages.RetrieveTeamsSystemUserRequest.ColumnSet">
+			<summary>deprecated</summary>
 			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.Query.ColumnSet"></see>.</returns>
 		</member>
 		<member name="P:Microsoft.Crm.Sdk.Messages.RetrieveTeamsSystemUserRequest.EntityId">
+			<summary>deprecated</summary>
 			<returns>Returns <see cref="T:System.Guid"></see>.</returns>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.RetrieveTeamsSystemUserResponse">
-			<summary>Deprecated. </summary>
+			<summary>deprecated</summary>
+		</member>
+		<member name="M:Microsoft.Crm.Sdk.Messages.RetrieveTeamsSystemUserResponse.#ctor">
+			<summary>deprecated</summary>
 		</member>
 		<member name="P:Microsoft.Crm.Sdk.Messages.RetrieveTeamsSystemUserResponse.EntityCollection">
+			<summary>deprecated</summary>
 			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.EntityCollection"></see>.</returns>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.RetrieveUnpublishedMultipleRequest">
@@ -4463,7 +5101,7 @@
 			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.Query.QueryBase"></see>.</returns>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.RetrieveUnpublishedMultipleResponse">
-			<summary>Response_Message<see cref="T:Microsoft.Xrm.Sdk.Messages.RetrieveUnpublishedMultipleRequest"></see></summary>
+			<summary>Response_Message<see cref="T:Microsoft.Xrm.Sdk.Messages.RetrieveUnpublishedMultipleRequest"></see> class.</summary>
 		</member>
 		<member name="M:Microsoft.Crm.Sdk.Messages.RetrieveUnpublishedMultipleResponse.#ctor">
 			<summary>constructor_initializesRetrieveUnpublishedMultipleResponse class</summary>
@@ -4487,10 +5125,10 @@
 			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.EntityReference"></see>.</returns>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.RetrieveUnpublishedResponse">
-			<summary>Response_Message<see cref="T:Microsoft.Xrm.Sdk.Messages.RetrieveUnpublishedRequest"></see></summary>
+			<summary>Response_Message<see cref="T:Microsoft.Xrm.Sdk.Messages.RetrieveUnpublishedRequest"></see> class.</summary>
 		</member>
 		<member name="M:Microsoft.Crm.Sdk.Messages.RetrieveUnpublishedResponse.#ctor">
-			<summary>constructor_initializesRetrieveUnpublishedResponse class</summary>
+			<summary>constructor_initializesRetrieveUnpublishedResponse class.</summary>
 		</member>
 		<member name="P:Microsoft.Crm.Sdk.Messages.RetrieveUnpublishedResponse.Entity">
 			<summary>Gets the unpublished record specified in the request.</summary>
@@ -4503,24 +5141,37 @@
 			<returns>Returns <see cref="T:System.Guid"></see>.</returns>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.RetrieveUserPrivilegesResponse">
-			<summary>sdk_ComingSoon</summary>
+			<summary>Contains the response from <see cref="T:Microsoft.Crm.Sdk.Messages.RetrieveUserPrivilegesRequest"></see>.</summary>
+		</member>
+		<member name="M:Microsoft.Crm.Sdk.Messages.RetrieveUserPrivilegesResponse.#ctor">
+			<summary>Initializes a new instance of the RetrieveUserPrivilegesResponse class.</summary>
 		</member>
 		<member name="P:Microsoft.Crm.Sdk.Messages.RetrieveUserPrivilegesResponse.RolePrivileges">
+			<summary>Gets or sets an array of privileges that the user holds.</summary>
 			<returns>Returns <see cref="T:Microsoft.Crm.Sdk.Messages.RolePrivilege"></see>.</returns>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.RetrieveUserSettingsSystemUserRequest">
-			<summary>Deprecated. Use <see cref="T:Microsoft.Xrm.Sdk.Messages.RetrieveMultipleRequest"></see>.</summary>
+			<summary>deprecated Use <see cref="T:Microsoft.Xrm.Sdk.Messages.RetrieveMultipleRequest"></see>.</summary>
+		</member>
+		<member name="M:Microsoft.Crm.Sdk.Messages.RetrieveUserSettingsSystemUserRequest.#ctor">
+			<summary>deprecated</summary>
 		</member>
 		<member name="P:Microsoft.Crm.Sdk.Messages.RetrieveUserSettingsSystemUserRequest.ColumnSet">
+			<summary>deprecated</summary>
 			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.Query.ColumnSet"></see>.</returns>
 		</member>
 		<member name="P:Microsoft.Crm.Sdk.Messages.RetrieveUserSettingsSystemUserRequest.EntityId">
+			<summary>deprecated</summary>
 			<returns>Returns <see cref="T:System.Guid"></see>.</returns>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.RetrieveUserSettingsSystemUserResponse">
-			<summary>Deprecated. </summary>
+			<summary>deprecated</summary>
+		</member>
+		<member name="M:Microsoft.Crm.Sdk.Messages.RetrieveUserSettingsSystemUserResponse.#ctor">
+			<summary>deprecated</summary>
 		</member>
 		<member name="P:Microsoft.Crm.Sdk.Messages.RetrieveUserSettingsSystemUserResponse.Entity">
+			<summary>deprecated</summary>
 			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.Entity"></see>.</returns>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.RetrieveVersionRequest">
@@ -4539,11 +5190,29 @@
 			<summary>Gets the version.</summary>
 			<returns>Returns <see cref="T:System.String"></see>.</returns>
 		</member>
+		<member name="T:Microsoft.Crm.Sdk.Messages.ReviseQuoteRequest">
+			<summary>Request_Contains_Data set the state of a quote to Draft.</summary>
+		</member>
 		<member name="M:Microsoft.Crm.Sdk.Messages.ReviseQuoteRequest.#ctor">
 			<summary>constructor_initializesOrganizationRequest class.</summary>
 		</member>
+		<member name="P:Microsoft.Crm.Sdk.Messages.ReviseQuoteRequest.ColumnSet">
+			<summary>Gets or sets the collection of attributes to retrieve in the revised quote. Required.</summary>
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.Query.ColumnSet"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Crm.Sdk.Messages.ReviseQuoteRequest.QuoteId">
+			<summary>Gets or sets the ID of the original. Required.</summary>
+			<returns>Returns <see cref="T:System.Guid"></see>.</returns>
+		</member>
+		<member name="T:Microsoft.Crm.Sdk.Messages.ReviseQuoteResponse">
+			<summary>Response_Message<see cref="T:Microsoft.Crm.Sdk.Messages.ReviseQuoteRequest"></see>.</summary>
+		</member>
 		<member name="M:Microsoft.Crm.Sdk.Messages.ReviseQuoteResponse.#ctor">
-			<summary>constructor_initializesOrganizationResponse class.</summary>
+			<summary>Initializes a new instance of the ReviseQuoteResponse class.</summary>
+		</member>
+		<member name="P:Microsoft.Crm.Sdk.Messages.ReviseQuoteResponse.Entity">
+			<summary>Gets the revised quote.</summary>
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.Entity"></see>.</returns>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.RevokeAccessRequest">
 			<summary>Request_Contains_Data replace the access rights on the target record for the specified security principal (user or team).</summary>
@@ -4622,8 +5291,23 @@
 			<summary>Gets or sets the ID of the privilege.</summary>
 			<returns>Returns <see cref="T:System.Guid"></see>.</returns>
 		</member>
+		<member name="T:Microsoft.Crm.Sdk.Messages.RolePrivilegeAuditDetail">
+			<summary>Represents audited changes to the privileges of a security role.</summary>
+		</member>
 		<member name="M:Microsoft.Crm.Sdk.Messages.RolePrivilegeAuditDetail.#ctor">
-			<summary>Initializes a new instance of the AuditDetail class.</summary>
+			<summary>constructor_initializesRolePrivilegeAuditDetail class.</summary>
+		</member>
+		<member name="P:Microsoft.Crm.Sdk.Messages.RolePrivilegeAuditDetail.InvalidNewPrivileges">
+			<summary>Gets a collection of invalid privileges for the role.</summary>
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.DataCollection`1"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Crm.Sdk.Messages.RolePrivilegeAuditDetail.NewRolePrivileges">
+			<summary>Gets or sets the role’s new privileges.</summary>
+			<returns>Returns <see cref="T:Microsoft.Crm.Sdk.Messages.RolePrivilege"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Crm.Sdk.Messages.RolePrivilegeAuditDetail.OldRolePrivileges">
+			<summary>Gets or sets the role’s old privileges.</summary>
+			<returns>Returns <see cref="T:Microsoft.Crm.Sdk.Messages.RolePrivilege"></see>.</returns>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.RollupRequest">
 			<summary>Request_Contains_Data retrieve all the entity records related to the specified record. </summary>
@@ -4652,6 +5336,18 @@
 		<member name="P:Microsoft.Crm.Sdk.Messages.RollupResponse.EntityCollection">
 			<summary>Gets the collection of records related to the specified record.</summary>
 			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.EntityCollection"></see>.</returns>
+		</member>
+		<member name="T:Microsoft.Crm.Sdk.Messages.RollupType">
+			<summary>Specifies the possible values for the rollup type. </summary>
+		</member>
+		<member name="F:Microsoft.Crm.Sdk.Messages.RollupType.Extended">
+			<summary>Not supported in this release.</summary>
+		</member>
+		<member name="F:Microsoft.Crm.Sdk.Messages.RollupType.None">
+			<summary>Specifies to roll up no related entities.</summary>
+		</member>
+		<member name="F:Microsoft.Crm.Sdk.Messages.RollupType.Related">
+			<summary>Specifies to roll up only related entities.</summary>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.SearchByBodyKbArticleRequest">
 			<summary>Request_Contains_Data search for knowledge base articles that contain the specified body text.</summary>
@@ -4837,18 +5533,18 @@
 			<summary>Request_Contains_Data send an e-mail message using a template.</summary>
 		</member>
 		<member name="M:Microsoft.Crm.Sdk.Messages.SendEmailFromTemplateRequest.#ctor">
-			<summary>constructor_initializesSendEmailFromTemplateRequest class.</summary>
+			<summary>constructor_initializesOrganizationRequest class.</summary>
 		</member>
 		<member name="P:Microsoft.Crm.Sdk.Messages.SendEmailFromTemplateRequest.RegardingId">
-			<summary>Gets or sets the ID of the entity instance with which the e-mail message is associated.</summary>
+			<summary>Gets or sets the ID of the record with which the e-mail message is associated.</summary>
 			<returns>Returns <see cref="T:System.Guid"></see>.</returns>
 		</member>
 		<member name="P:Microsoft.Crm.Sdk.Messages.SendEmailFromTemplateRequest.RegardingType">
-			<summary>Gets or sets the type of the entity instance with which the e-mail message is associated.</summary>
+			<summary>Gets or sets the type of the record with which the e-mail message is associated.</summary>
 			<returns>Returns <see cref="T:System.String"></see>.</returns>
 		</member>
 		<member name="P:Microsoft.Crm.Sdk.Messages.SendEmailFromTemplateRequest.Target">
-			<summary>Gets or sets the e-mail instance to send.</summary>
+			<summary>Gets or sets the e-mail record to send.</summary>
 			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.Entity"></see>.</returns>
 		</member>
 		<member name="P:Microsoft.Crm.Sdk.Messages.SendEmailFromTemplateRequest.TemplateId">
@@ -4859,7 +5555,7 @@
 			<summary>Response_Message<see cref="T:Microsoft.Crm.Sdk.Messages.SendEmailFromTemplateRequest"></see>.</summary>
 		</member>
 		<member name="P:Microsoft.Crm.Sdk.Messages.SendEmailFromTemplateResponse.Id">
-			<summary>Gets the ID of the e-mail entity instance that was sent.</summary>
+			<summary>Gets the ID of the e-mail record that was sent.</summary>
 			<returns>Returns <see cref="T:System.Guid"></see>.</returns>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.SendEmailRequest">
@@ -4956,7 +5652,10 @@
 			<returns>Returns <see cref="T:System.Guid"></see>.</returns>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.SetBusinessEquipmentResponse">
-			<summary>sdk_ComingSoon</summary>
+			<summary>Contains the response from <see cref="T:Microsoft.Crm.Sdk.Messages.SetBusinessEquipmentRequest"></see>.</summary>
+		</member>
+		<member name="M:Microsoft.Crm.Sdk.Messages.SetBusinessEquipmentResponse.#ctor">
+			<summary>Initializes a new instance of the SetBusinessEquipmentResponse class.</summary>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.SetBusinessSystemUserRequest">
 			<summary>sdk_ComingSoon</summary>
@@ -4971,7 +5670,10 @@
 			<returns>Returns <see cref="T:System.Guid"></see>.</returns>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.SetBusinessSystemUserResponse">
-			<summary>sdk_ComingSoon</summary>
+			<summary>Contains the response from <see cref="T:Microsoft.Crm.Sdk.Messages.SetBusinessSystemUserRequest"></see>.</summary>
+		</member>
+		<member name="M:Microsoft.Crm.Sdk.Messages.SetBusinessSystemUserResponse.#ctor">
+			<summary>Initializes a new instance of the SetBusinessSystemUserResponse class.</summary>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.SetLocLabelsRequest">
 			<summary>Request_Contains_Data set localized labels for a limited set of entity attributes.</summary>
@@ -5010,7 +5712,10 @@
 			<returns>Returns <see cref="T:System.Guid"></see>.</returns>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.SetParentBusinessUnitResponse">
-			<summary>sdk_ComingSoon</summary>
+			<summary>Contains the response from <see cref="T:Microsoft.Crm.Sdk.Messages.SetParentBusinessUnitRequest"></see>.</summary>
+		</member>
+		<member name="M:Microsoft.Crm.Sdk.Messages.SetParentBusinessUnitResponse.#ctor">
+			<summary>Initializes a new instance of the SetParentBusinessUnitResponse class.</summary>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.SetParentSystemUserRequest">
 			<summary>sdk_ComingSoon</summary>
@@ -5025,7 +5730,10 @@
 			<returns>Returns <see cref="T:System.Guid"></see>.</returns>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.SetParentSystemUserResponse">
-			<summary>sdk_ComingSoon</summary>
+			<summary>Contains the response from <see cref="T:Microsoft.Crm.Sdk.Messages.SetParentSystemUserRequest"></see>.</summary>
+		</member>
+		<member name="M:Microsoft.Crm.Sdk.Messages.SetParentSystemUserResponse.#ctor">
+			<summary>Initializes a new instance of the SetParentSystemUserResponse class.</summary>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.SetParentTeamRequest">
 			<summary>sdk_ComingSoon</summary>
@@ -5037,7 +5745,10 @@
 			<returns>Returns <see cref="T:System.Guid"></see>.</returns>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.SetParentTeamResponse">
-			<summary>sdk_ComingSoon</summary>
+			<summary>Contains the response from <see cref="T:Microsoft.Crm.Sdk.Messages.SetParentTeamRequest"></see>.</summary>
+		</member>
+		<member name="M:Microsoft.Crm.Sdk.Messages.SetParentTeamResponse.#ctor">
+			<summary>Initializes a new instance of the SetParentTeamResponse class.</summary>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.SetRelatedRequest">
 			<summary>sdk_ComingSoon</summary>
@@ -5046,7 +5757,10 @@
 			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.EntityReference"></see>.</returns>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.SetRelatedResponse">
-			<summary>sdk_ComingSoon</summary>
+			<summary>Contains the response from <see cref="T:Microsoft.Crm.Sdk.Messages.SetRelatedRequest"></see>.</summary>
+		</member>
+		<member name="M:Microsoft.Crm.Sdk.Messages.SetRelatedResponse.#ctor">
+			<summary>Initializes a new instance of the SetRelatedResponse class.</summary>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.SetReportRelatedRequest">
 			<summary>Contains the data needed to link an instance of a report entity to related entities.</summary>
@@ -5076,29 +5790,71 @@
 		<member name="M:Microsoft.Crm.Sdk.Messages.SetReportRelatedResponse.#ctor">
 			<summary>Initializes a new instance of the SetReportRelatedResponse class.</summary>
 		</member>
+		<member name="T:Microsoft.Crm.Sdk.Messages.SetStateRequest">
+			<summary>Request_Contains_Data set the state of an entity record.</summary>
+		</member>
+		<member name="M:Microsoft.Crm.Sdk.Messages.SetStateRequest.#ctor">
+			<summary>constructor_initializesOrganizationRequest class.</summary>
+		</member>
 		<member name="P:Microsoft.Crm.Sdk.Messages.SetStateRequest.EntityMoniker">
+			<summary>Gets or sets the entity. Required.</summary>
 			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.EntityReference"></see>.</returns>
 		</member>
 		<member name="P:Microsoft.Crm.Sdk.Messages.SetStateRequest.State">
+			<summary>Gets or sets the state of the entity record. Required.</summary>
 			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.OptionSetValue"></see>.</returns>
 		</member>
 		<member name="P:Microsoft.Crm.Sdk.Messages.SetStateRequest.Status">
+			<summary>Gets or sets the status that corresponds to the State property. Required.</summary>
 			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.OptionSetValue"></see>.</returns>
 		</member>
+		<member name="T:Microsoft.Crm.Sdk.Messages.SetStateResponse">
+			<summary>Response_Message<see cref="T:Microsoft.Crm.Sdk.Messages.SetStateRequest"></see>.</summary>
+		</member>
+		<member name="M:Microsoft.Crm.Sdk.Messages.SetStateResponse.#ctor">
+			<summary>Initializes a new instance of the SetStateResponse class.</summary>
+		</member>
+		<member name="T:Microsoft.Crm.Sdk.Messages.ShareAuditDetail">
+			<summary>Represents a shared audit detail record.</summary>
+		</member>
 		<member name="M:Microsoft.Crm.Sdk.Messages.ShareAuditDetail.#ctor">
-			<summary>Initializes a new instance of the AuditDetail class.</summary>
+			<summary>constructor_initializesShareAuditDetail class.</summary>
+		</member>
+		<member name="P:Microsoft.Crm.Sdk.Messages.ShareAuditDetail.NewPrivileges">
+			<summary>Gets or sets the privileges of the user after a change.</summary>
+			<returns>Returns <see cref="T:Microsoft.Crm.Sdk.Messages.AccessRights"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Crm.Sdk.Messages.ShareAuditDetail.OldPrivileges">
+			<summary>Gets or sets the privileges of the user before a change.</summary>
+			<returns>Returns <see cref="T:Microsoft.Crm.Sdk.Messages.AccessRights"></see>. Returns null in a few cases.</returns>
+		</member>
+		<member name="P:Microsoft.Crm.Sdk.Messages.ShareAuditDetail.Principal">
+			<summary>Gets or sets the security principal (user or team) that shares the audit detail record.</summary>
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.EntityReference"></see>.</returns>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.StatusUpdateBulkOperationRequest">
 			<summary>internal</summary>
 		</member>
 		<member name="M:Microsoft.Crm.Sdk.Messages.StatusUpdateBulkOperationRequest.#ctor">
-			<summary>constructor_initializesOrganizationRequest class.</summary>
+			<summary>internal</summary>
+		</member>
+		<member name="P:Microsoft.Crm.Sdk.Messages.StatusUpdateBulkOperationRequest.BulkOperationId">
+			<summary>internal</summary>
+			<returns>Returns <see cref="T:System.Guid"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Crm.Sdk.Messages.StatusUpdateBulkOperationRequest.FailureCount">
+			<summary>internal</summary>
+			<returns>Returns <see cref="T:System.Int32"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Crm.Sdk.Messages.StatusUpdateBulkOperationRequest.SuccessCount">
+			<summary>internal</summary>
+			<returns>Returns <see cref="T:System.Int32"></see>.</returns>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.StatusUpdateBulkOperationResponse">
 			<summary>internal</summary>
 		</member>
 		<member name="M:Microsoft.Crm.Sdk.Messages.StatusUpdateBulkOperationResponse.#ctor">
-			<summary>constructor_initializesOrganizationResponse class.</summary>
+			<summary>internal</summary>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.SubCode">
 			<summary>Contains the possible values for a subcode, used in scheduling appointments.</summary>
@@ -5287,48 +6043,95 @@
 			<summary>constructor_initializesOrganizationResponse class.</summary>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.UnlockInvoicePricingRequest">
-			<summary>sdk_ComingSoon</summary>
+			<summary>Request_Contains_Data unlock pricing for an invoice.</summary>
+		</member>
+		<member name="M:Microsoft.Crm.Sdk.Messages.UnlockInvoicePricingRequest.#ctor">
+			<summary>constructor_initializesUnlockInvoicePricingRequest class.</summary>
 		</member>
 		<member name="P:Microsoft.Crm.Sdk.Messages.UnlockInvoicePricingRequest.InvoiceId">
+			<summary>Gets or sets the ID of the invoice.</summary>
 			<returns>Returns <see cref="T:System.Guid"></see>.</returns>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.UnlockInvoicePricingResponse">
-			<summary>sdk_ComingSoon</summary>
+			<summary>Response_Message<see cref="T:Microsoft.Crm.Sdk.Messages.UnlockInvoicePricingRequest"></see>.</summary>
+		</member>
+		<member name="M:Microsoft.Crm.Sdk.Messages.UnlockInvoicePricingResponse.#ctor">
+			<summary>Initializes a new instance of the UnlockInvoicePricingResponse class.</summary>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.UnlockSalesOrderPricingRequest">
-			<summary>sdk_ComingSoon</summary>
+			<summary>Request_Contains_Data unlock pricing for a sales order (order).</summary>
+		</member>
+		<member name="M:Microsoft.Crm.Sdk.Messages.UnlockSalesOrderPricingRequest.#ctor">
+			<summary>constructor_initializesUnlockSalesOrderPricingRequest class.</summary>
 		</member>
 		<member name="P:Microsoft.Crm.Sdk.Messages.UnlockSalesOrderPricingRequest.SalesOrderId">
+			<summary>Gets or sets the ID of the sales order (order).</summary>
 			<returns>Returns <see cref="T:System.Guid"></see>.</returns>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.UnlockSalesOrderPricingResponse">
-			<summary>sdk_ComingSoon</summary>
+			<summary>Response_Message<see cref="T:Microsoft.Crm.Sdk.Messages.UnlockSalesOrderPricingRequest"></see>.</summary>
+		</member>
+		<member name="M:Microsoft.Crm.Sdk.Messages.UnlockSalesOrderPricingResponse.#ctor">
+			<summary>Initializes a new instance of the UnlockSalesOrderPricingResponse class.</summary>
+		</member>
+		<member name="T:Microsoft.Crm.Sdk.Messages.UnpublishDuplicateRuleRequest">
+			<summary>Request_Contains_Data submit an asynchronous job to unpublish a duplicate rule.</summary>
 		</member>
 		<member name="M:Microsoft.Crm.Sdk.Messages.UnpublishDuplicateRuleRequest.#ctor">
-			<summary>constructor_initializesOrganizationRequest class.</summary>
+			<summary>constructor_initializesUnpublishDuplicateRuleRequest class.</summary>
+		</member>
+		<member name="P:Microsoft.Crm.Sdk.Messages.UnpublishDuplicateRuleRequest.DuplicateRuleId">
+			<summary>Gets or sets the ID of the duplicate rule to be unpublished. Required.</summary>
+			<returns>Returns <see cref="T:System.Guid"></see>.</returns>
+		</member>
+		<member name="T:Microsoft.Crm.Sdk.Messages.UnpublishDuplicateRuleResponse">
+			<summary>Response_Message<see cref="T:Microsoft.Crm.Sdk.Messages.UnpublishDuplicateRuleRequest"></see>.</summary>
 		</member>
 		<member name="M:Microsoft.Crm.Sdk.Messages.UnpublishDuplicateRuleResponse.#ctor">
-			<summary>constructor_initializesOrganizationResponse class.</summary>
+			<summary>Initializes a new instance of the UnpublishDuplicateRuleResponse class.</summary>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.UpdateUserSettingsSystemUserRequest">
-			<summary>Deprecated. Use <see cref="T:Microsoft.Xrm.Sdk.Messages.UpdateRequest"></see>.</summary>
+			<summary>deprecated Use <see cref="T:Microsoft.Xrm.Sdk.Messages.UpdateRequest"></see>.</summary>
+		</member>
+		<member name="M:Microsoft.Crm.Sdk.Messages.UpdateUserSettingsSystemUserRequest.#ctor">
+			<summary>deprecated</summary>
 		</member>
 		<member name="P:Microsoft.Crm.Sdk.Messages.UpdateUserSettingsSystemUserRequest.Settings">
+			<summary>deprecated</summary>
 			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.Entity"></see>.</returns>
 		</member>
 		<member name="P:Microsoft.Crm.Sdk.Messages.UpdateUserSettingsSystemUserRequest.UserId">
+			<summary>deprecated</summary>
 			<returns>Returns <see cref="T:System.Guid"></see>.</returns>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.UpdateUserSettingsSystemUserResponse">
-			<summary>Deprecated. </summary>
+			<summary>deprecated</summary>
+		</member>
+		<member name="M:Microsoft.Crm.Sdk.Messages.UpdateUserSettingsSystemUserResponse.#ctor">
+			<summary>deprecated</summary>
+		</member>
+		<member name="T:Microsoft.Crm.Sdk.Messages.UtcTimeFromLocalTimeRequest">
+			<summary>Request_Contains_Data retrieve the UTC (Coordinated Universal Time) time for the specified local time.</summary>
+		</member>
+		<member name="M:Microsoft.Crm.Sdk.Messages.UtcTimeFromLocalTimeRequest.#ctor">
+			<summary>constructor_initializesUtcTimeFromLocalTimeRequest class.</summary>
 		</member>
 		<member name="P:Microsoft.Crm.Sdk.Messages.UtcTimeFromLocalTimeRequest.LocalTime">
+			<summary>Gets or sets the local time. Required.</summary>
 			<returns>Returns <see cref="T:System.DateTime"></see>.</returns>
 		</member>
 		<member name="P:Microsoft.Crm.Sdk.Messages.UtcTimeFromLocalTimeRequest.TimeZoneCode">
+			<summary>Gets or sets the time zone code. Required.</summary>
 			<returns>Returns <see cref="T:System.Int32"></see>.</returns>
 		</member>
+		<member name="T:Microsoft.Crm.Sdk.Messages.UtcTimeFromLocalTimeResponse">
+			<summary>Response_Message<see cref="T:Microsoft.Crm.Sdk.Messages.UtcTimeFromLocalTimeRequest"></see>.</summary>
+		</member>
+		<member name="M:Microsoft.Crm.Sdk.Messages.UtcTimeFromLocalTimeResponse.#ctor">
+			<summary>Initializes a new instance of the UtcTimeFromLocalTimeResponse class.</summary>
+		</member>
 		<member name="P:Microsoft.Crm.Sdk.Messages.UtcTimeFromLocalTimeResponse.UtcTime">
+			<summary>Gets the local time represented as UTC time.</summary>
 			<returns>Returns <see cref="T:System.DateTime"></see>.</returns>
 		</member>
 		<member name="T:Microsoft.Crm.Sdk.Messages.ValidateRecurrenceRuleRequest">
@@ -5461,17 +6264,45 @@
 			<summary>Gets the ID of the logged on user.</summary>
 			<returns>Returns <see cref="T:System.Guid"></see>.</returns>
 		</member>
+		<member name="T:Microsoft.Crm.Sdk.Messages.WinOpportunityRequest">
+			<summary>Request_Contains_Data set the state of an opportunity to Won.</summary>
+		</member>
 		<member name="M:Microsoft.Crm.Sdk.Messages.WinOpportunityRequest.#ctor">
 			<summary>constructor_initializesOrganizationRequest class.</summary>
 		</member>
+		<member name="P:Microsoft.Crm.Sdk.Messages.WinOpportunityRequest.OpportunityClose">
+			<summary>Gets or sets the opportunity close activity associated with this state change. Required.</summary>
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.Entity"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Crm.Sdk.Messages.WinOpportunityRequest.Status">
+			<summary>Gets or sets a new status of the opportunity. Required.</summary>
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.OptionSetValue"></see>.</returns>
+		</member>
+		<member name="T:Microsoft.Crm.Sdk.Messages.WinOpportunityResponse">
+			<summary>Response_Message<see cref="T:Microsoft.Crm.Sdk.Messages.WinOpportunityRequest"></see>.</summary>
+		</member>
 		<member name="M:Microsoft.Crm.Sdk.Messages.WinOpportunityResponse.#ctor">
-			<summary>constructor_initializesOrganizationResponse class.</summary>
+			<summary>constructor_initializesWinOpportunityResponse class. </summary>
+		</member>
+		<member name="T:Microsoft.Crm.Sdk.Messages.WinQuoteRequest">
+			<summary>Request_Contains_Data set the state of a quote to Won.</summary>
 		</member>
 		<member name="M:Microsoft.Crm.Sdk.Messages.WinQuoteRequest.#ctor">
 			<summary>constructor_initializesOrganizationRequest class.</summary>
 		</member>
+		<member name="P:Microsoft.Crm.Sdk.Messages.WinQuoteRequest.QuoteClose">
+			<summary>Gets or sets the quote close activity associated with this state change. Required.</summary>
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.Entity"></see>.</returns>
+		</member>
+		<member name="P:Microsoft.Crm.Sdk.Messages.WinQuoteRequest.Status">
+			<summary>Gets or sets a new status of the quote. Required.</summary>
+			<returns>Returns <see cref="T:Microsoft.Xrm.Sdk.OptionSetValue"></see>.</returns>
+		</member>
+		<member name="T:Microsoft.Crm.Sdk.Messages.WinQuoteResponse">
+			<summary>Response_Message<see cref="T:Microsoft.Crm.Sdk.Messages.WinQuoteRequest"></see>.</summary>
+		</member>
 		<member name="M:Microsoft.Crm.Sdk.Messages.WinQuoteResponse.#ctor">
-			<summary>constructor_initializesOrganizationResponse class.</summary>
+			<summary>constructor_initializesWinQuoteResponse class. </summary>
 		</member>
 	</members>
 </doc>

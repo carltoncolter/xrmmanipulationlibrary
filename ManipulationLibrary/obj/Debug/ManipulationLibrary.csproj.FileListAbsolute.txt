@@ -45,3 +45,14 @@ D:\My Libraries\Projects\manipulationlibrary\ManipulationLibrary\bin\Debug\Micro
 D:\My Libraries\Projects\manipulationlibrary\ManipulationLibrary\obj\Debug\ResolveAssemblyReference.cache
 D:\My Libraries\Projects\manipulationlibrary\ManipulationLibrary\obj\Debug\ManipulationLibrary.dll
 D:\My Libraries\Projects\manipulationlibrary\ManipulationLibrary\obj\Debug\ManipulationLibrary.pdb
+D:\solutions\Crm2011-ManipulationLibrary\Source Code\ManipulationLibrary\bin\Debug\ManipulationLibrary.dll
+D:\solutions\Crm2011-ManipulationLibrary\Source Code\ManipulationLibrary\bin\Debug\ManipulationLibrary.pdb
+D:\solutions\Crm2011-ManipulationLibrary\Source Code\ManipulationLibrary\bin\Debug\Microsoft.Crm.Sdk.Proxy.dll
+D:\solutions\Crm2011-ManipulationLibrary\Source Code\ManipulationLibrary\bin\Debug\Microsoft.Xrm.Sdk.dll
+D:\solutions\Crm2011-ManipulationLibrary\Source Code\ManipulationLibrary\bin\Debug\Microsoft.Xrm.Sdk.Workflow.dll
+D:\solutions\Crm2011-ManipulationLibrary\Source Code\ManipulationLibrary\bin\Debug\Microsoft.Crm.Sdk.Proxy.xml
+D:\solutions\Crm2011-ManipulationLibrary\Source Code\ManipulationLibrary\bin\Debug\Microsoft.Xrm.Sdk.xml
+D:\solutions\Crm2011-ManipulationLibrary\Source Code\ManipulationLibrary\bin\Debug\Microsoft.Xrm.Sdk.Workflow.xml
+D:\solutions\Crm2011-ManipulationLibrary\Source Code\ManipulationLibrary\obj\Debug\ResolveAssemblyReference.cache
+D:\solutions\Crm2011-ManipulationLibrary\Source Code\ManipulationLibrary\obj\Debug\ManipulationLibrary.dll
+D:\solutions\Crm2011-ManipulationLibrary\Source Code\ManipulationLibrary\obj\Debug\ManipulationLibrary.pdb

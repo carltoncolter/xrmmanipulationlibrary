@@ -1,5 +1,5 @@
 ﻿// ==================================================================================
-//  Project:	Manipulation Library for Microsoft Dynamics CRM 4.0
+//  Project:	Manipulation Library for Microsoft Dynamics CRM 2011
 //  File:		ConvertValue.cs
 //  Summary:	This workflow activity converts one value to another value
 // ==================================================================================

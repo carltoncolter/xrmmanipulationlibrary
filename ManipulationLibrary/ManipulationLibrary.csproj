@@ -126,17 +126,19 @@
     <Compile Include="Calculations\AdvancedMath.cs" />
     <Compile Include="Calculations\BasicMath.cs" />
     <Compile Include="Calculations\ConvertValue.cs" />
-    <Compile Include="Calculations\Helpers\EqOperator.cs" />
-    <Compile Include="Calculations\Helpers\EqToken.cs" />
-    <Compile Include="Calculations\Helpers\Equation.cs" />
+    <Compile Include="Calculations\MathHelpers\EqOperator.cs" />
+    <Compile Include="Calculations\MathHelpers\EqToken.cs" />
+    <Compile Include="Calculations\MathHelpers\Equation.cs" />
     <Compile Include="Calculations\Maximum.cs" />
     <Compile Include="Calculations\Minimum.cs" />
+    <Compile Include="Crm\GetId.cs" />
     <Compile Include="Dates\AddBusinessDays.cs" />
     <Compile Include="Dates\AddDays.cs" />
     <Compile Include="Dates\SubDays.cs" />
     <Compile Include="Dates\SubBusinessDays.cs" />
-    <Compile Include="Dates\Helpers\DateUtilities.cs" />
+    <Compile Include="Helpers\DateUtilities.cs" />
     <Compile Include="Dates\ParseDate.cs" />
+    <Compile Include="Helpers\UserSettings.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RegEx\FormatRegex.cs" />
     <Compile Include="RegEx\Match.cs" />
@@ -176,6 +178,7 @@
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

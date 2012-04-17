@@ -1,5 +1,5 @@
 ﻿// ==================================================================================
-//  Project:	Manipulation Library for Microsoft Dynamics CRM 4.0
+//  Project:	Manipulation Library for Microsoft Dynamics CRM 2011
 //  File:		PadString.cs
 // ==================================================================================
 using System;

@@ -1,5 +1,5 @@
 ﻿// ==================================================================================
-//  Project:	Manipulation Library for Microsoft Dynamics CRM 4.0
+//  Project:	Manipulation Library for Microsoft Dynamics CRM 2011
 //  File:		AdvancedMath.cs
 //  Summary:	This workflow activity solves math equations.
 // ==================================================================================
@@ -7,7 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Activities;
-using ManipulationLibrary.Calculations.Helpers;
+using ManipulationLibrary.Calculations.MathHelpers;
 using Microsoft.Xrm.Sdk;
 using Microsoft.Xrm.Sdk.Workflow;
 
