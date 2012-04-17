@@ -1,5 +1,5 @@
 ﻿// ==================================================================================
-//  Project:	Manipulation Library for Microsoft Dynamics CRM 4.0
+//  Project:	Manipulation Library for Microsoft Dynamics CRM 2011
 //  File:		Equation.cs
 //  Summary:	This class utilizes reverse polish notation to solve equations. 
 // ==================================================================================
@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 
-namespace ManipulationLibrary.Calculations.Helpers
+namespace ManipulationLibrary.Calculations.MathHelpers
 {
     public enum TokenCategory
     {

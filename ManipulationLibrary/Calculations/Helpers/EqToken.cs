@@ -1,5 +1,5 @@
 ﻿// ==================================================================================
-//  Project:	Manipulation Library for Microsoft Dynamics CRM 4.0
+//  Project:	Manipulation Library for Microsoft Dynamics CRM 2011
 //  File:		EqToken.cs
 //  Summary:	The EqTokens are the tokens that store the operations, values, 
 //   functions and constants to be used in solving an equation.
@@ -7,7 +7,7 @@
 
 using System;
 
-namespace ManipulationLibrary.Calculations.Helpers
+namespace ManipulationLibrary.Calculations.MathHelpers
 {
     [Serializable]
     public class EqToken
