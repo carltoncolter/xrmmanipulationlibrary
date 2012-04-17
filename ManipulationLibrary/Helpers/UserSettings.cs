@@ -1,7 +1,14 @@
-﻿using System;
+﻿// ==================================================================================
+//  Project:	Manipulation Library for Microsoft Dynamics CRM 2011
+//  File:		UserSettings.cs
+//  Summary:	This helper gets the user settings of a user running a workflow.
+//  License:    MsPL - Microsoft Public License
+// ==================================================================================
+
+using System;
 using System.Activities;
-using Microsoft.Crm.Sdk.Messages;
 using Microsoft.Xrm.Sdk;
+using Microsoft.Xrm.Sdk.Query;
 using Microsoft.Xrm.Sdk.Workflow;
 
 namespace ManipulationLibrary.Helpers
@@ -15,16 +22,10 @@ namespace ManipulationLibrary.Helpers
             var service = serviceFactory.CreateOrganizationService(context.UserId);
             return GetUserSettings(service, context.UserId);
         }
+
         public static Entity GetUserSettings(IOrganizationService service, Guid userid)
         {
-            var req = new RetrieveUserSettingsSystemUserRequest
-            {
-                ColumnSet = new Microsoft.Xrm.Sdk.Query.ColumnSet(true),
-                EntityId = userid // user is the user object
-            };
-
-            var resp = (RetrieveUserSettingsSystemUserResponse)service.Execute(req);
-            return resp == null ? null : resp.Entity;
+            return service.Retrieve("usersettings", userid, new ColumnSet(true));
         }
     }
 }
