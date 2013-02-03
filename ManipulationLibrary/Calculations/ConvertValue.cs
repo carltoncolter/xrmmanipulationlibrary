@@ -17,7 +17,7 @@ namespace ManipulationLibrary.Calculations
             var error = false;
             try
             {
-                var value = Convert.ToDouble(Value);
+                var value = Convert.ToDouble(Value.Get<string>(executionContext));
 
                 FloatValue.Set(executionContext, value);
 

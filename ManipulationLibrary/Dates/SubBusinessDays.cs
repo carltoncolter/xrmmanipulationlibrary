@@ -19,6 +19,8 @@ namespace ManipulationLibrary.Dates
 
         protected override void Execute(CodeActivityContext executionContext)
         {
+            TimeSpan? begin = DateUtilities.ParseTimeSpan(BusinessTimeStart.Get<string>(executionContext));
+            TimeSpan? end = DateUtilities.ParseTimeSpan(BusinessTimeEnd.Get<string>(executionContext));
 
             var rules = DateUtilities.GetRules(executionContext);
             
@@ -29,7 +31,7 @@ namespace ManipulationLibrary.Dates
                 Operations.Subtract, 
                 DaysToSubtract.Get<int>(executionContext),
                 HoursToSubtract.Get<int>(executionContext),
-                MinutesToSubtract.Get<int>(executionContext));
+                MinutesToSubtract.Get<int>(executionContext), begin, end);
 
             Result.Set(executionContext, result);
         }
@@ -41,6 +43,14 @@ namespace ManipulationLibrary.Dates
         [Input("Start Date")]
         [Default("1900-01-01T00:00:00Z")]
         public InArgument<DateTime> StartDate { get; set; }
+
+        [Input("Business Time Start")]
+        [Default("08:00")]
+        public InArgument<string> BusinessTimeStart { get; set; }
+
+        [Input("Business Time End")]
+        [Default("08:00")]
+        public InArgument<string> BusinessTimeEnd { get; set; }
 
         [Input("Only check to make sure the last day is a business day")]
         [Default("false")]
