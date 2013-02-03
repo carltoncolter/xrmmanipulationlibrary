@@ -49,7 +49,7 @@ namespace ManipulationLibrary.Dates
         public InArgument<string> BusinessTimeStart { get; set; }
 
         [Input("Business Time End")]
-        [Default("08:00")]
+        [Default("18:00")]
         public InArgument<string> BusinessTimeEnd { get; set; }
 
         [Input("Only check to make sure the last day is a business day")]
