@@ -254,6 +254,14 @@ namespace ManipulationLibrary.Helpers
                         intparts[i] = Convert.ToInt32(timeparts[i]);
                     }
                 }
+                intparts[0] = intparts[0] < 24 ? intparts[0] : 24;
+                intparts[1] = intparts[1] < 60 ? intparts[1] : 60;
+                intparts[2] = intparts[2] < 60 ? intparts[2] : 60;
+
+                intparts[0] = intparts[0] > 0 ? intparts[0] : 0;
+                intparts[1] = intparts[1] > 0 ? intparts[1] : 0;
+                intparts[2] = intparts[2] > 0 ? intparts[2] : 0;
+                
                 return new TimeSpan(intparts[0], intparts[1], intparts[2]);
             } catch 
             {
