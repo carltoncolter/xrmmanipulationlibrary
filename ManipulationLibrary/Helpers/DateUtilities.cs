@@ -165,7 +165,7 @@ namespace ManipulationLibrary.Helpers
         /// <param name = "hours">The number of hours to modify by</param>
         /// <param name = "minutes">The number of minutes to modify by</param>
         public static DateTime ModifyDateTime(EntityCollection calRules, bool checkLastDayOnly, DateTime date,
-                                              Operations operation, int days, int hours, int minutes)
+                                              Operations operation, int days, int hours, int minutes, TimeSpan? mintime, TimeSpan? maxtime)
         {
             if (days != 0)
             {
@@ -192,18 +192,21 @@ namespace ManipulationLibrary.Helpers
 
             //We check our adjusted end date to make sure it's within something close to normal business hours (8am - 6pm)
             //If not we go to the next day, or we round up to 8am
-            if (date.Hour > 18)
+            if (maxtime.HasValue && mintime.HasValue)
             {
-                adjustend = new DateTime(adjustend.Year, adjustend.Month, adjustend.Day,
-                                         operation == Operations.Add ? 8 : 18, 0, 0);
-                date = FindDateXBizDays(calRules, adjustend, 1, operation);
-            }
+                if (date.TimeOfDay > maxtime)
+                {
+                    adjustend = new DateTime(adjustend.Year, adjustend.Month, adjustend.Day, 
+                                             maxtime.Value.Hours, maxtime.Value.Minutes, maxtime.Value.Seconds);
+                    date = FindDateXBizDays(calRules, adjustend, 1, operation);
+                }
 
-            else if (date.Hour < 8)
-            {
-                adjustend = new DateTime(adjustend.Year, adjustend.Month, adjustend.Day,
-                                         operation == Operations.Add ? 8 : 18, 0, 0);
-                date = adjustend;
+                else if (date.TimeOfDay < mintime)
+                {
+                    adjustend = new DateTime(adjustend.Year, adjustend.Month, adjustend.Day, 
+                                             mintime.Value.Hours, mintime.Value.Minutes, mintime.Value.Seconds);
+                    date = adjustend;
+                }
             }
 
             return date;
@@ -225,6 +228,36 @@ namespace ManipulationLibrary.Helpers
                     return false;
                 default:
                     return !IsClosed(calRules, date);
+            }
+        }
+
+        /// <summary>
+        /// Convert string to a timespan
+        /// </summary>
+        /// <param name="time">Time in string format</param>
+        /// <returns>Nullable TimeSpan </returns>
+        public static TimeSpan? ParseTimeSpan(string time)
+        {
+            if (!time.Contains(":"))
+            {
+                return null;
+            }
+
+            try
+            {
+                var timeparts = time.Split(':');
+                var intparts = new int[] { 0, 0, 0 };
+                for (int i = 0; i < 3; i++)
+                {
+                    if (timeparts.Length > i)
+                    {
+                        intparts[i] = Convert.ToInt32(timeparts[i]);
+                    }
+                }
+                return new TimeSpan(intparts[0], intparts[1], intparts[2]);
+            } catch 
+            {
+                return null;
             }
         }
     }

@@ -1,11 +1,23 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ManipulationLibrary", "ManipulationLibrary\ManipulationLibrary.csproj", "{C2FC9E1F-A7EC-4AEB-9E51-8F7A1A012599}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoundsLike", "SoundsLikePlugin\SoundsLike.csproj", "{759D4F2E-7C87-41D1-866C-DBBDB35F9979}"
 EndProject
 Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://tfs.codeplex.com/tfs/tfs08
+		SccProjectUniqueName0 = ManipulationLibrary\\ManipulationLibrary.csproj
+		SccProjectName0 = ManipulationLibrary
+		SccLocalPath0 = ManipulationLibrary
+		SccProjectUniqueName1 = SoundsLikePlugin\\SoundsLike.csproj
+		SccProjectName1 = SoundsLikePlugin
+		SccLocalPath1 = SoundsLikePlugin
+		SccLocalPath2 = .
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
