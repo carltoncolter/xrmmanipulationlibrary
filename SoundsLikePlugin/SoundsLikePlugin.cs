@@ -23,11 +23,11 @@ namespace SoundsLike
                 return string.Empty;
             }
             tracer.Trace("Getting field {0}", field);
-            if (primary.Attributes.ContainsKey(field))
+            if (primary!=null && primary.Attributes.ContainsKey(field))
             {
                 return String.Format("{0}{1}", prefix, primary.GetAttributeValue<string>(field));
             }
-            if (secondary.Attributes.ContainsKey(field))
+            if (secondary!=null && secondary.Attributes.ContainsKey(field))
             {
                 return String.Format("{0}{1}", prefix, secondary.GetAttributeValue<string>(field));
             }
@@ -95,8 +95,8 @@ namespace SoundsLike
                     tracingService.Trace("SoundsLikePlugin: Getting Text for Sources");
                     string text = String.Format("{0}{1}{2}",
                                     GetString(tracingService, entity, pre, setting.Source),
-                                    GetString(tracingService, entity, pre, setting.Source2),
-                                    GetString(tracingService, entity, pre, setting.Source3));
+                                    GetString(tracingService, entity, pre, setting.Source2," "),
+                                    GetString(tracingService, entity, pre, setting.Source3," "));
                     tracingService.Trace("SoundsLikePlugin: Source Text: {0}", text);
 
                     // Codify the string using the method specified

@@ -253,7 +253,8 @@ namespace SoundsLike
                     if (_preTranslationTable.ContainsKey(key))
                     {
                         translation.Append(_preTranslationTable[key]);
-                        index += (key.Length - 1);
+                        index += key.Length;
+                        break;
                     }
                 }
 
@@ -273,6 +274,8 @@ namespace SoundsLike
                         {
                             translation.Append(_commonTranslationTable[key]);
                             index += (key.Length - 1);
+                            //index += key.Length;
+                            break;
                         }
                     }
 
