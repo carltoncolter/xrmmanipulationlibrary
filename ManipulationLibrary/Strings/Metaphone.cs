@@ -94,6 +94,7 @@ namespace ManipulationLibrary.Strings
                                          {"achf", "kf"},
                                          {"achv", "kf"},
                                          {"achw", "k"},
+                                         {"ohn", "n"},
                                          {"ochl", "kl"},
                                          {"ochr", "kr"},
                                          {"ochn", "kn"},
