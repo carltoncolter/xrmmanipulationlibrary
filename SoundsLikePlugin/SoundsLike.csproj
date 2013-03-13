@@ -41,11 +41,12 @@
     <AssemblyOriginatorKeyFile>key.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="microsoft.xrm.client">
-      <HintPath>crm\microsoft.xrm.client.dll</HintPath>
+    <Reference Include="microsoft.crm.sdk.proxy">
+      <HintPath>..\..\5.0.13\sdk\bin\microsoft.crm.sdk.proxy.dll</HintPath>
     </Reference>
-    <Reference Include="microsoft.xrm.sdk">
-      <HintPath>crm\microsoft.xrm.sdk.dll</HintPath>
+    <Reference Include="microsoft.xrm.sdk, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\5.0.13\sdk\bin\microsoft.xrm.sdk.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

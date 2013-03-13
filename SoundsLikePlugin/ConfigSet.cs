@@ -24,6 +24,12 @@ namespace SoundsLike
         [XmlAttribute("source"),DefaultValue("name")]
         public string Source { get; set; }
 
+        [XmlAttribute("source2"), DefaultValue("")]
+        public string Source2 { get; set; }
+
+        [XmlAttribute("source3"), DefaultValue("")]
+        public string Source3 { get; set; }
+
         [XmlAttribute("target")]
         public string Target { get; set; }
 
