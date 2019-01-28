@@ -1,5 +1,5 @@
 ﻿// ==================================================================================
-//  Project:	Manipulation Library for Microsoft Dynamics CRM 2011
+//  Project:	Manipulation Library for Microsoft Dynamics CRM 9.0
 //  File:		Minimum.cs
 //  Summary:	This workflow activity returns the lowest number between two objects
 // ==================================================================================

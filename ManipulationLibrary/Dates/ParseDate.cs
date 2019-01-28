@@ -1,5 +1,5 @@
 // ==================================================================================
-//  Project:	Manipulation Library for Microsoft Dynamics CRM 2011
+//  Project:	Manipulation Library for Microsoft Dynamics CRM 9.0
 //  File:		ParseDate.cs
 //  License:    MsPL - Microsoft Public License
 //  Summary:	This workflow activity parses a date and was written by Carlton Colter.

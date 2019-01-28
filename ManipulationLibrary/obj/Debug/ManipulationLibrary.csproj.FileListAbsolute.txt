@@ -1,0 +1,11 @@
+C:\Users\carlcolt.NORTHAMERICA\source\repos\xrmmanipulationlibrary\ManipulationLibrary\bin\Debug\ManipulationLibrary.dll
+C:\Users\carlcolt.NORTHAMERICA\source\repos\xrmmanipulationlibrary\ManipulationLibrary\bin\Debug\ManipulationLibrary.pdb
+C:\Users\carlcolt.NORTHAMERICA\source\repos\xrmmanipulationlibrary\ManipulationLibrary\bin\Debug\Microsoft.Crm.Sdk.Proxy.dll
+C:\Users\carlcolt.NORTHAMERICA\source\repos\xrmmanipulationlibrary\ManipulationLibrary\bin\Debug\Microsoft.Xrm.Sdk.dll
+C:\Users\carlcolt.NORTHAMERICA\source\repos\xrmmanipulationlibrary\ManipulationLibrary\bin\Debug\Microsoft.Xrm.Sdk.Workflow.dll
+C:\Users\carlcolt.NORTHAMERICA\source\repos\xrmmanipulationlibrary\ManipulationLibrary\bin\Debug\Microsoft.Crm.Sdk.Proxy.xml
+C:\Users\carlcolt.NORTHAMERICA\source\repos\xrmmanipulationlibrary\ManipulationLibrary\bin\Debug\Microsoft.Xrm.Sdk.xml
+C:\Users\carlcolt.NORTHAMERICA\source\repos\xrmmanipulationlibrary\ManipulationLibrary\bin\Debug\Microsoft.Xrm.Sdk.Workflow.xml
+C:\Users\carlcolt.NORTHAMERICA\source\repos\xrmmanipulationlibrary\ManipulationLibrary\obj\Debug\ManipulationLibrary.csprojResolveAssemblyReference.cache
+C:\Users\carlcolt.NORTHAMERICA\source\repos\xrmmanipulationlibrary\ManipulationLibrary\obj\Debug\ManipulationLibrary.dll
+C:\Users\carlcolt.NORTHAMERICA\source\repos\xrmmanipulationlibrary\ManipulationLibrary\obj\Debug\ManipulationLibrary.pdb

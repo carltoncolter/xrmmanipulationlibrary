@@ -1,5 +1,5 @@
 ﻿// ==================================================================================
-//  Project:	Manipulation Library for Microsoft Dynamics CRM 2011
+//  Project:	Manipulation Library for Microsoft Dynamics CRM 9.0
 //  File:		AddBusinessDays.cs
 //  Copyright:  Engage Inc. 2010
 //              www.engage2day.com

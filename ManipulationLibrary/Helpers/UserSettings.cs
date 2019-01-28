@@ -1,5 +1,5 @@
 ﻿// ==================================================================================
-//  Project:	Manipulation Library for Microsoft Dynamics CRM 2011
+//  Project:	Manipulation Library for Microsoft Dynamics CRM 9.0
 //  File:		UserSettings.cs
 //  Summary:	This helper gets the user settings of a user running a workflow.
 //  License:    MsPL - Microsoft Public License

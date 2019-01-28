@@ -1,5 +1,5 @@
 ﻿// ==================================================================================
-//  Project:	Manipulation Library for Microsoft Dynamics CRM 2011
+//  Project:	Manipulation Library for Microsoft Dynamics CRM 9.0
 //  File:		ConvertToUTC.cs
 //  Summary:	This workflow activity converts a local datetime to UTC date time
 //  License:    MsPL - Microsoft Public License

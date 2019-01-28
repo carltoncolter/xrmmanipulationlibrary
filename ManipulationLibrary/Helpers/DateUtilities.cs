@@ -1,5 +1,5 @@
 ﻿// ==================================================================================
-//  Project:	Manipulation Library for Microsoft Dynamics CRM 2011
+//  Project:	Manipulation Library for Microsoft Dynamics CRM 9.0
 //  File:		DateUtilities.cs
 //  Copyright:  Engage Inc. 2010
 //              www.engage2day.com
@@ -11,7 +11,7 @@
 //    A special thanks to Engage for contributing to the Manipulation Library.
 //                                                                    -Carlton Colter
 //
-//    This helper was updated to work with CRM 2011 (5.0).  It can be copied and 
+//    This helper was updated to work with CRM 9.0 (5.0).  It can be copied and 
 //    used in plugins and other CRM applications.
 // ==================================================================================
 

@@ -1,0 +1,11 @@
+C:\Users\carlcolt.NORTHAMERICA\source\repos\xrmmanipulationlibrary\EquationLibrary\obj\Debug\EquationLibrary.csprojResolveAssemblyReference.cache
+C:\Users\carlcolt.NORTHAMERICA\source\repos\xrmmanipulationlibrary\EquationLibrary\bin\Debug\EquationLibrary.dll
+C:\Users\carlcolt.NORTHAMERICA\source\repos\xrmmanipulationlibrary\EquationLibrary\bin\Debug\EquationLibrary.pdb
+C:\Users\carlcolt.NORTHAMERICA\source\repos\xrmmanipulationlibrary\EquationLibrary\bin\Debug\Microsoft.Crm.Sdk.Proxy.dll
+C:\Users\carlcolt.NORTHAMERICA\source\repos\xrmmanipulationlibrary\EquationLibrary\bin\Debug\Microsoft.Xrm.Sdk.dll
+C:\Users\carlcolt.NORTHAMERICA\source\repos\xrmmanipulationlibrary\EquationLibrary\bin\Debug\Microsoft.Xrm.Sdk.Workflow.dll
+C:\Users\carlcolt.NORTHAMERICA\source\repos\xrmmanipulationlibrary\EquationLibrary\bin\Debug\Microsoft.Crm.Sdk.Proxy.xml
+C:\Users\carlcolt.NORTHAMERICA\source\repos\xrmmanipulationlibrary\EquationLibrary\bin\Debug\Microsoft.Xrm.Sdk.xml
+C:\Users\carlcolt.NORTHAMERICA\source\repos\xrmmanipulationlibrary\EquationLibrary\bin\Debug\Microsoft.Xrm.Sdk.Workflow.xml
+C:\Users\carlcolt.NORTHAMERICA\source\repos\xrmmanipulationlibrary\EquationLibrary\obj\Debug\EquationLibrary.dll
+C:\Users\carlcolt.NORTHAMERICA\source\repos\xrmmanipulationlibrary\EquationLibrary\obj\Debug\EquationLibrary.pdb

@@ -1,5 +1,5 @@
 ﻿// ==================================================================================
-//  Project:	Manipulation Library for Microsoft Dynamics CRM 2011
+//  Project:	Manipulation Library for Microsoft Dynamics CRM 9.0
 //  File:		Equation.cs
 //  Summary:	This class utilizes reverse polish notation to solve equations. 
 // ==================================================================================

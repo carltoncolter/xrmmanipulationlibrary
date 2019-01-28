@@ -1,5 +1,5 @@
 ﻿// ==================================================================================
-//  Project:	Manipulation Library for Microsoft Dynamics CRM 2011
+//  Project:	Manipulation Library for Microsoft Dynamics CRM 9.0
 //  File:		EntityInfo.cs
 //  Summary:	This workflow activity gets the id and logical name of the context 
 //              entity as well as builds a url to reference the entity

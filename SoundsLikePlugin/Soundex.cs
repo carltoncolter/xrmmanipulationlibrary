@@ -1,5 +1,5 @@
 ﻿// ==================================================================================
-//  Project:	Manipulation Library for Microsoft Dynamics CRM 4.0
+//  Project:	Manipulation Library for Microsoft Dynamics CRM 9.0
 //  File:		Soundex.cs
 //  Summary:	This class does a soundex string codification. 
 // ==================================================================================

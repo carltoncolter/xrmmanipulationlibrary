@@ -1,5 +1,5 @@
 ﻿// ==================================================================================
-//  Project:	Manipulation Library for Microsoft Dynamics CRM 2011
+//  Project:	Manipulation Library for Microsoft Dynamics CRM 9.0
 //  File:		EqOperator.cs
 //  Summary:	This class manages the individual operations and functions used to 
 //   solve equations dynamically, new functions can be added in the static 

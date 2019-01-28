@@ -1,5 +1,5 @@
 ﻿// ==================================================================================
-//  Project:	Manipulation Library for Microsoft Dynamics CRM 2011
+//  Project:	Manipulation Library for Microsoft Dynamics CRM 9.0
 //  File:		NumberFormat.cs
 //  Summary:	This helper is a re-implementation of fn_GetNumberFormatString SQL 
 //              function used by CRM's Filtered Views

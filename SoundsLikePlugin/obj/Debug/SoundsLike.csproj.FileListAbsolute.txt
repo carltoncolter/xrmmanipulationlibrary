@@ -1,0 +1,9 @@
+C:\Users\carlcolt.NORTHAMERICA\source\repos\xrmmanipulationlibrary\SoundsLikePlugin\bin\Debug\SoundsLikePlugin.dll
+C:\Users\carlcolt.NORTHAMERICA\source\repos\xrmmanipulationlibrary\SoundsLikePlugin\bin\Debug\SoundsLikePlugin.pdb
+C:\Users\carlcolt.NORTHAMERICA\source\repos\xrmmanipulationlibrary\SoundsLikePlugin\bin\Debug\Microsoft.Crm.Sdk.Proxy.dll
+C:\Users\carlcolt.NORTHAMERICA\source\repos\xrmmanipulationlibrary\SoundsLikePlugin\bin\Debug\Microsoft.Xrm.Sdk.dll
+C:\Users\carlcolt.NORTHAMERICA\source\repos\xrmmanipulationlibrary\SoundsLikePlugin\bin\Debug\Microsoft.Crm.Sdk.Proxy.xml
+C:\Users\carlcolt.NORTHAMERICA\source\repos\xrmmanipulationlibrary\SoundsLikePlugin\bin\Debug\Microsoft.Xrm.Sdk.xml
+C:\Users\carlcolt.NORTHAMERICA\source\repos\xrmmanipulationlibrary\SoundsLikePlugin\obj\Debug\SoundsLike.csprojResolveAssemblyReference.cache
+C:\Users\carlcolt.NORTHAMERICA\source\repos\xrmmanipulationlibrary\SoundsLikePlugin\obj\Debug\SoundsLikePlugin.dll
+C:\Users\carlcolt.NORTHAMERICA\source\repos\xrmmanipulationlibrary\SoundsLikePlugin\obj\Debug\SoundsLikePlugin.pdb
