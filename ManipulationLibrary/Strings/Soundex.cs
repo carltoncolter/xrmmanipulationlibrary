@@ -18,25 +18,28 @@ namespace ManipulationLibrary.Strings
         /// <param name="text">The original text</param>
         /// <param name="min">The minimum length (0's will be appended to make up space)</param>
         /// <param name="max">The maximum length (string will be cut off)</param>
-        /// <param name="original">Whether or not to use the original calculation method</param>
+        /// <param name="limit">Maximum number of characters to process</param>
         /// <returns>The metaphone encoded string</returns>
-        private static string Codify(string text, int min, int max, bool original)
+        public static string Codify(string text, int min, int max, int limit=0)
         {
             if (String.IsNullOrEmpty(text)) return String.Empty;
 
-            var str = text.Trim();
+            var str =
+             (limit == 0) ? text.Trim() :
+             text.Substring(0, limit > text.Length ? text.Length : limit);
 
             var soundex = new StringBuilder();
 
             const string source = "etaoinshrdlcumwfgypbvkjxqz";
+            const string encode = "03000520634205012011122222";
 
-            var encode = "0300052D634205D12011122222";
-            if (original)
-                encode = "03000520634205012011122222";
-
-            var lastChar = encode[source.IndexOf(Char.ToLower(str[0]))];
-            for (var i = 1; i < str.Length; i++)
+            var firstChar = '!';
+            var lastChar = '!';
+            for (var i = 0; i < str.Length; i++)
             {
+                if (firstChar == '!' && Char.IsLetter(str[i]) && str[i] < 128)
+                    firstChar = str[i];
+
                 var codeIndex = source.IndexOf(Char.ToLower(str[i]));
                 if (codeIndex < 0)
                 {
@@ -50,12 +53,14 @@ namespace ManipulationLibrary.Strings
                     continue;
                 }
 
+                
                 lastChar = encodedChar;
                 soundex.Append(encodedChar);
+                if (max != -1 && soundex.Length >= max) break;
             }
 
-            soundex.Replace("D", String.Empty);
-            soundex.Insert(0, Char.ToUpper(str[0]));
+            soundex.Remove(0, 1);
+            soundex.Insert(0, Char.ToUpper(firstChar));
 
             while (soundex.Length < min) soundex.Append('0');
 
@@ -68,9 +73,9 @@ namespace ManipulationLibrary.Strings
         {
             var minLength = MinLength.Get<int>(executionContext);
             var maxLength = MaxLength.Get<int>(executionContext);
-            var useOriginalMethod = UseOriginal.Get<bool>(executionContext);
+            var limit = Limit.Get<bool>(executionContext);
             var text = Text.Get<string>(executionContext);
-            var result = Codify(text, minLength, maxLength, useOriginalMethod);
+            var result = Codify(text, minLength, maxLength, limit);
             Result.Set(executionContext,result);
         }
 
@@ -81,10 +86,10 @@ namespace ManipulationLibrary.Strings
         [Input("Maximum Length")]
         [Default("4")]
         public InArgument<int> MaxLength { get; set; }
-
-        [Input("Use Original Version")]
-        [Default("false")]
-        public InArgument<bool> UseOriginal { get; set; }
+        
+        [Input("Limit")]
+        [Default("4")]
+        public InArgument<int> Limit { get; set; }
 
         [Input("Text")]
         public InArgument<string> Text { get; set; }
